@@ -1,5 +1,6 @@
 {
   "name": "profile",
+  "homepage": "http://Edd-wordd.github.io/monaTech",
   "version": "0.1.0",
   "private": true,
   "main": "index.js",
@@ -25,8 +26,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "^4.0.3",
     "react-swipeable-views": "^0.13.9",
-    "typeit-react": "^0.1.3",
-    "homepage": "http://Edd-wordd.github.io/monaTech"
+    "typeit-react": "^0.1.3"
   },
   "devDependencies": {
     "@babel/core": "^7.10.4",
