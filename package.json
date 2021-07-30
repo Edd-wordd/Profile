@@ -55,7 +55,8 @@
   "scripts": {
     "start-dev": "concurrently -c blue,green -n webpack,express \"webpack --mode development -w\" \"nodemon ./server\"",
     "start-prod": "node ./server",
-    "build": "webpack --mode production, gh-pages -d build",
+    "deploy": "gh-pages -d build",
+    "build": "webpack --mode production",
     "lint": "eslint . --ignore-pattern '/public/**/*.js' --fix",
     "eject": "react-scripts eject",
     "test": "jest --verbose --runInBand"
