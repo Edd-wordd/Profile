@@ -1,6 +1,5 @@
 {
   "name": "profile",
-  "homepage": "https://github.com/Edd-wordd/monaTech",
   "version": "0.1.0",
   "private": true,
   "main": "index.js",
@@ -55,8 +54,6 @@
   "scripts": {
     "start-dev": "concurrently -c blue,green -n webpack,express \"webpack --mode development -w\" \"nodemon ./server\"",
     "start-prod": "node ./server",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "build": "webpack --mode production",
     "lint": "eslint . --ignore-pattern '/public/**/*.js' --fix",
     "eject": "react-scripts eject",
