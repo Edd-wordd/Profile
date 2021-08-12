@@ -6,7 +6,7 @@ import GetInTouch from '../components/GetInTouch'
 function Contact() {
   return (
     <>
-      <ContactForm />\
+      <ContactForm />
       <GetInTouch />
       <Footer />
     </>
