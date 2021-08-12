@@ -130,7 +130,7 @@ const textInputs = [
   },
   {
     required: true,
-    id: 'outlined-required',
+    id: 'pNumber',
     label: 'Phone Number',
     variant: 'outlined',
     size: 'small',
@@ -140,7 +140,7 @@ const textInputs = [
   },
   {
     required: true,
-    id: 'outlined required',
+    id: 'email',
     label: 'Email',
     variant: 'outlined',
     size: 'small',
@@ -150,7 +150,7 @@ const textInputs = [
   },
   {
     required: true,
-    id: 'outlined-password-input',
+    id: 'companyName',
     label: 'Company Name',
     autoComplete: 'current-password',
     variant: 'outlined',
@@ -158,7 +158,7 @@ const textInputs = [
   },
   {
     required: false,
-    id: 'outlined-password-input',
+    id: 'companyUrl',
     label: 'Company Website or URL',
     autoComplete: 'current-password',
     variant: 'outlined',
@@ -166,7 +166,7 @@ const textInputs = [
   },
   {
     required: true,
-    id: 'standard-multiline-flexible',
+    id: 'userMessage',
     label: 'How Can We Help You?',
     multiline: true,
     rowsMax: 4,
@@ -229,8 +229,24 @@ const radioInputs = [
 
 function submitForm() {
   let fname = document.getElementById('firstName').value
+  let lname = document.getElementById('lastName').value
+  let userNum = document.getElementById('pNumber').value
+  let userEmail = document.getElementById('email').value
+  let companyName = document.getElementById('companyName').value
+  let companyUrl = document.getElementById('companyUrl').value
+  let userMessage = document.getElementById('userMessage').value
+
+  let newUser = {
+    'First name': fname,
+    'Last Name': lname,
+    'Phone Number': userNum,
+    Email: userEmail,
+    Company: companyName,
+    'Company Url': companyUrl,
+    Message: userMessage,
+  }
   console.log('Button was clicked by daddy')
-  console.log(fname)
+  console.log(newUser)
 }
 function ContactForm() {
   const classes = useStyles()

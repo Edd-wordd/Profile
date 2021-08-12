@@ -117,7 +117,6 @@ const useStyles = makeStyles(() => ({
 
 // store the data for the tab labels and routes
 const tabs = [
-  { label: 'Portfolio', route: '/portfolio' },
   { label: 'About Us', route: '/about' },
   { label: 'Services', route: '/services' },
   { label: 'Contact Us', route: '/contact' },
