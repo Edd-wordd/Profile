@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: 'cover',
     backgroundAttachment: 'fixed',
     backgroundPosition: 'center center',
-    padding: '20rem 0rem 10rem 0rem',
+    padding: '20rem 0rem 5rem 0rem',
   },
   form: {
     '& .MuiTextField-root': {
@@ -39,18 +39,21 @@ const useStyles = makeStyles((theme) => ({
     padding: '1.5rem 4.5rem',
   },
   radio: {
-    paddingLeft: '3rem',
+    paddingLeft: theme.spacing(4.5),
+    [theme.breakpoints.down('xs')]: {
+      paddingLeft: theme.spacing(1),
+    },
   },
   selectInputWrapper: {
-    paddingLeft: '2rem',
+    paddingLeft: theme.spacing(4),
     margin: '1.5rem 0rem',
     [theme.breakpoints.down('xs')]: {
-      padding: '.5rem',
+      padding: theme.spacing(1),
     },
   },
   selectInput: {
     width: '50%',
-    marginTop: '.25rem',
+    marginTop: theme.spacing(0.5),
     [theme.breakpoints.down('xs')]: {
       width: '100%',
     },
@@ -65,20 +68,20 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   formPaper: {
-    padding: '2rem',
+    padding: theme.spacing(4),
     [theme.breakpoints.down('xs')]: {
-      padding: '0rem',
-      paddingBottom: '.5rem',
+      padding: theme.spacing(1.5),
+      paddingBottom: theme.spacing(1),
     },
   },
 
   heading: {
     color: mainTheme.palette.defaultLight.main,
-    fontSize: '3rem',
+    fontSize: theme.spacing(6),
     letterSpacing: '.15rem',
     fontWeight: 600,
     [theme.breakpoints.down('xs')]: {
-      fontSize: '1.5rem',
+      fontSize: theme.spacing(3),
     },
   },
   paragraph: {
@@ -99,7 +102,7 @@ const useStyles = makeStyles((theme) => ({
     width: '250px',
     height: 'auto',
     margin: '0rem 5rem',
-    padding: '1.5rem',
+    padding: theme.spacing(3),
     background: 'linear-gradient(45deg,#CC95C0,#1FA2FF  , #12D8FA , #A6FFCB )',
     border: 'none',
   },
