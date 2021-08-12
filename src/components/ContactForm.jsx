@@ -28,6 +28,9 @@ const useStyles = makeStyles((theme) => ({
     '& .MuiTextField-root': {
       marginTop: theme.spacing(2),
       marginLeft: theme.spacing(3.5),
+      [theme.breakpoints.down('xs')]: {
+        margin: theme.spacing(1),
+      },
     },
   },
 
@@ -41,19 +44,32 @@ const useStyles = makeStyles((theme) => ({
   selectInputWrapper: {
     paddingLeft: '2rem',
     margin: '1.5rem 0rem',
+    [theme.breakpoints.down('xs')]: {
+      padding: '.5rem',
+    },
   },
   selectInput: {
     width: '50%',
     marginTop: '.25rem',
+    [theme.breakpoints.down('xs')]: {
+      width: '100%',
+    },
   },
   submitBtn: {
     margin: '1.5rem 0rem',
     padding: '.5rem 4rem',
     display: 'flex',
     justify: 'center',
+    [theme.breakpoints.down('xs')]: {
+      margin: '1rem 4.5rem',
+    },
   },
   formPaper: {
     padding: '2rem',
+    [theme.breakpoints.down('xs')]: {
+      padding: '0rem',
+      paddingBottom: '.5rem',
+    },
   },
 
   heading: {
@@ -61,6 +77,9 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '3rem',
     letterSpacing: '.15rem',
     fontWeight: 600,
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '1.5rem',
+    },
   },
   paragraph: {
     color: mainTheme.palette.defaultLight.main,
@@ -236,6 +255,7 @@ function ContactForm() {
             xl={6}
             lg={5}
             md={10}
+            xs={12}
           >
             <Typography variant="h1" className={classes.heading}>
               Need to get in Touch?
