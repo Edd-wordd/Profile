@@ -12,6 +12,7 @@ import Select from '@material-ui/core/Select'
 import InputLabel from '@material-ui/core/InputLabel'
 import MenuItem from '@material-ui/core/MenuItem'
 import mainTheme from '../theme'
+import Hidden from '@material-ui/core/Hidden'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -234,6 +235,7 @@ function ContactForm() {
             item
             xl={6}
             lg={5}
+            md={10}
           >
             <Typography variant="h1" className={classes.heading}>
               Need to get in Touch?
@@ -246,20 +248,22 @@ function ContactForm() {
               give us a call or click the message box on the lower right! Either
               way, we look forward to talking with you!
             </Typography>
-            <Paper elevation={4} className={classes.companyCard}>
-              <Grid
-                container
-                direction="column"
-                justify="center"
-                alignItems="flex-start"
-              >
-                <Typography variant="h6">Company Info</Typography>
-                <Typography>Mona Tech LLC</Typography>
-                <Typography>Location: Las vegas, Nevada</Typography>
-                <Typography>Phone: (915) 867-1023 </Typography>
-                <Typography>Email: info@monaTech.io</Typography>
-              </Grid>
-            </Paper>
+            <Hidden mdDown>
+              <Paper elevation={4} className={classes.companyCard}>
+                <Grid
+                  container
+                  direction="column"
+                  justify="center"
+                  alignItems="flex-start"
+                >
+                  <Typography variant="h6">Company Info</Typography>
+                  <Typography>Mona Tech LLC</Typography>
+                  <Typography>Location: Las vegas, Nevada</Typography>
+                  <Typography>Phone: (915) 867-1023 </Typography>
+                  <Typography>Email: info@monaTech.io</Typography>
+                </Grid>
+              </Paper>
+            </Hidden>
           </Grid>
           <Grid item lg={5}>
             <Paper elevation={3} className={classes.formPaper}>
