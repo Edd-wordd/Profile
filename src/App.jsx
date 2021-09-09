@@ -10,6 +10,11 @@ import Contact from './pages/Contact'
 import BookCall from './pages/BookCall'
 import Home from './pages/Home'
 import ContentWriting from './pages/ContentWriting'
+import Seo from './pages/Seo'
+import MobileApp from './pages/MobileApp'
+import Ecommerce from './pages/Ecommerce'
+import WebDesign from './pages/WebDesign'
+import WebMaintanice from './pages/WebMaintanice'
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -26,6 +31,22 @@ function App() {
       <div className={classes.root}>
         <Switch>
           {/* remember to put the home route last!!! */}
+
+          <Route path="/Web-Maintanice">
+            <WebMaintanice />
+          </Route>
+          <Route path="/Web-Design">
+            <WebDesign />
+          </Route>
+          <Route path="/eCommerce">
+            <Ecommerce />
+          </Route>
+          <Route path="/Mobile-App">
+            <MobileApp />
+          </Route>
+          <Route path="/Seo">
+            <Seo />
+          </Route>
           <Route path="/content-writing">
             <ContentWriting />
           </Route>
