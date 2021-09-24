@@ -1,9 +1,11 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import { Typography, Paper, Grid, Container } from '@material-ui/core'
+import { Typography, Button, Grid, Container } from '@material-ui/core'
 import mainTheme from '../theme'
 import Box from '@material-ui/core/Box'
 import DescriptionIcon from '@material-ui/icons/Description'
+import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt'
+import ComputerIcon from '@material-ui/icons/Computer'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -16,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     padding: '20rem 0rem 5rem 0rem',
   },
   mainContent: {
-    padding: '4rem 0rem 8rem 0rem',
+    padding: '0rem 0rem 8rem 0rem',
   },
   mainTitle: {
     borderBottom: '3px solid #FF8E53',
@@ -44,6 +46,21 @@ const useStyles = makeStyles((theme) => ({
   banner: {
     background: 'linear-gradient(40deg,#9b80ce, #f4f1fa 50%,#0f0c29 30%)',
     padding: '4rem 0rem 4rem 0rem',
+  },
+  btnWrapper: {
+    margin: '2rem 0 5rem 0',
+  },
+  button: {
+    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+    color: mainTheme.palette.defaultLight.main,
+  },
+  btn: {
+    border: 'none',
+    fontWeight: 600,
+    textDecoration: 'underline',
+    '&:hover': {
+      backgroundColor: 'transparent',
+    },
   },
 }))
 
@@ -120,6 +137,28 @@ function ContentSection() {
               <DescriptionIcon /> This is the first feature
             </Typography>
           </Grid>
+        </Grid>
+        <Grid
+          container
+          direction="row"
+          justify="center"
+          className={classes.btnWrapper}
+        >
+          <Button
+            variant="contained"
+            className={classes.button}
+            startIcon={<ComputerIcon />}
+            size="large"
+          >
+            Request a Free Quote!
+          </Button>
+          <Button
+            className={classes.btn}
+            endIcon={<ArrowRightAltIcon className={classes.BtnIcon} />}
+            size="large"
+          >
+            Questions? Talk to an expert!
+          </Button>
         </Grid>
       </Container>
     </div>
