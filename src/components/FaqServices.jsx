@@ -5,9 +5,15 @@ import { makeStyles, Grid, Typography } from '@material-ui/core'
 import Accordion from '@material-ui/core/Accordion'
 import AccordionSummary from '@material-ui/core/AccordionSummary'
 import AccordionDetails from '@material-ui/core/AccordionDetails'
-// import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDownIcon'
 import ComputerIcon from '@material-ui/icons/Computer'
 
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+     
+    },
+   
+  }))
 
 
 function FaqServices() {
