@@ -6,6 +6,7 @@ import Box from '@material-ui/core/Box'
 import DescriptionIcon from '@material-ui/icons/Description'
 import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt'
 import ComputerIcon from '@material-ui/icons/Computer'
+import FaqServices from '../components/FaqServices'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -160,6 +161,7 @@ function ContentSection() {
             Questions? Talk to an expert!
           </Button>
         </Grid>
+        <FaqServices/>
       </Container>
     </div>
   )
