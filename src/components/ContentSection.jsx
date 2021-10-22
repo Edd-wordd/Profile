@@ -7,6 +7,7 @@ import DescriptionIcon from '@material-ui/icons/Description'
 import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt'
 import ComputerIcon from '@material-ui/icons/Computer'
 import FaqServices from '../components/FaqServices'
+// import GetStarted from '../components/GetStarted'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -68,6 +69,7 @@ const useStyles = makeStyles((theme) => ({
 function ContentSection() {
   const classes = useStyles()
   return (
+    <>
     <div className={classes.root}>
       <Container maxWidth="xl">
         <Grid
@@ -161,9 +163,13 @@ function ContentSection() {
             Questions? Talk to an expert!
           </Button>
         </Grid>
-        <FaqServices/>
+        {/* <GetStarted/> */}
+        
       </Container>
+      
     </div>
+    <FaqServices/>
+    </>
   )
 }
 
