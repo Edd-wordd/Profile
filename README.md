@@ -1,7 +1,8 @@
 # Getting Started 
 
-Step one: npm install 
-Step two: npm run start-dev (to run the application) 
+- Step one: npm install 
+
+- Step two: npm run start-dev (to run the application) 
 
 
 
