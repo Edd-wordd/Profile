@@ -31,38 +31,48 @@ const questions =
 [
     {
         question: "this is one question",
-        details: 'this is the answer to the question'
+        details: 'this is the answer to the question',
+        rank: 1
     }, {
         question: "this is Two question",
-        details: 'this is the answer to the question'
+        details: 'this is the answer to the question',
+        rank: 2
     }, {
         question: "this is Three question",
-        details: 'this is the answer to the question'
+        details: 'this is the answer to the question',
+        rank: 3
     }, {
         question: "this is Four question",
-        details: 'this is the answer to the question'
+        details: 'this is the answer to the question',
+        rank: 4
     }, {
         question: "this is Five question",
-        details: 'this is the answer to the question'
+        details: 'this is the answer to the question',
+        rank: 5
     }, 
 
 ]
 const questionSecond = [
     {
         question: "this is Six question",
-        details: 'this is the answer to the question'
+        details: 'this is the answer to the question',
+        rank: 6
     }, {
         question: "this is Seven question",
-        details: 'this is the answer to the question'
+        details: 'this is the answer to the question',
+        rank: 7
     }, {
         question: "this is Eight question",
-        details: 'this is the answer to the question'
+        details: 'this is the answer to the question',
+        rank: 8
     }, {
         question: "this is Nine question",
-        details: 'this is the answer to the question'
+        details: 'this is the answer to the question',
+        rank: 9
     }, {
         question: "this is Ten question",
-        details: 'this is the answer to the question'
+        details: 'this is the answer to the question',
+        rank: 10
     }, 
 ]
     
@@ -90,7 +100,7 @@ function FaqServices() {
                     <Grid>
                         {questions.map((question, index) => {
                             return(
-                    <Accordion className={classes.accordion} key={index} expanded={expanded === index} onChange={handleChange(index)}>
+                    <Accordion className={classes.accordion} key={index} expanded={expanded === `${question.rank}`} onChange={handleChange(`${question.rank}`)}>
                         <AccordionSummary  expandIcon={<ExpandMoreIcon/>}>
                             <Typography>{question.question}</Typography>
                         </AccordionSummary>
@@ -107,7 +117,7 @@ function FaqServices() {
                         <Grid>
                         {questionSecond.map((question, index) => {
                             return(
-                    <Accordion className={classes.accordion} key={index}expanded={expanded === index} onChange={handleChange(index)}>
+                    <Accordion className={classes.accordion} key={index}expanded={expanded === `${question.rank}`} onChange={handleChange(`${question.rank}`)}>
                         <AccordionSummary  expandIcon={<ExpandMoreIcon/>}>
                             <Typography>{question.question}</Typography>
                         </AccordionSummary>
