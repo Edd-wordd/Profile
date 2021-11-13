@@ -7,6 +7,7 @@ import AccordionSummary from '@material-ui/core/AccordionSummary'
 import AccordionDetails from '@material-ui/core/AccordionDetails'
 import ComputerIcon from '@material-ui/icons/Computer'
 import mainTheme from '../theme'
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -90,7 +91,7 @@ function FaqServices() {
                         {questions.map((question, index) => {
                             return(
                     <Accordion className={classes.accordion} key={index} expanded={expanded === index} onChange={handleChange(index)}>
-                        <AccordionSummary  expandIcon={<ComputerIcon/>}>
+                        <AccordionSummary  expandIcon={<ExpandMoreIcon/>}>
                             <Typography>{question.question}</Typography>
                         </AccordionSummary>
                         <AccordionDetails>
@@ -107,7 +108,7 @@ function FaqServices() {
                         {questionSecond.map((question, index) => {
                             return(
                     <Accordion className={classes.accordion} key={index}expanded={expanded === index} onChange={handleChange(index)}>
-                        <AccordionSummary  expandIcon={<ComputerIcon/>}>
+                        <AccordionSummary  expandIcon={<ExpandMoreIcon/>}>
                             <Typography>{question.question}</Typography>
                         </AccordionSummary>
                         <AccordionDetails>
