@@ -7,7 +7,6 @@ import AccordionSummary from '@material-ui/core/AccordionSummary'
 import AccordionDetails from '@material-ui/core/AccordionDetails'
 import ComputerIcon from '@material-ui/icons/Computer'
 import mainTheme from '../theme'
-// import classes from '*.module.css'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -20,6 +19,9 @@ const useStyles = makeStyles((theme) => ({
     },
     mainInfo: {
         padding: '2rem 0rem'
+    },
+    questionWrapper: {
+        padding: '1rem 0rem 3rem 0rem'
     }
    
   }))
@@ -66,6 +68,11 @@ const questionSecond = [
 
 function FaqServices() {
     const classes = useStyles()
+    const [expanded, setExpanded] = React.useState('panel1')
+
+    const handleChange = (panel) => (event, isExpanded) => {
+        setExpanded(isExpanded ? panel: false)
+    }
     return (
         <div>
             <SectionHeader  title="FAQ" subTitle="Ask Away"/>
@@ -78,11 +85,11 @@ function FaqServices() {
                     Nemo quasi beatae, doloremque aliquam deserunt veritatis perspiciatis molestias sequi libero dolorem, natus quibusdam ex atque, sit sapiente odit quidem eum autem.
                 </Typography>
                 </Grid>
-                <Grid container direction='row' justify='space-evenly' alignItems='center'>
+                <Grid container direction='row' justify='space-evenly' alignItems='center' className={classes.questionWrapper}>
                     <Grid>
                         {questions.map((question, index) => {
                             return(
-                    <Accordion className={classes.accordion} key={index}>
+                    <Accordion className={classes.accordion} key={index} expanded={expanded === index} onChange={handleChange(index)}>
                         <AccordionSummary  expandIcon={<ComputerIcon/>}>
                             <Typography>{question.question}</Typography>
                         </AccordionSummary>
@@ -99,7 +106,7 @@ function FaqServices() {
                         <Grid>
                         {questionSecond.map((question, index) => {
                             return(
-                    <Accordion className={classes.accordion} key={index}>
+                    <Accordion className={classes.accordion} key={index}expanded={expanded === index} onChange={handleChange(index)}>
                         <AccordionSummary  expandIcon={<ComputerIcon/>}>
                             <Typography>{question.question}</Typography>
                         </AccordionSummary>
