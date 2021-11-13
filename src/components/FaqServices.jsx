@@ -24,13 +24,44 @@ const useStyles = makeStyles((theme) => ({
    
   }))
 
-// const questions =
-// [
-//     {
-//         question: "this is one question",
-//         details: 'this is the answer to the question'
-//     }
-// ]
+const questions =
+[
+    {
+        question: "this is one question",
+        details: 'this is the answer to the question'
+    }, {
+        question: "this is Two question",
+        details: 'this is the answer to the question'
+    }, {
+        question: "this is Three question",
+        details: 'this is the answer to the question'
+    }, {
+        question: "this is Four question",
+        details: 'this is the answer to the question'
+    }, {
+        question: "this is Five question",
+        details: 'this is the answer to the question'
+    }, 
+
+]
+const questionSecond = [
+    {
+        question: "this is Six question",
+        details: 'this is the answer to the question'
+    }, {
+        question: "this is Seven question",
+        details: 'this is the answer to the question'
+    }, {
+        question: "this is Eight question",
+        details: 'this is the answer to the question'
+    }, {
+        question: "this is Nine question",
+        details: 'this is the answer to the question'
+    }, {
+        question: "this is Ten question",
+        details: 'this is the answer to the question'
+    }, 
+]
     
 
 function FaqServices() {
@@ -49,101 +80,40 @@ function FaqServices() {
                 </Grid>
                 <Grid container direction='row' justify='space-evenly' alignItems='center'>
                     <Grid>
-                    <Accordion className={classes.accordion}>
+                        {questions.map((question, index) => {
+                            return(
+                    <Accordion className={classes.accordion} key={index}>
                         <AccordionSummary  expandIcon={<ComputerIcon/>}>
-                            <Typography>This is the first question</Typography>
+                            <Typography>{question.question}</Typography>
                         </AccordionSummary>
                         <AccordionDetails>
                             <Typography>
                                 This is in the details
                             </Typography>
                         </AccordionDetails>
-                    </Accordion> <Accordion>
+                    
+                </Accordion>
+               
+                        )})}
+                        </Grid>
+                        <Grid>
+                        {questionSecond.map((question, index) => {
+                            return(
+                    <Accordion className={classes.accordion} key={index}>
                         <AccordionSummary  expandIcon={<ComputerIcon/>}>
-                            <Typography>This is the first question</Typography>
+                            <Typography>{question.question}</Typography>
                         </AccordionSummary>
                         <AccordionDetails>
                             <Typography>
                                 This is in the details
                             </Typography>
                         </AccordionDetails>
-                    </Accordion> <Accordion>
-                        <AccordionSummary  expandIcon={<ComputerIcon/>}>
-                            <Typography>This is the first question</Typography>
-                        </AccordionSummary>
-                        <AccordionDetails>
-                            <Typography>
-                                This is in the details
-                            </Typography>
-                        </AccordionDetails>
-                    </Accordion> <Accordion>
-                        <AccordionSummary  expandIcon={<ComputerIcon/>}>
-                            <Typography>This is the first question</Typography>
-                        </AccordionSummary>
-                        <AccordionDetails>
-                            <Typography>
-                                This is in the details
-                            </Typography>
-                        </AccordionDetails>
-                    </Accordion> <Accordion>
-                        <AccordionSummary  expandIcon={<ComputerIcon/>}>
-                            <Typography>This is the first question</Typography>
-                        </AccordionSummary>
-                        <AccordionDetails>
-                            <Typography>
-                                This is in the details
-                            </Typography>
-                        </AccordionDetails>
-                    </Accordion>
-                    </Grid>
-                    <Grid>
-                    <Accordion className={classes.accordion}>
-                        <AccordionSummary  expandIcon={<ComputerIcon/>}>
-                            <Typography>This is the first question</Typography>
-                        </AccordionSummary>
-                        <AccordionDetails>
-                            <Typography>
-                                This is in the details
-                            </Typography>
-                        </AccordionDetails>
-                    </Accordion>       <Accordion>
-                        <AccordionSummary  expandIcon={<ComputerIcon/>}>
-                            <Typography>This is the first question</Typography>
-                        </AccordionSummary>
-                        <AccordionDetails>
-                            <Typography>
-                                This is in the details
-                            </Typography>
-                        </AccordionDetails>
-                    </Accordion>       <Accordion>
-                        <AccordionSummary  expandIcon={<ComputerIcon/>}>
-                            <Typography>This is the first question</Typography>
-                        </AccordionSummary>
-                        <AccordionDetails>
-                            <Typography>
-                                This is in the details
-                            </Typography>
-                        </AccordionDetails>
-                    </Accordion>       <Accordion>
-                        <AccordionSummary  expandIcon={<ComputerIcon/>}>
-                            <Typography>This is the first question</Typography>
-                        </AccordionSummary>
-                        <AccordionDetails>
-                            <Typography>
-                                This is in the details
-                            </Typography>
-                        </AccordionDetails>
-                    </Accordion>       <Accordion>
-                        <AccordionSummary  expandIcon={<ComputerIcon/>}>
-                            <Typography>This is the first question</Typography>
-                        </AccordionSummary>
-                        <AccordionDetails>
-                            <Typography>
-                                This is in the details
-                            </Typography>
-                        </AccordionDetails>
-                    </Accordion>
-                    </Grid>
+                    
+                </Accordion>
+               
+                        )})}
+                        </Grid>
+           
                 </Grid>
             </Container>
             
