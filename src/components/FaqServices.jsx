@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     },
     accordion:{
         width: '600px',
-        backgroundColor: mainTheme.palette.primary_100.main,
+        backgroundColor: mainTheme.palette.defaultLight.main,
     },
     mainInfo: {
         padding: '2rem 0rem'
