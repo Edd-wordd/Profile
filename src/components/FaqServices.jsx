@@ -5,7 +5,6 @@ import { makeStyles, Grid, Typography } from '@material-ui/core'
 import Accordion from '@material-ui/core/Accordion'
 import AccordionSummary from '@material-ui/core/AccordionSummary'
 import AccordionDetails from '@material-ui/core/AccordionDetails'
-import ComputerIcon from '@material-ui/icons/Computer'
 import mainTheme from '../theme'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
