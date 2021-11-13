@@ -6,6 +6,7 @@ import Accordion from '@material-ui/core/Accordion'
 import AccordionSummary from '@material-ui/core/AccordionSummary'
 import AccordionDetails from '@material-ui/core/AccordionDetails'
 import ComputerIcon from '@material-ui/icons/Computer'
+import mainTheme from '../theme'
 // import classes from '*.module.css'
 
 
@@ -14,7 +15,11 @@ const useStyles = makeStyles((theme) => ({
      
     },
     accordion:{
-        width: '600px'
+        width: '600px',
+        backgroundColor: mainTheme.palette.primary_100.main,
+    },
+    mainInfo: {
+        padding: '2rem 0rem'
     }
    
   }))
@@ -34,7 +39,7 @@ function FaqServices() {
         <div>
             <SectionHeader  title="FAQ" subTitle="Ask Away"/>
             <Container maxWidth='lg'>
-                <Grid container direction='row' justifyContent='center' alignItems='center'>
+                <Grid container direction='row' justifyContent='center' alignItems='center' className={classes.mainInfo}>
                 <Typography paragraph >
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet veniam ipsum aliquid explicabo. 
                     Harum ipsa blanditiis eaque ducimus dolores libero corrupti eligendi debitis. Nulla delectus tempore aliquid. 
