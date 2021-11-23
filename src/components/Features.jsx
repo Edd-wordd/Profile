@@ -1,5 +1,4 @@
 import React from 'react'
-// import SectionHeader from '../components/SectionHeader'
 import { Typography, Grid, Card } from '@material-ui/core'
 import { Box, CardContent, Container } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
@@ -25,15 +24,11 @@ function Features() {
 
    return (
       <div className={classes.root}>
-         {/* <SectionHeader
-            title="Features"
-            subTitle="maybe this doesnt need to be added"
-         /> */}
          <Container maxWidth="xl">
             <Grid
                container
                direction="row"
-               justify="space-evenly"
+               justify="center"
                alignItems="center"
             >
                <Box>
