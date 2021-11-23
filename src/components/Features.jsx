@@ -8,6 +8,7 @@ const useStyles = makeStyles((theme) => ({
    root: {
       backgroundColor: '#ffffff',
       width: '100%',
+      padding: '3.5rem 0rem',
    },
    mainInfoWrapper: {
       width: '625px',
