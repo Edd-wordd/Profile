@@ -3,6 +3,9 @@ import { Typography, Grid, Card } from '@material-ui/core'
 import { Box, CardContent, Container } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import mainTheme from '../theme'
+import MultilineChartIcon from '@material-ui/icons/MultilineChart'
+import GroupAddIcon from '@material-ui/icons/GroupAdd'
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
 
 const useStyles = makeStyles((theme) => ({
    root: {
@@ -23,9 +26,24 @@ const useStyles = makeStyles((theme) => ({
    },
    cards: {
       margin: '1rem 0rem',
+      padding: '.5rem',
       '&:hover': {
          boxShadow: `inset 0px -2px 0px 0px ${mainTheme.palette.secondary.main}`,
       },
+   },
+   icon: {
+      width: '100px',
+      height: 'auto',
+   },
+   cardWrapper: {
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'center',
+   },
+
+   cardInfo: {
+      //   textAlign: 'left',
+      padding: '.5rem 0rem 0rem 1rem',
    },
 }))
 
@@ -58,33 +76,45 @@ function Features() {
                      corporis fuga?
                   </Typography>
                   <Card className={classes.cards}>
-                     <CardContent>
-                        <Typography variant="h6">Word of the Day</Typography>
-                        <Typography variant="body2">
-                           Lorem ipsum dolor sit amet consectetur adipisicing
-                           elit. Ad atque dolor laudantium, deleniti labore
-                           temporibus soluta?
-                        </Typography>
+                     <CardContent className={classes.cardWrapper}>
+                        <GroupAddIcon className={classes.icon} />
+
+                        <Grid className={classes.cardInfo}>
+                           <Typography variant="h6">Word of the Day</Typography>
+                           <Typography variant="body2">
+                              Lorem ipsum dolor sit amet consectetur adipisicing
+                              elit. Ad atque dolor laudantium, deleniti labore
+                              temporibus soluta?
+                           </Typography>
+                        </Grid>
                      </CardContent>
                   </Card>
                   <Card className={classes.cards}>
-                     <CardContent>
-                        <Typography variant="h6">Word of the Day</Typography>
-                        <Typography variant="body2">
-                           Lorem ipsum dolor sit amet consectetur adipisicing
-                           elit. Ad atque dolor laudantium, deleniti labore
-                           temporibus soluta?
-                        </Typography>
+                     <CardContent className={classes.cardWrapper}>
+                        <MultilineChartIcon className={classes.icon} />
+
+                        <Grid className={classes.cardInfo}>
+                           <Typography variant="h6">Word of the Day</Typography>
+                           <Typography variant="body2">
+                              Lorem ipsum dolor sit amet consectetur adipisicing
+                              elit. Ad atque dolor laudantium, deleniti labore
+                              temporibus soluta?
+                           </Typography>
+                        </Grid>
                      </CardContent>
                   </Card>
                   <Card className={classes.cards}>
-                     <CardContent>
-                        <Typography variant="h6">Word of the Day</Typography>
-                        <Typography variant="body2">
-                           Lorem ipsum dolor sit amet consectetur adipisicing
-                           elit. Ad atque dolor laudantium, deleniti labore
-                           temporibus soluta?
-                        </Typography>
+                     <CardContent className={classes.cardWrapper}>
+                        <ShoppingCartIcon className={classes.icon} />
+
+                        <Grid className={classes.cardInfo}>
+                           <Typography variant="h6">Word of the Day</Typography>
+                           <Typography variant="body2">
+                              Lorem ipsum dolor sit amet consectetur adipisicing
+                              elit. Ad atque dolor laudantium, deleniti labore
+                              temporibus soluta?
+                           </Typography>
+                        </Grid>
                      </CardContent>
                   </Card>
                </Grid>
