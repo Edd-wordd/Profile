@@ -7,6 +7,7 @@ import DescriptionIcon from '@material-ui/icons/Description'
 import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt'
 import ComputerIcon from '@material-ui/icons/Computer'
 import FaqServices from '../components/FaqServices'
+import Features from '../components/Features'
 // import GetStarted from '../components/GetStarted'
 
 const useStyles = makeStyles((theme) => ({
@@ -101,6 +102,7 @@ function ContentSection() {
             </Typography>
           </Grid>
         </Grid>
+        <Features/>
         <Grid
           container
           direction="row"
