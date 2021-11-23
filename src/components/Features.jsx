@@ -9,13 +9,22 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: '#ffffff',
       width: '100%',
    },
+   mainInfoWrapper: {
+      width: '625px',
+      height: 'auto',
+   },
    mainImg: {
       width: '600px',
       height: 'auto',
    },
-   mainInfo: {
-      width: '500px',
-      height: 'auto',
+   paragraph: {
+      padding: '1rem 0rem',
+   },
+   cards: {
+      margin: '1rem 0rem',
+      '&:hover': {
+         boxShadow: `inset 0px -2px 0px 0px ${mainTheme.palette.secondary.main}`,
+      },
    },
 }))
 
@@ -38,16 +47,16 @@ function Features() {
                   />
                </Box>
 
-               <Grid className={classes.mainInfo}>
+               <Grid className={classes.mainInfoWrapper}>
                   <Typography variant="h4">How We Works!</Typography>
-                  <Typography>
+                  <Typography className={classes.paragraph}>
                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
                      Velit iste officia numquam, ut cumque error necessitatibus
                      exercitationem, repellendus odit, quo voluptatem. Est
                      laudantium natus molestiae, tempora laborum repellat
                      corporis fuga?
                   </Typography>
-                  <Card>
+                  <Card className={classes.cards}>
                      <CardContent>
                         <Typography variant="h6">Word of the Day</Typography>
                         <Typography variant="body2">
@@ -57,7 +66,7 @@ function Features() {
                         </Typography>
                      </CardContent>
                   </Card>
-                  <Card>
+                  <Card className={classes.cards}>
                      <CardContent>
                         <Typography variant="h6">Word of the Day</Typography>
                         <Typography variant="body2">
@@ -67,7 +76,7 @@ function Features() {
                         </Typography>
                      </CardContent>
                   </Card>
-                  <Card>
+                  <Card className={classes.cards}>
                      <CardContent>
                         <Typography variant="h6">Word of the Day</Typography>
                         <Typography variant="body2">
