@@ -7,6 +7,7 @@ import AccordionSummary from '@material-ui/core/AccordionSummary'
 import AccordionDetails from '@material-ui/core/AccordionDetails'
 import mainTheme from '../theme'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Box from '@material-ui/core/Box'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -21,7 +22,12 @@ const useStyles = makeStyles((theme) => ({
         padding: '2rem 0rem'
     },
     questionWrapper: {
-        padding: '1rem 0rem 3rem 0rem'
+        padding: '2rem 0rem 8rem 0rem'
+    },
+    QandA:{
+        width: '300px',
+        height: 'auto',
+        borderRadius: '50%'
     }
    
   }))
@@ -88,7 +94,14 @@ function FaqServices() {
             <SectionHeader  title="FAQ" subTitle="Ask Away"/>
             <Container maxWidth='lg'>
                 <Grid container direction='row' justifyContent='center' alignItems='center' className={classes.mainInfo}>
+                    {/* <Box> 
+                        <img
+                        src="../../public/assets/41_41.jpg"
+                        className={classes.QandA}
+                        />
+                    </Box> */}
                 <Typography paragraph >
+         
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet veniam ipsum aliquid explicabo. 
                     Harum ipsa blanditiis eaque ducimus dolores libero corrupti eligendi debitis. Nulla delectus tempore aliquid. 
                     Beatae, blanditiis. Necessitatibus? Lorem ipsum dolor sit amet consectetur, adipisicing elit.

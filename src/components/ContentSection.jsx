@@ -81,7 +81,7 @@ function ContentSection() {
         >
           <Box>
             <img
-              src="../../public/assets/lukas-blazek-mcSDtbWXUZU-unsplash.jpg"
+              src="../../public/assets/computerVector.jpg"
               className={classes.pics}
             />
           </Box>
