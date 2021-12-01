@@ -25,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
       padding: '1rem 0rem',
    },
    cards: {
+      boxShadow:  `2px 2px 20px ${mainTheme.palette.primary_300.main}`,
       margin: '1rem 0rem',
       padding: '.5rem',
       '&:hover': {
