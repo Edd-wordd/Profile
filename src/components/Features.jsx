@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
    cards: {
       boxShadow:  `2px 2px 20px ${mainTheme.palette.primary_300.main}`,
       margin: '1rem 0rem',
-      padding: '.5rem',
+      padding: theme.spacing(1),
       '&:hover': {
          boxShadow: `inset 0px -2px 0px 0px ${mainTheme.palette.secondary.main}`,
       },
@@ -43,7 +43,6 @@ const useStyles = makeStyles((theme) => ({
    },
 
    cardInfo: {
-      //   textAlign: 'left',
       padding: '.5rem 0rem 0rem 1rem',
    },
 }))
