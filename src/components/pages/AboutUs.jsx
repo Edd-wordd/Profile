@@ -1,11 +1,5 @@
 import React from 'react'
-import Footer from '../components/Footer'
-import WhoWeAre from '../components/WhoWeAre'
-import MainDisplay from '../components/MainDisplay'
-import MissionStatement from '../components/MissionStatement'
-import TechUsed from '../components/TechUsed'
-import GetInTouch from '../components/GetInTouch'
-import WhatWeDo from '../components/WhatWeDo'
+import { MainDisplay, MissionStatement, TechUsed, GetInTouch, WhatWeDo, WhoWeAre, Footer } from '../index'
 
 function AboutUs() {
   return (

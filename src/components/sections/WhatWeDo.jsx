@@ -1,5 +1,5 @@
 import React from 'react'
-import mainTheme from '../theme'
+import mainTheme from '../../theme'
 import { makeStyles } from '@material-ui/core/styles'
 import { Container, Typography, Grid, Link } from '@material-ui/core'
 import SectionHeader from './SectionHeader'

@@ -1,6 +1,6 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import mainTheme from '../theme'
+import mainTheme from '../../theme'
 import { Hidden, Typography, Grid } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
@@ -68,6 +68,7 @@ function SectionHeader(props) {
         <Typography variant="h4" className={classes.title}>
           {props.title}
         </Typography>
+
 
         <Grid container item direction="row" justify="center">
           <Hidden xsDown>

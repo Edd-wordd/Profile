@@ -1,11 +1,11 @@
 import React from 'react'
-import SectionHeader from '../components/SectionHeader'
+import SectionHeader from './SectionHeader'
 import Container from '@material-ui/core/Container'
 import { makeStyles, Grid, Typography } from '@material-ui/core'
 import Accordion from '@material-ui/core/Accordion'
 import AccordionSummary from '@material-ui/core/AccordionSummary'
 import AccordionDetails from '@material-ui/core/AccordionDetails'
-import mainTheme from '../theme'
+import mainTheme from '../../theme'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Box from '@material-ui/core/Box'
 

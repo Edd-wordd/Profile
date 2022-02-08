@@ -1,5 +1,5 @@
 import React from 'react'
-import mainTheme from '../theme'
+import mainTheme from '../../theme'
 import { makeStyles, Grid, Typography, Paper, Hidden } from '@material-ui/core'
 import Container from '@material-ui/core/Container'
 import PhoneIphoneIcon from '@material-ui/icons/PhoneIphone'
