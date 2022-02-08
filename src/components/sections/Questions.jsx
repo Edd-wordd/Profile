@@ -1,5 +1,5 @@
 import React from 'react'
-import mainTheme from '../theme'
+import mainTheme from '../../theme'
 import Fade from '@material-ui/core/Fade'
 import { makeStyles } from '@material-ui/core'
 import { Container, Typography, Grid, Link, Paper } from '@material-ui/core'

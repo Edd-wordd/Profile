@@ -1,6 +1,6 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import mainTheme from '../theme'
+import mainTheme from '../../theme'
 import { Container, Typography, Grid, Button, Hidden } from '@material-ui/core'
 import MenuBookIcon from '@material-ui/icons/MenuBook'
 import Box from '@material-ui/core/Box'

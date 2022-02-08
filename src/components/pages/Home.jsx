@@ -1,11 +1,5 @@
 import React from 'react'
-import WhoWeAre from '../components/WhoWeAre'
-import HmServices from '../components/HmServices'
-import Questions from '../components/Questions'
-import Footer from '../components/Footer'
-import GetStarted from '../components/GetStarted'
-import MainDisplay from '../components/MainDisplay'
-import Resources from '../components/Resources'
+import { WhoWeAre, HmServices, Questions, Footer, GetStarted, MainDisplay, Resources } from '../index'
 
 function Home() {
   return (
