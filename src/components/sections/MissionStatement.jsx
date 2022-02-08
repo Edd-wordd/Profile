@@ -1,6 +1,6 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import mainTheme from '../theme'
+import mainTheme from '../../theme'
 import { Hidden, Typography, Grid, Container, Paper } from '@material-ui/core'
 import SectionHeader from './SectionHeader'
 import FormatQuoteRoundedIcon from '@material-ui/icons/FormatQuoteRounded'

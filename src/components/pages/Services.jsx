@@ -1,10 +1,6 @@
 import React from 'react'
-import Footer from '../components/Footer'
-import ServicesOffered from '../components/ServicesOffered'
-import ServicesMain from '../components/ServicesMain'
-import TechUsed from '../components/TechUsed'
-import GetStarted from '../components/GetStarted'
-import MainDisplay from '../components/MainDisplay'
+import { Footer, ServicesOffered, ServicesMain, TechUsed, GetStarted, MainDisplay } from '../index'
+
 
 function Services() {
   return (

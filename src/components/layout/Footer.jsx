@@ -1,14 +1,10 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import { Hidden, Typography } from '@material-ui/core'
-import Grid from '@material-ui/core/Grid'
-import { Link } from '@material-ui/core'
-import mainTheme from '../theme'
-import Paper from '@material-ui/core/Paper'
+import { Hidden, Typography, Link, Paper, Button, Grid } from '@material-ui/core'
+import mainTheme from '../../theme'
 import FacebookIcon from '@material-ui/icons/Facebook'
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import InstagramIcon from '@material-ui/icons/Instagram'
-import Button from '@material-ui/core/Button'
 import ComputerIcon from '@material-ui/icons/Computer'
 
 const useStyles = makeStyles((theme) => ({
@@ -184,7 +180,7 @@ function Footer() {
         <Grid item>
           <Link href="/">
             <img
-              src="../../public/assets/black.png"
+              src="../../../public/assets/black.png"
               alt="mona-tech-logo"
               className={classes.mainLogo}
             />

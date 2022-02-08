@@ -1,6 +1,6 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import mainTheme from '../theme'
+import mainTheme from '../../theme'
 import { Container, Typography, Grid } from '@material-ui/core'
 import Button from '@material-ui/core/Button'
 import ComputerIcon from '@material-ui/icons/Computer'

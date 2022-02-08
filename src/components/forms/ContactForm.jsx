@@ -1,18 +1,10 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import { Typography, Paper, Grid, Container } from '@material-ui/core'
-import TextField from '@material-ui/core/TextField'
-import Radio from '@material-ui/core/Radio'
-import RadioGroup from '@material-ui/core/RadioGroup'
-import FormControlLabel from '@material-ui/core/FormControlLabel'
-import FormControl from '@material-ui/core/FormControl'
-import FormLabel from '@material-ui/core/FormLabel'
-import Button from '@material-ui/core/Button'
-import Select from '@material-ui/core/Select'
-import InputLabel from '@material-ui/core/InputLabel'
-import MenuItem from '@material-ui/core/MenuItem'
-import mainTheme from '../theme'
-import Hidden from '@material-ui/core/Hidden'
+import { Typography, Paper, Grid,
+  Container, TextField, Radio, RadioGroup,
+  Button, Select, Hidden, FormLabel, MenuItem,
+  FormControlLabel, FormControl, InputLabel } from '@material-ui/core'
+import mainTheme from '../../theme'
 
 const useStyles = makeStyles((theme) => ({
   root: {

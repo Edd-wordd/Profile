@@ -1,7 +1,5 @@
 import React from 'react'
-import ContactForm from '../components/ContactForm'
-import Footer from '../components/Footer'
-import GetInTouch from '../components/GetInTouch'
+import { ContactForm,  Footer, GetInTouch } from '../index'
 
 function Contact() {
   return (
