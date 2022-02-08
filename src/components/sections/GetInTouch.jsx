@@ -1,5 +1,5 @@
 import React from 'react'
-import mainTheme from '../theme'
+import mainTheme from '../../theme'
 import { makeStyles, Button, Grid, Typography } from '@material-ui/core'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 import Container from '@material-ui/core/Container'
@@ -70,7 +70,7 @@ function GetInTouch() {
             <Hidden xsDown>
               <Grid item md={4} sm={12} align="center">
                 <img
-                  src="../../public/assets/logo2.png"
+                  src="../../../public/assets/logo2.png"
                   alt="logo"
                   className={classes.logo}
                 />
@@ -105,7 +105,7 @@ function GetInTouch() {
             </Grid>
             <Grid item md={4} sm={12} xs={12} align="center">
               <img
-                src="../../public/assets/logo2.png"
+                src="../../../public/assets/logo2.png"
                 alt="logo"
                 className={classes.logo}
               />

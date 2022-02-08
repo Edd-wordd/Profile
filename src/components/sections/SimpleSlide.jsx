@@ -1,5 +1,5 @@
 import React from 'react'
-import mainTheme from '../theme'
+import mainTheme from '../../theme'
 // import Grow from '@material-ui/core/Slide'
 import { makeStyles, Grid, Typography, Paper } from '@material-ui/core'
 import { Transition } from 'react-transition-group'

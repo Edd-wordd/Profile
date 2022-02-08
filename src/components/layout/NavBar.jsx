@@ -6,7 +6,7 @@ import Hidden from '@material-ui/core/Hidden'
 import Grid from '@material-ui/core/Grid'
 import Container from '@material-ui/core/Container'
 import { Fade as Hamburger } from 'hamburger-react'
-import mainTheme from '../theme'
+import mainTheme from '../../theme'
 
 // styles
 const useStyles = makeStyles(() => ({
@@ -155,7 +155,7 @@ function NavBar() {
               <Grid item xs={11}>
                 <Link href="/">
                   <img
-                    src="../../public/assets/monaTechLogo.png"
+                    src="../../../public/assets/monaTechLogo.png"
                     alt="mona-tech-logo"
                     className={classes.mobileLogoImg}
                   />
@@ -203,7 +203,7 @@ function NavBar() {
             <Grid item sm={4} md={2} lg={2}>
               <Link href="/">
                 <img
-                  src="../../public/assets/monaTechLogo.png"
+                  src="../../../public/assets/monaTechLogo.png"
                   alt="mona-tech-logo"
                   className={classes.mainLogo}
                 />

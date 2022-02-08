@@ -1,5 +1,5 @@
 import React from 'react'
-import mainTheme from '../theme'
+import mainTheme from '../../theme'
 import { Button, Box, makeStyles } from '@material-ui/core'
 import { Container, Typography, Grid, Hidden } from '@material-ui/core'
 import ComputerIcon from '@material-ui/icons/Computer'
@@ -74,8 +74,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
+
 function MainDisplay(props) {
   const classes = useStyles()
+
+
   return (
     <div
       className={classes.root}
