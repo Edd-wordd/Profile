@@ -80,6 +80,9 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: 'none',
     color: mainTheme.palette.defaultLight.main,
   },
+  copyright: {
+    padding: '0 0 1.5rem 0',
+  },
 }))
 
 const servicesFooterLinks = [
@@ -191,9 +194,9 @@ function Footer() {
       <Grid container item direction="row" justify="center">
         <span className={classes.line}></span>
       </Grid>
-      <Grid container direction="row" justify="center">
+      <Grid container direction="row" justify="center" className={classes.copyright}>
         <Grid>
-          <Typography>© Copyright 2021 | All Rights Reserved</Typography>
+          <Typography>© Copyright {new Date().getFullYear()} | All Rights Reserved</Typography>
         </Grid>
         <Hidden xsDown>
           <Grid>
