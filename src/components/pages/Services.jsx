@@ -1,5 +1,5 @@
 import React from 'react'
-import { Footer, ServicesOffered, ServicesMain, TechUsed, GetStarted, MainDisplay } from '../index'
+import { ServicesOffered, ServicesMain, TechUsed, GetStarted, MainDisplay } from '../index'
 
 
 function Services() {
@@ -16,7 +16,6 @@ function Services() {
       <ServicesOffered />
       <TechUsed />
       <GetStarted />
-      <Footer />
     </>
   )
 }

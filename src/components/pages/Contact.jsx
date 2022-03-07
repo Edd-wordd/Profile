@@ -1,12 +1,11 @@
 import React from 'react'
-import { ContactForm,  Footer, GetInTouch } from '../index'
+import { ContactForm, GetInTouch } from '../index'
 
 function Contact() {
   return (
     <>
       <ContactForm />
       <GetInTouch />
-      <Footer />
     </>
   )
 }

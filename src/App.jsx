@@ -15,6 +15,7 @@ import MobileApp from '../src/components/pages/MobileApp'
 import Ecommerce from '../src/components/pages/Ecommerce'
 import WebDesign from '../src/components/pages/WebDesign'
 import WebMaintanice from '../src/components/pages/WebMaintanice'
+import Footer from '../src/components/layout/Footer'
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -69,6 +70,7 @@ function App() {
             <Home />
           </Route>
         </Switch>
+        <Footer />
       </div>
     </Router>
   )

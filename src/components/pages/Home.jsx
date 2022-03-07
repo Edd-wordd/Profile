@@ -1,5 +1,5 @@
 import React from 'react'
-import { WhoWeAre, HmServices, Questions, Footer, GetStarted, MainDisplay, Resources } from '../index'
+import { WhoWeAre, HmServices, Questions, GetStarted, MainDisplay, Resources } from '../index'
 
 function Home() {
   return (
@@ -16,7 +16,6 @@ function Home() {
       <Questions />
       <Resources />
       <GetStarted />
-      <Footer />
     </div>
   )
 }

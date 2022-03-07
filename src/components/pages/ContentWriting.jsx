@@ -1,11 +1,10 @@
 import React from 'react'
-import { ContentSection, Footer } from '../index'
+import { ContentSection } from '../index'
 
 function ContentWriting() {
   return (
     <div>
       <ContentSection />
-      <Footer />
     </div>
   )
 }
