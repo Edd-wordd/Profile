@@ -37,14 +37,9 @@ export { default as AboutUs } from '../components/pages/AboutUs';
 export { default as BookCall } from '../components/pages/BookCall';
 export { default as Contact } from '../components/pages/Contact';
 export { default as ContentWriting } from '../components/pages/ContentWriting';
-export { default as Ecommerce } from '../components/pages/Ecommerce';
 export { default as Home } from '../components/pages/Home';
-export { default as MobileApp } from '../components/pages/MobileApp';
 export { default as Portfolio } from '../components/pages/Portfolio';
-export { default as Seo } from '../components/pages/Seo';
 export { default as Services } from '../components/pages/Services';
-export { default as WebDesign } from '../components/pages/WebDesign';
-export { default as WebMaintanice } from '../components/pages/WebMaintanice';
 
 //============================================
 // Forms
