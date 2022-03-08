@@ -27,6 +27,7 @@ export { default as SimpleSlide } from '../components/sections/SimpleSlide';
 export { default as TechUsed } from '../components/sections/TechUsed';
 export { default as WhatWeDo } from '../components/sections/WhatWeDo';
 export { default as WhoWeAre } from '../components/sections/WhoWeAre';
+export { default as MajorSigns } from '../components/sections/MajorSigns';
 
 //============================================
 // Pages

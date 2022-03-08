@@ -155,7 +155,7 @@ function ServicesOffered() {
                 <Typography variant="h4" className={classes.titles}>
                   {service.serviceOffered}
                 </Typography>
-                <div className={classes.line}></div>
+                <div className={classes.line}/>
                 <Typography className={classes.servicePara}>
                   {service.serviceDetails}
                 </Typography>
