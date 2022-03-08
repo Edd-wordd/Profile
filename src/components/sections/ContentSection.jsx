@@ -1,17 +1,14 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import { Typography, Button, Grid, Container } from '@material-ui/core'
-import mainTheme from '../../theme'
+import { Typography, Grid, Container } from '@material-ui/core'
 import Box from '@material-ui/core/Box'
-import DescriptionIcon from '@material-ui/icons/Description'
-import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt'
-import ComputerIcon from '@material-ui/icons/Computer'
 import FaqServices from './FaqServices'
-// import GetStarted from '../components/GetStarted'
+import {MajorSigns} from "../index";
+import mainTheme from "../../theme";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundImage: `url(https://images.unsplash.com/photo-1619632973808-4acf8041df42?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2251&q=80)`,
+    backgroundImage: `url(https://images.unsplash.com/photo-1616004655123-818cbd4b3143?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80)`,
     width: '100%',
     height: 'auto',
     backgroundSize: 'cover',
@@ -23,18 +20,18 @@ const useStyles = makeStyles((theme) => ({
     padding: '0rem 0rem 8rem 0rem',
   },
   mainTitle: {
-    borderBottom: '3px solid #FF8E53',
+    borderBottom: '1px solid #FF8E53',
+    marginBottom:'1rem',
+    color: mainTheme.palette.defaultLight.main,
   },
   pics: {
-    width: '600px',
+    width: '400px',
     height: 'auto',
-    padding: '1.5rem',
-    // border: '3px solid pink',
-    // webkitClipPath: 'polygon(0 0, 0 100px, 100px 80px, 100px 0)',
-    clipPath: 'polygon(0 0, 100% 0, 100% 22%, 0 80%)',
+    borderRadius: '10px',
+
   },
   mainDescription: {
-    width: '700px',
+    width: '600px',
     height: 'auto',
     color: mainTheme.palette.defaultLight.main,
     letterSpacing: theme.spacing(0.25),
@@ -42,11 +39,7 @@ const useStyles = makeStyles((theme) => ({
       width: '100%',
     },
   },
-  icons: {
-    width: '50px',
-    height: 'auto',
-    color: mainTheme.palette.defaultLight.main,
-  },
+
   banner: {
     background: 'linear-gradient(40deg,#9b80ce, #f4f1fa 50%,#0f0c29 30%)',
     padding: '4rem 0rem 4rem 0rem',
@@ -77,19 +70,18 @@ function ContentSection() {
           <Grid
             container
             direction="row"
-            justify="space-around"
+            justify="space-evenly"
             alignItems="center"
             className={classes.mainContent}
           >
             <Box>
-              <img
+              <img alt='image4'
                 src="../../../public/assets/computerVector.jpg"
                 className={classes.pics}
               />
             </Box>
             <Grid>
-              <Typography variant="h3" className={classes.mainTitle}>
-                <DescriptionIcon className={classes.icons} />
+              <Typography variant="h4" className={classes.mainTitle}>
                 Content Writing Essentials
               </Typography>
               <Typography paragraph className={classes.mainDescription}>
@@ -104,69 +96,7 @@ function ContentSection() {
               </Typography>
             </Grid>
           </Grid>
-          <Grid
-            container
-            direction="row"
-            justify="space-around"
-            alignItems="center"
-            className={classes.banner}
-          >
-            <Grid>
-              <Typography variant="h4">Features</Typography>
-              <Typography>
-                <DescriptionIcon /> This is the first feature
-              </Typography>{' '}
-              <Typography>
-                <DescriptionIcon /> This is the first feature
-              </Typography>{' '}
-              <Typography>
-                <DescriptionIcon /> This is the first feature
-              </Typography>{' '}
-              <Typography>
-                <DescriptionIcon /> This is the first feature
-              </Typography>
-            </Grid>
-            <Grid>
-              <Typography variant="h4">
-                Major signs you need Content Writing
-              </Typography>
-              <Typography>
-                <DescriptionIcon /> This is the first feature
-              </Typography>{' '}
-              <Typography>
-                <DescriptionIcon /> This is the first feature
-              </Typography>{' '}
-              <Typography>
-                <DescriptionIcon /> This is the first feature
-              </Typography>{' '}
-              <Typography>
-                <DescriptionIcon /> This is the first feature
-              </Typography>
-            </Grid>
-          </Grid>
-          <Grid
-            container
-            direction="row"
-            justify="center"
-            className={classes.btnWrapper}
-          >
-            <Button
-              variant="contained"
-              className={classes.button}
-              startIcon={<ComputerIcon />}
-              size="large"
-            >
-              Request a Free Quote!
-            </Button>
-            <Button
-              className={classes.btn}
-              endIcon={<ArrowRightAltIcon className={classes.BtnIcon} />}
-              size="large"
-            >
-              Questions? Talk to an expert!
-            </Button>
-          </Grid>
-          {/* <GetStarted/> */}
+          <MajorSigns />
         </Container>
       </div>
       <FaqServices />
