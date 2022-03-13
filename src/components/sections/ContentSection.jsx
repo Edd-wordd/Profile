@@ -61,7 +61,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-function ContentSection() {
+function ContentSection(props) {
   const classes = useStyles()
   return (
     <>
@@ -82,7 +82,7 @@ function ContentSection() {
             </Box>
             <Grid>
               <Typography variant="h4" className={classes.mainTitle}>
-                Content Writing Essentials
+                {props.title}
               </Typography>
               <Typography paragraph className={classes.mainDescription}>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.

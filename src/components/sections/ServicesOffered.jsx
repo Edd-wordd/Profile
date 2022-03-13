@@ -121,7 +121,6 @@ const services = [
 function ServicesOffered() {
   const classes = useStyles()
   let display = ''
-
   return (
     <>
       <Container maxWidth="xl">
