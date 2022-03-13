@@ -9,8 +9,8 @@ import Services from '../src/components/pages/Services'
 import Contact from '../src/components/pages/Contact'
 import BookCall from '../src/components/pages/BookCall'
 import Home from '../src/components/pages/Home'
-import ContentWriting from '../src/components/pages/ContentWriting'
 import Footer from '../src/components/layout/Footer'
+import ContentSection from "./components/sections/ContentSection";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -29,7 +29,7 @@ function App() {
           {/* remember to put the home route last!!! */}
           <Route path="/portfolio" component={Portfolio}/>
           <Route path="/about" component={AboutUs}/>
-          <Route path="/services/:id" component={ContentWriting}/>
+          <Route path="/services/:id" component={ContentSection}/>
           <Route path="/services" component={Services}/>
           <Route path="/contact" component={Contact}/>
           <Route path="/bookcall" component={BookCall}/>
