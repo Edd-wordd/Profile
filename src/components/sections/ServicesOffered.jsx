@@ -70,7 +70,7 @@ const useStyles = makeStyles((theme) => ({
   },
   links: {
     textDecoration: 'none',
-  }
+  },
 }))
 
 const services = [
@@ -110,9 +110,9 @@ const services = [
       ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magnam pariatur consectetur, quidem quasi modi culpa delectus quisquam suscipit eveniet eius ratione vitae omni dolorum nam unde repellendus hic exercitationem.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis rem in earum beatae, maxime quod repellendus rerum voluptatem doloribus vero provident voluptatum reiciendis sed suscipit dignissimos ipsam commodi eveniet eos? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia maiores dolorem sequi consequatur eaque mollitia temporibus voluptas, a quisquam? Voluptate sunt veritatis corporis delectus nobis omnis eligendi accusamus ad est.',
   },
   {
-    serviceId: 'web-maintanice',
+    serviceId: 'web-maintenance',
     serviceImg: '../../public/assets/thom-bradley-ap8jsn3B9gI-unsplash.jpg',
-    serviceOffered: 'Website/App Maintiance & Support',
+    serviceOffered: 'Website/App Maintenance & Support',
     serviceDetails:
       ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magnam pariatur consectetur, quidem quasi modi culpa delectus quisquam suscipit eveniet eius ratione vitae omni dolorum nam unde repellendus hic exercitationem.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis rem in earum beatae, maxime quod repellendus rerum voluptatem doloribus vero provident voluptatum reiciendis sed suscipit dignissimos ipsam commodi eveniet eos? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia maiores dolorem sequi consequatur eaque mollitia temporibus voluptas, a quisquam? Voluptate sunt veritatis corporis delectus nobis omnis eligendi accusamus ad est.',
   },
@@ -136,11 +136,7 @@ function ServicesOffered() {
             >
               <Hidden mdDown>
                 <Grid>
-                  <Box
-                    display={
-                      index % 2 === 0 ? (display = '') : (display = 'none')
-                    }
-                  >
+                  <Box display={index % 2 === 0 ? (display = '') : (display = 'none')}>
                     <img alt={service.serviceId} className={classes.img} src={service.serviceImg} />
                   </Box>
                 </Grid>
@@ -156,10 +152,8 @@ function ServicesOffered() {
                 <Typography variant="h4" className={classes.titles}>
                   {service.serviceOffered}
                 </Typography>
-                <div className={classes.line}/>
-                <Typography className={classes.servicePara}>
-                  {service.serviceDetails}
-                </Typography>
+                <div className={classes.line} />
+                <Typography className={classes.servicePara}>{service.serviceDetails}</Typography>
 
                 <Grid
                   container
@@ -168,26 +162,21 @@ function ServicesOffered() {
                   alignItems="flex-end"
                   className={classes.btnWrapper}
                 >
-                  <Link to={'/services/'+ service.serviceId} className={classes.links}>
+                  <Link to={'/services/' + service.serviceId} className={classes.links}>
                     <Button
-                        className={classes.btn}
-                        startIcon={<MenuBookIcon />}
-                        variant="outlined"
-                        size="large"
+                      className={classes.btn}
+                      startIcon={<MenuBookIcon />}
+                      variant="outlined"
+                      size="large"
                     >
                       Learn More
                     </Button>
                   </Link>
-
                 </Grid>
               </Grid>
               <Hidden mdDown>
                 <Grid>
-                  <Box
-                    display={
-                      index % 2 === 1 ? (display = '') : (display = 'none')
-                    }
-                  >
+                  <Box display={index % 2 === 1 ? (display = '') : (display = 'none')}>
                     <img alt={service.serviceId} className={classes.img} src={service.serviceImg} />
                   </Box>
                 </Grid>
