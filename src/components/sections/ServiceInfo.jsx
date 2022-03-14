@@ -14,20 +14,32 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: 'cover',
     backgroundAttachment: 'fixed',
     backgroundPosition: 'center center',
-    padding: '20rem 0rem 5rem 0rem',
+    padding: '20rem 0 5rem 0',
   },
   mainContent: {
-    padding: '0rem 0rem 8rem 0rem',
+    padding: '0 0 6rem 0',
+    [theme.breakpoints.down('sm')]: {
+      padding: '0 0 1.5rem 0',
+    },
   },
   mainTitle: {
     borderBottom: '1px solid #FF8E53',
-    marginBottom: '1rem',
+    marginBottom: theme.spacing(2),
     color: mainTheme.palette.defaultLight.main,
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1.75rem',
+    },
   },
   pics: {
-    width: '400px',
-    height: 'auto',
-    borderRadius: '10px',
+    minWidth: '600px',
+    maxHeight: '400px',
+    borderRadius: theme.spacing(1),
+    [theme.breakpoints.down('sm')]: {
+      minWidth: '300px',
+      minHeight: '300px',
+      padding: '2.5rem 0',
+      borderRadius: theme.spacing(1),
+    },
   },
   mainDescription: {
     width: '600px',
@@ -38,26 +50,6 @@ const useStyles = makeStyles((theme) => ({
       width: '100%',
     },
   },
-
-  banner: {
-    background: 'linear-gradient(40deg,#9b80ce, #f4f1fa 50%,#0f0c29 30%)',
-    padding: '4rem 0rem 4rem 0rem',
-  },
-  btnWrapper: {
-    margin: '2rem 0 5rem 0',
-  },
-  button: {
-    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-    color: mainTheme.palette.defaultLight.main,
-  },
-  btn: {
-    border: 'none',
-    fontWeight: 600,
-    textDecoration: 'underline',
-    '&:hover': {
-      backgroundColor: 'transparent',
-    },
-  },
 }))
 
 const serviceInfo = [
@@ -65,9 +57,25 @@ const serviceInfo = [
     path: '/services/content-writing',
     title: 'Content Writing',
     description:
-      ' Content Writing Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      ' Content Writing Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
     image:
       'https://images.unsplash.com/photo-1520076794559-6a1229412a42?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fGNvbnRlbnQlMjB3cml0aW5nfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
+    majorTitle_1: 'Major Sign 1',
+    majorTitle_2: 'Major Sign 2',
+    majorTitle_3: 'Major Sign 3',
+    majorTitle_4: 'Major Sign 4',
+    majorImage:
+      'https://images.unsplash.com/photo-1504691342899-4d92b50853e1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y29udGVudCUyMHdyaXRpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
+    majorInfo_1:
+      ' Content Writing Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+    majorInfo_2:
+      ' Content Writing Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+    majorInfo_3:
+      ' Content Writing Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+    majorInfo_4:
+      ' Content Writing Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+    majorSignInfo:
+      ' Content Writing Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
   },
   {
     path: '/services/seo',
@@ -76,6 +84,22 @@ const serviceInfo = [
       ' SEO Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     image:
       'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8c2VvfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
+    majorTitle_1: 'Major Sign 1 SEO',
+    majorTitle_2: 'Major Sign 2 SEO',
+    majorTitle_3: 'Major Sign 3 SEO',
+    majorTitle_4: 'Major Sign 4 SEO',
+    majorImage:
+      'https://images.unsplash.com/photo-1504691342899-4d92b50853e1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y29udGVudCUyMHdyaXRpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
+    majorInfo_1:
+      'SEO Content Writing Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+    majorInfo_2:
+      'SEO Content Writing Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+    majorInfo_3:
+      'SEO Content Writing Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+    majorInfo_4:
+      'SEO Content Writing Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+    majorSignInfo:
+      'SEO Content Writing Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
   },
   {
     path: '/services/mobile-app',
@@ -84,6 +108,22 @@ const serviceInfo = [
       ' Mobile App Development Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     image:
       'https://images.unsplash.com/photo-1597740985671-2a8a3b80502e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fGFwcHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60',
+    majorTitle_1: 'Major Sign 1 Mobile APP',
+    majorTitle_2: 'Major Sign 2 Mobile APP',
+    majorTitle_3: 'Major Sign 3 Mobile APP',
+    majorTitle_4: 'Major Sign 4 Mobile APP',
+    majorImage:
+      'https://images.unsplash.com/photo-1504691342899-4d92b50853e1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y29udGVudCUyMHdyaXRpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
+    majorInfo_1:
+      'Mobile App Content Writing Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+    majorInfo_2:
+      'Mobile App Content Writing Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+    majorInfo_3:
+      'Mobile App Content Writing Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+    majorInfo_4:
+      'Mobile App Content Writing Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+    majorSignInfo:
+      'Mobile App Content Writing Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
   },
   {
     path: '/services/eCommerce',
@@ -92,6 +132,22 @@ const serviceInfo = [
       ' eCommerce Website Development Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     image:
       'https://images.unsplash.com/photo-1586880244406-556ebe35f282?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZWNvbW1lcmNlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
+    majorTitle_1: 'Major Sign 1 Mobile eComm',
+    majorTitle_2: 'Major Sign 2 Mobile eComm',
+    majorTitle_3: 'Major Sign 3 Mobile eComm',
+    majorTitle_4: 'Major Sign 4 Mobile eComm',
+    majorImage:
+      'https://images.unsplash.com/photo-1504691342899-4d92b50853e1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y29udGVudCUyMHdyaXRpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
+    majorInfo_1:
+      'eComm Content Writing Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+    majorInfo_2:
+      'eComm Content Writing Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+    majorInfo_3:
+      'eComm Content Writing Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+    majorInfo_4:
+      'eComm Content Writing Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+    majorSignInfo:
+      'eComm Content Writing Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
   },
   {
     path: '/services/web-design',
@@ -100,6 +156,22 @@ const serviceInfo = [
       ' Web Design & Development Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     image:
       'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8c2VvfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
+    majorTitle_1: 'Major Sign 1 Web Design',
+    majorTitle_2: 'Major Sign 2 Web Design',
+    majorTitle_3: 'Major Sign 3 Web Design',
+    majorTitle_4: 'Major Sign 4 Web Design',
+    majorImage:
+      'https://images.unsplash.com/photo-1504691342899-4d92b50853e1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y29udGVudCUyMHdyaXRpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
+    majorInfo_1:
+      'Web Design Content Writing Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+    majorInfo_2:
+      'Web Design Content Writing Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+    majorInfo_3:
+      'Web Design Content Writing Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+    majorInfo_4:
+      'Web Design Content Writing Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+    majorSignInfo:
+      'Web Design Content Writing Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
   },
   {
     path: '/services/web-maintenance',
@@ -108,6 +180,22 @@ const serviceInfo = [
       ' Website Maintenance Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
     image:
       'https://images.unsplash.com/photo-1514575110897-1253ff7b2ccb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8bW9iaWxlJTIwYXBwfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=800&q=60',
+    majorTitle_1: 'Major Sign 1 Maintenance',
+    majorTitle_2: 'Major Sign 2 Maintenance',
+    majorTitle_3: 'Major Sign 3 Maintenance',
+    majorTitle_4: 'Major Sign 4 Maintenance',
+    majorImage:
+      'https://images.unsplash.com/photo-1504691342899-4d92b50853e1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y29udGVudCUyMHdyaXRpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
+    majorInfo_1:
+      'Maintenance Content Writing Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+    majorInfo_2:
+      'Maintenance Content Writing Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+    majorInfo_3:
+      'Maintenance Content Writing Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+    majorInfo_4:
+      'Maintenance Content Writing Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
+    majorSignInfo:
+      'Maintenance Content Writing Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam',
   },
 ]
 
@@ -119,7 +207,7 @@ function ServiceInfo() {
     <>
       {serviceInfo.map((service, index) =>
         `${location}` === `${service.path}` ? (
-          <>
+          <div key={index}>
             <div className={classes.root}>
               <Container maxWidth="xl">
                 <Grid
@@ -141,11 +229,22 @@ function ServiceInfo() {
                     </Typography>
                   </Grid>
                 </Grid>
-                `
-                <MajorSigns />
+                <MajorSigns
+                  title={service.title}
+                  majorTitle_1={service.majorTitle_1}
+                  majorTitle_2={service.majorTitle_2}
+                  majorTitle_3={service.majorTitle_3}
+                  majorTitle_4={service.majorTitle_4}
+                  majorInfo_1={service.majorInfo_1}
+                  majorInfo_2={service.majorInfo_2}
+                  majorInfo_3={service.majorInfo_3}
+                  majorInfo_4={service.majorInfo_4}
+                  majorSignInfo={service.majorSignInfo}
+                  majorImage={service.majorImage}
+                />
               </Container>
             </div>
-          </>
+          </div>
         ) : null
       )}
       <FaqServices />
