@@ -28,6 +28,7 @@ export { default as TechUsed } from '../components/sections/TechUsed'
 export { default as WhatWeDo } from '../components/sections/WhatWeDo'
 export { default as WhoWeAre } from '../components/sections/WhoWeAre'
 export { default as MajorSigns } from '../components/sections/MajorSigns'
+export { default as BookCallButton } from '../components/sections/BookCallButton'
 
 //============================================
 // Pages
