@@ -11,6 +11,7 @@ import BookCall from '../src/components/pages/BookCall'
 import Home from '../src/components/pages/Home'
 import Footer from '../src/components/layout/Footer'
 import ServiceInfo from './components/sections/ServiceInfo'
+import TermsAndCondition from './components/pages/TermsAndCondition'
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -27,6 +28,7 @@ function App() {
       <div className={classes.root}>
         <Switch>
           {/* remember to put the home route last!!! */}
+          <Route path="/termsandcondition" component={TermsAndCondition} />
           <Route path="/portfolio" component={Portfolio} />
           <Route path="/about" component={AboutUs} />
           <Route path="/services/:id" component={ServiceInfo} />
