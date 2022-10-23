@@ -11,6 +11,7 @@ import BookCall from '../src/components/pages/BookCall'
 import Home from '../src/components/pages/Home'
 import Footer from '../src/components/layout/Footer'
 import ServiceInfo from './components/sections/ServiceInfo'
+import PrivacyPolicy from './components/pages/PrivacyPolicy'
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -26,7 +27,9 @@ function App() {
       <NavBar />
       <div className={classes.root}>
         <Switch>
+
           {/* remember to put the home route last!!! */}
+          <Route path="/privacypolicy" component={PrivacyPolicy} />
           <Route path="/portfolio" component={Portfolio} />
           <Route path="/about" component={AboutUs} />
           <Route path="/services/:id" component={ServiceInfo} />
@@ -38,6 +41,7 @@ function App() {
         <Footer />
       </div>
     </Router>
+
   )
 }
 
