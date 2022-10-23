@@ -39,7 +39,12 @@ export { default as Contact } from '../components/pages/Contact'
 export { default as Home } from '../components/pages/Home'
 export { default as Portfolio } from '../components/pages/Portfolio'
 export { default as Services } from '../components/pages/Services'
+<<<<<<< HEAD
+export { default as TermsAndCondition } from '../components/pages/TermsAndCondition'
+
+=======
 export { default as PrivacyPolicy } from '../components/pages/PrivacyPolicy'
+>>>>>>> master
 //============================================
 // Forms
 //============================================

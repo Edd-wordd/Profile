@@ -11,7 +11,11 @@ import BookCall from '../src/components/pages/BookCall'
 import Home from '../src/components/pages/Home'
 import Footer from '../src/components/layout/Footer'
 import ServiceInfo from './components/sections/ServiceInfo'
+<<<<<<< HEAD
+import TermsAndCondition from './components/pages/TermsAndCondition'
+=======
 import PrivacyPolicy from './components/pages/PrivacyPolicy'
+>>>>>>> master
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -29,7 +33,11 @@ function App() {
         <Switch>
 
           {/* remember to put the home route last!!! */}
+<<<<<<< HEAD
+          <Route path="/termsandcondition" component={TermsAndCondition} />
+=======
           <Route path="/privacypolicy" component={PrivacyPolicy} />
+>>>>>>> master
           <Route path="/portfolio" component={Portfolio} />
           <Route path="/about" component={AboutUs} />
           <Route path="/services/:id" component={ServiceInfo} />
