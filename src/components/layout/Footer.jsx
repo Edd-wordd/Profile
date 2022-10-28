@@ -86,20 +86,15 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 const servicesFooterLinks = [
-  { path: '/', label: 'SEO' },
-  { path: '/services', label: 'Website Redesign' },
-  { path: '/about', label: 'Website Development' },
-  { path: '/portfolio', label: 'eCommerce Development' },
-  { path: '/services', label: 'Mobile App Development' },
-  { path: '/services', label: 'Website Maintanice & Support' },
-]
-const exploreFooterLinks = [
+  { path: '/services/seo', label: 'Seo Services' },
+  { path: '/services/web-design', label: 'Website Development' },
+  { path: '/services/eCommerce', label: 'eCommerce Development' },
+  { path: '/services/mobile-app', label: 'Mobile App Development' },
+  { path: '/services/web-maintenance', label: 'Website Maintenance & Support' },
   { path: '/portfolio', label: 'FAQ' },
-  { path: '/about', label: 'Careers' },
-  { path: '/', label: 'Recent Articles' },
   { path: '/services', label: 'Join Our Team' },
-  { path: '/services', label: 'Send Us Feedback' },
-  { path: '/services', label: 'Latest News' },
+
+
 ]
 
 function Footer() {
@@ -126,20 +121,7 @@ function Footer() {
             ))}
           </Paper>
         </Grid>
-        {/* Explore Link Section */}
-        <Grid>
-          <Paper className={classes.boxes}>
-            <Typography variant="h6">Explore</Typography>
-            {exploreFooterLinks.map((link, index) => (
-              <Typography key={index} variant="subtitle1">
-                <Link className={classes.links} href={link.path}>
-                  {link.label}
-                </Link>
-              </Typography>
-            ))}
-          </Paper>
-        </Grid>
-        {/* Company Info Section */}
+
         <Grid>
           <Paper className={classes.box1}>
             <Typography variant="h6">Company Info:</Typography>
@@ -204,7 +186,7 @@ function Footer() {
           </Grid>
         </Hidden>
         <Grid>
-          <Typography>Terms &#38; Conditions | Privacy Policy </Typography>
+          <Typography><Link href='/termsandcondition' >Terms &#38; Conditions</Link> |  <Link href="/privacypolicy">Privacy Policy</Link> </Typography>
         </Grid>
       </Grid>
     </div>
