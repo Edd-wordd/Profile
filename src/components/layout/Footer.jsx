@@ -146,7 +146,7 @@ function Footer() {
             <Typography>
               Phone:
               <Link className={classes.links} href="tel:9158671023">
-                +1 (915) 867-1023
+                +1 (999) 811-1003
               </Link>
             </Typography>
             <Typography>
