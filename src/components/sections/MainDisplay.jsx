@@ -4,6 +4,7 @@ import { Button, Box, makeStyles } from '@material-ui/core'
 import { Container, Typography, Grid, Hidden } from '@material-ui/core'
 import ComputerIcon from '@material-ui/icons/Computer'
 import MobileFriendlyIcon from '@material-ui/icons/MobileFriendly'
+import { Link } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -72,6 +73,13 @@ const useStyles = makeStyles((theme) => ({
     color: mainTheme.palette.defaultLight.main,
     opacity: '85%',
   },
+  buttonStyle:{
+    textDecoration: 'none',
+    '&:hover': {
+        textDecoration: 'none',
+    },
+  }
+
 }))
 
 
@@ -112,26 +120,6 @@ function MainDisplay(props) {
                   {props.mobileViewSubtitle}
                 </Typography>
               </Grid>
-              <Grid container direction="column" alignItems="stretch">
-                <Button
-                  variant="contained"
-                  className={classes.buttonMobileView}
-                  startIcon={<ComputerIcon />}
-                  size="large"
-                  style={{ marginBottom: '1.5rem' }}
-                >
-                  Web Development
-                </Button>
-
-                <Button
-                  variant="contained"
-                  className={classes.buttonMobileView}
-                  startIcon={<MobileFriendlyIcon />}
-                  size="large"
-                >
-                  Mobile Development
-                </Button>
-              </Grid>
             </Container>
           </Hidden>
           {/* larger view */}
@@ -144,23 +132,26 @@ function MainDisplay(props) {
                 {props.mainViewSubtitle}
               </Typography>
               <Grid container direction="row" justify="center">
+                <Link href={props.buttonLink} className={classes.buttonStyle}>
                 <Button
                   variant="contained"
                   className={classes.button}
                   startIcon={<ComputerIcon />}
                   size="large"
                 >
-                  Web Development
+                  {props.buttonOneText}
                 </Button>
-
+                </Link>
+                <Link href={props.buttonLink2} className={classes.buttonStyle}>
                 <Button
                   variant="contained"
                   className={classes.button}
                   startIcon={<MobileFriendlyIcon />}
                   size="large"
                 >
-                  Mobile Development
+                  {props.buttonTwoText}
                 </Button>
+                </Link>
               </Grid>
             </Container>
           </Hidden>
