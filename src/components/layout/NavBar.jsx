@@ -1,14 +1,11 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import { Link } from '@material-ui/core'
-import Button from '@material-ui/core/Button'
-import Hidden from '@material-ui/core/Hidden'
-import Grid from '@material-ui/core/Grid'
+import { Link, Button, Hidden, Grid } from '@material-ui/core'
 import Container from '@material-ui/core/Container'
 import { Fade as Hamburger } from 'hamburger-react'
 import mainTheme from '../../theme'
+import { BookCallButton } from '../index'
 
-// styles
 const useStyles = makeStyles(() => ({
   root: {
     margin: '-1rem -.5rem',
@@ -31,7 +28,6 @@ const useStyles = makeStyles(() => ({
     transitionTimingFunction: 'ease-in',
     transition: '.3s',
   },
-
   // Logo for desktop version
   mainLogo: {
     width: '10em',
@@ -87,25 +83,24 @@ const useStyles = makeStyles(() => ({
     marginLeft: '-2rem',
     color: mainTheme.palette.defaultLight.main,
   },
-  bookBtn: {
-    fontFamily: 'Open Sans Condensed',
-    fontSize: 14,
-    fontWeight: 800,
-    letterSpacing: '.15rem',
-    // border: `2px solid ${mainTheme.palette.primary.main}`,
-    border: '2px solid #1FA2FF ',
-    color: mainTheme.palette.defaultLight.main,
-    padding: '8px 20px',
-    marginTop: '1rem',
-    marginBottom: '1rem',
-
-    borderRadius: '2rem',
-    '&:hover': {
-      // background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-
-      backgroundImage: `linear-gradient(#1FA2FF  20%,#12D8FA)`,
-    },
-  },
+  // bookBtn: {
+  //   fontFamily: 'Open Sans Condensed',
+  //   fontSize: 14,
+  //   fontWeight: 800,
+  //   letterSpacing: '.15rem',
+  //   // border: `2px solid ${mainTheme.palette.primary.main}`,
+  //   border: '2px solid #1FA2FF ',
+  //   color: mainTheme.palette.defaultLight.main,
+  //   padding: '8px 20px',
+  //   marginTop: '1rem',
+  //   marginBottom: '1rem',
+  //
+  //   borderRadius: '2rem',
+  //   '&:hover': {
+  //     // background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+  //     backgroundImage: `linear-gradient(#1FA2FF  20%,#12D8FA)`,
+  //   },
+  // },
   // styling for the logo and hamburger icon when on mobile view
   setMobileNavDropdown: {
     backgroundColor: mainTheme.palette.defaultDark.secondary,
@@ -146,11 +141,7 @@ function NavBar() {
           <Grid container>
             <Grid
               container
-              className={
-                isShowingMenu
-                  ? classes.setMobileNavDropdown
-                  : classes.mobileNavDropdown
-              }
+              className={isShowingMenu ? classes.setMobileNavDropdown : classes.mobileNavDropdown}
             >
               <Grid item xs={11}>
                 <Link href="/">
@@ -162,11 +153,7 @@ function NavBar() {
                 </Link>
               </Grid>
               <Grid item xs={1} className={classes.hamIcon}>
-                <Hamburger
-                  toggled={isShowingMenu}
-                  toggle={setIsShowingMenu}
-                  duration={0.7}
-                />
+                <Hamburger toggled={isShowingMenu} toggle={setIsShowingMenu} duration={0.7} />
               </Grid>
             </Grid>
             {/* show each tab */}
@@ -174,16 +161,10 @@ function NavBar() {
               <>
                 {tabs.map((tab, index) => {
                   return (
-                    <Grid
-                      item
-                      xs={12}
-                      className={classes.mobileBtn}
-                      key={index}
-                    >
+                    <Grid item xs={12} className={classes.mobileBtn} key={index}>
                       <Button
                         className={`${classes.tab}  ${
-                          window.location.pathname === tab.route &&
-                          classes.selectedTab
+                          window.location.pathname === tab.route && classes.selectedTab
                         }`}
                         href={tab.route}
                       >
@@ -215,8 +196,7 @@ function NavBar() {
                   <Button
                     key={tab.route}
                     className={`${classes.tab} ${
-                      window.location.pathname === tab.route &&
-                      classes.selectedTab
+                      window.location.pathname === tab.route && classes.selectedTab
                     }`}
                     href={tab.route}
                   >
@@ -226,9 +206,8 @@ function NavBar() {
               })}
             </Grid>
             <Grid item sm={8} md={7} lg={3} className={classes.btnDisplay}>
-              <Button className={classes.bookBtn}>
-                Book a free Consultation call
-              </Button>
+              {/*<Button className={classes.bookBtn}>Book a free Consultation call</Button>*/}
+              <BookCallButton />
             </Grid>
           </Grid>
           {/* </Container> */}
