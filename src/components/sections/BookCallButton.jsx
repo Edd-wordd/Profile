@@ -69,9 +69,9 @@ export default function BookCallButton() {
         <Fade in={open}>
           <div className={classes.paper}>
             <h2 id="transition-modal-title">
-              This will be a form to fill out for a Future Client Call tiah is a hoe
+              This will be a form to fill out for a Future Client calls
             </h2>
-            <p id="transition-modal-description">react-transition-group animates me.</p>
+            <p id="transition-modal-description">Form with all the required information from the client</p>
           </div>
         </Fade>
       </Modal>
