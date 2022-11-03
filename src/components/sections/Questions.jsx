@@ -95,21 +95,25 @@ const sectionOneQuestions = [
     question: 'Do you have a great mobile app idea?',
     details:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit.',
+    link: '/services/mobile-app'
   },
   {
     question: 'Does your business need a online presence?',
     details:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit.',
+    link: '/services/web-design'
   },
   {
     question: 'Is your site outdated and in need of a revamp?',
     details:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit.',
+    link: '/services/web-maintenance'
   },
   {
     question: 'Are you not getting the traction you expected?',
     details:
       'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit.',
+    link: '/services/seo'
   },
 ]
 
@@ -197,7 +201,7 @@ function Questions() {
                 justify="flex-end"
                 alignItems="center"
               >
-                <Link href="/" className={classes.links}>
+                <Link href={question.link} className={classes.links}>
                   Learn More
                 </Link>
               </Grid>
