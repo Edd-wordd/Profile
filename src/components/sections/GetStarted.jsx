@@ -8,6 +8,8 @@ import BeenhereIcon from '@material-ui/icons/Beenhere'
 import Button from '@material-ui/core/Button'
 import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt'
 import ComputerIcon from '@material-ui/icons/Computer'
+import { Link } from '@material-ui/core'
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -150,6 +152,7 @@ function GetStarted() {
         justify="center"
         className={classes.btnWrapper}
       >
+        <Link href={'/contact'}>
         <Button
           variant="contained"
           className={classes.button}
@@ -158,6 +161,7 @@ function GetStarted() {
         >
           Get Started!
         </Button>
+        </Link>
         <Button
           variant="outlined"
           className={classes.btn}
