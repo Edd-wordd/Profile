@@ -1,5 +1,5 @@
 import React from 'react'
-import {Button, Grid, makeStyles} from "@material-ui/core";
+import {Button, Grid, makeStyles, Link} from "@material-ui/core";
 import ComputerIcon from "@material-ui/icons/Computer";
 import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
 import mainTheme from "../../theme";
@@ -37,6 +37,7 @@ function ButtonLink(props) {
                 justify="center"
                 className={classes.btnWrapper}
             >
+                <Link href={props.linkOne}>
                 <Button
                     variant="contained"
                     className={classes.button}
@@ -45,12 +46,16 @@ function ButtonLink(props) {
                 >
                     {props.btnOneText}
                 </Button>
+                </Link>
+                <Link href={props.linkTwo}>
                 <Button
                     className={classes.btn}
                     endIcon={<ArrowRightAltIcon className={classes.BtnIcon} />}
                     size="large"
                 >
-                    {props.btnTwoText}                </Button>
+                    {props.btnTwoText}
+                </Button>
+                </Link>
             </Grid>
 
         </div>
