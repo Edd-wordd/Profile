@@ -148,10 +148,7 @@ function HmServices() {
       <Container maxWidth="xl">
         {/* Section title only shows on mobile */}
         <Hidden smUp>
-          <SectionHeader
-            title="Our Services"
-            subTitle="Let us Help build the Future!"
-          />
+          <SectionHeader title="Our Services" subTitle="Let us Help build the Future!" />
         </Hidden>
 
         <Grid
@@ -166,18 +163,8 @@ function HmServices() {
             return (
               <Transition in={setInProp} timeout={1000} key={index}>
                 {(state) => (
-                  <Slide
-                    direction="right"
-                    in={inProp}
-                    mountOnEnter
-                    unmountOnExit
-                    timeout={3000}
-                  >
-                    <Paper
-                      elevation={10}
-                      id={`box_${index}`}
-                      className={classes.boxes}
-                    >
+                  <Slide direction="right" in={inProp} mountOnEnter unmountOnExit timeout={3000}>
+                    <Paper elevation={10} id={`box_${index}`} className={classes.boxes}>
                       <Icon className={classes.icons} />
                       <Typography variant="h5" className={classes.boxTitle}>
                         {service.serviceTitle}
@@ -192,16 +179,8 @@ function HmServices() {
         </Grid>
         {/* Section Title shows on Ipads and up */}
         <Hidden xsDown>
-          <Grid
-            container
-            direction="row"
-            justify="center"
-            className={classes.sectionTitle}
-          >
-            <SectionHeader
-              title="Our Services"
-              subTitle="Let us Help build the Future!"
-            />
+          <Grid container direction="row" justify="center" className={classes.sectionTitle}>
+            <SectionHeader title="Our Services" subTitle="Let us Help build the Future!" />
           </Grid>
         </Hidden>
 
@@ -211,18 +190,8 @@ function HmServices() {
             return (
               <Transition in={setInProp} timeout={1000} key={index}>
                 {(state) => (
-                  <Slide
-                    direction="left"
-                    in={inProp}
-                    mountOnEnter
-                    unmountOnExit
-                    timeout={3000}
-                  >
-                    <Paper
-                      elevation={10}
-                      id={`boxes_${index}`}
-                      className={classes.boxes}
-                    >
+                  <Slide direction="left" in={inProp} mountOnEnter unmountOnExit timeout={3000}>
+                    <Paper elevation={10} id={`boxes_${index}`} className={classes.boxes}>
                       <Icon className={classes.icons} />
                       <Typography variant="h5" className={classes.boxTitle}>
                         {service.serviceTitle}
