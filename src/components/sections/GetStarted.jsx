@@ -5,8 +5,7 @@ import Paper from '@material-ui/core/Paper'
 import { Container, Typography, Grid, Hidden } from '@material-ui/core'
 import SectionHeader from './SectionHeader'
 import BeenhereIcon from '@material-ui/icons/Beenhere'
-import {ButtonLink} from '../index'
-
+import { ButtonLink } from '../index'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -70,10 +69,7 @@ function GetStarted() {
   return (
     <div className={classes.root}>
       <Grid className={classes.headingWrapper}>
-        <SectionHeader
-          title="How to get Started?"
-          subTitle="The right time is NOW!"
-        />
+        <SectionHeader title="How to get Started?" subTitle="The right time is NOW!" />
       </Grid>
       <Grid
         className={classes.iconWrapper}
@@ -98,18 +94,9 @@ function GetStarted() {
       <Grid container direction="row" justify="center" alignItems="center">
         {getStartedSteps.map((step, index) => (
           <Paper variant="outlined" className={classes.boxes} key={index}>
-            <Grid
-              container
-              direction="row"
-              justify="center"
-              alignItems="center"
-            >
+            <Grid container direction="row" justify="center" alignItems="center">
               <Typography variant="subtitle1">{step.title}</Typography>
-              <Typography
-                paragraph
-                variant="body1"
-                style={{ color: '#808080' }}
-              >
+              <Typography paragraph variant="body1" style={{ color: '#808080' }}>
                 {step.description}
               </Typography>
             </Grid>
@@ -119,13 +106,17 @@ function GetStarted() {
       <Container maxWidth="lg">
         <Grid container direction="row" justify="center">
           <Typography paragraph variant="body1" style={{ color: '#808080' }}>
-            'We believe in high quality work, and keep our team members
-            practicing the industry standards while developing new innovative
-            ways.',
+            'We believe in high quality work, and keep our team members practicing the industry
+            standards while developing new innovative ways.',
           </Typography>
         </Grid>
       </Container>
-      <ButtonLink linkOne='/contact' linkTwo="/" btnOneText="Get Started" btnTwoText="Questions? Talk to an Expert!"/>
+      <ButtonLink
+        linkOne="/contact"
+        linkTwo="/"
+        btnOneText="Get Started"
+        btnTwoText="Questions? Talk to an Expert!"
+      />
     </div>
   )
 }
