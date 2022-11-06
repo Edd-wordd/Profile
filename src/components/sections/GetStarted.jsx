@@ -1,14 +1,10 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import mainTheme from '../../theme'
+// import mainTheme from '../../theme'
 import Paper from '@material-ui/core/Paper'
 import { Container, Typography, Grid, Hidden } from '@material-ui/core'
 import SectionHeader from './SectionHeader'
 import BeenhereIcon from '@material-ui/icons/Beenhere'
-import Button from '@material-ui/core/Button'
-import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt'
-import ComputerIcon from '@material-ui/icons/Computer'
-import { Link } from '@material-ui/core'
 import {ButtonLink} from '../index'
 
 
@@ -43,24 +39,6 @@ const useStyles = makeStyles((theme) => ({
   },
   iconWrapper: {
     marginTop: theme.spacing(6),
-  },
-  btnWrapper: {
-    padding: '2rem 0 4rem 0',
-  },
-  button: {
-    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-    color: mainTheme.palette.defaultLight.main,
-  },
-  btn: {
-    border: 'none',
-    fontWeight: 600,
-    textDecoration: 'underline',
-    '&:hover': {
-      backgroundColor: 'transparent',
-    },
-  },
-  btnIcon: {
-    color: ' #FE6B8B',
   },
 }))
 
@@ -148,31 +126,6 @@ function GetStarted() {
         </Grid>
       </Container>
       <ButtonLink linkOne='/contact' linkTwo="/" btnOneText="Get Started" btnTwoText="Questions? Talk to an Expert!"/>
-      {/*<Grid*/}
-      {/*  container*/}
-      {/*  direction="row"*/}
-      {/*  justify="center"*/}
-      {/*  className={classes.btnWrapper}*/}
-      {/*>*/}
-      {/*  <Link href={'/contact'}>*/}
-      {/*  <Button*/}
-      {/*    variant="contained"*/}
-      {/*    className={classes.button}*/}
-      {/*    startIcon={<ComputerIcon />}*/}
-      {/*    size="large"*/}
-      {/*  >*/}
-      {/*    Get Started!*/}
-      {/*  </Button>*/}
-      {/*  </Link>*/}
-      {/*  <Button*/}
-      {/*    variant="outlined"*/}
-      {/*    className={classes.btn}*/}
-      {/*    endIcon={<ArrowRightAltIcon className={classes.btnIcon} />}*/}
-      {/*    size="large"*/}
-      {/*  >*/}
-      {/*    Questions? Talk to an expert!*/}
-      {/*  </Button>*/}
-      {/*</Grid>*/}
     </div>
   )
 }
