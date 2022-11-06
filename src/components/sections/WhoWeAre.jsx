@@ -7,6 +7,7 @@ import SectionHeader from './SectionHeader'
 import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt'
 import Zoom from '@material-ui/core/Zoom'
 import { Transition } from 'react-transition-group'
+import ButtonLink from '../buttons/ButtonLink'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -146,6 +147,7 @@ function WhoWeAre() {
             Questions? Talk to an expert!
           </Button>
         </Grid>
+        <ButtonLink/>
       </Container>
     </>
   )
