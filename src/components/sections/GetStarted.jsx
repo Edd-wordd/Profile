@@ -9,6 +9,7 @@ import Button from '@material-ui/core/Button'
 import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt'
 import ComputerIcon from '@material-ui/icons/Computer'
 import { Link } from '@material-ui/core'
+import {ButtonLink} from '../index'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -146,31 +147,32 @@ function GetStarted() {
           </Typography>
         </Grid>
       </Container>
-      <Grid
-        container
-        direction="row"
-        justify="center"
-        className={classes.btnWrapper}
-      >
-        <Link href={'/contact'}>
-        <Button
-          variant="contained"
-          className={classes.button}
-          startIcon={<ComputerIcon />}
-          size="large"
-        >
-          Get Started!
-        </Button>
-        </Link>
-        <Button
-          variant="outlined"
-          className={classes.btn}
-          endIcon={<ArrowRightAltIcon className={classes.btnIcon} />}
-          size="large"
-        >
-          Questions? Talk to an expert!
-        </Button>
-      </Grid>
+      <ButtonLink linkOne='/contact' linkTwo="/" btnOneText="Get Started" btnTwoText="Questions? Talk to an Expert!"/>
+      {/*<Grid*/}
+      {/*  container*/}
+      {/*  direction="row"*/}
+      {/*  justify="center"*/}
+      {/*  className={classes.btnWrapper}*/}
+      {/*>*/}
+      {/*  <Link href={'/contact'}>*/}
+      {/*  <Button*/}
+      {/*    variant="contained"*/}
+      {/*    className={classes.button}*/}
+      {/*    startIcon={<ComputerIcon />}*/}
+      {/*    size="large"*/}
+      {/*  >*/}
+      {/*    Get Started!*/}
+      {/*  </Button>*/}
+      {/*  </Link>*/}
+      {/*  <Button*/}
+      {/*    variant="outlined"*/}
+      {/*    className={classes.btn}*/}
+      {/*    endIcon={<ArrowRightAltIcon className={classes.btnIcon} />}*/}
+      {/*    size="large"*/}
+      {/*  >*/}
+      {/*    Questions? Talk to an expert!*/}
+      {/*  </Button>*/}
+      {/*</Grid>*/}
     </div>
   )
 }
