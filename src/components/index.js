@@ -47,3 +47,8 @@ export { default as PrivacyPolicy } from '../components/pages/PrivacyPolicy'
 //============================================
 
 export { default as ContactForm } from '../components/forms/ContactForm'
+
+//============================================
+// Buttons
+//============================================
+export { default as ButtonLink } from '../components/buttons/ButtonLink'
