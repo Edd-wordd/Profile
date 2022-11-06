@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 
-function ButtonLink() {
+function ButtonLink(props) {
     const classes = useStyles()
     return (
         <div>
@@ -43,15 +43,14 @@ function ButtonLink() {
                     startIcon={<ComputerIcon />}
                     size="large"
                 >
-                    Request a Free Quote!
+                    {props.btnOneText}
                 </Button>
                 <Button
                     className={classes.btn}
                     endIcon={<ArrowRightAltIcon className={classes.BtnIcon} />}
                     size="large"
                 >
-                    Questions? Talk to an expert!
-                </Button>
+                    {props.btnTwoText}                </Button>
             </Grid>
 
         </div>
