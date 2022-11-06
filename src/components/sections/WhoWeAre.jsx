@@ -1,10 +1,8 @@
 import React from 'react'
-import mainTheme from '../../theme'
-import { makeStyles, Button, Paper } from '@material-ui/core'
+// import mainTheme from '../../theme'
+import { makeStyles, Paper } from '@material-ui/core'
 import { Container, Typography, Grid } from '@material-ui/core'
-import ComputerIcon from '@material-ui/icons/Computer'
 import SectionHeader from './SectionHeader'
-import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt'
 import Zoom from '@material-ui/core/Zoom'
 import { Transition } from 'react-transition-group'
 import ButtonLink from '../buttons/ButtonLink'
@@ -25,24 +23,7 @@ const useStyles = makeStyles((theme) => ({
       width: '100%',
     },
   },
-  btnWrapper: {
-    margin: '2rem 0 5rem 0',
-  },
-  button: {
-    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-    color: mainTheme.palette.defaultLight.main,
-  },
-  btn: {
-    border: 'none',
-    fontWeight: 600,
-    textDecoration: 'underline',
-    '&:hover': {
-      backgroundColor: 'transparent',
-    },
-  },
-  BtnIcon: {
-    color: ' #FE6B8B',
-  },
+
 }))
 
 const coreValues = [
@@ -125,29 +106,7 @@ function WhoWeAre() {
             </Transition>
           ))}
         </Grid>
-        <Grid
-          container
-          direction="row"
-          justify="center"
-          className={classes.btnWrapper}
-        >
-          <Button
-            variant="contained"
-            className={classes.button}
-            startIcon={<ComputerIcon />}
-            size="large"
-          >
-            Request a Free Quote!
-          </Button>
-          <Button
-            className={classes.btn}
-            endIcon={<ArrowRightAltIcon className={classes.BtnIcon} />}
-            size="large"
-          >
-            Questions? Talk to an expert!
-          </Button>
-        </Grid>
-        <ButtonLink/>
+        <ButtonLink btnOneText='Request a free Quote' btnTwoText="Questions? Talk to an expert!"/>
       </Container>
     </>
   )
