@@ -71,7 +71,9 @@ export default function BookCallButton() {
             <h2 id="transition-modal-title">
               This will be a form to fill out for a Future Client calls
             </h2>
-            <p id="transition-modal-description">Form with all the required information from the client</p>
+            <p id="transition-modal-description">
+              Form with all the required information from the client
+            </p>
           </div>
         </Fade>
       </Modal>
