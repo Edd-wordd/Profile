@@ -5,9 +5,9 @@ function Home() {
   return (
     <div>
       <MainDisplay
-        mobileViewTitle="Look..."
+        mobileViewTitle="Look to the Future..."
         mobileViewSubtitle="lets go get this"
-        mainViewTitle="Look to the Future..."
+        mainViewTitle="Look to the future..."
         mainViewSubtitle="lets go baby!!!"
         href={`https://images.unsplash.com/photo-1508361727343-ca787442dcd7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=$%7BimageWidth%7D&q=80`}
         buttonOneText={'Web Development'}
