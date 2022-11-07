@@ -64,7 +64,6 @@ function ButtonLink(props) {
             {props.btnOneText}
           </Button>
         </Link>
-        {/*<Link href={props.linkTwo}>*/}
         <Button
           className={classes.btn}
           endIcon={<ArrowRightAltIcon className={classes.BtnIcon} />}
@@ -73,7 +72,6 @@ function ButtonLink(props) {
         >
           {props.btnTwoText}
         </Button>
-        {/*</Link>*/}
         <Modal
           aria-labelledby="transition-modal-title"
           aria-describedby="transition-modal-description"
