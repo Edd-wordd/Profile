@@ -5,7 +5,7 @@ function Home() {
   return (
     <div>
       <MainDisplay
-        mobileViewTitle="Look to the Future..."
+        mobileViewTitle="Look..."
         mobileViewSubtitle="lets go get this"
         mainViewTitle="Look to the Future..."
         mainViewSubtitle="lets go baby!!!"
