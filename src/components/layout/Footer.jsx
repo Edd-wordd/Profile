@@ -93,8 +93,6 @@ const servicesFooterLinks = [
   { path: '/services/web-maintenance', label: 'Website Maintenance & Support' },
   { path: '/portfolio', label: 'FAQ' },
   { path: '/services', label: 'Join Our Team' },
-
-
 ]
 
 function Footer() {
@@ -141,14 +139,16 @@ function Footer() {
               </Link>
             </Typography>
             <Typography>Las Vegas, Nevada U.S.A</Typography>
-            <Button
-              variant="contained"
-              className={classes.button}
-              startIcon={<ComputerIcon />}
-              size="large"
-            >
-              Get a Quote w!
-            </Button>
+            <Link href="/contact">
+              <Button
+                variant="contained"
+                className={classes.button}
+                startIcon={<ComputerIcon />}
+                size="large"
+              >
+                Get a Quote w!
+              </Button>
+            </Link>
             <Typography variant="h6">Connect With Us: </Typography>
             <Link className={classes.links} href="/">
               <FacebookIcon className={classes.icons} />
@@ -186,7 +186,10 @@ function Footer() {
           </Grid>
         </Hidden>
         <Grid>
-          <Typography><Link href='/termsandcondition' >Terms &#38; Conditions</Link> |  <Link href="/privacypolicy">Privacy Policy</Link> </Typography>
+          <Typography>
+            <Link href="/termsandcondition">Terms &#38; Conditions</Link> |{' '}
+            <Link href="/privacypolicy">Privacy Policy</Link>{' '}
+          </Typography>
         </Grid>
       </Grid>
     </div>
