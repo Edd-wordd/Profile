@@ -1,12 +1,11 @@
 import React from 'react'
 import mainTheme from '../../theme'
 import { makeStyles } from '@material-ui/core/styles'
-import { Container, Typography, Grid, Button, Grow } from '@material-ui/core'
-import ComputerIcon from '@material-ui/icons/Computer'
+import { Container, Typography, Grid, Grow } from '@material-ui/core'
 import Paper from '@material-ui/core/Paper'
 import SectionHeader from './SectionHeader'
 import { Transition } from 'react-transition-group'
-import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt'
+import ButtonLink from '../buttons/ButtonLink'
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -23,24 +22,6 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('xs')]: {
       width: '100%',
     },
-  },
-  btnWrapper: {
-    margin: '2rem 0 4rem 0',
-  },
-  button: {
-    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-    color: mainTheme.palette.defaultLight.main,
-  },
-  btn: {
-    border: 'none',
-    fontWeight: 600,
-    textDecoration: 'underline',
-    '&:hover': {
-      backgroundColor: 'transparent',
-    },
-  },
-  icon: {
-    color: ' #FE6B8B', // pinkish orange color
   },
   coreValue: { color: '#616161' }, // light grey color
 }))
@@ -87,28 +68,21 @@ function ServicesMain() {
       <Container maxWidth="lg">
         <Grid className={classes.paragraphWrapper}>
           <Typography paragraph variant="body1" className={classes.paraInfo}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt,
-            officiis ea! Atque, ratione cumque. Fugiat earum eius doloribus quo
-            repudiandae, maiores excepturi officia iusto consequuntur quis odio
-            labore, commodi minima? Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Deserunt, officiis ea! Atque, ratione cumque.
-            Fugiat earum eius doloribus quo repudiandae, maiores excepturi
-            officia iusto consequuntur quis odio labore, commodi minima? Lorem
-            ipsum dolor sit amet consectetur adipisicing elit. Deserunt,
-            officiis ea! Atque, ratione cumque. Fugiat earum eius doloribus quo
-            repudiandae, maiores excepturi officia iusto consequuntur quis odio
-            labore, commodi minima?8
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, officiis ea! Atque,
+            ratione cumque. Fugiat earum eius doloribus quo repudiandae, maiores excepturi officia
+            iusto consequuntur quis odio labore, commodi minima? Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Deserunt, officiis ea! Atque, ratione cumque. Fugiat earum
+            eius doloribus quo repudiandae, maiores excepturi officia iusto consequuntur quis odio
+            labore, commodi minima? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Deserunt, officiis ea! Atque, ratione cumque. Fugiat earum eius doloribus quo
+            repudiandae, maiores excepturi officia iusto consequuntur quis odio labore, commodi
+            minima?8
           </Typography>
         </Grid>
       </Container>
 
       <Container maxWidth="xl">
-        <Grid
-          container
-          direction="row"
-          justify="space-evenly"
-          alignItems="center"
-        >
+        <Grid container direction="row" justify="space-evenly" alignItems="center">
           {coreValues.map((value, index) => (
             <Transition in={setInProp} timeout={2000} key={index}>
               {(state) => (
@@ -117,11 +91,7 @@ function ServicesMain() {
                     <Typography variant="subtitle1">
                       <b>{value.coreTitle}</b>
                     </Typography>
-                    <Typography
-                      paragraph
-                      variant="body1"
-                      className={classes.coreValue}
-                    >
+                    <Typography paragraph variant="body1" className={classes.coreValue}>
                       {value.coreValue}
                     </Typography>
                   </Paper>
@@ -130,29 +100,11 @@ function ServicesMain() {
             </Transition>
           ))}
         </Grid>
-        <Grid
-          container
-          direction="row"
-          justify="center"
-          className={classes.btnWrapper}
-        >
-          <Button
-            variant="contained"
-            className={classes.button}
-            startIcon={<ComputerIcon />}
-            size="large"
-          >
-            Get Started!
-          </Button>
-          <Button
-            variant="outlined"
-            className={classes.btn}
-            endIcon={<ArrowRightAltIcon className={classes.icon} />}
-            size="large"
-          >
-            Questions? Talk to an expert!
-          </Button>
-        </Grid>
+        <ButtonLink
+          btnOneText="Get Started"
+          btnTwoText="Questions? Talk to an expert!"
+          linkOne="/contact"
+        />
       </Container>
     </>
   )
