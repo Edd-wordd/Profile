@@ -1,4 +1,3 @@
-const webpack = require('webpack')
 const path = require('path')
 const autoprefixer = require('autoprefixer')
 
@@ -17,7 +16,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
