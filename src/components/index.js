@@ -6,6 +6,20 @@ export { default as NavBar } from '../components/layout/NavBar'
 export { default as Footer } from '../components/layout/Footer'
 
 //============================================
+// Pages
+//============================================
+
+export { default as AboutUs } from '../components/pages/AboutUs'
+export { default as BookCall } from '../components/pages/BookCall'
+export { default as Contact } from '../components/pages/Contact'
+export { default as Home } from '../components/pages/Home'
+export { default as Portfolio } from '../components/pages/Portfolio'
+export { default as Services } from '../components/pages/Services'
+export { default as TermsAndCondition } from '../components/pages/TermsAndCondition'
+export { default as PrivacyPolicy } from '../components/pages/PrivacyPolicy'
+export { default as FAQ } from '../components/pages/FAQ'
+
+//============================================
 // Sections
 //============================================
 
@@ -28,21 +42,6 @@ export { default as TechUsed } from '../components/sections/TechUsed'
 export { default as WhatWeDo } from '../components/sections/WhatWeDo'
 export { default as WhoWeAre } from '../components/sections/WhoWeAre'
 export { default as MajorSigns } from '../components/sections/MajorSigns'
-export { default as BookCallButton } from '../components/sections/BookCallButton'
-
-//============================================
-// Pages
-//============================================
-
-export { default as AboutUs } from '../components/pages/AboutUs'
-export { default as BookCall } from '../components/pages/BookCall'
-export { default as Contact } from '../components/pages/Contact'
-export { default as Home } from '../components/pages/Home'
-export { default as Portfolio } from '../components/pages/Portfolio'
-export { default as Services } from '../components/pages/Services'
-export { default as TermsAndCondition } from '../components/pages/TermsAndCondition'
-export { default as PrivacyPolicy } from '../components/pages/PrivacyPolicy'
-export { default as FAQ } from '../components/pages/FAQ'
 
 //============================================
 // Forms
@@ -53,4 +52,6 @@ export { default as ContactForm } from '../components/forms/ContactForm'
 //============================================
 // Buttons
 //============================================
+
 export { default as ButtonLink } from '../components/buttons/ButtonLink'
+export { default as BookCallButton } from './buttons/BookCallButton'
