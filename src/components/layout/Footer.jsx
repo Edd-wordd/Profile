@@ -150,13 +150,13 @@ function Footer() {
               </Button>
             </Link>
             <Typography variant="h6">Connect With Us: </Typography>
-            <Link className={classes.links} href="/">
+            <Link className={classes.links} href="https://www.facebook.com" target="_blank">
               <FacebookIcon className={classes.icons} />
             </Link>
-            <Link className={classes.links} href="/">
+            <Link className={classes.links} href="https://www.linkedin.com/" target="_blank">
               <LinkedInIcon className={classes.icons} />
             </Link>
-            <Link className={classes.links} href="/">
+            <Link className={classes.links} href="https://www.instagram.com" target="_blank">
               <InstagramIcon className={classes.icons} />
             </Link>
           </Paper>
