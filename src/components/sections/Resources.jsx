@@ -1,4 +1,4 @@
-// import React from 'react'
+import React, { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import { Grid, Container } from '@material-ui/core'
 import mainTheme from '../../theme'
@@ -11,7 +11,6 @@ import CardMedia from '@material-ui/core/CardMedia'
 import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 import { RWebShare } from 'react-web-share'
-import React, { useState } from 'react'
 
 const useStyles = makeStyles((theme) => ({
   root: {
