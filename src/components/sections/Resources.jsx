@@ -56,20 +56,12 @@ function Resources() {
           {blogPosts.map((card, index) => (
             <Card className={classes.root} key={index}>
               <CardActionArea>
-                <CardMedia
-                  className={classes.media}
-                  image={card.image}
-                  title="resoources"
-                />
+                <CardMedia className={classes.media} image={card.image} title="resoources" />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
                     {card.title}
                   </Typography>
-                  <Typography
-                    variant="body2"
-                    color="textSecondary"
-                    component="p"
-                  >
+                  <Typography variant="body2" color="textSecondary" component="p">
                     {card.description}
                   </Typography>
                 </CardContent>
@@ -78,9 +70,10 @@ function Resources() {
                 <Button size="small" color="primary">
                   Share
                 </Button>
-                <Button size="small" color="primary">
-                  Learn More
-                </Button>
+                {/*removed this button as issue #74 requested. May need to reinstate it at a later date*/}
+                {/*<Button size="small" color="primary">*/}
+                {/*  Learn More*/}
+                {/*</Button>*/}
               </CardActions>
             </Card>
           ))}
