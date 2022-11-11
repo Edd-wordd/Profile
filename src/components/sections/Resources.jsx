@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import { makeStyles } from '@material-ui/core/styles'
-import { Grid, Container } from '@material-ui/core'
+import { Grid, Container, makeStyles } from '@material-ui/core'
 import mainTheme from '../../theme'
 import SectionHeader from './SectionHeader'
 import Card from '@material-ui/core/Card'
@@ -70,21 +69,16 @@ function Resources() {
               <CardActions>
                 <RWebShare
                   data={{
-                    text: 'Hello World',
+                    // text: 'Hello World',
                     url: 'https://www.google.com',
-                    title: 'Hello World',
+                    title: 'Mona Tech Blog',
                   }}
-                  {/*onclick is only logging to console*/}
                   onClick={() => console.log('shared successfully')}
                 >
                   <Button size="small" color="primary">
                     Share
                   </Button>
                 </RWebShare>
-                {/*removed this button as issue #74 requested. May need to reinstate it at a later date*/}
-                {/*<Button size="small" color="primary">*/}
-                {/*  Learn More*/}
-                {/*</Button>*/}
               </CardActions>
             </Card>
           ))}
