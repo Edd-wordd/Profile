@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import { Grid, Container } from '@material-ui/core'
 import mainTheme from '../../theme'
@@ -10,6 +10,8 @@ import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
 import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
+import { RWebShare } from 'react-web-share'
+import React, { useState } from 'react'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -67,9 +69,19 @@ function Resources() {
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Button size="small" color="primary">
-                  Share
-                </Button>
+                <RWebShare
+                  data={{
+                    text: 'Hello World',
+                    url: 'https://www.google.com',
+                    title: 'Hello World',
+                  }}
+                  {/*onclick is only logging to console*/}
+                  onClick={() => console.log('shared successfully')}
+                >
+                  <Button size="small" color="primary">
+                    Share
+                  </Button>
+                </RWebShare>
                 {/*removed this button as issue #74 requested. May need to reinstate it at a later date*/}
                 {/*<Button size="small" color="primary">*/}
                 {/*  Learn More*/}
