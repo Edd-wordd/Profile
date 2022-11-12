@@ -31,18 +31,21 @@ const blogPosts = [
     description:
       'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet ex ullam, asperiores minima delectus inventore sequi, voluptates ipsa architecto reiciendis repellendus minus est omnis cupiditate, placeat totam labore tempore earum?',
     image: 'public/assets/tim-mossholder-VOXs79vySFo-unsplash.jpg',
+    link: 'https://www.drop.com',
   },
   {
     title: 'What key words you need?',
     description:
       'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet ex ullam, asperiores minima delectus inventore sequi, voluptates ipsa architecto reiciendis repellendus minus est omnis cupiditate, placeat totam labore tempore earum?',
     image: 'public/assets/tim-mossholder-VOXs79vySFo-unsplash.jpg',
+    link: 'https://www.eddwordd.com',
   },
   {
     title: 'WordPress VS Custom Webpage',
     description:
       'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet ex ullam, asperiores minima delectus inventore sequi, voluptates ipsa architecto reiciendis repellendus minus est omnis cupiditate, placeat totam labore tempore earum?',
     image: 'public/assets/tim-mossholder-VOXs79vySFo-unsplash.jpg',
+    link: 'https://www.linkedin.com',
   },
 ]
 function Resources() {
@@ -69,9 +72,9 @@ function Resources() {
               <CardActions>
                 <RWebShare
                   data={{
-                    // text: 'Hello World',
-                    url: 'https://www.google.com',
-                    title: 'Mona Tech Blog',
+                    text: card.description,
+                    url: card.link,
+                    title: card.title,
                   }}
                   onClick={() => console.log('shared successfully')}
                 >
