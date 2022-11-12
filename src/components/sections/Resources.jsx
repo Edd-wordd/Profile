@@ -1,6 +1,5 @@
-import React from 'react'
-import { makeStyles } from '@material-ui/core/styles'
-import { Grid, Container } from '@material-ui/core'
+import React, { useState } from 'react'
+import { Grid, Container, makeStyles } from '@material-ui/core'
 import mainTheme from '../../theme'
 import SectionHeader from './SectionHeader'
 import Card from '@material-ui/core/Card'
@@ -10,6 +9,7 @@ import CardContent from '@material-ui/core/CardContent'
 import CardMedia from '@material-ui/core/CardMedia'
 import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
+import { RWebShare } from 'react-web-share'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -31,18 +31,21 @@ const blogPosts = [
     description:
       'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet ex ullam, asperiores minima delectus inventore sequi, voluptates ipsa architecto reiciendis repellendus minus est omnis cupiditate, placeat totam labore tempore earum?',
     image: 'public/assets/tim-mossholder-VOXs79vySFo-unsplash.jpg',
+    link: 'https://www.drop.com',
   },
   {
     title: 'What key words you need?',
     description:
       'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet ex ullam, asperiores minima delectus inventore sequi, voluptates ipsa architecto reiciendis repellendus minus est omnis cupiditate, placeat totam labore tempore earum?',
     image: 'public/assets/tim-mossholder-VOXs79vySFo-unsplash.jpg',
+    link: 'https://www.eddwordd.com',
   },
   {
     title: 'WordPress VS Custom Webpage',
     description:
       'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eveniet ex ullam, asperiores minima delectus inventore sequi, voluptates ipsa architecto reiciendis repellendus minus est omnis cupiditate, placeat totam labore tempore earum?',
     image: 'public/assets/tim-mossholder-VOXs79vySFo-unsplash.jpg',
+    link: 'https://www.linkedin.com',
   },
 ]
 function Resources() {
@@ -67,13 +70,18 @@ function Resources() {
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Button size="small" color="primary">
-                  Share
-                </Button>
-                {/*removed this button as issue #74 requested. May need to reinstate it at a later date*/}
-                {/*<Button size="small" color="primary">*/}
-                {/*  Learn More*/}
-                {/*</Button>*/}
+                <RWebShare
+                  data={{
+                    text: card.description,
+                    url: card.link,
+                    title: card.title,
+                  }}
+                  onClick={() => console.log('shared successfully')}
+                >
+                  <Button size="small" color="primary">
+                    Share
+                  </Button>
+                </RWebShare>
               </CardActions>
             </Card>
           ))}
