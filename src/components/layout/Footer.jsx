@@ -91,7 +91,6 @@ const servicesFooterLinks = [
   { path: '/services/eCommerce', label: 'eCommerce Development' },
   { path: '/services/mobile-app', label: 'Mobile App Development' },
   { path: '/services/web-maintenance', label: 'Website Maintenance & Support' },
-  { path: '/faq', label: 'FAQ' },
   { path: '/services', label: 'Join Our Team' },
 ]
 
