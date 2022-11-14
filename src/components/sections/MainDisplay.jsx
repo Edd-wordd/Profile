@@ -73,19 +73,16 @@ const useStyles = makeStyles((theme) => ({
     color: mainTheme.palette.defaultLight.main,
     opacity: '85%',
   },
-  buttonStyle:{
+  buttonStyle: {
     textDecoration: 'none',
     '&:hover': {
-        textDecoration: 'none',
+      textDecoration: 'none',
     },
-  }
-
+  },
 }))
-
 
 function MainDisplay(props) {
   const classes = useStyles()
-
 
   return (
     <div
@@ -100,23 +97,12 @@ function MainDisplay(props) {
             {/* smaller view */}
             <Container maxWidth="lg" className={classes.titleWrapperMobileView}>
               <Grid container direction="column" justify="center">
-                <Typography
-                  variant="h1"
-                  className={classes.mainTitleMobileView}
-                >
+                <Typography variant="h1" className={classes.mainTitleMobileView}>
                   {props.mobileViewTitle}
                 </Typography>
               </Grid>
-              <Grid
-                container
-                direction="row"
-                justify="center"
-                alignItems="center"
-              >
-                <Typography
-                  paragraph
-                  className={classes.mainParagraphMobileView}
-                >
+              <Grid container direction="row" justify="center" alignItems="center">
+                <Typography paragraph className={classes.mainParagraphMobileView}>
                   {props.mobileViewSubtitle}
                 </Typography>
               </Grid>
@@ -132,26 +118,30 @@ function MainDisplay(props) {
                 {props.mainViewSubtitle}
               </Typography>
               <Grid container direction="row" justify="center">
-                <Link href={props.buttonLink} className={classes.buttonStyle}>
-                <Button
-                  variant="contained"
-                  className={classes.button}
-                  startIcon={<ComputerIcon />}
-                  size="large"
-                >
-                  {props.buttonOneText}
-                </Button>
-                </Link>
-                <Link href={props.buttonLink2} className={classes.buttonStyle}>
-                <Button
-                  variant="contained"
-                  className={classes.button}
-                  startIcon={<MobileFriendlyIcon />}
-                  size="large"
-                >
-                  {props.buttonTwoText}
-                </Button>
-                </Link>
+                {props.buttonOneText ? (
+                  <Link href={props.buttonLink} className={classes.buttonStyle}>
+                    <Button
+                      variant="contained"
+                      className={classes.button}
+                      startIcon={<ComputerIcon />}
+                      size="large"
+                    >
+                      {props.buttonOneText}
+                    </Button>
+                  </Link>
+                ) : null}
+                {props.buttonTwoText ? (
+                  <Link href={props.buttonLink2} className={classes.buttonStyle}>
+                    <Button
+                      variant="contained"
+                      className={classes.button}
+                      startIcon={<MobileFriendlyIcon />}
+                      size="large"
+                    >
+                      {props.buttonTwoText}
+                    </Button>
+                  </Link>
+                ) : null}
               </Grid>
             </Container>
           </Hidden>
