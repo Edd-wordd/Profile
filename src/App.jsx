@@ -13,7 +13,6 @@ import Footer from '../src/components/layout/Footer'
 import ServiceInfo from './components/sections/ServiceInfo'
 import TermsAndCondition from './components/pages/TermsAndCondition'
 import PrivacyPolicy from './components/pages/PrivacyPolicy'
-import FAQ from './components/pages/FAQ'
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -30,7 +29,6 @@ function App() {
       <div className={classes.root}>
         <Switch>
           {/* remember to put the home route last!!! */}
-          <Route path="/faq" component={FAQ} />
           <Route path="/termsandcondition" component={TermsAndCondition} />
           <Route path="/privacypolicy" component={PrivacyPolicy} />
           <Route path="/portfolio" component={Portfolio} />

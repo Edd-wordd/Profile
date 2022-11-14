@@ -17,7 +17,6 @@ export { default as Portfolio } from '../components/pages/Portfolio'
 export { default as Services } from '../components/pages/Services'
 export { default as TermsAndCondition } from '../components/pages/TermsAndCondition'
 export { default as PrivacyPolicy } from '../components/pages/PrivacyPolicy'
-export { default as FAQ } from '../components/pages/FAQ'
 
 //============================================
 // Sections
