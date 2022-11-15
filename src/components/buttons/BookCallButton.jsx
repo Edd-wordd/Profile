@@ -4,7 +4,7 @@ import Modal from '@material-ui/core/Modal'
 import Backdrop from '@material-ui/core/Backdrop'
 import Fade from '@material-ui/core/Fade'
 import mainTheme from '../../theme'
-import { Button, Container, Grid, Paper, TextField, Typography } from '@material-ui/core'
+import { Button, TextField, Typography } from '@material-ui/core'
 
 const textInputs = [
   {
@@ -13,9 +13,6 @@ const textInputs = [
     label: 'First Name',
     variant: 'outlined',
     size: 'small',
-    style: {
-      width: '45%',
-    },
   },
   {
     required: true,
@@ -23,9 +20,6 @@ const textInputs = [
     label: 'Last Name',
     variant: 'outlined',
     size: 'small',
-    style: {
-      width: '45%',
-    },
   },
   {
     required: true,
@@ -33,9 +27,6 @@ const textInputs = [
     label: 'Phone Number',
     variant: 'outlined',
     size: 'small',
-    style: {
-      width: '45%',
-    },
   },
   {
     required: true,
@@ -43,9 +34,6 @@ const textInputs = [
     label: 'Email',
     variant: 'outlined',
     size: 'small',
-    style: {
-      width: '45%',
-    },
   },
   {
     required: true,
@@ -88,14 +76,6 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  paper: {
-    backgroundColor: theme.palette.background.paper,
-    border: '2px solid #000',
-    boxShadow: theme.shadows[5],
-    // padding: theme.spacing(2, 4, 3),
-    // width: '100%',
-    // margin: theme.spacing(0, -4),
-  },
   bookBtn: {
     fontFamily: 'Open Sans Condensed',
     fontSize: 16,
@@ -114,11 +94,16 @@ const useStyles = makeStyles((theme) => ({
       backgroundImage: `linear-gradient(#1FA2FF  20%,#12D8FA)`,
     },
   },
-  root: {},
+  paper: {
+    backgroundColor: theme.palette.background.paper,
+    border: '2px solid #000',
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2, 4, 3),
+    width: '30%',
+  },
   form: {
     '& .MuiTextField-root': {
-      // marginTop: theme.spacing(2),
-      // marginLeft: theme.spacing(3.5),
+      margin: theme.spacing(1),
       [theme.breakpoints.down('xs')]: {
         margin: theme.spacing(1),
       },
@@ -127,37 +112,14 @@ const useStyles = makeStyles((theme) => ({
 
   formHeader: {
     borderBottom: '1.5px solid black',
-    // padding: '1.5rem 4.5rem',
   },
   submitBtn: {
-    // margin: '1.5rem 0rem',
     padding: '.5rem 4rem',
     display: 'flex',
     justify: 'center',
     [theme.breakpoints.down('xs')]: {
       margin: '1rem 4.5rem',
     },
-  },
-  // formPaper: {
-  //   padding: theme.spacing(4),
-  //   [theme.breakpoints.down('xs')]: {
-  //     padding: theme.spacing(1.5),
-  //     paddingBottom: theme.spacing(1),
-  //   },
-  // },
-  heading: {
-    color: mainTheme.palette.defaultLight.main,
-    fontSize: theme.spacing(6),
-    letterSpacing: '.15rem',
-    fontWeight: 600,
-    [theme.breakpoints.down('xs')]: {
-      fontSize: theme.spacing(3),
-    },
-  },
-  message: {
-    padding: '1.5rem 0rem 0rem 0rem',
-    color: mainTheme.palette.defaultLight.main,
-    letterSpacing: '.15rem',
   },
 }))
 
@@ -192,46 +154,34 @@ export default function BookCallButton() {
       >
         <Fade in={open}>
           <div className={classes.paper}>
-            <Container maxWidth="xl">
-              <Grid container direction="row" justify="center">
-                <Grid item lg={5}>
-                  {/*<Paper elevation={3} className={classes.formPaper}>*/}
-                  <Typography className={classes.formHeader}>
-                    Let's get your consultation call booked!
-                  </Typography>
-                  <form className={classes.form} noValidate autoComplete="off">
-                    <div>
-                      <Grid container direction="row" justifyContent="center" alignItems="center">
-                        {textInputs.map((value, index) => (
-                          <TextField
-                            key={index}
-                            required={value.required}
-                            id={value.id}
-                            label={value.label}
-                            variant={value.variant}
-                            size={value.size}
-                            multiline={value.multiline}
-                            rowsMax={value.rowsMax}
-                            style={value.style}
-                            fullWidth={value.fullWidth}
-                          />
-                        ))}
-                      </Grid>
-                    </div>
-                    <Button
-                      className={classes.submitBtn}
-                      size="large"
-                      variant="outlined"
-                      aria-label="large outlined button"
-                      onClick={() => submitForm()}
-                    >
-                      SUBMIT
-                    </Button>
-                  </form>
-                  {/*</Paper>*/}
-                </Grid>
-              </Grid>
-            </Container>
+            <Typography className={classes.formHeader}>
+              Let's get your consultation call booked!
+            </Typography>
+            <form className={classes.form} noValidate autoComplete="off">
+              {textInputs.map((value, index) => (
+                <TextField
+                  key={index}
+                  required={value.required}
+                  id={value.id}
+                  label={value.label}
+                  variant={value.variant}
+                  size={value.size}
+                  multiline={value.multiline}
+                  rowsMax={value.rowsMax}
+                  style={value.style}
+                  fullWidth={value.fullWidth}
+                />
+              ))}
+              <Button
+                className={classes.submitBtn}
+                size="large"
+                variant="outlined"
+                aria-label="large outlined button"
+                onClick={() => submitForm()}
+              >
+                SUBMIT
+              </Button>
+            </form>
           </div>
         </Fade>
       </Modal>
