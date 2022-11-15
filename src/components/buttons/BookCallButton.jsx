@@ -4,6 +4,75 @@ import Modal from '@material-ui/core/Modal'
 import Backdrop from '@material-ui/core/Backdrop'
 import Fade from '@material-ui/core/Fade'
 import mainTheme from '../../theme'
+import { Button, Container, Grid, Paper, TextField, Typography } from '@material-ui/core'
+
+const textInputs = [
+  {
+    required: true,
+    id: 'firstName',
+    label: 'First Name',
+    variant: 'outlined',
+    size: 'small',
+    style: {
+      width: '45%',
+    },
+  },
+  {
+    required: true,
+    id: 'lastName',
+    label: 'Last Name',
+    variant: 'outlined',
+    size: 'small',
+    style: {
+      width: '45%',
+    },
+  },
+  {
+    required: true,
+    id: 'pNumber',
+    label: 'Phone Number',
+    variant: 'outlined',
+    size: 'small',
+    style: {
+      width: '45%',
+    },
+  },
+  {
+    required: true,
+    id: 'email',
+    label: 'Email',
+    variant: 'outlined',
+    size: 'small',
+    style: {
+      width: '45%',
+    },
+  },
+  {
+    required: true,
+    id: 'companyName',
+    label: 'Company Name',
+    autoComplete: 'current-password',
+    variant: 'outlined',
+    fullWidth: true,
+  },
+  {
+    required: false,
+    id: 'companyUrl',
+    label: 'Company Website or URL',
+    autoComplete: 'current-password',
+    variant: 'outlined',
+    fullWidth: true,
+  },
+  {
+    required: true,
+    id: 'userMessage',
+    label: 'How Can We Help You?',
+    multiline: true,
+    rowsMax: 4,
+    variant: 'outlined',
+    fullWidth: true,
+  },
+]
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -68,12 +137,53 @@ export default function BookCallButton() {
       >
         <Fade in={open}>
           <div className={classes.paper}>
-            <h2 id="transition-modal-title">
-              This will be a form to fill out for a Future Client calls
-            </h2>
-            <p id="transition-modal-description">
-              Form with all the required information from the client
-            </p>
+            <div className={classes.root}>
+              <Container maxWidth="xl">
+                <Grid container direction="row" justify="center">
+                  <Grid item lg={5}>
+                    <Paper elevation={3} className={classes.formPaper}>
+                      <Typography className={classes.formHeader}>
+                        Please fill this form out! Let us know what we can do for you!
+                      </Typography>
+                      <form className={classes.form} noValidate autoComplete="off">
+                        <div>
+                          <Grid
+                            container
+                            direction="row"
+                            justifyContent="center"
+                            alignItems="center"
+                          >
+                            {textInputs.map((value, index) => (
+                              <TextField
+                                key={index}
+                                required={value.required}
+                                id={value.id}
+                                label={value.label}
+                                variant={value.variant}
+                                size={value.size}
+                                multiline={value.multiline}
+                                rowsMax={value.rowsMax}
+                                style={value.style}
+                                fullWidth={value.fullWidth}
+                              />
+                            ))}
+                          </Grid>
+                        </div>
+                        <Button
+                          className={classes.submitBtn}
+                          size="large"
+                          variant="outlined"
+                          aria-label="large outlined button"
+                          onClick={() => submitForm()}
+                        >
+                          SUBMIT
+                        </Button>
+                      </form>
+                    </Paper>
+                  </Grid>
+                </Grid>
+              </Container>
+            </div>
           </div>
         </Fade>
       </Modal>
