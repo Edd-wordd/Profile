@@ -100,14 +100,18 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
     width: '30%',
+    borderRadius: '2%',
   },
   form: {
     '& .MuiTextField-root': {
-      margin: theme.spacing(1),
+      margin: theme.spacing(1, 0),
       [theme.breakpoints.down('xs')]: {
         margin: theme.spacing(1),
       },
     },
+  },
+  textField: {
+    paddingRight: theme.spacing(1),
   },
 
   formHeader: {
@@ -116,7 +120,7 @@ const useStyles = makeStyles((theme) => ({
   submitBtn: {
     padding: '.5rem 4rem',
     display: 'flex',
-    justify: 'center',
+    marginLeft: 'auto',
     [theme.breakpoints.down('xs')]: {
       margin: '1rem 4.5rem',
     },
@@ -160,6 +164,7 @@ export default function BookCallButton() {
             <form className={classes.form} noValidate autoComplete="off">
               {textInputs.map((value, index) => (
                 <TextField
+                  className={classes.textField}
                   key={index}
                   required={value.required}
                   id={value.id}
