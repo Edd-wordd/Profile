@@ -1,11 +1,75 @@
 import React from 'react'
-import { Button, Grid, makeStyles, Link } from '@material-ui/core'
+import { Button, Grid, makeStyles, Link, Typography, TextField } from '@material-ui/core'
 import ComputerIcon from '@material-ui/icons/Computer'
 import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt'
 import mainTheme from '../../theme'
 import Modal from '@material-ui/core/Modal'
 import Backdrop from '@material-ui/core/Backdrop'
 import Fade from '@material-ui/core/Fade'
+
+const textInputs = [
+  {
+    required: true,
+    id: 'firstName',
+    label: 'First Name',
+    variant: 'outlined',
+    size: 'small',
+  },
+  {
+    required: true,
+    id: 'lastName',
+    label: 'Last Name',
+    variant: 'outlined',
+    size: 'small',
+  },
+  {
+    required: true,
+    id: 'pNumber',
+    label: 'Phone Number',
+    variant: 'outlined',
+    size: 'small',
+  },
+  {
+    required: true,
+    id: 'email',
+    label: 'Email',
+    variant: 'outlined',
+    size: 'small',
+  },
+  {
+    required: true,
+    id: 'companyName',
+    label: 'Company Name',
+    autoComplete: 'current-password',
+    variant: 'outlined',
+    fullWidth: true,
+  },
+  {
+    required: false,
+    id: 'companyUrl',
+    label: 'Company Website or URL',
+    autoComplete: 'current-password',
+    variant: 'outlined',
+    fullWidth: true,
+  },
+  {
+    required: true,
+    id: 'userMessage',
+    label: 'How Can We Help You?',
+    multiline: true,
+    rowsMax: 4,
+    variant: 'outlined',
+    fullWidth: true,
+  },
+  // {
+  //   required: true,
+  //   id: 'calendy',
+  //   label: 'Calendly Link',
+  //   multiline: false,
+  //   variant: 'outlined',
+  //   fullWidth: true,
+  // },
+]
 
 const useStyles = makeStyles((theme) => ({
   root: {},
@@ -37,6 +101,31 @@ const useStyles = makeStyles((theme) => ({
     border: '2px solid #000',
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
+    width: '30%',
+    borderRadius: '2%',
+  },
+  form: {
+    '& .MuiTextField-root': {
+      margin: theme.spacing(1, 0),
+      [theme.breakpoints.down('xs')]: {
+        margin: theme.spacing(1),
+      },
+    },
+  },
+  textField: {
+    paddingRight: theme.spacing(1),
+  },
+
+  formHeader: {
+    borderBottom: '1.5px solid black',
+  },
+  submitBtn: {
+    padding: '.5rem 4rem',
+    display: 'flex',
+    marginLeft: 'auto',
+    [theme.breakpoints.down('xs')]: {
+      margin: '1rem 4.5rem',
+    },
   },
 }))
 
@@ -86,12 +175,35 @@ function ButtonLink(props) {
         >
           <Fade in={open}>
             <div className={classes.paper}>
-              <h2 id="transition-modal-title">
-                This will be a form to fill out for a Future Client calls
-              </h2>
-              <p id="transition-modal-description">
-                Form with all the required information from the client
-              </p>
+              <Typography className={classes.formHeader}>
+                Let's get your consultation call booked!
+              </Typography>
+              <form className={classes.form} noValidate autoComplete="off">
+                {textInputs.map((value, index) => (
+                  <TextField
+                    className={classes.textField}
+                    key={index}
+                    required={value.required}
+                    id={value.id}
+                    label={value.label}
+                    variant={value.variant}
+                    size={value.size}
+                    multiline={value.multiline}
+                    rowsMax={value.rowsMax}
+                    style={value.style}
+                    fullWidth={value.fullWidth}
+                  />
+                ))}
+                <Button
+                  className={classes.submitBtn}
+                  size="large"
+                  variant="outlined"
+                  aria-label="large outlined button"
+                  onClick={() => submitForm()}
+                >
+                  SUBMIT
+                </Button>
+              </form>
             </div>
           </Fade>
         </Modal>
