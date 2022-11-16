@@ -1,99 +1,17 @@
 import React from 'react'
-import mainTheme from '../../theme'
-import { makeStyles, Grid, Typography, Paper, Hidden } from '@material-ui/core'
+import { Grid, Typography, Paper, Hidden } from '@material-ui/core'
 import Container from '@material-ui/core/Container'
 import PhoneIphoneIcon from '@material-ui/icons/PhoneIphone'
 import ComputerIcon from '@material-ui/icons/Computer'
-import SectionHeader from './SectionHeader'
+import { SectionHeader } from '../index'
 import { Transition } from 'react-transition-group'
 import Slide from '@material-ui/core/Slide'
 import DescriptionIcon from '@material-ui/icons/Description'
 import GroupAddIcon from '@material-ui/icons/GroupAdd'
 import MultilineChartIcon from '@material-ui/icons/MultilineChart'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
+import { useStyles } from '../styles/HmServices.styles'
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    backgroundColor: mainTheme.palette.defaultLight.main,
-    paddingBottom: theme.spacing(5),
-  },
-  sectionTitle: {
-    paddingBottom: theme.spacing(7),
-    marginBottom: theme.spacing(6),
-    background: '#0f0c29', //dark purple color
-    color: mainTheme.palette.defaultLight.main,
-    [theme.breakpoints.down('md')]: {
-      marginBottom: theme.spacing(0),
-      background: mainTheme.palette.defaultLight.main,
-      color: mainTheme.palette.defaultDark.main,
-    },
-  },
-  boxWrapper: {
-    paddingTop: theme.spacing(6),
-    [theme.breakpoints.down('md')]: {
-      paddingTop: theme.spacing(0),
-    },
-  },
-  boxes: {
-    width: '400px',
-    margin: theme.spacing(1),
-    height: 'auto',
-    padding: '.75rem 1.5rem',
-    backgroundColor: '#ded5ef', // Light purple color
-    // color: mainTheme.palette.defaultLight.main,
-    color: '#818181',
-
-    '&#box_0': {
-      marginBottom: theme.spacing(-8),
-      marginTop: theme.spacing(10),
-      [theme.breakpoints.down('md')]: {
-        margin: theme.spacing(1),
-      },
-    },
-    '&#box_1': {
-      [theme.breakpoints.down('md')]: {
-        margin: theme.spacing(1),
-      },
-    },
-    '&#box_2': {
-      marginBottom: theme.spacing(-8),
-      marginTop: theme.spacing(10),
-      [theme.breakpoints.down('md')]: {
-        margin: theme.spacing(1),
-      },
-    },
-    '&#boxes_0': {
-      marginTop: theme.spacing(-14),
-      marginBottom: theme.spacing(16),
-      [theme.breakpoints.down('md')]: {
-        margin: theme.spacing(1),
-      },
-    },
-    '&#boxes_1': {
-      marginBottom: theme.spacing(5),
-      marginTop: theme.spacing(-5),
-      [theme.breakpoints.down('md')]: {
-        margin: theme.spacing(1),
-      },
-    },
-    '&#boxes_2': {
-      marginTop: theme.spacing(-14),
-      marginBottom: theme.spacing(16),
-      [theme.breakpoints.down('md')]: {
-        margin: theme.spacing(1),
-      },
-    },
-  },
-  icons: {
-    width: '20%',
-    height: 'auto',
-    color: mainTheme.palette.defaultLight.main,
-  },
-  boxTitle: {
-    paddingTop: theme.spacing(1),
-    paddingBottom: theme.spacing(1),
-  },
-}))
 const icons = [MultilineChartIcon, ComputerIcon, DescriptionIcon]
 const icons2 = [PhoneIphoneIcon, ShoppingCartIcon, GroupAddIcon]
 const serviceCardsOne = [
@@ -130,8 +48,8 @@ const serviceCardsTwo = [
       ' Lorem ipsum dolor, sit amet consectetur adipisicing elit.Placeat,facere, quasi animi rerum sed repellendus non ratione dignissimos consequuntur dolores?',
   },
 ]
-function HmServices() {
-  const classes = useStyles()
+function HmServices(props) {
+  const classes = useStyles(props)
   const [inProp, setInProp] = React.useState(false)
 
   const handleChange = () => {
