@@ -1,29 +1,9 @@
 import React, { useState } from 'react'
-import { Grid, Container, makeStyles } from '@material-ui/core'
-import mainTheme from '../../theme'
-import SectionHeader from './SectionHeader'
-import Card from '@material-ui/core/Card'
-import CardActionArea from '@material-ui/core/CardActionArea'
-import CardActions from '@material-ui/core/CardActions'
-import CardContent from '@material-ui/core/CardContent'
-import CardMedia from '@material-ui/core/CardMedia'
-import Button from '@material-ui/core/Button'
-import Typography from '@material-ui/core/Typography'
+import { Card, Grid, Container, CardActionArea, Typography } from '@material-ui/core'
+import { CardActions, CardContent, CardMedia, Button } from '@material-ui/core'
 import { RWebShare } from 'react-web-share'
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    width: 450,
-    height: 'auto',
-    margin: '4rem 2.5rem 8rem 0rem',
-    [theme.breakpoints.down('sm')]: {
-      margin: '1rem 0rem',
-    },
-  },
-  media: {
-    height: 250,
-  },
-}))
+import { useStyles } from '../styles/Resources.styles'
+import { SectionHeader } from '../index'
 
 const blogPosts = [
   {
@@ -48,8 +28,8 @@ const blogPosts = [
     link: 'https://www.linkedin.com',
   },
 ]
-function Resources() {
-  const classes = useStyles()
+function Resources(props) {
+  const classes = useStyles(props)
   return (
     <div>
       <SectionHeader title="Our Resources" subTitle="We make things happen" />
