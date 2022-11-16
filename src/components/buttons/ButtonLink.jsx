@@ -52,23 +52,6 @@ const textInputs = [
     variant: 'outlined',
     fullWidth: true,
   },
-  {
-    required: true,
-    id: 'userMessage',
-    label: 'How Can We Help You?',
-    multiline: true,
-    rowsMax: 4,
-    variant: 'outlined',
-    fullWidth: true,
-  },
-  // {
-  //   required: true,
-  //   id: 'calendy',
-  //   label: 'Calendly Link',
-  //   multiline: false,
-  //   variant: 'outlined',
-  //   fullWidth: true,
-  // },
 ]
 
 const useStyles = makeStyles((theme) => ({
@@ -176,7 +159,7 @@ function ButtonLink(props) {
           <Fade in={open}>
             <div className={classes.paper}>
               <Typography className={classes.formHeader}>
-                Let's get your consultation call booked!
+                Talk to an expert about your project!
               </Typography>
               <form className={classes.form} noValidate autoComplete="off">
                 {textInputs.map((value, index) => (
