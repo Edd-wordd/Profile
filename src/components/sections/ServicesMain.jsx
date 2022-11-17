@@ -1,30 +1,8 @@
 import React from 'react'
-import mainTheme from '../../theme'
-import { makeStyles } from '@material-ui/core/styles'
-import { Container, Typography, Grid, Grow } from '@material-ui/core'
-import Paper from '@material-ui/core/Paper'
-import SectionHeader from './SectionHeader'
+import { Paper, Container, Typography, Grid, Grow } from '@material-ui/core'
+import { SectionHeader, ButtonLink } from '../index'
 import { Transition } from 'react-transition-group'
-import ButtonLink from '../buttons/ButtonLink'
-
-const useStyles = makeStyles((theme) => ({
-  root: {},
-  paragraphWrapper: { margin: '3rem 0' },
-  paraInfo: {
-    letterSpacing: theme.spacing(0.25),
-    lineHeight: theme.spacing(0.25),
-  },
-  boxes: {
-    width: '600px',
-    height: 'auto',
-    padding: theme.spacing(4),
-    marginBottom: theme.spacing(4),
-    [theme.breakpoints.down('xs')]: {
-      width: '100%',
-    },
-  },
-  coreValue: { color: '#616161' }, // light grey color
-}))
+import { useStyles } from '../styles/ServicesMain.styles'
 
 const coreValues = [
   {
@@ -49,8 +27,8 @@ const coreValues = [
   },
 ]
 
-function ServicesMain() {
-  const classes = useStyles()
+function ServicesMain(props) {
+  const classes = useStyles(props)
   const [inProp, setInProp] = React.useState(false)
 
   const handleChange = () => {
