@@ -1,45 +1,8 @@
 import React from 'react'
-import { makeStyles } from '@material-ui/core/styles'
-// import mainTheme from '../../theme'
-import Paper from '@material-ui/core/Paper'
-import { Container, Typography, Grid, Hidden } from '@material-ui/core'
-import SectionHeader from './SectionHeader'
+import { Container, Typography, Grid, Hidden, Paper } from '@material-ui/core'
 import BeenhereIcon from '@material-ui/icons/Beenhere'
-import { ButtonLink } from '../index'
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    backgroundColor: '#f4f1fa', //light purple color
-  },
-  headingWrapper: {
-    paddingTop: theme.spacing(3),
-  },
-  icons: {
-    width: '50px',
-    height: 'auto',
-    color: '#616161', // light grey color
-  },
-  line: {
-    width: '175px',
-    padding: '0rem 5rem',
-    margin: '0rem .5rem',
-    borderBottom: '3px dotted #c0c0c0',
-  },
-  boxes: {
-    width: '300px',
-    height: 'auto',
-    border: 'none',
-    padding: theme.spacing(4),
-    margin: '0rem 1.5rem 0rem 1rem',
-    marginBottom: theme.spacing(4),
-    [theme.breakpoints.down('xs')]: {
-      width: '100%',
-    },
-  },
-  iconWrapper: {
-    marginTop: theme.spacing(6),
-  },
-}))
+import { ButtonLink, SectionHeader } from '../index'
+import { useStyles } from '../styles/GetStarted.styles'
 
 const getStartedSteps = [
   {
@@ -64,8 +27,8 @@ const getStartedSteps = [
   },
 ]
 
-function GetStarted() {
-  const classes = useStyles()
+function GetStarted(props) {
+  const classes = useStyles(props)
   return (
     <div className={classes.root}>
       <Grid className={classes.headingWrapper}>
