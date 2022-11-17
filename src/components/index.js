@@ -10,7 +10,6 @@ export { default as Footer } from '../components/layout/Footer'
 //============================================
 
 export { default as AboutUs } from '../components/pages/AboutUs'
-export { default as BookCall } from '../components/pages/BookCall'
 export { default as Contact } from '../components/pages/Contact'
 export { default as Home } from '../components/pages/Home'
 export { default as Portfolio } from '../components/pages/Portfolio'
