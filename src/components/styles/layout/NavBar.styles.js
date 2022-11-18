@@ -1,0 +1,108 @@
+import { makeStyles } from '@material-ui/core/styles'
+import mainTheme from '../../../theme'
+
+const useStyles = makeStyles(() => ({
+  root: {
+    margin: '-1rem -.5rem',
+    position: 'fixed',
+    width: '100%',
+    height: '10rem',
+    zIndex: '999',
+    backgroundColor: 'transparent',
+    transitionTimingFunction: 'ease-in',
+    transition: '.3s',
+  },
+  active: {
+    backgroundColor: mainTheme.palette.defaultDark.main,
+    margin: '-2rem -.5rem',
+    borderBottom: `1px solid ${mainTheme.palette.defaultLight.main}`,
+    position: 'fixed',
+    height: '10rem',
+    width: '100%',
+    zIndex: '999',
+    transitionTimingFunction: 'ease-in',
+    transition: '.3s',
+  },
+  // Logo for desktop version
+  mainLogo: {
+    width: '10em',
+    margin: '1rem 0 0 0',
+  },
+  // Logo for mobile version
+  mobileLogoImg: {
+    margin: '.5rem 0 0 -1.5rem',
+    height: '10rem',
+  },
+  mobileBtn: {
+    paddingBottom: '3rem',
+    marginTop: '-2.5rem',
+    backgroundColor: mainTheme.palette.defaultDark.secondary,
+    textAlign: 'center',
+    borderBottom: `1px solid ${mainTheme.palette.defaultLight.main}`,
+  },
+  // style for the tabs (links on the navbar)
+  tab: {
+    fontFamily: 'Open Sans Condensed',
+    paddingBottom: '0px',
+    fontSize: 14,
+    fontWeight: 800,
+    borderRadius: 0,
+    color: mainTheme.palette.defaultLight.main,
+    letterSpacing: '.3rem',
+    transitionTimingFunction: 'ease-in',
+    transition: '.5s',
+    marginBottom: '.5rem',
+
+    '&:hover': {
+      color: mainTheme.palette.primary_100.main,
+      backgroundColor: 'transparent',
+      textShadow: `1px 1px ${mainTheme.palette.primary_100.main}`,
+      boxShadow: `inset 0 -2px 0 0 ${mainTheme.palette.primary.main}`,
+      marginBottom: '.5rem',
+    },
+  },
+  btnDisplay: {
+    display: 'flex',
+    justifyContent: 'space-evenly',
+    margin: '3.5rem 0 3rem 0',
+  },
+  // the selected tab on navbar
+  selectedTab: {
+    borderBottom: `2px solid ${mainTheme.palette.primary.main}`,
+    color: mainTheme.palette.primary_100.main,
+    textShadow: `1px 1px ${mainTheme.palette.primary_100.main}`,
+    marginBottom: '.5rem',
+  },
+  hamIcon: {
+    paddingTop: '3.5rem',
+    marginLeft: '-2rem',
+    color: mainTheme.palette.defaultLight.main,
+  },
+  // bookBtn: {
+  //   fontFamily: 'Open Sans Condensed',
+  //   fontSize: 14,
+  //   fontWeight: 800,
+  //   letterSpacing: '.15rem',
+  //   // border: `2px solid ${mainTheme.palette.primary.main}`,
+  //   border: '2px solid #1FA2FF ',
+  //   color: mainTheme.palette.defaultLight.main,
+  //   padding: '8px 20px',
+  //   marginTop: '1rem',
+  //   marginBottom: '1rem',
+  //
+  //   borderRadius: '2rem',
+  //   '&:hover': {
+  //     // background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+  //     backgroundImage: `linear-gradient(#1FA2FF  20%,#12D8FA)`,
+  //   },
+  // },
+  // styling for the logo and hamburger icon when on mobile view
+  setMobileNavDropdown: {
+    backgroundColor: mainTheme.palette.defaultDark.secondary,
+  },
+  mobileNavDropdown: {
+    backgroundColor: 'transparent',
+  },
+}))
+
+export { useStyles }
