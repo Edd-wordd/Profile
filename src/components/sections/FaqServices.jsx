@@ -1,26 +1,9 @@
 import React from 'react'
-import SectionHeader from './SectionHeader'
-import { makeStyles, Grid, Typography, Container } from '@material-ui/core'
+import { SectionHeader } from '../index'
+import { Grid, Typography, Container } from '@material-ui/core'
 import { Accordion, AccordionSummary, AccordionDetails } from '@material-ui/core'
-import mainTheme from '../../theme'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
-
-const useStyles = makeStyles((theme) => ({
-  root: {},
-  accordion: {
-    width: '600px',
-    backgroundColor: mainTheme.palette.defaultLight.main,
-    [theme.breakpoints.down('sm')]: {
-      width: '375px',
-    },
-  },
-  mainInfo: {
-    padding: '2rem 0rem',
-  },
-  questionWrapper: {
-    padding: '2rem 0rem 8rem 0rem',
-  },
-}))
+import { useStyles } from '../styles/FaqServices.styles'
 
 const questions = [
   {
@@ -77,8 +60,8 @@ const questionSecond = [
   },
 ]
 
-function FaqServices() {
-  const classes = useStyles()
+function FaqServices(props) {
+  const classes = useStyles(props)
   const [expanded, setExpanded] = React.useState('panel1')
 
   const handleChange = (panel) => (event, isExpanded) => {
