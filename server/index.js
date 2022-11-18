@@ -2,10 +2,8 @@ const express = require('express')
 const path = require('path')
 const morgan = require('morgan')
 const helmet = require('helmet')
-// const fileUpload = require('express-fileupload')
 
 const app = express()
-// app.use(express.json()) // parses the req body
 const port = process.env.PORT || 3000
 
 const publicDir = path.join(__dirname, '..', 'public')
