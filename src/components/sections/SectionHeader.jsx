@@ -59,17 +59,10 @@ function SectionHeader(props) {
   const classes = useStyles()
   return (
     <>
-      <Grid
-        className={classes.titleWrapper}
-        container
-        direction="row"
-        justify="center"
-      >
+      <Grid className={classes.titleWrapper} container direction="row" justify="center">
         <Typography variant="h4" className={classes.title}>
           {props.title}
         </Typography>
-
-
         <Grid container item direction="row" justify="center">
           <Hidden xsDown>
             <div className={classes.lineL}></div>
