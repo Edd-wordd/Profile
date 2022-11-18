@@ -1,10 +1,7 @@
 import React from 'react'
-import { makeStyles } from '@material-ui/core/styles'
-import mainTheme from '../../theme'
-import { Hidden, Typography, Grid } from '@material-ui/core'
+import { makeStyles, Hidden, Typography, Grid } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
-  root: {},
   titleWrapper: {
     marginTop: '3rem',
     [theme.breakpoints.down('xs')]: {
@@ -14,7 +11,6 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     paddingBottom: '1rem',
-    // color: mainTheme.palette.charcoal.main,
   },
   subTitle: { marginTop: '1rem' },
   lineL: {
