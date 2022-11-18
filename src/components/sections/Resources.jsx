@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Card, Grid, Container, CardActionArea, Typography } from '@material-ui/core'
 import { CardActions, CardContent, CardMedia, Button } from '@material-ui/core'
 import { RWebShare } from 'react-web-share'
-import { useStyles } from '../styles/Resources.styles'
+import { useStyles } from '../styles/sections/Resources.styles'
 import { SectionHeader } from '../index'
 
 const blogPosts = [

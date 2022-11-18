@@ -2,7 +2,7 @@ import React from 'react'
 import { Typography, Grid, Container } from '@material-ui/core'
 import { SectionHeader } from '../index'
 import GroupIcon from '@material-ui/icons/Group'
-import { useStyles } from '../styles/MissionStatement.styles'
+import { useStyles } from '../styles/sections/MissionStatement.styles'
 
 function MissionStatement(props) {
   const classes = useStyles(props)
