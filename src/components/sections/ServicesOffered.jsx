@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Box, Container, Typography, Grid, Button, Hidden } from '@material-ui/core'
 import MenuBookIcon from '@material-ui/icons/MenuBook'
-import { useStyles } from '../styles/ServicesOffered.styles'
+import { useStyles } from '../styles/sections/ServicesOffered.styles'
 
 const services = [
   {

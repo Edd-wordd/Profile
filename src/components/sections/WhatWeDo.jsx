@@ -4,7 +4,7 @@ import { SectionHeader } from '../index'
 import TypeIt from 'typeit-react'
 import CheckCircleIcon from '@material-ui/icons/CheckCircle'
 import { Transition } from 'react-transition-group'
-import { useStyles } from '../styles/WhatWeDo.styles'
+import { useStyles } from '../styles/sections/WhatWeDo.styles'
 
 const bulletPoints = [
   {

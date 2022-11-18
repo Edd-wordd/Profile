@@ -1,7 +1,7 @@
 import React from 'react'
 import { SectionHeader } from '../index'
 import { Grid, Typography, Container, Paper, Hidden } from '@material-ui/core'
-import { useStyles } from '../styles/MajorSigns.styles'
+import { useStyles } from '../styles/sections/MajorSigns.styles'
 
 const MajorSigns = (props) => {
   const classes = useStyles(props)

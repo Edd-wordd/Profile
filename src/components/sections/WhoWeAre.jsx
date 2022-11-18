@@ -3,7 +3,7 @@ import { Container, Typography, Grid, Paper } from '@material-ui/core'
 import Zoom from '@material-ui/core/Zoom'
 import { Transition } from 'react-transition-group'
 import { ButtonLink, SectionHeader } from '../index'
-import { useStyles } from '../styles/WhoWeAre.styles'
+import { useStyles } from '../styles/sections/WhoWeAre.styles'
 
 const coreValues = [
   {

@@ -9,7 +9,7 @@ import AssessmentOutlinedIcon from '@material-ui/icons/AssessmentOutlined'
 import BlurOnOutlinedIcon from '@material-ui/icons/BlurOnOutlined'
 import PostAddOutlinedIcon from '@material-ui/icons/PostAddOutlined'
 import CameraEnhanceOutlinedIcon from '@material-ui/icons/CameraEnhanceOutlined'
-import { useStyles } from '../styles/Questions.styles'
+import { useStyles } from '../styles/sections/Questions.styles'
 
 const sectionOneQuestions = [
   {

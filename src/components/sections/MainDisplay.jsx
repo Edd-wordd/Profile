@@ -3,7 +3,7 @@ import { Button, Box, Link } from '@material-ui/core'
 import { Container, Typography, Grid, Hidden } from '@material-ui/core'
 import ComputerIcon from '@material-ui/icons/Computer'
 import MobileFriendlyIcon from '@material-ui/icons/MobileFriendly'
-import { useStyles } from '../styles/MainDisplay.styles'
+import { useStyles } from '../styles/sections/MainDisplay.styles'
 
 function MainDisplay(props) {
   const classes = useStyles(props)

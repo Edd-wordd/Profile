@@ -2,7 +2,7 @@ import React from 'react'
 import { Paper, Container, Typography, Grid, Grow } from '@material-ui/core'
 import { SectionHeader, ButtonLink } from '../index'
 import { Transition } from 'react-transition-group'
-import { useStyles } from '../styles/ServicesMain.styles'
+import { useStyles } from '../styles/sections/ServicesMain.styles'
 
 const coreValues = [
   {
