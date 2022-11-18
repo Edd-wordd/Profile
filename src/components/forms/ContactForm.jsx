@@ -1,5 +1,5 @@
 import React from 'react'
-import { useStyles } from '../styles/sections/ContactForm.styles'
+import { useStyles } from '../styles/forms/ContactForm.styles'
 import {
   Typography,
   Paper,
