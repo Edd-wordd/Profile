@@ -22,7 +22,6 @@ export { default as PrivacyPolicy } from '../components/pages/PrivacyPolicy'
 //============================================
 
 export { default as MainDisplay } from '../components/sections/MainDisplay'
-export { default as ClientTest } from '../components/sections/ClientTest'
 export { default as ServiceInfo } from './sections/ServiceInfo'
 export { default as FaqServices } from '../components/sections/FaqServices'
 export { default as GetInTouch } from '../components/sections/GetInTouch'
