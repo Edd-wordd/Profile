@@ -1,11 +1,8 @@
 import React from 'react'
-import { Button, Grid, makeStyles, Link, Typography, TextField } from '@material-ui/core'
+import { Backdrop, Fade, Button, Grid, Modal, Link, Typography, TextField } from '@material-ui/core'
 import ComputerIcon from '@material-ui/icons/Computer'
 import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt'
-import mainTheme from '../../theme'
-import Modal from '@material-ui/core/Modal'
-import Backdrop from '@material-ui/core/Backdrop'
-import Fade from '@material-ui/core/Fade'
+import { useStyles } from '../styles/buttons/ButtonLink.styles'
 
 const textInputs = [
   {
@@ -54,66 +51,8 @@ const textInputs = [
   },
 ]
 
-const useStyles = makeStyles((theme) => ({
-  root: {},
-  btnWrapper: {
-    margin: '2rem 0 5rem 0',
-  },
-  button: {
-    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-    color: mainTheme.palette.defaultLight.main,
-  },
-  btn: {
-    border: 'none',
-    fontWeight: 600,
-    textDecoration: 'underline',
-    '&:hover': {
-      backgroundColor: 'transparent',
-    },
-  },
-  BtnIcon: {
-    color: ' #FE6B8B',
-  },
-  modal: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  paper: {
-    backgroundColor: theme.palette.background.paper,
-    border: '2px solid #000',
-    boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3),
-    width: '30%',
-    borderRadius: '2%',
-  },
-  form: {
-    '& .MuiTextField-root': {
-      margin: theme.spacing(1, 0),
-      [theme.breakpoints.down('xs')]: {
-        margin: theme.spacing(1),
-      },
-    },
-  },
-  textField: {
-    paddingRight: theme.spacing(1),
-  },
-
-  formHeader: {
-    borderBottom: '1.5px solid black',
-  },
-  submitBtn: {
-    padding: '.5rem 4rem',
-    display: 'flex',
-    marginLeft: 'auto',
-    [theme.breakpoints.down('xs')]: {
-      margin: '1rem 4.5rem',
-    },
-  },
-}))
-
 function ButtonLink(props) {
-  const classes = useStyles()
+  const classes = useStyles(props)
   const [open, setOpen] = React.useState(false)
 
   const handleOpen = () => {
