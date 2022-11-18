@@ -10,7 +10,7 @@ import DescriptionIcon from '@material-ui/icons/Description'
 import GroupAddIcon from '@material-ui/icons/GroupAdd'
 import MultilineChartIcon from '@material-ui/icons/MultilineChart'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
-import { useStyles } from '../styles/HmServices.styles'
+import { useStyles } from '../styles/sections/HmServices.styles'
 
 const icons = [MultilineChartIcon, ComputerIcon, DescriptionIcon]
 const icons2 = [PhoneIphoneIcon, ShoppingCartIcon, GroupAddIcon]

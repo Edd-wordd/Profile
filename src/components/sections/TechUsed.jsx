@@ -7,7 +7,7 @@ import RedditIcon from '@material-ui/icons/Reddit'
 import TwitterIcon from '@material-ui/icons/Twitter'
 import SportsMotorsportsIcon from '@material-ui/icons/SportsMotorsports'
 import TypeIt from 'typeit-react'
-import { useStyles } from '../styles/TechUsed.styles'
+import { useStyles } from '../styles/sections/TechUsed.styles'
 
 const icons = [AdbIcon, ChildCareIcon, FlightIcon, RedditIcon, TwitterIcon, SportsMotorsportsIcon]
 const coreValues = [

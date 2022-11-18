@@ -1,6 +1,6 @@
 import React from 'react'
 import { Hidden, Container, Grid, Typography, useMediaQuery } from '@material-ui/core'
-import { useStyles } from '../styles/GetInTouch.styles'
+import { useStyles } from '../styles/sections/GetInTouch.styles'
 
 function GetInTouch(props) {
   const classes = useStyles(props)

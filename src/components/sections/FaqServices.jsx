@@ -3,7 +3,7 @@ import { SectionHeader } from '../index'
 import { Grid, Typography, Container } from '@material-ui/core'
 import { Accordion, AccordionSummary, AccordionDetails } from '@material-ui/core'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
-import { useStyles } from '../styles/FaqServices.styles'
+import { useStyles } from '../styles/sections/FaqServices.styles'
 
 const questions = [
   {
