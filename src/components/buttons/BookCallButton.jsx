@@ -58,7 +58,7 @@ const textInputs = [
   },
   {
     required: true,
-    id: 'calendy',
+    id: 'calendly',
     label: 'Calendly Link',
     multiline: false,
     variant: 'outlined',
