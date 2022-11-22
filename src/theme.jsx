@@ -9,10 +9,10 @@ const mainTheme = createMuiTheme({
       main: '#ffd9da', // Light Pink
     },
     primary_300: {
-      main: '#1D2B64', // light blue grey (timberwolf)
+      main: '#1D2B64', // light blue grey (timber-wolf)
     },
     secondary: {
-      main: '#e8eddf', // really light blue green (alabaster)
+      main: '#e8eddf', // really light blue-green (alabaster)
     },
     text: {
       primary: '#282623', // dark gray
