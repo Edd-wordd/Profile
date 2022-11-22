@@ -4766,7 +4766,7 @@ eslint-config-prettier@^6.11.0:
 
 eslint-config-react-app@^7.0.1:
   version "7.0.1"
-  resolved "https://registry.npmjs.org/eslint-config-react-app/-/eslint-config-react-app-7.0.1.tgz"
+  resolved "https://registry.yarnpkg.com/eslint-config-react-app/-/eslint-config-react-app-7.0.1.tgz#73ba3929978001c5c86274c017ea57eb5fa644b4"
   integrity sha512-K6rNzvkIeHaTd8m/QEh1Zko0KI7BACWkkneSs6s9cKZC/J27X3eZR6Upt1jkmZ/4FK+XUOPPxMEN7+lbUXfSlA==
   dependencies:
     "@babel/core" "^7.16.0"
@@ -9492,6 +9492,11 @@ react-app-polyfill@^3.0.0:
     raf "^3.4.1"
     regenerator-runtime "^0.13.9"
     whatwg-fetch "^3.6.2"
+
+react-calendly@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/react-calendly/-/react-calendly-4.1.0.tgz#418ad8daad3b1972786c78f20cc9e13b7bd29b12"
+  integrity sha512-a4/yHZwwmuEgUZOfRh0Hs5lt96WSlWI3GQ0fNWWUnKN11YjR5E0fq4YZSMZ3Cas8FVcdoM88JSnNPbZoeLzbtQ==
 
 react-dev-utils@^12.0.1:
   version "12.0.1"
