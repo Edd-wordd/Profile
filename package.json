@@ -10,17 +10,13 @@
     "@fortawesome/react-fontawesome": "^0.1.12",
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
-<<<<<<< Updated upstream
     "@material-ui/styles": "^4.10.0",
     "@mui/icons-material": "^5.0.0",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
     "caniuse-lite": "^1.0.30001430",
-=======
-    "eslint-config-react-app": "^7.0.1",
->>>>>>> Stashed changes
-    "express": "^4.17.1",
+    "eslint-config-react-app": "^7.0.1", "express": "^4.17.1",
     "hamburger-react": "^2.4.0",
     "helmet": "^3.23.3",
     "html-webpack-plugin": "^5.5.0",
