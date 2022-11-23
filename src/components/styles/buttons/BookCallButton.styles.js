@@ -55,6 +55,16 @@ const useStyles = makeStyles((theme) => ({
       margin: '1rem 4.5rem',
     },
   },
+  spinner: {
+    color: 'white',
+    // center the spinner on the page
+    position: 'absolute',
+    left: '50%',
+    top: '50%',
+    transform: 'translate(-50%, -50%)',
+    // move spinner down a bit
+    marginTop: '25rem',
+  },
 }))
 
 export { useStyles }

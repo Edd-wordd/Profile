@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Fade, Backdrop, Modal, Button, TextField, Typography } from '@material-ui/core'
 import { useStyles } from '../styles/buttons/BookCallButton.styles'
+import { ColorRing } from 'react-loader-spinner'
 
 const textInputs = [
   {
@@ -69,6 +70,17 @@ const textInputs = [
 export default function BookCallButton(props) {
   const classes = useStyles(props)
   const [open, setOpen] = React.useState(false)
+  const [loading, setLoading] = useState(false)
+  const [show, setShow] = useState(false)
+
+  const LoadSpinner = () => {
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+      setShow(!show)
+    }, 700)
+    handleOpen()
+  }
 
   const handleOpen = () => {
     setOpen(true)
@@ -80,55 +92,61 @@ export default function BookCallButton(props) {
 
   return (
     <div>
-      <button type="button" onClick={handleOpen} className={classes.bookBtn}>
+      <button type="button" onClick={LoadSpinner} className={classes.bookBtn}>
         Book a free Consultation Call
       </button>
-      <Modal
-        aria-labelledby="transition-modal-title"
-        aria-describedby="transition-modal-description"
-        className={classes.modal}
-        open={open}
-        onClose={handleClose}
-        closeAfterTransition
-        BackdropComponent={Backdrop}
-        BackdropProps={{
-          timeout: 500,
-        }}
-      >
-        <Fade in={open}>
-          <div className={classes.paper}>
-            <Typography className={classes.formHeader}>
-              Let's get your consultation call booked!
-            </Typography>
-            <form className={classes.form} noValidate autoComplete="off">
-              {textInputs.map((value, index) => (
-                <TextField
-                  className={classes.textField}
-                  key={index}
-                  required={value.required}
-                  id={value.id}
-                  label={value.label}
-                  variant={value.variant}
-                  size={value.size}
-                  multiline={value.multiline}
-                  rowsMax={value.rowsMax}
-                  style={value.style}
-                  fullWidth={value.fullWidth}
-                />
-              ))}
-              <Button
-                className={classes.submitBtn}
-                size="large"
-                variant="outlined"
-                aria-label="large outlined button"
-                onClick={() => submitForm()}
-              >
-                SUBMIT
-              </Button>
-            </form>
-          </div>
-        </Fade>
-      </Modal>
+      {loading ? (
+        <ColorRing visible={true} ariaLabel="blocks-loading" wrapperClass={classes.spinner} />
+      ) : (
+        <>
+          <Modal
+            aria-labelledby="transition-modal-title"
+            aria-describedby="transition-modal-description"
+            className={classes.modal}
+            open={open}
+            onClose={handleClose}
+            closeAfterTransition
+            BackdropComponent={Backdrop}
+            BackdropProps={{
+              timeout: 500,
+            }}
+          >
+            <Fade in={open}>
+              <div className={classes.paper}>
+                <Typography className={classes.formHeader}>
+                  Let's get your consultation call booked!
+                </Typography>
+                <form className={classes.form} noValidate autoComplete="off">
+                  {textInputs.map((value, index) => (
+                    <TextField
+                      className={classes.textField}
+                      key={index}
+                      required={value.required}
+                      id={value.id}
+                      label={value.label}
+                      variant={value.variant}
+                      size={value.size}
+                      multiline={value.multiline}
+                      rowsMax={value.rowsMax}
+                      style={value.style}
+                      fullWidth={value.fullWidth}
+                    />
+                  ))}
+                  <Button
+                    className={classes.submitBtn}
+                    size="large"
+                    variant="outlined"
+                    aria-label="large outlined button"
+                    onClick={() => submitForm()}
+                  >
+                    SUBMIT
+                  </Button>
+                </form>
+              </div>
+            </Fade>
+          </Modal>
+        </>
+      )}
     </div>
   )
 }
