@@ -56,6 +56,12 @@ const useStyles = makeStyles((theme) => ({
       margin: '1rem 4.5rem',
     },
   },
+  spinner: {
+    color: 'white',
+    //  always load the spinner behind the modal and centered
+    position: 'absolute',
+    zIndex: 1000,
+  },
 }))
 
 export { useStyles }
