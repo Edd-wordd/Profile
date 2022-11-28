@@ -5,6 +5,7 @@ import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt'
 import { useStyles } from '../styles/buttons/ButtonLink.styles'
 // import { ColorRing } from 'react-loader-spinner'
 import { Backdrop } from '@mui/material'
+import CircularProgress from '@mui/material/CircularProgress'
 
 const textInputs = [
   {
@@ -56,17 +57,17 @@ const textInputs = [
 function ButtonLink(props) {
   const classes = useStyles(props)
   const [open, setOpen] = React.useState(false)
-  // const [loading, setLoading] = useState(false)
-  // const [show, setShow] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [show, setShow] = useState(false)
 
-  // const LoadSpinner = () => {
-  //   setLoading(true)
-  //   setTimeout(() => {
-  //     setLoading(false)
-  //     setShow(!show)
-  //   }, 700)
-  //   handleOpen()
-  // }
+  const LoadSpinner = () => {
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+      setShow(!show)
+    }, 700)
+    handleOpen()
+  }
 
   const handleOpen = () => {
     setOpen(true)
@@ -92,62 +93,64 @@ function ButtonLink(props) {
           className={classes.btn}
           endIcon={<ArrowRightAltIcon className={classes.BtnIcon} />}
           size="large"
-          // onClick={LoadSpinner}
-          onClick={handleOpen}
+          onClick={LoadSpinner}
+          // onClick={handleOpen}
         >
           {props.btnTwoText}
         </Button>
-        {/*{loading ? (*/}
-        {/*  <ColorRing isible={true} ariaLabel="blocks-loading" wrapperClass={classes.spinner} />*/}
-        {/*) : (*/}
-
-        <Modal
-          aria-labelledby="transition-modal-title"
-          aria-describedby="transition-modal-description"
-          className={classes.modal}
-          open={open}
-          onClose={handleClose}
-          closeAfterTransition
-          BackdropComponent={Backdrop}
-          BackdropProps={{
-            timeout: 500,
-          }}
-        >
-          <Fade in={open}>
-            <div className={classes.paper}>
-              <Typography className={classes.formHeader}>
-                Talk to an expert about your project!
-              </Typography>
-              <form className={classes.form} noValidate autoComplete="off">
-                {textInputs.map((value, index) => (
-                  <TextField
-                    className={classes.textField}
-                    key={index}
-                    required={value.required}
-                    id={value.id}
-                    label={value.label}
-                    variant={value.variant}
-                    size={value.size}
-                    multiline={value.multiline}
-                    rowsMax={value.rowsMax}
-                    style={value.style}
-                    fullWidth={value.fullWidth}
-                  />
-                ))}
-                <Button
-                  className={classes.submitBtn}
-                  size="large"
-                  variant="outlined"
-                  aria-label="large outlined button"
-                  onClick={() => submitForm()}
-                >
-                  SUBMIT
-                </Button>
-              </form>
-            </div>
-          </Fade>
-        </Modal>
-        {/*)}*/}
+        {loading ? (
+          // <ColorRing visible={true} ariaLabel="blocks-loading" wrapperClass={classes.spinner} />
+          <Backdrop open>
+            <CircularProgress />
+          </Backdrop>
+        ) : (
+          <Modal
+            aria-labelledby="transition-modal-title"
+            aria-describedby="transition-modal-description"
+            className={classes.modal}
+            open={open}
+            onClose={handleClose}
+            closeAfterTransition
+            BackdropComponent={Backdrop}
+            BackdropProps={{
+              timeout: 500,
+            }}
+          >
+            <Fade in={open}>
+              <div className={classes.paper}>
+                <Typography className={classes.formHeader}>
+                  Talk to an expert about your project!
+                </Typography>
+                <form className={classes.form} noValidate autoComplete="off">
+                  {textInputs.map((value, index) => (
+                    <TextField
+                      className={classes.textField}
+                      key={index}
+                      required={value.required}
+                      id={value.id}
+                      label={value.label}
+                      variant={value.variant}
+                      size={value.size}
+                      multiline={value.multiline}
+                      rowsMax={value.rowsMax}
+                      style={value.style}
+                      fullWidth={value.fullWidth}
+                    />
+                  ))}
+                  <Button
+                    className={classes.submitBtn}
+                    size="large"
+                    variant="outlined"
+                    aria-label="large outlined button"
+                    onClick={() => submitForm()}
+                  >
+                    SUBMIT
+                  </Button>
+                </form>
+              </div>
+            </Fade>
+          </Modal>
+        )}
       </Grid>
     </div>
   )

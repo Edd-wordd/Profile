@@ -33,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2, 4, 3),
     width: '30%',
     borderRadius: '2%',
+    zIndex: 1000,
   },
   form: {
     '& .MuiTextField-root': {
