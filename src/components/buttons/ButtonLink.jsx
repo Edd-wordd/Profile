@@ -3,7 +3,6 @@ import { Fade, Button, Grid, Modal, Link, Typography, TextField } from '@materia
 import ComputerIcon from '@material-ui/icons/Computer'
 import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt'
 import { useStyles } from '../styles/buttons/ButtonLink.styles'
-// import { ColorRing } from 'react-loader-spinner'
 import { Backdrop } from '@mui/material'
 import CircularProgress from '@mui/material/CircularProgress'
 
@@ -94,12 +93,10 @@ function ButtonLink(props) {
           endIcon={<ArrowRightAltIcon className={classes.BtnIcon} />}
           size="large"
           onClick={LoadSpinner}
-          // onClick={handleOpen}
         >
           {props.btnTwoText}
         </Button>
         {loading ? (
-          // <ColorRing visible={true} ariaLabel="blocks-loading" wrapperClass={classes.spinner} />
           <Backdrop open>
             <CircularProgress />
           </Backdrop>
