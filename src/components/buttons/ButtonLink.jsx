@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import { Backdrop, Fade, Button, Grid, Modal, Link, Typography, TextField } from '@material-ui/core'
+import { Fade, Button, Grid, Modal, Link, Typography, TextField } from '@material-ui/core'
 import ComputerIcon from '@material-ui/icons/Computer'
 import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt'
 import { useStyles } from '../styles/buttons/ButtonLink.styles'
-import { ColorRing } from 'react-loader-spinner'
+import { Backdrop } from '@mui/material'
+import CircularProgress from '@mui/material/CircularProgress'
 
 const textInputs = [
   {
@@ -96,7 +97,9 @@ function ButtonLink(props) {
           {props.btnTwoText}
         </Button>
         {loading ? (
-          <ColorRing isible={true} ariaLabel="blocks-loading" wrapperClass={classes.spinner} />
+          <Backdrop open>
+            <CircularProgress color="inherit" />
+          </Backdrop>
         ) : (
           <Modal
             aria-labelledby="transition-modal-title"
