@@ -98,7 +98,7 @@ function ButtonLink(props) {
         </Button>
         {loading ? (
           <Backdrop open>
-            <CircularProgress />
+            <CircularProgress color="inherit" />
           </Backdrop>
         ) : (
           <Modal
