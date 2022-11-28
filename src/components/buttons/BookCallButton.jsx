@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import { Fade, Backdrop, Modal, Button, TextField, Typography } from '@material-ui/core'
+import { Fade, Modal, Button, TextField, Typography } from '@material-ui/core'
 import { useStyles } from '../styles/buttons/BookCallButton.styles'
-import { ColorRing } from 'react-loader-spinner'
+import { Backdrop } from '@mui/material'
+import CircularProgress from '@mui/material/CircularProgress'
 
 const textInputs = [
   {
@@ -96,7 +97,9 @@ export default function BookCallButton(props) {
         Book a free Consultation Call
       </button>
       {loading ? (
-        <ColorRing visible={true} ariaLabel="blocks-loading" wrapperClass={classes.spinner} />
+        <Backdrop open>
+          <CircularProgress color="inherit" />
+        </Backdrop>
       ) : (
         <>
           <Modal
