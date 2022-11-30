@@ -137,7 +137,7 @@ export default function BookCallButton(props) {
                     />
                   ))}
                   <PopupButton
-                    url="https://calendly.com/your_scheduling_page"
+                    url="https://calendly.com/mona-tech"
                     text="Schedule time with us"
                     rootElement={document.getElementById('root')}
                     className={classes.calendlyBtn}
