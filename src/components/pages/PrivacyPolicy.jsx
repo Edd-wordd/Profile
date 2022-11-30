@@ -14,7 +14,7 @@ function PrivacyPolicy(props) {
           Privacy Policy
         </Typography>
         <Typography className={classes.p} component="p" paragraph>
-          Last updated: November 11, 2020
+          Last updated: November 11, 2050
         </Typography>
         <Typography className={classes.p} component="p" paragraph>
           This Privacy Policy describes Our policies and procedures on the collection, use and
@@ -56,7 +56,7 @@ function PrivacyPolicy(props) {
             <Typography className={classes.p} component="p" paragraph>
               <span style={{ fontWeight: 'bold' }}>Company </span>
               (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to
-              IONnovate, LLC, Las Vegas, NV.
+              Monatech, LLC, Las Vegas, NV.
             </Typography>
           </li>
           <li>
@@ -113,8 +113,8 @@ function PrivacyPolicy(props) {
           </li>
           <li>
             <Typography className={classes.p} component="p" paragraph>
-              <span style={{ fontWeight: 'bold' }}>Website </span>refers to IONnovate, accessible
-              from http://www.ionnovate.com.
+              <span style={{ fontWeight: 'bold' }}>Website </span>refers to monatech, accessible
+              from http://www.monatech.com.
             </Typography>
           </li>
           <li>
@@ -219,7 +219,6 @@ function PrivacyPolicy(props) {
               Cookies. For more information on how You can delete Flash Cookies, please read "Where
               can I change the settings for disabling, or deleting local shared objects?" available
               at
-              https://helpx.adobe.com/flash-player/kb/disable-local-shared-objects-flash.html#main_Where_can_I_change_the_settings_for_disabling__or_deleting_local_shared_objects_
             </Typography>
           </li>
           <li>
@@ -598,7 +597,7 @@ function PrivacyPolicy(props) {
         <ul>
           <li>
             <Typography className={classes.p} component="p" paragraph>
-              By email: privacy@ionnovate.com
+              By email: privacy@monatech.com
             </Typography>
           </li>
         </ul>
