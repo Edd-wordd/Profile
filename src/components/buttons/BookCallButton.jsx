@@ -3,6 +3,7 @@ import { Fade, Modal, Button, TextField, Typography } from '@material-ui/core'
 import { useStyles } from '../styles/buttons/BookCallButton.styles'
 import { Backdrop } from '@mui/material'
 import CircularProgress from '@mui/material/CircularProgress'
+import { PopupButton } from 'react-calendly'
 
 const textInputs = [
   {
@@ -58,14 +59,14 @@ const textInputs = [
     variant: 'outlined',
     fullWidth: true,
   },
-  {
-    required: true,
-    id: 'calendly',
-    label: 'Calendly Link',
-    multiline: false,
-    variant: 'outlined',
-    fullWidth: true,
-  },
+  // {
+  //   required: true,
+  //   id: 'calendly',
+  //   label: 'Calendly Link',
+  //   multiline: false,
+  //   variant: 'outlined',
+  //   fullWidth: true,
+  // },
 ]
 
 export default function BookCallButton(props) {
@@ -135,6 +136,12 @@ export default function BookCallButton(props) {
                       fullWidth={value.fullWidth}
                     />
                   ))}
+                  <PopupButton
+                    url="https://calendly.com/your_scheduling_page"
+                    text="Schedule time with us"
+                    rootElement={document.getElementById('root')}
+                    className={classes.calendlyBtn}
+                  />
                   <Button
                     className={classes.submitBtn}
                     size="large"
