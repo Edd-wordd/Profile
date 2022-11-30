@@ -3,7 +3,6 @@ import { Link, Button, Hidden, Grid } from '@material-ui/core'
 import { Fade as Hamburger } from 'hamburger-react'
 import { BookCallButton } from '../index'
 import { useStyles } from '../styles/layout/NavBar.styles'
-import CalendlyWidget from '../widgets/CalendlyWidget'
 
 // store the data for the tab labels and routes
 const tabs = [
@@ -103,7 +102,6 @@ function NavBar(props) {
             <Grid item sm={8} md={7} lg={3} className={classes.btnDisplay}>
               {/*<Button className={classes.bookBtn}>Book a free Consultation call</Button>*/}
               <BookCallButton />
-              <CalendlyWidget />
             </Grid>
           </Grid>
           {/* </Container> */}
