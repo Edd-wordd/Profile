@@ -66,6 +66,12 @@ const useStyles = makeStyles((theme) => ({
     // move spinner down a bit
     marginTop: '25rem',
   },
+  calendlyBtn: {
+    padding: '.5rem 4rem',
+    backgroundColor: 'transparent',
+    border: '1px solid lightgrey',
+    borderRadius: '5%',
+  },
 }))
 
 export { useStyles }
