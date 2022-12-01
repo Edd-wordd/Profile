@@ -11,6 +11,7 @@ import Footer from '../src/components/layout/Footer'
 import ServiceInfo from './components/sections/ServiceInfo'
 import TermsAndCondition from './components/pages/TermsAndCondition'
 import PrivacyPolicy from './components/pages/PrivacyPolicy'
+import NotFound from './components/sections/NotFound'
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -27,14 +28,15 @@ function App() {
       <div className={classes.root}>
         <Switch>
           {/* remember to put the home route last!!! */}
-          <Route path="/termsandcondition" component={TermsAndCondition} />
-          <Route path="/privacypolicy" component={PrivacyPolicy} />
-          <Route path="/portfolio" component={Portfolio} />
-          <Route path="/about" component={AboutUs} />
-          <Route path="/services/:id" component={ServiceInfo} />
-          <Route path="/services" component={Services} />
-          <Route path="/contact" component={Contact} />
-          <Route path="/" component={Home} />
+          <Route exact path="/termsandcondition" component={TermsAndCondition} />
+          <Route exact path="/privacypolicy" component={PrivacyPolicy} />
+          <Route exact path="/portfolio" component={Portfolio} />
+          <Route exact path="/about" component={AboutUs} />
+          <Route exact path="/services/:id" component={ServiceInfo} />
+          <Route exact path="/services" component={Services} />
+          <Route exact path="/contact" component={Contact} />
+          <Route exact path="/" component={Home} />
+          <Route component={NotFound} />
         </Switch>
         <Footer />
       </div>
