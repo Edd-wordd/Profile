@@ -13,7 +13,6 @@ const servicesFooterLinks = [
   { path: '/services/eCommerce', label: 'eCommerce Development' },
   { path: '/services/mobile-app', label: 'Mobile App Development' },
   { path: '/services/web-maintenance', label: 'Website Maintenance & Support' },
-  { path: '/services', label: 'Join Our Team' },
 ]
 
 function Footer(props) {
