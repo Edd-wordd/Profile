@@ -4,6 +4,7 @@ import FacebookIcon from '@material-ui/icons/Facebook'
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import InstagramIcon from '@material-ui/icons/Instagram'
 import ComputerIcon from '@material-ui/icons/Computer'
+import TwitterIcon from '@material-ui/icons/Twitter'
 import { useStyles } from '../styles/layout/Footer.styles'
 
 const servicesFooterLinks = [
@@ -77,6 +78,9 @@ function Footer(props) {
             </Link>
             <Link className={classes.links} href="https://www.instagram.com" target="_blank">
               <InstagramIcon className={classes.icons} />
+            </Link>
+            <Link className={classes.links} href="https://www.twitter.com" target="_blank">
+              <TwitterIcon className={classes.icons} />
             </Link>
           </Paper>
         </Grid>
