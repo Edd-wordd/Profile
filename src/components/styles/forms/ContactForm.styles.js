@@ -50,6 +50,7 @@ const useStyles = makeStyles((theme) => ({
     padding: '.5rem 4rem',
     display: 'flex',
     justify: 'center',
+    marginLeft: 'auto',
     [theme.breakpoints.down('xs')]: {
       margin: '1rem 4.5rem',
     },
