@@ -63,6 +63,12 @@ const useStyles = makeStyles((theme) => ({
     position: 'absolute',
     zIndex: 1000,
   },
+  closeBtn: {
+    position: 'inline block',
+    float: 'right',
+    color: 'grey',
+    cursor: 'pointer',
+  },
 }))
 
 export { useStyles }
