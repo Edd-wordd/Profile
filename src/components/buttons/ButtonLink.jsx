@@ -115,6 +115,9 @@ function ButtonLink(props) {
           >
             <Fade in={open}>
               <div className={classes.paper}>
+                <Button onClick={handleClose} className={classes.closeBtn}>
+                  X
+                </Button>
                 <Typography className={classes.formHeader}>
                   Talk to an expert about your project!
                 </Typography>
