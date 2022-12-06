@@ -72,6 +72,13 @@ const useStyles = makeStyles((theme) => ({
     border: '1px solid lightgrey',
     borderRadius: '5%',
   },
+  closeBtn: {
+    color: 'grey',
+    cursor: 'pointer',
+    padding: '0 1rem',
+    display: 'inline-block',
+    float: 'right',
+  },
 }))
 
 export { useStyles }
