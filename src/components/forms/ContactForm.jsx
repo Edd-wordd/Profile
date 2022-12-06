@@ -10,7 +10,6 @@ import {
   RadioGroup,
   Button,
   Select,
-  Hidden,
   FormLabel,
   MenuItem,
   FormControlLabel,
@@ -85,41 +84,27 @@ const textInputs = [
     fullWidth: true,
   },
 ]
+
 const selectInputs = [
   {
     value: 'google search',
     label: 'Google Search',
   },
   {
-    value: 'google maps',
-    label: 'Google Maps',
-  },
-  {
     value: 'repeat client',
-    label: 'Reapeat Client',
+    label: 'Repeat Client',
   },
   {
-    value: 'online',
-    label: 'Online',
-  },
-  {
-    value: 'refferal',
-    label: 'Refferal',
-  },
-  {
-    value: 'online website',
-    label: 'Online Website',
+    value: 'referral',
+    label: 'Referral',
   },
   {
     value: 'other',
     label: 'Other',
   },
 ]
+
 const radioInputs = [
-  {
-    value: 'right away',
-    label: 'Right Away',
-  },
   {
     value: 'one week',
     label: 'One Week',
@@ -133,32 +118,11 @@ const radioInputs = [
     label: 'Not Sure',
   },
   {
-    value: 'price shopping only',
-    label: 'Price Shopping Only',
+    value: 'price shopping',
+    label: 'Price Shopping',
   },
 ]
 
-function submitForm() {
-  let fname = document.getElementById('firstName').value
-  let lname = document.getElementById('lastName').value
-  let userNum = document.getElementById('pNumber').value
-  let userEmail = document.getElementById('email').value
-  let companyName = document.getElementById('companyName').value
-  let companyUrl = document.getElementById('companyUrl').value
-  let userMessage = document.getElementById('userMessage').value
-
-  let newUser = {
-    'First name': fname,
-    'Last Name': lname,
-    'Phone Number': userNum,
-    Email: userEmail,
-    Company: companyName,
-    'Company Url': companyUrl,
-    Message: userMessage,
-  }
-  console.log('Button was clicked by daddy')
-  console.log(newUser)
-}
 function ContactForm(props) {
   const classes = useStyles(props)
   const [value, setValue] = React.useState('right away')
@@ -168,9 +132,35 @@ function ContactForm(props) {
     setReference(event.target.value)
   }
 
-  const handelRadioChange = (event) => {
+  const handleRadioChange = (event) => {
     setValue(event.target.value)
   }
+
+  function submitForm() {
+    let firstName = document.getElementById('firstName').value
+    let lastName = document.getElementById('lastName').value
+    let userNum = document.getElementById('pNumber').value
+    let userEmail = document.getElementById('email').value
+    let companyName = document.getElementById('companyName').value
+    let companyUrl = document.getElementById('companyUrl').value
+    let userMessage = document.getElementById('userMessage').value
+
+    let newUser = {
+      'First name': firstName,
+      'Last Name': lastName,
+      'Phone Number': userNum,
+      Email: userEmail,
+      Company: companyName,
+      'Company Url': companyUrl,
+      Message: userMessage,
+      'Time Frame': value,
+      'How did you hear about us?': reference,
+      UserTimeStamp: new Date().toLocaleString(),
+    }
+    console.log('Button was clicked by edward')
+    console.log(newUser)
+  }
+
   return (
     <div className={classes.root}>
       <Container maxWidth="xl">
@@ -198,17 +188,6 @@ function ContactForm(props) {
               click the message box on the lower right! Either way, we look forward to talking with
               you!
             </Typography>
-            <Hidden mdDown>
-              <Paper elevation={4} className={classes.companyCard}>
-                <Grid container direction="column" justify="center" alignItems="flex-start">
-                  <Typography variant="h6">Company Info</Typography>
-                  <Typography>Mona Tech LLC</Typography>
-                  <Typography>Location: Las vegas, Nevada</Typography>
-                  <Typography>Phone: (915) 867-1023 </Typography>
-                  <Typography>Email: info@monaTech.io</Typography>
-                </Grid>
-              </Paper>
-            </Hidden>
           </Grid>
           <Grid item lg={5}>
             <Paper elevation={3} className={classes.formPaper}>
@@ -217,7 +196,7 @@ function ContactForm(props) {
               </Typography>
               <form className={classes.form} noValidate autoComplete="off">
                 <div>
-                  <Grid container direction="row" justifyContent="center" alignItems="center">
+                  <Grid container direction="row" justify="center" alignItems="center">
                     {textInputs.map((value, index) => (
                       <TextField
                         key={index}
@@ -239,13 +218,13 @@ function ContactForm(props) {
                       required
                       variant="outlined"
                       labelId="select-label"
-                      id="simple-select"
+                      id="user-select"
                       className={classes.selectInput}
                       value={reference}
                       onChange={handleSelectChange}
                     >
                       {selectInputs.map((value, index) => (
-                        <MenuItem key={index} value={value.value}>
+                        <MenuItem key={index} value={value.value} id={value.value}>
                           {value.label}
                         </MenuItem>
                       ))}
@@ -259,9 +238,9 @@ function ContactForm(props) {
                   </FormLabel>
                   <RadioGroup
                     aria-label="start-date"
-                    name="start-date1"
+                    name="start-date"
                     value={value}
-                    onChange={handelRadioChange}
+                    onChange={handleRadioChange}
                   >
                     {radioInputs.map((value, index) => (
                       <FormControlLabel
@@ -273,12 +252,7 @@ function ContactForm(props) {
                     ))}
                   </RadioGroup>
                 </FormControl>
-                {/* <Grid
-                  container
-                  direction="row"
-                  justifyContent="flex-end"
-                  alignItems="center"
-                > */}
+
                 <Button
                   className={classes.submitBtn}
                   size="large"
@@ -288,7 +262,6 @@ function ContactForm(props) {
                 >
                   SUBMIT
                 </Button>
-                {/* </Grid> */}
               </form>
             </Paper>
           </Grid>
