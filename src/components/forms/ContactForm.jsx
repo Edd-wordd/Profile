@@ -24,7 +24,7 @@ const textInputs = [
     label: 'First Name',
     variant: 'outlined',
     required: true,
-    error: true,
+    error: false,
     helperText: 'Please enter your first name',
     size: 'small',
     style: {
@@ -37,7 +37,7 @@ const textInputs = [
     label: 'Last Name',
     variant: 'outlined',
     required: true,
-    error: true,
+    error: false,
     helperText: 'Please enter your last name',
     size: 'small',
     style: {
@@ -50,7 +50,7 @@ const textInputs = [
     label: 'Phone Number',
     variant: 'outlined',
     required: true,
-    error: true,
+    error: false,
     helperText: 'Please enter your phone number',
     size: 'small',
     style: {
@@ -63,7 +63,7 @@ const textInputs = [
     label: 'Email',
     variant: 'outlined',
     required: true,
-    error: true,
+    error: false,
     helperText: 'Please enter valid email',
     size: 'small',
     style: {
@@ -76,7 +76,7 @@ const textInputs = [
     label: 'Company Name',
     variant: 'outlined',
     required: true,
-    error: true,
+    error: false,
     helperText: 'Please enter your company name',
     autoComplete: 'current-password',
     fullWidth: true,
@@ -96,7 +96,7 @@ const textInputs = [
     label: 'How Can We Help You?',
     variant: 'outlined',
     required: true,
-    error: true,
+    error: false,
     helperText: 'Please enter your message',
     multiline: true,
     rowsMax: 4,
@@ -151,8 +151,6 @@ const radioInputs = [
 ]
 function ContactForm(props) {
   const classes = useStyles(props)
-  const [radioInput, setRadioInput] = React.useState('')
-  const [selectInput, setSelectInput] = React.useState('')
   const [values, setValues] = React.useState({
     firstName: '',
     lastName: '',
@@ -162,15 +160,10 @@ function ContactForm(props) {
     companyUrl: '',
     message: '',
     timeFrame: '',
+    startDate: '',
+    source: '',
   })
 
-  const handleSelectChange = (event) => {
-    setSelectInput(event.target.value)
-  }
-
-  const handleRadioChange = (event) => {
-    setRadioInput(event.target.value)
-  }
   const handleSubmit = (e) => {
     e.preventDefault()
     const data = new FormData(e.target)
@@ -231,12 +224,13 @@ function ContactForm(props) {
                       variant="outlined"
                       labelId="select-label"
                       id="user-select"
+                      name="source"
                       className={classes.selectInput}
-                      value={selectInput}
-                      onChange={handleSelectChange}
+                      value={values.source}
+                      onChange={handleChange}
                     >
                       {selectInputs.map((value, index) => (
-                        <MenuItem key={index} value={value.value} id={value.value}>
+                        <MenuItem key={index} {...value}>
                           {value.label}
                         </MenuItem>
                       ))}
@@ -250,9 +244,9 @@ function ContactForm(props) {
                   </FormLabel>
                   <RadioGroup
                     aria-label="start-date"
-                    name="start-date"
-                    value={radioInput}
-                    onChange={handleRadioChange}
+                    name="startDate"
+                    value={values.startDate}
+                    onChange={handleChange}
                   >
                     {radioInputs.map((value, index) => (
                       <FormControlLabel
