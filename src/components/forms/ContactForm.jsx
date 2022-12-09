@@ -1,5 +1,4 @@
 import React from 'react'
-import { useStyles } from '../styles/forms/ContactForm.styles'
 import {
   Typography,
   Paper,
@@ -16,72 +15,100 @@ import {
   FormControl,
   InputLabel,
 } from '@material-ui/core'
+import { useStyles } from '../styles/forms/ContactForm.styles'
 
 const textInputs = [
   {
-    required: true,
-    id: 'firstName',
+    id: '1001',
+    name: 'firstName',
     label: 'First Name',
     variant: 'outlined',
+    required: true,
+    error: true,
+    helperText: 'Please enter your first name',
     size: 'small',
     style: {
       width: '45%',
     },
   },
   {
-    required: true,
-    id: 'lastName',
+    id: '1002',
+    name: 'lastName',
     label: 'Last Name',
     variant: 'outlined',
+    required: true,
+    error: true,
+    helperText: 'Please enter your last name',
     size: 'small',
     style: {
       width: '45%',
     },
   },
   {
-    required: true,
-    id: 'pNumber',
+    id: '1003',
+    name: 'phoneNumber',
     label: 'Phone Number',
     variant: 'outlined',
+    required: true,
+    error: true,
+    helperText: 'Please enter your phone number',
     size: 'small',
     style: {
       width: '45%',
     },
   },
   {
-    required: true,
-    id: 'email',
+    id: '1004',
+    name: 'email',
     label: 'Email',
     variant: 'outlined',
+    required: true,
+    error: true,
+    helperText: 'Please enter valid email',
     size: 'small',
     style: {
       width: '45%',
     },
   },
   {
-    required: true,
-    id: 'companyName',
+    id: '1005',
+    name: 'companyName',
     label: 'Company Name',
-    autoComplete: 'current-password',
     variant: 'outlined',
-    fullWidth: true,
-  },
-  {
-    required: false,
-    id: 'companyUrl',
-    label: 'Company Website or URL',
-    autoComplete: 'current-password',
-    variant: 'outlined',
-    fullWidth: true,
-  },
-  {
     required: true,
-    id: 'userMessage',
+    error: true,
+    helperText: 'Please enter your company name',
+    autoComplete: 'current-password',
+    fullWidth: true,
+  },
+  {
+    id: '1006',
+    name: 'companyURL',
+    label: 'Company URL',
+    variant: 'outlined',
+    required: false,
+    autoComplete: 'current-password',
+    fullWidth: true,
+  },
+  {
+    id: '1007',
+    name: 'message',
     label: 'How Can We Help You?',
+    variant: 'outlined',
+    required: true,
+    error: true,
+    helperText: 'Please enter your message',
     multiline: true,
     rowsMax: 4,
-    variant: 'outlined',
     fullWidth: true,
+  },
+  {
+    id: '1008',
+    name: 'timeFrame',
+    variant: 'outlined',
+    required: false,
+    fullWidth: true,
+    type: 'date',
   },
 ]
 
@@ -122,43 +149,39 @@ const radioInputs = [
     label: 'Price Shopping',
   },
 ]
-
 function ContactForm(props) {
   const classes = useStyles(props)
-  const [value, setValue] = React.useState('right away')
-  const [reference, setReference] = React.useState('')
+  const [radioInput, setRadioInput] = React.useState('')
+  const [selectInput, setSelectInput] = React.useState('')
+  const [values, setValues] = React.useState({
+    firstName: '',
+    lastName: '',
+    phoneNumber: '',
+    email: '',
+    companyName: '',
+    companyUrl: '',
+    message: '',
+    timeFrame: '',
+  })
 
   const handleSelectChange = (event) => {
-    setReference(event.target.value)
+    setSelectInput(event.target.value)
   }
 
   const handleRadioChange = (event) => {
-    setValue(event.target.value)
+    setRadioInput(event.target.value)
   }
-
-  function submitForm() {
-    let firstName = document.getElementById('firstName').value
-    let lastName = document.getElementById('lastName').value
-    let userNum = document.getElementById('pNumber').value
-    let userEmail = document.getElementById('email').value
-    let companyName = document.getElementById('companyName').value
-    let companyUrl = document.getElementById('companyUrl').value
-    let userMessage = document.getElementById('userMessage').value
-
-    let newUser = {
-      'First name': firstName,
-      'Last Name': lastName,
-      'Phone Number': userNum,
-      Email: userEmail,
-      Company: companyName,
-      'Company Url': companyUrl,
-      Message: userMessage,
-      'Time Frame': value,
-      'How did you hear about us?': reference,
-      UserTimeStamp: new Date().toLocaleString(),
-    }
-    console.log('Button was clicked by edward')
-    console.log(newUser)
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const data = new FormData(e.target)
+    console.log(Object.fromEntries(data.entries()))
+    console.log('submitting form')
+  }
+  const handleChange = (e) => {
+    setValues({
+      ...values,
+      [e.target.name]: e.target.value,
+    })
   }
 
   return (
@@ -194,22 +217,11 @@ function ContactForm(props) {
               <Typography className={classes.formHeader}>
                 Please fill this form out! Let us know what we can do for you!
               </Typography>
-              <form className={classes.form} noValidate autoComplete="off">
+              <form className={classes.form} noValidate autoComplete="off" onSubmit={handleSubmit}>
                 <div>
                   <Grid container direction="row" justify="center" alignItems="center">
                     {textInputs.map((value, index) => (
-                      <TextField
-                        key={index}
-                        required={value.required}
-                        id={value.id}
-                        label={value.label}
-                        variant={value.variant}
-                        size={value.size}
-                        multiline={value.multiline}
-                        rowsMax={value.rowsMax}
-                        style={value.style}
-                        fullWidth={value.fullWidth}
-                      />
+                      <TextField key={value.id} {...value} onChange={handleChange} />
                     ))}
                   </Grid>
                   <div className={classes.selectInputWrapper}>
@@ -220,7 +232,7 @@ function ContactForm(props) {
                       labelId="select-label"
                       id="user-select"
                       className={classes.selectInput}
-                      value={reference}
+                      value={selectInput}
                       onChange={handleSelectChange}
                     >
                       {selectInputs.map((value, index) => (
@@ -239,7 +251,7 @@ function ContactForm(props) {
                   <RadioGroup
                     aria-label="start-date"
                     name="start-date"
-                    value={value}
+                    value={radioInput}
                     onChange={handleRadioChange}
                   >
                     {radioInputs.map((value, index) => (
@@ -252,13 +264,12 @@ function ContactForm(props) {
                     ))}
                   </RadioGroup>
                 </FormControl>
-
                 <Button
                   className={classes.submitBtn}
+                  type="submit"
                   size="large"
                   variant="outlined"
                   aria-label="large outlined button"
-                  onClick={() => submitForm()}
                 >
                   SUBMIT
                 </Button>
