@@ -24,8 +24,6 @@ const textInputs = [
     label: 'First Name',
     variant: 'outlined',
     required: true,
-    error: false,
-    helperText: 'Please enter your first name',
     size: 'small',
     style: {
       width: '45%',
@@ -37,8 +35,6 @@ const textInputs = [
     label: 'Last Name',
     variant: 'outlined',
     required: true,
-    error: false,
-    helperText: 'Please enter your last name',
     size: 'small',
     style: {
       width: '45%',
@@ -50,8 +46,6 @@ const textInputs = [
     label: 'Phone Number',
     variant: 'outlined',
     required: true,
-    error: false,
-    helperText: 'Please enter your phone number',
     size: 'small',
     style: {
       width: '45%',
@@ -63,8 +57,6 @@ const textInputs = [
     label: 'Email',
     variant: 'outlined',
     required: true,
-    error: false,
-    helperText: 'Please enter valid email',
     size: 'small',
     style: {
       width: '45%',
@@ -76,8 +68,6 @@ const textInputs = [
     label: 'Company Name',
     variant: 'outlined',
     required: true,
-    error: false,
-    helperText: 'Please enter your company name',
     autoComplete: 'current-password',
     fullWidth: true,
   },
@@ -96,8 +86,6 @@ const textInputs = [
     label: 'How Can We Help You?',
     variant: 'outlined',
     required: true,
-    error: false,
-    helperText: 'Please enter your message',
     multiline: true,
     rowsMax: 4,
     fullWidth: true,
@@ -151,6 +139,7 @@ const radioInputs = [
 ]
 function ContactForm(props) {
   const classes = useStyles(props)
+  const [error, setError] = React.useState(false)
   const [values, setValues] = React.useState({
     firstName: '',
     lastName: '',
@@ -168,13 +157,30 @@ function ContactForm(props) {
     e.preventDefault()
     const data = new FormData(e.target)
     console.log(Object.fromEntries(data.entries()))
-    console.log('submitting form')
+    if (validate()) {
+      console.log('form is valid')
+    }
   }
   const handleChange = (e) => {
     setValues({
       ...values,
       [e.target.name]: e.target.value,
     })
+  }
+
+  // TODO: validate each text field and select field. Will need to add type to textInputs as well.
+  const validate = () => {
+    let errors = {}
+    errors.firstName = values.firstName ? '' : 'Please enter your first name'
+    errors.lastName = values.lastName ? '' : 'Please enter your last name'
+    errors.phoneNumber = values.phoneNumber ? '' : 'Please enter your phone number'
+    errors.email = values.email ? '' : 'Please enter valid email'
+    errors.companyName = values.companyName ? '' : 'Please enter your company name'
+    errors.message = values.message ? '' : 'Please enter your message'
+    errors.source = values.source ? '' : 'Please select a source'
+    errors.startDate = values.startDate ? '' : 'Please select a start date'
+    setError({ ...errors })
+    return Object.values(errors).every((errValues) => errValues === '')
   }
 
   return (
@@ -214,7 +220,13 @@ function ContactForm(props) {
                 <div>
                   <Grid container direction="row" justify="center" alignItems="center">
                     {textInputs.map((value, index) => (
-                      <TextField key={value.id} {...value} onChange={handleChange} />
+                      <TextField
+                        key={value.id}
+                        {...value}
+                        error={!!error[value.name]}
+                        helperText={error[value.name]}
+                        onChange={handleChange}
+                      />
                     ))}
                   </Grid>
                   <div className={classes.selectInputWrapper}>
