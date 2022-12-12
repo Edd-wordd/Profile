@@ -1,6 +1,7 @@
 import React from 'react'
 import { Typography, Paper, Grid, Container, TextField, Button, MenuItem } from '@material-ui/core'
 import { useStyles } from '../styles/forms/ContactForm.styles'
+import { Alert, AlertTitle, Stack } from '@mui/material'
 
 const formFieldInputs = [
   {
@@ -93,12 +94,14 @@ const formFieldInputs = [
     name: 'startDate',
     variant: 'outlined',
     label: 'Start Date',
-    disablePast: true,
     required: false,
     fullWidth: true,
     type: 'date',
     InputLabelProps: {
       shrink: true,
+    },
+    inputProps: {
+      min: new Date().toISOString().split('T')[0],
     },
   },
   {
