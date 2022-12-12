@@ -140,6 +140,7 @@ const selectInputs = [
 function ContactForm(props) {
   const classes = useStyles(props)
   const [error, setError] = React.useState(false)
+  const [alert, setAlert] = React.useState(false)
   const [values, setValues] = React.useState({
     firstName: '',
     lastName: '',
@@ -156,7 +157,18 @@ function ContactForm(props) {
     const data = new FormData(e.target)
     console.log(Object.fromEntries(data.entries()))
     if (validate()) {
+      setAlert(true)
       console.log('form is valid')
+      setValues({
+        firstName: '',
+        lastName: '',
+        phoneNumber: '',
+        email: '',
+        companyName: '',
+        message: '',
+        startDate: '',
+        whereDidYouHearAboutUs: '',
+      })
     }
   }
   const handleChange = (e) => {
@@ -224,6 +236,20 @@ function ContactForm(props) {
                 Please fill this form out! Let us know what we can do for you!
               </Typography>
               <form className={classes.form} noValidate autoComplete="off" onSubmit={handleSubmit}>
+                {alert && (
+                  <>
+                    <Alert severity="success">
+                      <AlertTitle>Success</AlertTitle>Your form has been sent successfully
+                    </Alert>
+                  </>
+                )}
+                {error && !alert && (
+                  <>
+                    <Alert severity="error">
+                      <AlertTitle>Error</AlertTitle>Your form has invalid inputs
+                    </Alert>
+                  </>
+                )}
                 <div>
                   <Grid container direction="row" justify="center" alignItems="center">
                     {formFieldInputs.map((value, index) => (
