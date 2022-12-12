@@ -1,90 +1,88 @@
 import React from 'react'
-import {
-  Typography,
-  Paper,
-  Grid,
-  Container,
-  TextField,
-  Radio,
-  RadioGroup,
-  Button,
-  Select,
-  FormLabel,
-  MenuItem,
-  FormControlLabel,
-  FormControl,
-  InputLabel,
-} from '@material-ui/core'
+import { Typography, Paper, Grid, Container, TextField, Button, MenuItem } from '@material-ui/core'
 import { useStyles } from '../styles/forms/ContactForm.styles'
 
-const textInputs = [
+const formFieldInputs = [
   {
     id: '1001',
     name: 'firstName',
     label: 'First Name',
+    type: 'text',
     variant: 'outlined',
     required: true,
     size: 'small',
+    InputLabelProps: {
+      shrink: true,
+    },
     style: {
-      width: '45%',
+      width: '46%',
     },
   },
   {
     id: '1002',
     name: 'lastName',
     label: 'Last Name',
+    type: 'text',
     variant: 'outlined',
     required: true,
+    InputLabelProps: {
+      shrink: true,
+    },
     size: 'small',
     style: {
-      width: '45%',
+      width: '46%',
     },
   },
   {
     id: '1003',
     name: 'phoneNumber',
     label: 'Phone Number',
+    type: 'text',
     variant: 'outlined',
     required: true,
     size: 'small',
+    InputLabelProps: {
+      shrink: true,
+    },
     style: {
-      width: '45%',
+      width: '46%',
     },
   },
   {
     id: '1004',
     name: 'email',
     label: 'Email',
+    type: 'email',
     variant: 'outlined',
     required: true,
+    InputLabelProps: {
+      shrink: true,
+    },
     size: 'small',
     style: {
-      width: '45%',
+      width: '46%',
     },
   },
   {
     id: '1005',
     name: 'companyName',
-    label: 'Company Name',
+    label: 'Company Name or URL',
+    type: 'text',
     variant: 'outlined',
+    InputLabelProps: {
+      shrink: true,
+    },
     required: true,
-    autoComplete: 'current-password',
-    fullWidth: true,
-  },
-  {
-    id: '1006',
-    name: 'companyURL',
-    label: 'Company URL',
-    variant: 'outlined',
-    required: false,
-    autoComplete: 'current-password',
     fullWidth: true,
   },
   {
     id: '1007',
     name: 'message',
-    label: 'How Can We Help You?',
+    label: 'How can we help you?',
     variant: 'outlined',
+    InputLabelProps: {
+      shrink: true,
+    },
     required: true,
     multiline: true,
     rowsMax: 4,
@@ -92,11 +90,28 @@ const textInputs = [
   },
   {
     id: '1008',
-    name: 'timeFrame',
+    name: 'startDate',
     variant: 'outlined',
+    label: 'Start Date',
+    disablePast: true,
     required: false,
     fullWidth: true,
     type: 'date',
+    InputLabelProps: {
+      shrink: true,
+    },
+  },
+  {
+    id: '1009',
+    name: 'whereDidYouHearAboutUs',
+    label: 'How did you hear about us?',
+    variant: 'outlined',
+    InputLabelProps: {
+      shrink: true,
+    },
+    required: false,
+    fullWidth: true,
+    select: true,
   },
 ]
 
@@ -119,24 +134,6 @@ const selectInputs = [
   },
 ]
 
-const radioInputs = [
-  {
-    value: 'one week',
-    label: 'One Week',
-  },
-  {
-    value: 'one month',
-    label: 'One Month',
-  },
-  {
-    value: 'not sure',
-    label: 'Not Sure',
-  },
-  {
-    value: 'price shopping',
-    label: 'Price Shopping',
-  },
-]
 function ContactForm(props) {
   const classes = useStyles(props)
   const [error, setError] = React.useState(false)
@@ -146,11 +143,9 @@ function ContactForm(props) {
     phoneNumber: '',
     email: '',
     companyName: '',
-    companyUrl: '',
     message: '',
-    timeFrame: '',
     startDate: '',
-    source: '',
+    whereDidYouHearAboutUs: '',
   })
 
   const handleSubmit = (e) => {
@@ -168,18 +163,27 @@ function ContactForm(props) {
     })
   }
 
-  // TODO: validate each text field and select field. Will need to add type to textInputs as well.
+  // TODO: validate each text field and select field. Will need to add type to formFieldInputs as well.
   const validate = () => {
+    const emailRegex = '^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$'
+    const phoneRegex = '^[0-9]{10}$'
+    const nameRegex = '^[a-zA-Z]{2,20}$'
+
     let errors = {}
-    errors.firstName = values.firstName ? '' : 'Please enter your first name'
-    errors.lastName = values.lastName ? '' : 'Please enter your last name'
-    errors.phoneNumber = values.phoneNumber ? '' : 'Please enter your phone number'
-    errors.email = values.email ? '' : 'Please enter valid email'
-    errors.companyName = values.companyName ? '' : 'Please enter your company name'
-    errors.message = values.message ? '' : 'Please enter your message'
-    errors.source = values.source ? '' : 'Please select a source'
-    errors.startDate = values.startDate ? '' : 'Please select a start date'
+    errors.firstName = values.firstName.trim().match(nameRegex)
+      ? ''
+      : 'Please enter your first name'
+    errors.lastName = values.lastName.trim().match(nameRegex) ? '' : 'Please enter your last name'
+    errors.phoneNumber = values.phoneNumber.trim().split('-').join('').match(phoneRegex)
+      ? ''
+      : 'Please enter valid phone number'
+    errors.email = values.email.trim().match(emailRegex) ? '' : 'Please enter valid email'
+    errors.companyName = values.companyName.trim() ? '' : 'Please enter company name or url'
+    errors.message = values.message ? '' : 'Please let us know how we can help you'
+    errors.startDate = values.startDate ? '' : 'Please enter a start date for your project'
+    errors.whereDidYouHearAboutUs = values.whereDidYouHearAboutUs ? '' : 'Please select a source'
     setError({ ...errors })
+
     return Object.values(errors).every((errValues) => errValues === '')
   }
 
@@ -219,63 +223,31 @@ function ContactForm(props) {
               <form className={classes.form} noValidate autoComplete="off" onSubmit={handleSubmit}>
                 <div>
                   <Grid container direction="row" justify="center" alignItems="center">
-                    {textInputs.map((value, index) => (
+                    {formFieldInputs.map((value, index) => (
                       <TextField
                         key={value.id}
                         {...value}
                         error={!!error[value.name]}
                         helperText={error[value.name]}
                         onChange={handleChange}
-                      />
+                        value={values[value.name]}
+                      >
+                        {selectInputs.map((value) => (
+                          <MenuItem key={value.label} {...value}>
+                            {value.value}
+                          </MenuItem>
+                        ))}
+                      </TextField>
                     ))}
                   </Grid>
-                  <div className={classes.selectInputWrapper}>
-                    <InputLabel id="select-label">How did you hear about us?*</InputLabel>
-                    <Select
-                      required
-                      variant="outlined"
-                      labelId="select-label"
-                      id="user-select"
-                      name="source"
-                      className={classes.selectInput}
-                      value={values.source}
-                      onChange={handleChange}
-                    >
-                      {selectInputs.map((value, index) => (
-                        <MenuItem key={index} {...value}>
-                          {value.label}
-                        </MenuItem>
-                      ))}
-                    </Select>
-                  </div>
                 </div>
-
-                <FormControl component="fieldset" className={classes.radio}>
-                  <FormLabel component="legend">
-                    When are you wanting to start your project?
-                  </FormLabel>
-                  <RadioGroup
-                    aria-label="start-date"
-                    name="startDate"
-                    value={values.startDate}
-                    onChange={handleChange}
-                  >
-                    {radioInputs.map((value, index) => (
-                      <FormControlLabel
-                        key={index}
-                        value={value.value}
-                        control={<Radio />}
-                        label={value.label}
-                      />
-                    ))}
-                  </RadioGroup>
-                </FormControl>
                 <Button
                   className={classes.submitBtn}
                   type="submit"
                   size="large"
                   variant="outlined"
                   aria-label="large outlined button"
+                  color="primary"
                 >
                   SUBMIT
                 </Button>
@@ -287,5 +259,4 @@ function ContactForm(props) {
     </div>
   )
 }
-
 export default ContactForm
