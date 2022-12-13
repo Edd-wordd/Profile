@@ -247,7 +247,13 @@ function ContactForm(props) {
                   <Snackbar open={error} autoHideDuration={6000} onClose={() => setError(false)}>
                     <Alert onClose={() => setError(false)} variant="filled" severity="error">
                       <AlertTitle>Error</AlertTitle>
-                      Please fill out all required fields!
+                      {`You are missing ${
+                        Object.values(error).filter((err) => err !== '').length
+                      } ${
+                        Object.values(error).filter((err) => err !== '').length > 1
+                          ? 'fields'
+                          : 'field'
+                      }`}
                     </Alert>
                   </Snackbar>
                 )}
