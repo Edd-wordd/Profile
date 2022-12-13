@@ -1,7 +1,7 @@
 import React from 'react'
 import { Typography, Paper, Grid, Container, TextField, Button, MenuItem } from '@material-ui/core'
 import { useStyles } from '../styles/forms/ContactForm.styles'
-import { Alert, AlertTitle, Stack } from '@mui/material'
+import { Alert, AlertTitle, Snackbar, Stack } from '@mui/material'
 
 const formFieldInputs = [
   {
@@ -158,6 +158,7 @@ function ContactForm(props) {
     console.log(Object.fromEntries(data.entries()))
     if (validate()) {
       setAlert(true)
+      setError(false)
       console.log('form is valid')
       setValues({
         firstName: '',
@@ -177,8 +178,6 @@ function ContactForm(props) {
       [e.target.name]: e.target.value,
     })
   }
-
-  // TODO: validate each text field and select field. Will need to add type to formFieldInputs as well.
   const validate = () => {
     const emailRegex = '^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$'
     const phoneRegex = '^[0-9]{10}$'
@@ -236,19 +235,21 @@ function ContactForm(props) {
                 Please fill this form out! Let us know what we can do for you!
               </Typography>
               <form className={classes.form} noValidate autoComplete="off" onSubmit={handleSubmit}>
-                {alert && (
-                  <>
-                    <Alert severity="success">
-                      <AlertTitle>Success</AlertTitle>Your form has been sent successfully
+                {
+                  <Snackbar open={alert} autoHideDuration={6000} onClose={() => setAlert(false)}>
+                    <Alert onClose={() => setAlert(false)} variant="filled" severity="success">
+                      <AlertTitle>Success</AlertTitle>
+                      Your message has been sent!
                     </Alert>
-                  </>
-                )}
-                {error && !alert && (
-                  <>
-                    <Alert severity="error">
-                      <AlertTitle>Error</AlertTitle>Your form has invalid inputs
+                  </Snackbar>
+                }
+                {!alert && error && (
+                  <Snackbar open={error} autoHideDuration={6000} onClose={() => setError(false)}>
+                    <Alert onClose={() => setError(false)} variant="filled" severity="error">
+                      <AlertTitle>Error</AlertTitle>
+                      Please fill out all required fields!
                     </Alert>
-                  </>
+                  </Snackbar>
                 )}
                 <div>
                   <Grid container direction="row" justify="center" alignItems="center">
@@ -277,6 +278,7 @@ function ContactForm(props) {
                   variant="outlined"
                   aria-label="large outlined button"
                   color="primary"
+                  id="submit"
                 >
                   SUBMIT
                 </Button>
