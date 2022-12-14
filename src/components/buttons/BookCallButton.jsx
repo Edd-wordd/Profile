@@ -150,7 +150,8 @@ export default function BookCallButton(props) {
                   <Button
                     className={classes.submitBtn}
                     size="large"
-                    variant="outlined"
+                    variant="contained"
+                    color="primary"
                     aria-label="large outlined button"
                     onClick={() => submitForm()}
                   >

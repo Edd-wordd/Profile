@@ -281,7 +281,7 @@ function ContactForm(props) {
                   className={classes.submitBtn}
                   type="submit"
                   size="large"
-                  variant="outlined"
+                  variant="contained"
                   aria-label="large outlined button"
                   color="primary"
                   id="submit"
