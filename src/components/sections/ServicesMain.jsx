@@ -79,9 +79,8 @@ function ServicesMain(props) {
           ))}
         </Grid>
         <ButtonLink
-          btnOneText="Get Started"
-          btnTwoText="Questions? Talk to an expert!"
           linkOne="/contact"
+          btnOneText="Get Started"
         />
       </Container>
     </>
