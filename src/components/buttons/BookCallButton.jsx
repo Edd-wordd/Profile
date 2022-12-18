@@ -101,7 +101,6 @@ export default function BookCallButton(props) {
   const handleOpen = () => {
     setOpen(true)
   }
-
   const handleClose = () => {
     setOpen(false)
   }
@@ -134,11 +133,9 @@ export default function BookCallButton(props) {
                 <Button color="primary" onClick={handleClose} className={classes.closeBtn}>
                   X
                 </Button>
-
                 <Typography className={classes.formHeader}>
                   Let's get your consultation call booked!
                 </Typography>
-
                 <form className={classes.form} noValidate autoComplete="off">
                   {textInputs.map((value, index) => (
                     <TextField
