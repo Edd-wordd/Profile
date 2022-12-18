@@ -31,8 +31,8 @@ const useStyles = makeStyles(() => ({
   },
   // Logo for mobile version
   mobileLogoImg: {
-    margin: '.5rem 0 0 -1.5rem',
-    height: '10rem',
+    margin: '1rem 0 .5rem  -.5rem',
+    height: '7rem',
   },
   mobileBtn: {
     paddingBottom: '3rem',
@@ -75,7 +75,7 @@ const useStyles = makeStyles(() => ({
     marginBottom: '.5rem',
   },
   hamIcon: {
-    paddingTop: '3.5rem',
+    paddingTop: '2.75rem',
     marginLeft: '-2rem',
     color: mainTheme.palette.defaultLight.main,
   },
