@@ -6,7 +6,6 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     height: '850px',
     borderRadius: '0 0 15% 0',
-    // borderBottom: `25px double pink`,
     backgroundSize: 'cover',
     backgroundPosition: 'center center',
     [theme.breakpoints.down('xs')]: {
@@ -15,20 +14,21 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   titleWrapper: {
-    paddingTop: theme.spacing(36),
+    paddingTop: theme.spacing(30),
   },
   mainTitle: {
-    fontWeight: 700,
-    fontSize: theme.spacing(10),
+    fontWeight: 500,
+    fontSize: theme.spacing(8),
     letterSpacing: theme.spacing(0.5),
     color: mainTheme.palette.defaultLight.main,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    marginTop: theme.spacing(7),
   },
   mainParagraph: {
-    margin: '2.5em 0 2rem 0',
-    fontSize: theme.spacing(5),
+    margin: '2.5em 0 5rem 0',
+    fontSize: theme.spacing(4),
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -38,7 +38,14 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
     backgroundColor: '#FE6B8B', //light pink peach color
     color: mainTheme.palette.defaultLight.main,
+    minWidth: '300px',
+    fontSize: theme.spacing(1.75),
+    letterSpacing: theme.spacing(0.15),
     opacity: '85%',
+    '&:hover': {
+      backgroundColor: '#FE6B8B',
+      opacity: '100%',
+    },
   },
   //   Ipad view stylings
   titleWrapperMobileView: {
