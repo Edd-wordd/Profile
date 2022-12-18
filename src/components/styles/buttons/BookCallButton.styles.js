@@ -23,7 +23,6 @@ const useStyles = makeStyles((theme) => ({
     '&:hover': {
       backgroundImage: `linear-gradient(#1FA2FF  20%,#12D8FA)`,
     },
-
   },
   paper: {
     backgroundColor: theme.palette.background.paper,
@@ -31,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
     width: '30%',
-    borderRadius: '10px',
+    borderRadius: '5px',
     zIndex: 1000,
   },
   form: {
@@ -77,8 +76,9 @@ const useStyles = makeStyles((theme) => ({
     "&:hover": {
       backgroundColor: "lightgrey",
       cursor: "pointer"
-    }
-  },
+    },
+
+    },
   closeBtn: {
     color: 'grey',
     cursor: 'pointer',
