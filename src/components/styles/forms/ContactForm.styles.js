@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: 'cover',
     backgroundAttachment: 'fixed',
     backgroundPosition: 'center center',
-    padding: '20rem 0rem 5rem 0rem',
+    padding: '12rem 0rem 5rem 0rem',
   },
   form: {
     '& .MuiTextField-root': {
