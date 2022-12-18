@@ -7,7 +7,7 @@ import { PopupButton } from 'react-calendly'
 
 const textInputs = [
   {
-    id: 2000,
+    id: '2000',
     name: 'firstName',
     label: 'First Name',
     required: true,
@@ -19,7 +19,7 @@ const textInputs = [
     },
   },
   {
-    id: 2001,
+    id: '2001',
     name: 'lastName',
     label: 'Last Name',
     required: true,
@@ -31,7 +31,7 @@ const textInputs = [
     },
   },
   {
-    id: 2002,
+    id: '2002',
     name: 'phoneNumber',
     label: 'Phone Number',
     required: true,
@@ -44,7 +44,7 @@ const textInputs = [
 
   },
   {
-    id: 2003,
+    id: '2003',
     name: 'email',
     label: 'Email',
     required: true,
@@ -56,7 +56,7 @@ const textInputs = [
     },
   },
   {
-    id: 2004,
+    id: '2004',
     name: 'companyName',
     label: 'Company Name',
     required: true,
@@ -68,7 +68,7 @@ const textInputs = [
     },
   },
   {
-    id: 2005,
+    id: '2005',
     name: 'userMessage',
     label: 'How may we help you?',
     required: true,
@@ -88,7 +88,26 @@ export default function BookCallButton(props) {
   const [open, setOpen] = React.useState(false)
   const [loading, setLoading] = useState(false)
   const [show, setShow] = useState(false)
+  const [form, setForm] = useState({
+    firstName: '',
+    lastName: '',
+    phoneNumber: '',
+    email: '',
+    companyName: '',
+    userMessage: '',
+  })
 
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value })
+  }
+
+  const handleSubmit = (e) =>{
+    e.preventDefault()
+    console.log('submit')
+    const data = new FormData(e.target)
+    console.log(Object.fromEntries(data.entries()))
+  }
   const LoadSpinner = () => {
     setLoading(true)
     setTimeout(() => {
@@ -136,11 +155,12 @@ export default function BookCallButton(props) {
                 <Typography className={classes.formHeader}>
                   Let's get your consultation call booked!
                 </Typography>
-                <form className={classes.form} noValidate autoComplete="off">
+                <form className={classes.form} noValidate autoComplete="off" onSubmit={handleSubmit}>
                   {textInputs.map((value, index) => (
                     <TextField
                       className={classes.textField}
-                      key={value.id}   required={value.required}
+                      key={value.id}
+                      onChange={handleChange}
                       {...value}
                     />))}
                   <PopupButton
@@ -154,8 +174,8 @@ export default function BookCallButton(props) {
                     size="large"
                     variant="contained"
                     color="primary"
-                    aria-label="large outlined button"
-                    onClick={() => submitForm()}
+                    aria-label="submit button"
+                    type="submit"
                   >
                     SUBMIT
                   </Button>
