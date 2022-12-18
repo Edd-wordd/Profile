@@ -46,14 +46,11 @@ function GetStarted(props) {
           <div className={classes.line}></div>
           <BeenhereIcon className={classes.icons} />
           <div className={classes.line}></div>
-
           <BeenhereIcon className={classes.icons} />
           <div className={classes.line}></div>
-
           <BeenhereIcon className={classes.icons} />
         </Hidden>
       </Grid>
-
       <Grid container direction="row" justify="center" alignItems="center">
         {getStartedSteps.map((step, index) => (
           <Paper variant="outlined" className={classes.boxes} key={index}>
@@ -74,10 +71,7 @@ function GetStarted(props) {
           </Typography>
         </Grid>
       </Container>
-      <ButtonLink
-        linkOne="/contact"
-        btnOneText="Get Started"
-      />
+      <ButtonLink linkOne="/contact" btnOneText="Get Started" />
     </div>
   )
 }
