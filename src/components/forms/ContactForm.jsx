@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Typography, Paper, Grid, Container, TextField, Button, MenuItem } from '@material-ui/core'
 import { useStyles } from '../styles/forms/ContactForm.styles'
 import { Alert, AlertTitle, Skeleton, Snackbar } from '@mui/material'
@@ -11,7 +11,6 @@ const formFieldInputs = [
     type: 'text',
     variant: 'outlined',
     required: true,
-    helperText: ' ',
     size: 'small',
     InputLabelProps: {
       shrink: true,
@@ -26,7 +25,6 @@ const formFieldInputs = [
     label: 'Last Name',
     type: 'text',
     variant: 'outlined',
-    helperText: ' ',
     required: true,
     InputLabelProps: {
       shrink: true,
@@ -42,7 +40,6 @@ const formFieldInputs = [
     label: 'Phone Number',
     type: 'text',
     variant: 'outlined',
-    helperText: ' ',
     required: true,
     size: 'small',
     InputLabelProps: {
@@ -58,7 +55,6 @@ const formFieldInputs = [
     label: 'Email',
     type: 'email',
     variant: 'outlined',
-    helperText: ' ',
     required: true,
     InputLabelProps: {
       shrink: true,
@@ -145,6 +141,7 @@ function ContactForm(props) {
   const classes = useStyles(props)
   const [error, setError] = React.useState(false)
   const [alert, setAlert] = React.useState(false)
+  const [loading, setLoading] = React.useState(true)
   const [values, setValues] = React.useState({
     firstName: '',
     lastName: '',
@@ -174,15 +171,18 @@ function ContactForm(props) {
         startDate: '',
         whereDidYouHearAboutUs: '',
       })
+
       console.log('form is valid')
     }
   }
+
   const handleChange = (e) => {
     setValues({
       ...values,
       [e.target.name]: e.target.value,
     })
   }
+
   const validate = () => {
     const emailRegex = '^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$'
     const phoneRegex = '^[0-9]{10}$'
@@ -255,85 +255,86 @@ function ContactForm(props) {
                   </Snackbar>
                 )}
                 <div>
-                  {alert ? (
-                    <Grid container direction="row" justify="space-between" alignItems="flex-start">
-                      <Skeleton
-                        animation="wave"
-                        variant="rect"
-                        width="45%"
-                        height={40}
-                        style={{ marginBottom: '1rem' }}
-                      />
-                      <Skeleton
-                        animation="wave"
-                        variant="rect"
-                        width="45%"
-                        height={40}
-                        style={{ marginBottom: '1rem' }}
-                      />{' '}
-                      <Skeleton
-                        animation="wave"
-                        variant="rect"
-                        width="45%"
-                        height={40}
-                        style={{ marginBottom: '1rem' }}
-                      />
-                      <Skeleton
-                        animation="wave"
-                        variant="rect"
-                        width="45%"
-                        height={40}
-                        style={{ marginBottom: '1rem' }}
-                      />{' '}
-                      <Skeleton
-                        animation="wave"
-                        variant="rect"
-                        width="100%"
-                        height={50}
-                        style={{ marginBottom: '1rem' }}
-                      />
-                      <Skeleton
-                        animation="wave"
-                        variant="rect"
-                        width="100%"
-                        height={50}
-                        style={{ marginBottom: '1rem' }}
-                      />{' '}
-                      <Skeleton
-                        animation="wave"
-                        variant="rect"
-                        width="100%"
-                        height={50}
-                        style={{ marginBottom: '1rem' }}
-                      />
-                      <Skeleton
-                        animation="wave"
-                        variant="rect"
-                        width="100%"
-                        height={50}
-                        style={{ marginBottom: '1rem' }}
-                      />
-                    </Grid>
-                  ) : (
-                    <Grid container direction="row" justify="center" alignItems="center">
-                      {formFieldInputs.map((value, index) => (
-                        <TextField
-                          key={value.id}
-                          {...value}
-                          error={!!error[value.name]}
-                          helperText={error[value.name]}
-                          onChange={handleChange}
-                          value={values[value.name]}
-                        >
-                          {selectInputs.map((value) => (
-                            <MenuItem key={value.label} {...value}>
-                              {value.value}
-                            </MenuItem>
-                          ))}
-                        </TextField>
-                      ))}
-                    </Grid>
-                  )}
+                  {loading && alert && <div>Loading...</div>}
+                  {/*{alert ? (*/}
+                  {/*  <Grid container direction="row" justify="space-between" alignItems="flex-start">*/}
+                  {/*    <Skeleton*/}
+                  {/*      animation="wave"*/}
+                  {/*      variant="rect"*/}
+                  {/*      width="45%"*/}
+                  {/*      height={40}*/}
+                  {/*      style={{ marginBottom: '1rem' }}*/}
+                  {/*    />*/}
+                  {/*    <Skeleton*/}
+                  {/*      animation="wave"*/}
+                  {/*      variant="rect"*/}
+                  {/*      width="45%"*/}
+                  {/*      height={40}*/}
+                  {/*      style={{ marginBottom: '1rem' }}*/}
+                  {/*    />{' '}*/}
+                  {/*    <Skeleton*/}
+                  {/*      animation="wave"*/}
+                  {/*      variant="rect"*/}
+                  {/*      width="45%"*/}
+                  {/*      height={40}*/}
+                  {/*      style={{ marginBottom: '1rem' }}*/}
+                  {/*    />*/}
+                  {/*    <Skeleton*/}
+                  {/*      animation="wave"*/}
+                  {/*      variant="rect"*/}
+                  {/*      width="45%"*/}
+                  {/*      height={40}*/}
+                  {/*      style={{ marginBottom: '1rem' }}*/}
+                  {/*    />{' '}*/}
+                  {/*    <Skeleton*/}
+                  {/*      animation="wave"*/}
+                  {/*      variant="rect"*/}
+                  {/*      width="100%"*/}
+                  {/*      height={50}*/}
+                  {/*      style={{ marginBottom: '1rem' }}*/}
+                  {/*    />*/}
+                  {/*    <Skeleton*/}
+                  {/*      animation="wave"*/}
+                  {/*      variant="rect"*/}
+                  {/*      width="100%"*/}
+                  {/*      height={50}*/}
+                  {/*      style={{ marginBottom: '1rem' }}*/}
+                  {/*    />{' '}*/}
+                  {/*    <Skeleton*/}
+                  {/*      animation="wave"*/}
+                  {/*      variant="rect"*/}
+                  {/*      width="100%"*/}
+                  {/*      height={50}*/}
+                  {/*      style={{ marginBottom: '1rem' }}*/}
+                  {/*    />*/}
+                  {/*    <Skeleton*/}
+                  {/*      animation="wave"*/}
+                  {/*      variant="rect"*/}
+                  {/*      width="100%"*/}
+                  {/*      height={50}*/}
+                  {/*      style={{ marginBottom: '1rem' }}*/}
+                  {/*    />*/}
+                  {/*  </Grid>*/}
+                  {/*) : (*/}
+                  <Grid container direction="row" justify="center" alignItems="center">
+                    {formFieldInputs.map((value, index) => (
+                      <TextField
+                        key={value.id}
+                        {...value}
+                        error={!!error[value.name]}
+                        helperText={error[value.name]}
+                        onChange={handleChange}
+                        value={values[value.name]}
+                      >
+                        {selectInputs.map((value) => (
+                          <MenuItem key={value.label} {...value}>
+                            {value.value}
+                          </MenuItem>
+                        ))}
+                      </TextField>
+                    ))}
+                  </Grid>
+                  {/*)}*/}
                 </div>
                 <Button
                   className={classes.submitBtn}
