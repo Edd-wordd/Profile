@@ -6,7 +6,7 @@ const useStyles = makeStyles(() => ({
     margin: '-1rem -.5rem',
     position: 'fixed',
     width: '100%',
-    height: '10rem',
+    height: '7.5rem',
     zIndex: '999',
     backgroundColor: 'transparent',
     transitionTimingFunction: 'ease-in',
@@ -17,16 +17,17 @@ const useStyles = makeStyles(() => ({
     margin: '-2rem -.5rem',
     borderBottom: `1px solid ${mainTheme.palette.defaultLight.main}`,
     position: 'fixed',
-    height: '10rem',
+    height: '7rem',
     width: '100%',
     zIndex: '999',
     transitionTimingFunction: 'ease-in',
-    transition: '.3s',
+    transition: '.5s',
+    // padding: '.5rem .5rem',
   },
   // Logo for desktop version
   mainLogo: {
-    width: '10em',
-    margin: '1rem 0 0 0',
+    width: '6em',
+    padding: '1.5rem 0 0 0',
   },
   // Logo for mobile version
   mobileLogoImg: {
@@ -43,32 +44,32 @@ const useStyles = makeStyles(() => ({
   // style for the tabs (links on the navbar)
   tab: {
     fontFamily: 'Open Sans Condensed',
-    paddingBottom: '0px',
     fontSize: 14,
     fontWeight: 800,
     borderRadius: 0,
+    padding: '1.5rem 0 1.5rem 0',
     color: mainTheme.palette.defaultLight.main,
     letterSpacing: '.3rem',
     transitionTimingFunction: 'ease-in',
     transition: '.5s',
-    marginBottom: '.5rem',
-
     '&:hover': {
       color: mainTheme.palette.primary_100.main,
       backgroundColor: 'transparent',
+      padding: '.15rem',
       textShadow: `1px 1px ${mainTheme.palette.primary_100.main}`,
       boxShadow: `inset 0 -2px 0 0 ${mainTheme.palette.primary.main}`,
-      marginBottom: '.5rem',
     },
   },
   btnDisplay: {
-    display: 'flex',
-    justifyContent: 'space-evenly',
-    margin: '3.5rem 0 3rem 0',
+    display: 'grid',
+    gridTemplateColumns: 'repeat(3, 1fr)',
+    gridGap: '1rem',
+    padding: '2rem 0',
+    alignItems: 'center',
   },
   // the selected tab on navbar
   selectedTab: {
-    borderBottom: `2px solid ${mainTheme.palette.primary.main}`,
+    borderBottom: `1px solid ${mainTheme.palette.primary.main}`,
     color: mainTheme.palette.primary_100.main,
     textShadow: `1px 1px ${mainTheme.palette.primary_100.main}`,
     marginBottom: '.5rem',
@@ -78,24 +79,6 @@ const useStyles = makeStyles(() => ({
     marginLeft: '-2rem',
     color: mainTheme.palette.defaultLight.main,
   },
-  // bookBtn: {
-  //   fontFamily: 'Open Sans Condensed',
-  //   fontSize: 14,
-  //   fontWeight: 800,
-  //   letterSpacing: '.15rem',
-  //   // border: `2px solid ${mainTheme.palette.primary.main}`,
-  //   border: '2px solid #1FA2FF ',
-  //   color: mainTheme.palette.defaultLight.main,
-  //   padding: '8px 20px',
-  //   marginTop: '1rem',
-  //   marginBottom: '1rem',
-  //
-  //   borderRadius: '2rem',
-  //   '&:hover': {
-  //     // background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-  //     backgroundImage: `linear-gradient(#1FA2FF  20%,#12D8FA)`,
-  //   },
-  // },
   // styling for the logo and hamburger icon when on mobile view
   setMobileNavDropdown: {
     backgroundColor: mainTheme.palette.defaultDark.secondary,
