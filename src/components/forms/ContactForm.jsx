@@ -1,8 +1,7 @@
-import React from "react";
+import React from 'react'
 import { Typography, Paper, Grid, Container, TextField, Button, MenuItem } from '@material-ui/core'
 import { useStyles } from '../styles/forms/ContactForm.styles'
 import { Alert, AlertTitle, Skeleton, Snackbar } from '@mui/material'
-
 
 const formFieldInputs = [
   {
@@ -12,6 +11,7 @@ const formFieldInputs = [
     type: 'text',
     variant: 'outlined',
     required: true,
+    helperText: ' ',
     size: 'small',
     InputLabelProps: {
       shrink: true,
@@ -26,6 +26,7 @@ const formFieldInputs = [
     label: 'Last Name',
     type: 'text',
     variant: 'outlined',
+    helperText: ' ',
     required: true,
     InputLabelProps: {
       shrink: true,
@@ -41,6 +42,7 @@ const formFieldInputs = [
     label: 'Phone Number',
     type: 'text',
     variant: 'outlined',
+    helperText: ' ',
     required: true,
     size: 'small',
     InputLabelProps: {
@@ -56,6 +58,7 @@ const formFieldInputs = [
     label: 'Email',
     type: 'email',
     variant: 'outlined',
+    helperText: ' ',
     required: true,
     InputLabelProps: {
       shrink: true,
@@ -155,6 +158,7 @@ function ContactForm(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+
     const data = new FormData(e.target)
     console.log(Object.fromEntries(data.entries()))
     if (validate()) {
@@ -251,7 +255,7 @@ function ContactForm(props) {
                   </Snackbar>
                 )}
                 <div>
-                  { alert ?  (
+                  {alert ? (
                     <Grid container direction="row" justify="space-between" alignItems="flex-start">
                       <Skeleton
                         animation="wave"
@@ -310,7 +314,7 @@ function ContactForm(props) {
                         style={{ marginBottom: '1rem' }}
                       />
                     </Grid>
-                    ) : (
+                  ) : (
                     <Grid container direction="row" justify="center" alignItems="center">
                       {formFieldInputs.map((value, index) => (
                         <TextField
