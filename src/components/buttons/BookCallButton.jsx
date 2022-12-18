@@ -7,66 +7,80 @@ import { PopupButton } from 'react-calendly'
 
 const textInputs = [
   {
-    required: true,
-    id: 'firstName',
+    id: 2000,
+    name: 'firstName',
     label: 'First Name',
+    required: true,
     variant: 'outlined',
     size: 'small',
+    type: 'text',
+    InputLabelProps: {
+      shrink: true,
+    },
   },
   {
-    required: true,
-    id: 'lastName',
+    id: 2001,
+    name: 'lastName',
     label: 'Last Name',
+    required: true,
     variant: 'outlined',
     size: 'small',
+    type: 'text',
+    InputLabelProps: {
+      shrink: true,
+    },
   },
   {
-    required: true,
-    id: 'pNumber',
+    id: 2002,
+    name: 'phoneNumber',
     label: 'Phone Number',
+    required: true,
     variant: 'outlined',
     size: 'small',
+    type: 'text',
+    InputLabelProps: {
+      shrink: true,
+    },
+
   },
   {
-    required: true,
-    id: 'email',
+    id: 2003,
+    name: 'email',
     label: 'Email',
+    required: true,
     variant: 'outlined',
     size: 'small',
+    type: 'email',
+    InputLabelProps: {
+      shrink: true,
+    },
   },
   {
-    required: true,
-    id: 'companyName',
+    id: 2004,
+    name: 'companyName',
     label: 'Company Name',
-    autoComplete: 'current-password',
-    variant: 'outlined',
-    fullWidth: true,
-  },
-  {
-    required: false,
-    id: 'companyUrl',
-    label: 'Company Website or URL',
-    autoComplete: 'current-password',
-    variant: 'outlined',
-    fullWidth: true,
-  },
-  {
     required: true,
-    id: 'userMessage',
-    label: 'How Can We Help You?',
+    variant: 'outlined',
+    fullWidth: true,
+    type: 'text',
+    InputLabelProps: {
+      shrink: true,
+    },
+  },
+  {
+    id: 2005,
+    name: 'userMessage',
+    label: 'How may we help you?',
+    required: true,
     multiline: true,
     rowsMax: 4,
     variant: 'outlined',
     fullWidth: true,
+    type: 'text',
+    InputLabelProps: {
+      shrink: true,
+    },
   },
-  // {
-  //   required: true,
-  //   id: 'calendly',
-  //   label: 'Calendly Link',
-  //   multiline: false,
-  //   variant: 'outlined',
-  //   fullWidth: true,
-  // },
 ]
 
 export default function BookCallButton(props) {
@@ -129,18 +143,9 @@ export default function BookCallButton(props) {
                   {textInputs.map((value, index) => (
                     <TextField
                       className={classes.textField}
-                      key={index}
-                      required={value.required}
-                      id={value.id}
-                      label={value.label}
-                      variant={value.variant}
-                      size={value.size}
-                      multiline={value.multiline}
-                      rowsMax={value.rowsMax}
-                      style={value.style}
-                      fullWidth={value.fullWidth}
-                    />
-                  ))}
+                      key={value.id}   required={value.required}
+                      {...value}
+                    />))}
                   <PopupButton
                     url="https://calendly.com/mona-tech"
                     text="Schedule time with us"
