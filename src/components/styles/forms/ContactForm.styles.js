@@ -3,7 +3,7 @@ import mainTheme from '../../../theme'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundImage: `url(https://images.unsplash.com/photo-1484807352052-23338990c6c6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2100&q=80)`,
+    backgroundImage: `url(https://images.unsplash.com/photo-1638444571531-42e04914a830?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80)`,
     width: '100%',
     height: 'auto',
     backgroundSize: 'cover',

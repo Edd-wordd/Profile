@@ -10,15 +10,15 @@ const useStyles = makeStyles((theme) => ({
   },
   bookBtn: {
     fontFamily: 'Open Sans Condensed',
-    fontSize: 16,
+    fontSize: 14,
     fontWeight: 800,
+    width: 300,
     letterSpacing: '.15rem',
     backgroundColor: 'transparent',
+    marginLeft: '3rem',
     border: '1px solid #1FA2FF ',
     color: mainTheme.palette.defaultLight.main,
-    padding: '1rem 1.5rem',
-    marginTop: '1rem',
-    marginBottom: '1rem',
+    padding: '.75rem 1rem',
     borderRadius: '2rem',
     '&:hover': {
       backgroundImage: `linear-gradient(#1FA2FF  20%,#12D8FA)`,
@@ -72,13 +72,12 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '5px',
     width: '100%',
     margin: '.5rem 0 1rem 0',
-    color: "gray",
-    "&:hover": {
-      backgroundColor: "lightgrey",
-      cursor: "pointer"
+    color: 'gray',
+    '&:hover': {
+      backgroundColor: 'lightgrey',
+      cursor: 'pointer',
     },
-
-    },
+  },
   closeBtn: {
     color: 'grey',
     cursor: 'pointer',
