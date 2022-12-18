@@ -76,9 +76,7 @@ function GetStarted(props) {
       </Container>
       <ButtonLink
         linkOne="/contact"
-        linkTwo="/"
         btnOneText="Get Started"
-        btnTwoText="Questions? Talk to an Expert!"
       />
     </div>
   )

@@ -74,12 +74,9 @@ function WhoWeAre(props) {
             </Transition>
           ))}
         </Grid>
-        {/*TODO: Add path to the second link*/}
         <ButtonLink
           linkOne="/contact"
-          linkTwo="/"
           btnOneText="Request a free Quote"
-          btnTwoText="Questions? Talk to an expert!"
         />
       </Container>
     </>
