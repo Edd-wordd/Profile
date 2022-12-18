@@ -6,6 +6,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    border: 'none',
   },
   bookBtn: {
     fontFamily: 'Open Sans Condensed',
@@ -13,25 +14,24 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 800,
     letterSpacing: '.15rem',
     backgroundColor: 'transparent',
-    // border: `2px solid ${mainTheme.palette.primary.main}`,
-    border: '2px solid #1FA2FF ',
+    border: '1px solid #1FA2FF ',
     color: mainTheme.palette.defaultLight.main,
-    padding: '20px 50px',
+    padding: '1rem 1.5rem',
     marginTop: '1rem',
     marginBottom: '1rem',
     borderRadius: '2rem',
     '&:hover': {
-      // background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
       backgroundImage: `linear-gradient(#1FA2FF  20%,#12D8FA)`,
     },
+
   },
   paper: {
     backgroundColor: theme.palette.background.paper,
-    border: '2px solid #000',
+    // border: '2px solid #000',
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
     width: '30%',
-    borderRadius: '2%',
+    borderRadius: '10px',
     zIndex: 1000,
   },
   form: {
@@ -67,10 +67,17 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '25rem',
   },
   calendlyBtn: {
-    padding: '.5rem 4rem',
+    padding: '1.25rem 4rem',
     backgroundColor: 'transparent',
     border: '1px solid lightgrey',
-    borderRadius: '5%',
+    borderRadius: '5px',
+    width: '100%',
+    margin: '.5rem 0 1rem 0',
+    color: "gray",
+    "&:hover": {
+      backgroundColor: "lightgrey",
+      cursor: "pointer"
+    }
   },
   closeBtn: {
     color: 'grey',
