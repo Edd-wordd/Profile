@@ -7,9 +7,8 @@ function Home() {
       <MainDisplay
         mobileViewTitle="Look to the Future..."
         mobileViewSubtitle="lets go get this"
-        mainViewTitle="Look to the future..."
-        mainViewSubtitle="lets go baby!!!"
-        // href={`https://images.unsplash.com/photo-1508361727343-ca787442dcd7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=$%7BimageWidth%7D&q=80`}
+        mainViewTitle="The future is here, and we're here to help you get there."
+        mainViewSubtitle="-Helping you design the future of the web. "
         href={`https://images.unsplash.com/photo-1638444571685-3f2b2f5aa00c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80`}
         buttonOneText={'Web Development'}
         buttonLink={'/services/web-design'}
