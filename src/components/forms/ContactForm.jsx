@@ -1,7 +1,8 @@
-import React from 'react'
+import React from "react";
 import { Typography, Paper, Grid, Container, TextField, Button, MenuItem } from '@material-ui/core'
 import { useStyles } from '../styles/forms/ContactForm.styles'
-import { Alert, AlertTitle, Snackbar, Stack } from '@mui/material'
+import { Alert, AlertTitle, Skeleton, Snackbar } from '@mui/material'
+
 
 const formFieldInputs = [
   {
@@ -159,7 +160,6 @@ function ContactForm(props) {
     if (validate()) {
       setAlert(true)
       setError(false)
-      console.log('form is valid')
       setValues({
         firstName: '',
         lastName: '',
@@ -170,6 +170,7 @@ function ContactForm(props) {
         startDate: '',
         whereDidYouHearAboutUs: '',
       })
+      console.log('form is valid')
     }
   }
   const handleChange = (e) => {
@@ -235,14 +236,6 @@ function ContactForm(props) {
                 Please fill this form out! Let us know what we can do for you!
               </Typography>
               <form className={classes.form} noValidate autoComplete="off" onSubmit={handleSubmit}>
-                {
-                  <Snackbar open={alert} autoHideDuration={6000} onClose={() => setAlert(false)}>
-                    <Alert onClose={() => setAlert(false)} variant="filled" severity="success">
-                      <AlertTitle>Success</AlertTitle>
-                      Your message has been sent!
-                    </Alert>
-                  </Snackbar>
-                }
                 {!alert && error && (
                   <Snackbar open={error} autoHideDuration={6000} onClose={() => setError(false)}>
                     <Alert onClose={() => setError(false)} variant="filled" severity="error">
@@ -258,24 +251,85 @@ function ContactForm(props) {
                   </Snackbar>
                 )}
                 <div>
-                  <Grid container direction="row" justify="center" alignItems="center">
-                    {formFieldInputs.map((value, index) => (
-                      <TextField
-                        key={value.id}
-                        {...value}
-                        error={!!error[value.name]}
-                        helperText={error[value.name]}
-                        onChange={handleChange}
-                        value={values[value.name]}
-                      >
-                        {selectInputs.map((value) => (
-                          <MenuItem key={value.label} {...value}>
-                            {value.value}
-                          </MenuItem>
-                        ))}
-                      </TextField>
-                    ))}
-                  </Grid>
+                  { alert ?  (
+                    <Grid container direction="row" justify="space-between" alignItems="flex-start">
+                      <Skeleton
+                        animation="wave"
+                        variant="rect"
+                        width="45%"
+                        height={40}
+                        style={{ marginBottom: '1rem' }}
+                      />
+                      <Skeleton
+                        animation="wave"
+                        variant="rect"
+                        width="45%"
+                        height={40}
+                        style={{ marginBottom: '1rem' }}
+                      />{' '}
+                      <Skeleton
+                        animation="wave"
+                        variant="rect"
+                        width="45%"
+                        height={40}
+                        style={{ marginBottom: '1rem' }}
+                      />
+                      <Skeleton
+                        animation="wave"
+                        variant="rect"
+                        width="45%"
+                        height={40}
+                        style={{ marginBottom: '1rem' }}
+                      />{' '}
+                      <Skeleton
+                        animation="wave"
+                        variant="rect"
+                        width="100%"
+                        height={50}
+                        style={{ marginBottom: '1rem' }}
+                      />
+                      <Skeleton
+                        animation="wave"
+                        variant="rect"
+                        width="100%"
+                        height={50}
+                        style={{ marginBottom: '1rem' }}
+                      />{' '}
+                      <Skeleton
+                        animation="wave"
+                        variant="rect"
+                        width="100%"
+                        height={50}
+                        style={{ marginBottom: '1rem' }}
+                      />
+                      <Skeleton
+                        animation="wave"
+                        variant="rect"
+                        width="100%"
+                        height={50}
+                        style={{ marginBottom: '1rem' }}
+                      />
+                    </Grid>
+                    ) : (
+                    <Grid container direction="row" justify="center" alignItems="center">
+                      {formFieldInputs.map((value, index) => (
+                        <TextField
+                          key={value.id}
+                          {...value}
+                          error={!!error[value.name]}
+                          helperText={error[value.name]}
+                          onChange={handleChange}
+                          value={values[value.name]}
+                        >
+                          {selectInputs.map((value) => (
+                            <MenuItem key={value.label} {...value}>
+                              {value.value}
+                            </MenuItem>
+                          ))}
+                        </TextField>
+                      ))}
+                    </Grid>
+                  )}
                 </div>
                 <Button
                   className={classes.submitBtn}
