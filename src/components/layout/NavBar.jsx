@@ -17,7 +17,6 @@ function NavBar(props) {
   const [navbar, setNavbar] = React.useState(false)
 
   const changeNavbarBackground = () => {
-    // console.log(window.scrollY);
     if (window.scrollY >= 80) {
       setNavbar(true)
     } else {
