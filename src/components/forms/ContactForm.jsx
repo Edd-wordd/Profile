@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Typography, Paper, Grid, Container, TextField, Button, MenuItem } from '@material-ui/core'
 import { useStyles } from '../styles/forms/ContactForm.styles'
-import { Alert, AlertTitle, Skeleton, Snackbar } from '@mui/material'
+import { Alert, AlertTitle, Snackbar } from '@mui/material'
 
 const formFieldInputs = [
   {
@@ -141,7 +141,6 @@ function ContactForm(props) {
   const classes = useStyles(props)
   const [error, setError] = React.useState(false)
   const [alert, setAlert] = React.useState(false)
-  const [loading, setLoading] = React.useState(true)
   const [values, setValues] = React.useState({
     firstName: '',
     lastName: '',
@@ -155,7 +154,6 @@ function ContactForm(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-
     const data = new FormData(e.target)
     console.log(Object.fromEntries(data.entries()))
     if (validate()) {
@@ -171,7 +169,6 @@ function ContactForm(props) {
         startDate: '',
         whereDidYouHearAboutUs: '',
       })
-
       console.log('form is valid')
     }
   }
@@ -248,74 +245,20 @@ function ContactForm(props) {
                         Object.values(error).filter((err) => err !== '').length
                       } ${
                         Object.values(error).filter((err) => err !== '').length > 1
-                          ? 'fields'
-                          : 'field'
+                          ? 'fields! Please fill them out.'
+                          : 'field! Please fill it out.'
                       }`}
                     </Alert>
                   </Snackbar>
                 )}
                 <div>
-                  {loading && alert && <div>Loading...</div>}
-                  {/*{alert ? (*/}
-                  {/*  <Grid container direction="row" justify="space-between" alignItems="flex-start">*/}
-                  {/*    <Skeleton*/}
-                  {/*      animation="wave"*/}
-                  {/*      variant="rect"*/}
-                  {/*      width="45%"*/}
-                  {/*      height={40}*/}
-                  {/*      style={{ marginBottom: '1rem' }}*/}
-                  {/*    />*/}
-                  {/*    <Skeleton*/}
-                  {/*      animation="wave"*/}
-                  {/*      variant="rect"*/}
-                  {/*      width="45%"*/}
-                  {/*      height={40}*/}
-                  {/*      style={{ marginBottom: '1rem' }}*/}
-                  {/*    />{' '}*/}
-                  {/*    <Skeleton*/}
-                  {/*      animation="wave"*/}
-                  {/*      variant="rect"*/}
-                  {/*      width="45%"*/}
-                  {/*      height={40}*/}
-                  {/*      style={{ marginBottom: '1rem' }}*/}
-                  {/*    />*/}
-                  {/*    <Skeleton*/}
-                  {/*      animation="wave"*/}
-                  {/*      variant="rect"*/}
-                  {/*      width="45%"*/}
-                  {/*      height={40}*/}
-                  {/*      style={{ marginBottom: '1rem' }}*/}
-                  {/*    />{' '}*/}
-                  {/*    <Skeleton*/}
-                  {/*      animation="wave"*/}
-                  {/*      variant="rect"*/}
-                  {/*      width="100%"*/}
-                  {/*      height={50}*/}
-                  {/*      style={{ marginBottom: '1rem' }}*/}
-                  {/*    />*/}
-                  {/*    <Skeleton*/}
-                  {/*      animation="wave"*/}
-                  {/*      variant="rect"*/}
-                  {/*      width="100%"*/}
-                  {/*      height={50}*/}
-                  {/*      style={{ marginBottom: '1rem' }}*/}
-                  {/*    />{' '}*/}
-                  {/*    <Skeleton*/}
-                  {/*      animation="wave"*/}
-                  {/*      variant="rect"*/}
-                  {/*      width="100%"*/}
-                  {/*      height={50}*/}
-                  {/*      style={{ marginBottom: '1rem' }}*/}
-                  {/*    />*/}
-                  {/*    <Skeleton*/}
-                  {/*      animation="wave"*/}
-                  {/*      variant="rect"*/}
-                  {/*      width="100%"*/}
-                  {/*      height={50}*/}
-                  {/*      style={{ marginBottom: '1rem' }}*/}
-                  {/*    />*/}
-                  {/*  </Grid>*/}
-                  {/*) : (*/}
+                  {alert && (
+                    <Alert onClose={() => setAlert(false)} severity="success">
+                      <AlertTitle>Success</AlertTitle>
+                      Your form has been sent Successfully!
+                      <strong>Thank you!</strong>
+                    </Alert>
+                  )}
                   <Grid container direction="row" justify="center" alignItems="center">
                     {formFieldInputs.map((value, index) => (
                       <TextField
@@ -334,7 +277,6 @@ function ContactForm(props) {
                       </TextField>
                     ))}
                   </Grid>
-                  {/*)}*/}
                 </div>
                 <Button
                   className={classes.submitBtn}

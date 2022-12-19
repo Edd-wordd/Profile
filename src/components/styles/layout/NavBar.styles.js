@@ -15,14 +15,12 @@ const useStyles = makeStyles(() => ({
   active: {
     backgroundColor: mainTheme.palette.defaultDark.main,
     margin: '-2rem -.5rem',
-    borderBottom: `1px solid ${mainTheme.palette.defaultLight.main}`,
     position: 'fixed',
     height: '7rem',
     width: '100%',
     zIndex: '999',
     transitionTimingFunction: 'ease-in',
     transition: '.5s',
-    // padding: '.5rem .5rem',
   },
   // Logo for desktop version
   mainLogo: {
@@ -57,7 +55,6 @@ const useStyles = makeStyles(() => ({
       backgroundColor: 'transparent',
       padding: '.15rem',
       textShadow: `1px 1px ${mainTheme.palette.primary_100.main}`,
-      boxShadow: `inset 0 -2px 0 0 ${mainTheme.palette.primary.main}`,
     },
   },
   btnDisplay: {
@@ -69,10 +66,10 @@ const useStyles = makeStyles(() => ({
   },
   // the selected tab on navbar
   selectedTab: {
-    borderBottom: `1px solid ${mainTheme.palette.primary.main}`,
     color: mainTheme.palette.primary_100.main,
     textShadow: `1px 1px ${mainTheme.palette.primary_100.main}`,
     marginBottom: '.5rem',
+    textDecoration: 'line-through',
   },
   hamIcon: {
     paddingTop: '2.75rem',
