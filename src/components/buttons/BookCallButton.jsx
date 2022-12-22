@@ -41,7 +41,6 @@ const textInputs = [
     InputLabelProps: {
       shrink: true,
     },
-
   },
   {
     id: '2003',
@@ -86,6 +85,7 @@ const textInputs = [
 export default function BookCallButton(props) {
   const classes = useStyles(props)
   const [open, setOpen] = React.useState(false)
+  const [errors, setErrors] = useState(false)
   const [loading, setLoading] = useState(false)
   const [show, setShow] = useState(false)
   const [form, setForm] = useState({
@@ -96,18 +96,42 @@ export default function BookCallButton(props) {
     companyName: '',
     userMessage: '',
   })
-
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    const data = new FormData(e.target)
+    console.log(Object.fromEntries(data.entries()))
+    if (validateForm) {
+      setErrors(false)
+      setForm({
+        firstName: '',
+        lastName: '',
+        phoneNumber: '',
+        email: '',
+        companyName: '',
+        userMessage: '',
+      })
+    }
+    console.log('form is valid')
+  }
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = (e) =>{
-    e.preventDefault()
-    console.log('submit')
-    const data = new FormData(e.target)
-    console.log(Object.fromEntries(data.entries()))
+  const validateForm = () => {
+    let invalidInputs = {}
+    invalidInputs.firstName = form.firstName ? '' : 'First Name is required'
+    invalidInputs.lastName = form.lastName ? '' : 'Last Name is required'
+    invalidInputs.phoneNumber = form.phoneNumber ? '' : 'Phone Number is required'
+    invalidInputs.email = form.email ? '' : 'Email is required'
+    invalidInputs.companyName = form.companyName ? '' : 'Company Name is required'
+    invalidInputs.userMessage = form.userMessage ? '' : 'Message is required'
+    setErrors({ ...invalidInputs })
+    console.log(invalidInputs)
+    console.log('edward')
+    return Object.values(invalidInputs).every((x) => x === '')
   }
+
   const LoadSpinner = () => {
     setLoading(true)
     setTimeout(() => {
@@ -116,7 +140,6 @@ export default function BookCallButton(props) {
     }, 700)
     handleOpen()
   }
-
   const handleOpen = () => {
     setOpen(true)
   }
@@ -155,14 +178,23 @@ export default function BookCallButton(props) {
                 <Typography className={classes.formHeader}>
                   Let's get your consultation call booked!
                 </Typography>
-                <form className={classes.form} noValidate autoComplete="off" onSubmit={handleSubmit}>
+                <form
+                  className={classes.form}
+                  noValidate
+                  autoComplete="off"
+                  onSubmit={handleSubmit}
+                >
                   {textInputs.map((value, index) => (
                     <TextField
-                      className={classes.textField}
                       key={value.id}
-                      onChange={handleChange}
                       {...value}
-                    />))}
+                      error={!!errors[value.name]}
+                      helperText={errors[value.name]}
+                      className={classes.textField}
+                      value={form[value.name]}
+                      onChange={handleChange}
+                    />
+                  ))}
                   <PopupButton
                     url="https://calendly.com/mona-tech"
                     text="Schedule time with us"

@@ -199,10 +199,8 @@ function ContactForm(props) {
     errors.startDate = values.startDate ? '' : 'Please enter a start date for your project'
     errors.whereDidYouHearAboutUs = values.whereDidYouHearAboutUs ? '' : 'Please select a source'
     setError({ ...errors })
-
     return Object.values(errors).every((errValues) => errValues === '')
   }
-
   return (
     <div className={classes.root}>
       <Container maxWidth="xl">
