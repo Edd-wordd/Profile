@@ -22,78 +22,78 @@ function Footer(props) {
       <Grid
         container
         direction="row"
-        justify="space-between"
+        justify="space-evenly"
         alignItems="center"
         className={classes.wrapper}
       >
         {/* Services Link Section */}
-        <Grid item>
-          <Paper className={classes.boxes}>
-            <Typography variant="h6">Services</Typography>
-            {servicesFooterLinks.map((link, index) => (
-              <Typography key={index} variant="subtitle1">
-                <Link className={classes.links} href={link.path}>
-                  {link.label}
-                </Link>
-              </Typography>
-            ))}
-          </Paper>
-        </Grid>
-        <Grid>
-          <Paper className={classes.box1}>
-            <Typography variant="h6">Company Info:</Typography>
-            <Typography>
-              Phone:
-              <Link className={classes.links} href="tel:9158671023">
-                +1 (999) 811-1003
+        {/*<Grid>*/}
+        <Paper className={classes.boxes}>
+          <Typography variant="h6">Services</Typography>
+          {servicesFooterLinks.map((link, index) => (
+            <Typography key={index} variant="subtitle1">
+              <Link className={classes.links} href={link.path}>
+                {link.label}
               </Link>
             </Typography>
-            <Typography>
-              Email:
-              <Link
-                className={classes.links}
-                href="mailto:edd_wordd@icloud.com?subject=Mona Tech General Inquries"
-              >
-                &nbsp;info@monatech.com
-              </Link>
-            </Typography>
-            <Typography>Las Vegas, Nevada U.S.A</Typography>
-            <Link href="/contact">
-              <Button
-                variant="contained"
-                className={classes.button}
-                startIcon={<ComputerIcon />}
-                size="large"
-              >
-                Get a Quote w!
-              </Button>
+          ))}
+        </Paper>
+        {/*</Grid>*/}
+        {/*<Grid>*/}
+        <Paper className={classes.box1}>
+          <Typography variant="h6">Company Info:</Typography>
+          <Typography>
+            Phone:
+            <Link className={classes.links} href="tel:9158671023">
+              +1 (999) 811-1003
             </Link>
-            <Typography variant="h6">Connect With Us: </Typography>
-            <Link className={classes.links} href="https://www.facebook.com" target="_blank">
-              <FacebookIcon className={classes.icons} />
+          </Typography>
+          <Typography>
+            Email:
+            <Link
+              className={classes.links}
+              href="mailto:edd_wordd@icloud.com?subject=Mona Tech General Inquires"
+            >
+              &nbsp;info@monatech.com
             </Link>
-            <Link className={classes.links} href="https://www.linkedin.com/" target="_blank">
-              <LinkedInIcon className={classes.icons} />
-            </Link>
-            <Link className={classes.links} href="https://www.instagram.com" target="_blank">
-              <InstagramIcon className={classes.icons} />
-            </Link>
-            <Link className={classes.links} href="https://www.twitter.com" target="_blank">
-              <TwitterIcon className={classes.icons} />
-            </Link>
-          </Paper>
-        </Grid>
-        {/* Footer Logo */}
-        <Grid item>
-          <Link href="/">
-            <img
-              src="../../../public/assets/black.png"
-              alt="mona-tech-logo"
-              className={classes.mainLogo}
-            />
+          </Typography>
+          <Typography>Las Vegas, Nevada U.S.A</Typography>
+          <Link href="/contact">
+            <Button
+              variant="contained"
+              className={classes.button}
+              startIcon={<ComputerIcon />}
+              size="large"
+            >
+              Let's get started
+            </Button>
           </Link>
-        </Grid>
+          <Typography variant="h6">Connect With Us: </Typography>
+          <Link className={classes.links} href="https://www.facebook.com" target="_blank">
+            <FacebookIcon className={classes.icons} />
+          </Link>
+          <Link className={classes.links} href="https://www.linkedin.com/" target="_blank">
+            <LinkedInIcon className={classes.icons} />
+          </Link>
+          <Link className={classes.links} href="https://www.instagram.com" target="_blank">
+            <InstagramIcon className={classes.icons} />
+          </Link>
+          <Link className={classes.links} href="https://www.twitter.com" target="_blank">
+            <TwitterIcon className={classes.icons} />
+          </Link>
+        </Paper>
+        {/*</Grid>*/}
+        {/* Footer Logo */}
+        {/*<Grid item>*/}
+        <Link href="/">
+          <img
+            src="../../../public/assets/black.png"
+            alt="mona-tech-logo"
+            className={classes.mainLogo}
+          />
+        </Link>
       </Grid>
+      {/*</Grid>*/}
       {/* Copyright Section */}
       <Grid container item direction="row" justify="center">
         <span className={classes.line}></span>
@@ -109,8 +109,9 @@ function Footer(props) {
         </Hidden>
         <Grid>
           <Typography>
-            <Link href="/termsandcondition">Terms &#38; Conditions</Link> |{' '}
-            <Link href="/privacypolicy">Privacy Policy</Link>{' '}
+            <Link href="/privacypolicy" className={classes.copyrightLinks}>
+              Privacy Policy
+            </Link>{' '}
           </Typography>
         </Grid>
       </Grid>
