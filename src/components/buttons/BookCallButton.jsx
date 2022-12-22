@@ -195,7 +195,11 @@ export default function BookCallButton(props) {
                 {error && !alert && (
                   <Alert onClose={() => setError(false)} severity="error">
                     <AlertTitle>Error</AlertTitle>
-                    Please fill all the fields!
+                    {`You are missing ${Object.values(error).filter((err) => err !== '').length} ${
+                      Object.values(error).filter((err) => err !== '').length > 1
+                        ? 'fields! Please fill them out.'
+                        : 'field! Please fill it out.'
+                    }`}
                   </Alert>
                 )}
                 {alert && !error && (
