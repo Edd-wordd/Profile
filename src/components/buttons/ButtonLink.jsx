@@ -9,7 +9,7 @@ function ButtonLink(props) {
   return (
     <div>
       <Grid container direction="row" justify="center" className={classes.btnWrapper}>
-        <Link href={props.linkOne}>
+        <Link href={props.linkOne} className={classes.link}>
           <Button
             variant="contained"
             className={classes.button}
