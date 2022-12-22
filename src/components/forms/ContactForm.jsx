@@ -258,7 +258,7 @@ function ContactForm(props) {
                     </Alert>
                   )}
                   <Grid container direction="row" justify="center" alignItems="center">
-                    {formFieldInputs.map((value, index) => (
+                    {formFieldInputs.map((value) => (
                       <TextField
                         key={value.id}
                         {...value}
