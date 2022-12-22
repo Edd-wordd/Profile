@@ -9,7 +9,6 @@ import Contact from '../src/components/pages/Contact'
 import Home from '../src/components/pages/Home'
 import Footer from '../src/components/layout/Footer'
 import ServiceInfo from './components/sections/ServiceInfo'
-import TermsAndCondition from './components/pages/TermsAndCondition'
 import PrivacyPolicy from './components/pages/PrivacyPolicy'
 import NotFound from './components/sections/NotFound'
 
@@ -28,7 +27,6 @@ function App() {
       <div className={classes.root}>
         <Switch>
           {/* remember to put the home route last!!! */}
-          <Route exact path="/termsandcondition" component={TermsAndCondition} />
           <Route exact path="/privacypolicy" component={PrivacyPolicy} />
           <Route exact path="/portfolio" component={Portfolio} />
           <Route exact path="/about" component={AboutUs} />

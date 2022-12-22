@@ -5,7 +5,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: '#0f0c29',
     color: mainTheme.palette.defaultLight.main,
-    // backgroundColor: mainTheme.palette.defaultDark.main,
     width: '100%',
     height: 'auto',
   },
@@ -16,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   mainLogo: {
-    width: '65%',
+    width: '35%',
     height: 'auto',
     [theme.breakpoints.down('xs')]: {
       width: '100%',
@@ -27,19 +26,19 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '1.2rem',
     marginRight: '.75rem',
     marginBottom: '1rem',
-    width: '75%',
+    width: '85%',
     height: '1px',
-    // background: 'white',
     background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
   },
 
   boxes: {
-    width: '250px',
+    width: '500px',
     height: 'auto',
     backgroundColor: 'transparent',
     color: 'white',
     padding: theme.spacing(1),
     margin: theme.spacing(1),
+    fontWeight: 200,
   },
   box1: {
     width: '250px',
@@ -73,9 +72,16 @@ const useStyles = makeStyles((theme) => ({
   links: {
     textDecoration: 'none',
     color: mainTheme.palette.defaultLight.main,
+    fontWeight: 'lighter',
+    fontFamily: 'Open Sans Condensed',
+    letterSpacing: '1px',
   },
   copyright: {
-    padding: '0 0 1.5rem 0',
+    padding: '0 0 1rem 0',
+  },
+  copyrightLinks: {
+    textDecoration: 'none',
+    color: mainTheme.palette.defaultLight.main,
   },
 }))
 export { useStyles }
