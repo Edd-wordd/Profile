@@ -21,7 +21,8 @@ const useStyles = makeStyles(() => ({
     zIndex: '999',
     transitionTimingFunction: 'ease-in',
     transition: '.5s',
-  },
+
+    },
   // Logo for desktop version
   mainLogo: {
     width: '6em',
@@ -53,7 +54,6 @@ const useStyles = makeStyles(() => ({
     '&:hover': {
       color: mainTheme.palette.primary_100.main,
       backgroundColor: 'transparent',
-      padding: '.15rem',
       textShadow: `1px 1px ${mainTheme.palette.primary_100.main}`,
     },
   },
@@ -70,6 +70,9 @@ const useStyles = makeStyles(() => ({
     textShadow: `1px 1px ${mainTheme.palette.primary_100.main}`,
     marginBottom: '.5rem',
     textDecoration: 'line-through',
+    "&:hover": {
+      textDecoration: 'line-through',
+    },
   },
   hamIcon: {
     paddingTop: '2.75rem',
