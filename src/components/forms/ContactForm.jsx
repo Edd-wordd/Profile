@@ -287,6 +287,7 @@ function ContactForm(props) {
                 >
                   SUBMIT
                 </Button>
+
               </form>
             </Paper>
           </Grid>
