@@ -180,6 +180,14 @@ function ContactForm(props) {
     })
   }
 
+  const checkPreviousDate = (date) => {
+    const today = new Date()
+    const selectedDate = new Date(date)
+    return selectedDate >= today
+
+  }
+checkPreviousDate(values.startDate)
+
   const validate = () => {
     const emailRegex = '^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$'
     const phoneRegex = '^[0-9]{10}$'
@@ -196,7 +204,7 @@ function ContactForm(props) {
     errors.email = values.email.trim().match(emailRegex) ? '' : 'Please enter valid email'
     errors.companyName = values.companyName.trim() ? '' : 'Please enter company name or url'
     errors.message = values.message ? '' : 'Please let us know how we can help you'
-    errors.startDate = values.startDate ? '' : 'Please enter a start date for your project'
+    errors.startDate = checkPreviousDate(values.startDate) ? '' : 'Please enter a start date for your project'
     errors.whereDidYouHearAboutUs = values.whereDidYouHearAboutUs ? '' : 'Please select a source'
     setError({ ...errors })
     return Object.values(errors).every((errValues) => errValues === '')
