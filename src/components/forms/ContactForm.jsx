@@ -292,6 +292,7 @@ checkPreviousDate(values.startDate)
                   aria-label="large outlined button"
                   color="primary"
                   id="submit"
+                  disabled={alert || error}
                 >
                   SUBMIT
                 </Button>
