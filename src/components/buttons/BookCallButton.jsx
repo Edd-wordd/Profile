@@ -238,6 +238,7 @@ export default function BookCallButton(props) {
                     color="primary"
                     aria-label="submit button"
                     type="submit"
+                    disabled={alert || error}
                   >
                     SUBMIT
                   </Button>
