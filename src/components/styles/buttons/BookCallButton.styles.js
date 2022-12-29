@@ -7,7 +7,9 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
     border: 'none',
+
   },
+
   bookBtn: {
     fontFamily: 'Open Sans Condensed',
     fontSize: 14,
@@ -26,11 +28,11 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     backgroundColor: theme.palette.background.paper,
-    boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 4, 3),
     width: '30%',
     borderRadius: '5px',
     zIndex: 1000,
+
   },
   form: {
     '& .MuiTextField-root': {
