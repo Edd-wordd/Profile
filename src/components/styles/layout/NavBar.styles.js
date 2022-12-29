@@ -11,6 +11,7 @@ const useStyles = makeStyles(() => ({
     backgroundColor: 'transparent',
     transitionTimingFunction: 'ease-in',
     transition: '.3s',
+
   },
   active: {
     backgroundColor: mainTheme.palette.defaultDark.main,
