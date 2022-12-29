@@ -1,8 +1,10 @@
 import React from 'react'
+import {useStyles} from "../styles/sections/NotFound.styles"
 
 const NotFound = () => {
+  const classes = useStyles()
   return (
-    <div>
+    <div className={classes.errorWrapper}>
       <h1>404</h1>
       <p>Page not found</p>
     </div>
