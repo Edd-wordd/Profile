@@ -39,6 +39,7 @@ const formFieldInputs = [
     name: 'phoneNumber',
     label: 'Phone Number',
     type: 'text',
+    placeholder: '( ___ ) - ___ - ____',
     variant: 'outlined',
     required: true,
     size: 'small',
