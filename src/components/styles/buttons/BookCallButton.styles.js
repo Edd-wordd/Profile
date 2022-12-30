@@ -7,7 +7,6 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
     border: 'none',
-
   },
 
   bookBtn: {
