@@ -62,7 +62,7 @@ const useStyles = makeStyles(() => ({
     display: 'grid',
     gridTemplateColumns: 'repeat(3, 1fr)',
     gridGap: '1rem',
-    padding: '2rem 0',
+    padding: '2rem 0 ',
     alignItems: 'center',
   },
   // the selected tab on navbar
