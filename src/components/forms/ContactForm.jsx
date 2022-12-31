@@ -2,6 +2,7 @@ import React from 'react'
 import { Typography, Paper, Grid, Container, TextField, Button, MenuItem } from '@material-ui/core'
 import { useStyles } from '../styles/forms/ContactForm.styles'
 import { Alert, AlertTitle, Snackbar } from '@mui/material'
+import {checkPreviousDate} from "../../utils";
 
 const formFieldInputs = [
   {
@@ -170,6 +171,7 @@ function ContactForm(props) {
         startDate: '',
         whereDidYouHearAboutUs: '',
       })
+
       console.log('form is valid')
     }
   }
@@ -180,15 +182,6 @@ function ContactForm(props) {
       [e.target.name]: e.target.value,
     })
   }
-
-  const checkPreviousDate = (date) => {
-    const today = new Date()
-    const selectedDate = new Date(date)
-    return selectedDate >= today
-
-  }
-checkPreviousDate(values.startDate)
-
   const validate = () => {
     const emailRegex = '^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$'
     const phoneRegex = '^[0-9]{10}$'
