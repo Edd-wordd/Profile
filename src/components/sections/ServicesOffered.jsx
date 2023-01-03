@@ -49,13 +49,14 @@ const services = [
   },
 ]
 
+
 function ServicesOffered(props) {
   const classes = useStyles(props)
   let display = ''
-
   return (
     <>
       <Container maxWidth="xl">
+
         {services.map((service, index) => (
           <div key={index}>
             <Grid
@@ -86,7 +87,6 @@ function ServicesOffered(props) {
                 </Typography>
                 <div className={classes.line} />
                 <Typography className={classes.servicePara}>{service.serviceDetails}</Typography>
-
                 <Grid
                   container
                   direction="column"
