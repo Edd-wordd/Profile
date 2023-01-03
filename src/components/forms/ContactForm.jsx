@@ -171,7 +171,6 @@ function ContactForm(props) {
         startDate: '',
         whereDidYouHearAboutUs: '',
       })
-
       console.log('form is valid')
     }
   }
