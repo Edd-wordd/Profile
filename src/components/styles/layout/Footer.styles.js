@@ -73,7 +73,6 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: 'none',
     color: mainTheme.palette.defaultLight.main,
     fontWeight: 'lighter',
-    fontFamily: 'Open Sans Condensed',
     letterSpacing: '1px',
   },
   copyright: {

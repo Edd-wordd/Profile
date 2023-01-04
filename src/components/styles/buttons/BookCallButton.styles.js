@@ -10,7 +10,6 @@ const useStyles = makeStyles((theme) => ({
   },
 
   bookBtn: {
-    fontFamily: 'Open Sans Condensed',
     fontSize: 14,
     fontWeight: 800,
     width: 300,
