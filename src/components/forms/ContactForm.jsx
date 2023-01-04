@@ -160,9 +160,7 @@ function ContactForm(props) {
     const data = new FormData(e.target)
     data.append('timeStamp', new Date())
     console.log(Object.fromEntries(data.entries()))
-    // timestamp for when the form was submitted
     if (validate()) {
-      // console.log(timestamp)
       setAlert(true)
       setError(false)
       setValue({

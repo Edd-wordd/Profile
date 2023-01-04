@@ -43,7 +43,6 @@ const useStyles = makeStyles(() => ({
   },
   // style for the tabs (links on the navbar)
   tab: {
-    fontFamily: 'Open Sans Condensed',
     fontSize: 14,
     fontWeight: 800,
     borderRadius: 0,

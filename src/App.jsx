@@ -11,6 +11,8 @@ import Footer from '../src/components/layout/Footer'
 import ServiceInfo from './components/sections/ServiceInfo'
 import PrivacyPolicy from './components/pages/PrivacyPolicy'
 import NotFound from './components/sections/NotFound'
+import { ThemeProvider } from '@material-ui/core/styles'
+import theme from './theme'
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -22,6 +24,7 @@ function App() {
   const classes = useStyles()
 
   return (
+    <ThemeProvider theme={theme}>
     <Router>
       <NavBar />
       <div className={classes.root}>
@@ -39,6 +42,7 @@ function App() {
         <Footer />
       </div>
     </Router>
+    </ThemeProvider>
   )
 }
 export default App
