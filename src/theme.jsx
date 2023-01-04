@@ -1,6 +1,66 @@
 import { createMuiTheme } from '@material-ui/core/styles'
 
 const mainTheme = createMuiTheme({
+  typography: {
+  body1:
+{
+  fontFamily:
+    "'Roboto Condensed', 'sans-serif'",
+},
+  body2:{
+  fontFamily:
+    "'Roboto Condensed', 'sans-serif'",
+  },
+    h1: {
+      fontFamily:
+        "'Roboto Condensed', 'sans-serif'",
+    },
+    h2: {
+      fontFamily:
+        "'Roboto Condensed', 'sans-serif'",
+    },
+    h3: {
+      fontFamily:
+        "'Roboto Condensed', 'sans-serif'",
+    },
+    h4: {
+      fontFamily:
+        "'Roboto Condensed', 'sans-serif'",
+    },
+    h5: {
+      fontFamily:
+        "'Roboto Condensed', 'sans-serif'",
+    },
+    h6: {
+      fontFamily:
+        "'Roboto Condensed', 'sans-serif'",
+    },
+    paragraph: {
+      fontFamily:
+        "'Roboto Condensed', 'sans-serif'",
+    },
+    subtitle1: {
+      fontFamily:
+        "'Roboto Condensed', 'sans-serif'",
+    },
+    subtitle2: {
+      fontFamily:
+        "'Roboto Condensed', 'sans-serif'",
+    },
+    button: {
+      fontFamily:
+        "'Roboto Condensed', 'sans-serif'",
+    },
+    caption: {
+      fontFamily:
+        "'Roboto Condensed', 'sans-serif'",
+    },
+    overline: {
+      fontFamily:
+        "'Roboto Condensed', 'sans-serif'",
+    },
+
+  },
   palette: {
     primary: {
       main: '#89023e', //Dark Pink
