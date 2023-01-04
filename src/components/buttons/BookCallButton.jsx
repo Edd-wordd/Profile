@@ -8,8 +8,8 @@ import { useStyles } from '../styles/buttons/BookCallButton.styles'
 const textInputs = [
   {
     id: '2000',
-    name: 'firstName',
-    label: 'First Name',
+    name: 'fullName',
+    label: 'Full Name',
     required: true,
     variant: 'outlined',
     size: 'small',
@@ -18,18 +18,18 @@ const textInputs = [
       shrink: true,
     },
   },
-  {
-    id: '2001',
-    name: 'lastName',
-    label: 'Last Name',
-    required: true,
-    variant: 'outlined',
-    size: 'small',
-    type: 'text',
-    InputLabelProps: {
-      shrink: true,
-    },
-  },
+  // {
+  //   id: '2001',
+  //   name: 'lastName',
+  //   label: 'Last Name',
+  //   required: true,
+  //   variant: 'outlined',
+  //   size: 'small',
+  //   type: 'text',
+  //   InputLabelProps: {
+  //     shrink: true,
+  //   },
+  // },
   {
     id: '2002',
     name: 'phoneNumber',
