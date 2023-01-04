@@ -2,7 +2,7 @@ import React from 'react'
 import { Typography, Paper, Grid, Container, TextField, Button, MenuItem } from '@material-ui/core'
 import { useStyles } from '../styles/forms/ContactForm.styles'
 import { Alert, AlertTitle, Snackbar } from '@mui/material'
-import {checkPreviousDate} from "../../utils";
+import { checkPreviousDate } from "../../utils";
 
 const formFieldInputs = [
   {
@@ -289,7 +289,6 @@ function ContactForm(props) {
                 >
                   SUBMIT
                 </Button>
-
               </form>
             </Paper>
           </Grid>
