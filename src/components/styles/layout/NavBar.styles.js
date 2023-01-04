@@ -13,6 +13,7 @@ const useStyles = makeStyles(() => ({
     transition: '.3s',
 
   },
+
   active: {
     backgroundColor: mainTheme.palette.defaultDark.main,
     margin: '-2rem -.5rem',
@@ -45,7 +46,7 @@ const useStyles = makeStyles(() => ({
   tab: {
     fontSize: 14,
     fontWeight: 800,
-    borderRadius: 0,
+    // borderRadius: 0,
     padding: '1.5rem 0 1.5rem 0',
     color: mainTheme.palette.defaultLight.main,
     letterSpacing: '.3rem',
