@@ -7,8 +7,8 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
     border: 'none',
+    overflowY: 'hidden !important',
   },
-
   bookBtn: {
     fontSize: 14,
     fontWeight: 800,
