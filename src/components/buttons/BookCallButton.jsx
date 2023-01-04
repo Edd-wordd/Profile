@@ -35,6 +35,7 @@ const textInputs = [
     name: 'phoneNumber',
     label: 'Phone Number',
     required: true,
+    placeholder: '( ___ ) - ___ - ____',
     variant: 'outlined',
     size: 'small',
     type: 'text',

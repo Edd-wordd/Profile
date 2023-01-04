@@ -30,5 +30,4 @@ const mainTheme = createMuiTheme({
     },
   },
 })
-
 export default mainTheme
