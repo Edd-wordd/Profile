@@ -16,7 +16,6 @@ const useStyles = makeStyles(() => ({
   root: {
     margin: '-.5rem -.5rem',
   },
-
 }))
 
 function App() {
