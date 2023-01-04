@@ -118,6 +118,7 @@ const formFieldInputs = [
     fullWidth: true,
     select: true,
   },
+
 ]
 
 const selectInputs = [
@@ -143,7 +144,7 @@ function ContactForm(props) {
   const classes = useStyles(props)
   const [error, setError] = React.useState(false)
   const [alert, setAlert] = React.useState(false)
-  const [values, setValues] = React.useState({
+  const [value, setValue] = React.useState({
     firstName: '',
     lastName: '',
     phoneNumber: '',
@@ -157,11 +158,14 @@ function ContactForm(props) {
   const handleSubmit = (e) => {
     e.preventDefault()
     const data = new FormData(e.target)
+    data.append('timeStamp', new Date())
     console.log(Object.fromEntries(data.entries()))
+    // timestamp for when the form was submitted
     if (validate()) {
+      // console.log(timestamp)
       setAlert(true)
       setError(false)
-      setValues({
+      setValue({
         firstName: '',
         lastName: '',
         phoneNumber: '',
@@ -173,13 +177,16 @@ function ContactForm(props) {
       })
       console.log('form is valid')
     }
+
   }
 
+
   const handleChange = (e) => {
-    setValues({
-      ...values,
+    setValue({
+      ...value,
       [e.target.name]: e.target.value,
     })
+
   }
   const validate = () => {
     const emailRegex = '^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$'
@@ -187,18 +194,18 @@ function ContactForm(props) {
     const nameRegex = '^[a-zA-Z]{2,20}$'
 
     let errors = {}
-    errors.firstName = values.firstName.trim().match(nameRegex)
+    errors.firstName = value.firstName.trim().match(nameRegex)
       ? ''
       : 'Please enter your first name'
-    errors.lastName = values.lastName.trim().match(nameRegex) ? '' : 'Please enter your last name'
-    errors.phoneNumber = values.phoneNumber.trim().split('-').join('').match(phoneRegex)
+    errors.lastName = value.lastName.trim().match(nameRegex) ? '' : 'Please enter your last name'
+    errors.phoneNumber = value.phoneNumber.trim().split('-').join('').match(phoneRegex)
       ? ''
       : 'Please enter valid phone number'
-    errors.email = values.email.trim().match(emailRegex) ? '' : 'Please enter valid email'
-    errors.companyName = values.companyName.trim() ? '' : 'Please enter company name or url'
-    errors.message = values.message ? '' : 'Please let us know how we can help you'
-    errors.startDate = checkPreviousDate(values.startDate) ? '' : 'Please enter a start date for your project'
-    errors.whereDidYouHearAboutUs = values.whereDidYouHearAboutUs ? '' : 'Please select a source'
+    errors.email = value.email.trim().match(emailRegex) ? '' : 'Please enter valid email'
+    errors.companyName = value.companyName.trim() ? '' : 'Please enter company name or url'
+    errors.message = value.message ? '' : 'Please let us know how we can help you'
+    errors.startDate = checkPreviousDate(value.startDate) ? '' : 'Please enter a start date for your project'
+    errors.whereDidYouHearAboutUs = value.whereDidYouHearAboutUs ? '' : 'Please select a source'
     setError({ ...errors })
     return Object.values(errors).every((errValues) => errValues === '')
   }
@@ -259,14 +266,14 @@ function ContactForm(props) {
                     </Alert>
                   )}
                   <Grid container direction="row" justify="center" alignItems="center">
-                    {formFieldInputs.map((value) => (
+                    {formFieldInputs.map((values) => (
                       <TextField
-                        key={value.id}
-                        {...value}
-                        error={!!error[value.name]}
-                        helperText={error[value.name]}
+                        key={values.id}
+                        {...values}
+                        error={!!error[values.name]}
+                        helperText={error[values.name]}
                         onChange={handleChange}
-                        value={values[value.name]}
+                        value={value[values.name]}
                       >
                         {selectInputs.map((value) => (
                           <MenuItem key={value.label} {...value}>
