@@ -129,6 +129,7 @@ export default function BookCallButton(props) {
   const handleSubmit = (e) => {
     e.preventDefault()
     const data = new FormData(e.target)
+    data.append("timeStamp", new Date())
     console.log(Object.fromEntries(data.entries()))
     if (validateForm()) {
       setError(false)
