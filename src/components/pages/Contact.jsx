@@ -5,7 +5,6 @@ function Contact() {
   return (
     <>
       <ContactForm />
-      <GetInTouch />
     </>
   )
 }
