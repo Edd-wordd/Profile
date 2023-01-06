@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, Grid, Link } from '@material-ui/core'
-import ComputerIcon from '@material-ui/icons/Computer'
+import ArrowForward from '@material-ui/icons/ArrowForward'
 import { useStyles } from '../styles/buttons/ButtonLink.styles'
 
 function ButtonLink(props) {
@@ -8,12 +8,11 @@ function ButtonLink(props) {
 
   return (
     <div>
-      <Grid container direction="row" justify="center" className={classes.btnWrapper}>
-        <Link href={props.linkOne} className={classes.link}>
+      <Grid className={classes.btnWrapper}>
+        <Link href={props.linkOne}>
           <Button
-            variant="contained"
             className={classes.button}
-            startIcon={<ComputerIcon />}
+            endIcon={<ArrowForward />}
             size="large"
           >
             {props.btnOneText}

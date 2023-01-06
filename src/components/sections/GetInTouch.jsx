@@ -62,7 +62,7 @@ function GetInTouch(props) {
               alignItems="center"
               justify="center"
             >
-              <Typography variant="h4" align="center" className={classes.h1}>
+              <Typography variant="h4" align="center" className={classes.h4}>
                 When it comes to developing world class solutions for your business, you need an
                 expert. That’s where we come in.
               </Typography>
