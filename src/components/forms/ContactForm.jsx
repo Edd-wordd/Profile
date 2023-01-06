@@ -11,6 +11,7 @@ const formFieldInputs = [
     label: 'First Name',
     type: 'text',
     variant: 'outlined',
+    helperText: ' ',
     required: true,
     size: 'small',
     InputLabelProps: {
@@ -26,6 +27,7 @@ const formFieldInputs = [
     label: 'Last Name',
     type: 'text',
     variant: 'outlined',
+    helperText: ' ',
     required: true,
     InputLabelProps: {
       shrink: true,
@@ -42,6 +44,7 @@ const formFieldInputs = [
     type: 'text',
     placeholder: '( ___ ) - ___ - ____',
     variant: 'outlined',
+    helperText: ' ',
     required: true,
     size: 'small',
     InputLabelProps: {
@@ -57,6 +60,7 @@ const formFieldInputs = [
     label: 'Email',
     type: 'email',
     variant: 'outlined',
+    helperText: ' ',
     required: true,
     InputLabelProps: {
       shrink: true,
@@ -72,6 +76,7 @@ const formFieldInputs = [
     label: 'Company Name or URL',
     type: 'text',
     variant: 'outlined',
+    helperText: ' ',
     InputLabelProps: {
       shrink: true,
     },
@@ -83,6 +88,7 @@ const formFieldInputs = [
     name: 'message',
     label: 'How can we help you?',
     variant: 'outlined',
+    helperText: ' ',
     InputLabelProps: {
       shrink: true,
     },
@@ -111,6 +117,7 @@ const formFieldInputs = [
     name: 'whereDidYouHearAboutUs',
     label: 'How did you hear about us?',
     variant: 'outlined',
+    helperText: ' ',
     InputLabelProps: {
       shrink: true,
     },
@@ -269,9 +276,10 @@ function ContactForm(props) {
                         key={values.id}
                         {...values}
                         error={!!error[values.name]}
-                        helperText={error[values.name]}
+                        helperText={error[values.name] || ' '}
                         onChange={handleChange}
                         value={value[values.name]}
+                        className={classes.textField}
                       >
                         {selectInputs.map((value) => (
                           <MenuItem key={value.label} {...value}>
