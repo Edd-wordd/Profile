@@ -20,7 +20,9 @@ const useStyles = makeStyles((theme) => ({
       },
     },
   },
-
+  textField: {
+    marginBottom: theme.spacing(-1)
+  },
   formHeader: {
     borderBottom: '1.5px solid black',
     padding: '1.5rem 4.5rem',
@@ -85,13 +87,13 @@ const useStyles = makeStyles((theme) => ({
     color: mainTheme.palette.defaultLight.main,
     letterSpacing: '.15rem',
   },
-  companyCard: {
-    width: '250px',
-    height: 'auto',
-    margin: '0rem 5rem',
-    padding: theme.spacing(3),
-    background: 'linear-gradient(45deg,#CC95C0,#1FA2FF  , #12D8FA , #A6FFCB )',
-    border: 'none',
-  },
+  // companyCard: {
+  //   width: '250px',
+  //   height: 'auto',
+  //   margin: '0rem 5rem',
+  //   padding: theme.spacing(3),
+  //   background: 'linear-gradient(45deg,#CC95C0,#1FA2FF  , #12D8FA , #A6FFCB )',
+  //   border: 'none',
+  // },
 }))
 export { useStyles }
