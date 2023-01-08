@@ -72,7 +72,6 @@ function NavBar(props) {
         </Hidden>
         <Hidden mdDown>
           {/* larger menu */}
-          {/* <Container maxWidth="xl"> */}
           <Grid container>
             <Grid item sm={4} md={2} lg={2}>
               <Link href="/">
@@ -99,11 +98,9 @@ function NavBar(props) {
               })}
             </Grid>
             <Grid item sm={8} md={7} lg={3} className={classes.btnDisplay}>
-              {/*<Button className={classes.bookBtn}>Book a free Consultation call</Button>*/}
               <BookCallButton />
             </Grid>
           </Grid>
-          {/* </Container> */}
         </Hidden>
       </div>
     </>

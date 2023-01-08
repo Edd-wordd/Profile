@@ -1,24 +1,23 @@
 import { makeStyles } from '@material-ui/core/styles'
 import mainTheme from '../../../theme'
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     margin: '-1rem -.5rem',
     position: 'fixed',
     width: '100%',
-    height: '7.5rem',
+    height: theme.spacing(14),
     zIndex: '999',
     backgroundColor: 'transparent',
     transitionTimingFunction: 'ease-in',
     transition: '.3s',
-
   },
 
   active: {
     backgroundColor: mainTheme.palette.defaultDark.main,
     margin: '-2rem -.5rem',
     position: 'fixed',
-    height: '7rem',
+    height: theme.spacing(14),
     width: '100%',
     zIndex: '999',
     transitionTimingFunction: 'ease-in',
@@ -33,10 +32,10 @@ const useStyles = makeStyles(() => ({
   // Logo for mobile version
   mobileLogoImg: {
     margin: '1rem 0 .5rem  -.5rem',
-    height: '7rem',
+    height: theme.spacing(15)
   },
   mobileBtn: {
-    paddingBottom: '3rem',
+    paddingBottom: theme.spacing(2),
     marginTop: '-2.5rem',
     backgroundColor: mainTheme.palette.defaultDark.secondary,
     textAlign: 'center',
@@ -44,9 +43,8 @@ const useStyles = makeStyles(() => ({
   },
   // style for the tabs (links on the navbar)
   tab: {
-    fontSize: 14,
-    fontWeight: 800,
-    // borderRadius: 0,
+    fontSize: 16,
+    fontWeight: 500,
     padding: '1.5rem 0 1.5rem 0',
     color: mainTheme.palette.defaultLight.main,
     letterSpacing: '.3rem',
