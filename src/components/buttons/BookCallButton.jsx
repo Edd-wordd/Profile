@@ -17,19 +17,11 @@ const textInputs = [
     InputLabelProps: {
       shrink: true,
     },
+    style: {
+      width: '49%',
+      paddingRight: '1%',
+    },
   },
-  // {
-  //   id: '2001',
-  //   name: 'lastName',
-  //   label: 'Last Name',
-  //   required: true,
-  //   variant: 'outlined',
-  //   size: 'small',
-  //   type: 'text',
-  //   InputLabelProps: {
-  //     shrink: true,
-  //   },
-  // },
   {
     id: '2002',
     name: 'phoneNumber',
@@ -42,14 +34,19 @@ const textInputs = [
     InputLabelProps: {
       shrink: true,
     },
+    style: {
+      width: '49%',
+    },
   },
   {
     id: '2003',
     name: 'email',
     label: 'Email',
     required: true,
+    placeholder: 'email@email.com',
     variant: 'outlined',
     size: 'small',
+    fullWidth: true,
     type: 'email',
     InputLabelProps: {
       shrink: true,
@@ -58,9 +55,10 @@ const textInputs = [
   {
     id: '2004',
     name: 'companyName',
-    label: 'Company Name',
+    label: 'Company Name or URL',
     required: true,
     variant: 'outlined',
+    size: 'small',
     fullWidth: true,
     type: 'text',
     InputLabelProps: {
@@ -75,6 +73,7 @@ const textInputs = [
     multiline: true,
     rowsMax: 4,
     variant: 'outlined',
+    size: 'small',
     fullWidth: true,
     type: 'text',
     InputLabelProps: {
@@ -91,8 +90,7 @@ export default function BookCallButton(props) {
   const [show, setShow] = useState(false)
   const [alert, setAlert] = useState(false)
   const [formInput, setFormInput] = useState({
-    firstName: '',
-    lastName: '',
+    fullName: '',
     phoneNumber: '',
     email: '',
     companyName: '',
@@ -100,17 +98,14 @@ export default function BookCallButton(props) {
   })
 
   const validateForm = () => {
-    const emailRegex = '^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)*$'
-    const phoneRegex = '^[0-9]{10}$'
-    const nameRegex = '^[a-zA-Z]{2,20}$'
+    const phoneRegex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/
+    const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    const fullNameRegex = '^[a-zA-Z]{2,20} [a-zA-Z]{2,20}$'
 
     const invalidInputs = {}
-    invalidInputs.firstName = formInput.firstName.trim().match(nameRegex)
+    invalidInputs.fullName = formInput.fullName.trim().match(fullNameRegex)
       ? ''
-      : 'Please enter a valid first name!'
-    invalidInputs.lastName = formInput.lastName.trim().match(nameRegex)
-      ? ''
-      : 'Please enter a valid last name!'
+      : 'Please enter a valid full name!'
     invalidInputs.phoneNumber = formInput.phoneNumber.trim().match(phoneRegex)
       ? ''
       : 'Please enter a valid phone number!'
@@ -135,8 +130,7 @@ export default function BookCallButton(props) {
       setError(false)
       setAlert(true)
       setFormInput({
-        firstName: '',
-        lastName: '',
+        fullName: '',
         phoneNumber: '',
         email: '',
         companyName: '',
@@ -166,7 +160,7 @@ export default function BookCallButton(props) {
   return (
     <div>
       <button type="button" onClick={LoadSpinner} className={classes.bookBtn}>
-        Book a free Consultation Call
+        Book a free consultation call
       </button>
       {loading ? (
         <Backdrop open>
@@ -188,14 +182,8 @@ export default function BookCallButton(props) {
           >
             <Fade in={open}>
               <div className={classes.paper}>
-                <Button color="primary" onClick={handleClose} className={classes.closeBtn}>
-                  X
-                </Button>
-                <Typography className={classes.formHeader}>
-                  Lets get your consultation call booked!
-                </Typography>
                 {error && !alert && (
-                  <Alert onClose={() => setError(false)} severity="error">
+                  <Alert onClose={() => setError(false)} severity="error" className={classes.alert}>
                     <AlertTitle>Error</AlertTitle>
                     {`You are missing ${Object.values(error).filter((err) => err !== '').length} ${
                       Object.values(error).filter((err) => err !== '').length > 1
@@ -205,7 +193,7 @@ export default function BookCallButton(props) {
                   </Alert>
                 )}
                 {alert && !error && (
-                  <Alert onClose={() => setAlert(false)} severity="success">
+                  <Alert onClose={() => setAlert(false)} severity="success" className={classes.alert}>
                     <AlertTitle>Success</AlertTitle>
                     Your message has been sent!
                   </Alert>
@@ -221,7 +209,7 @@ export default function BookCallButton(props) {
                       key={value.id}
                       {...value}
                       error={!!error[value.name]}
-                      helperText={error[value.name]}
+                      helperText={ error[value.name] || " " }
                       className={classes.textField}
                       value={formInput[value.name]}
                       onChange={handleChange}
