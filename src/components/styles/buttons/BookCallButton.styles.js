@@ -10,17 +10,17 @@ const useStyles = makeStyles((theme) => ({
   },
   bookBtn: {
     fontSize: 14,
-    fontWeight: 800,
+    fontWeight: 500,
     width: 300,
     letterSpacing: '.15rem',
     backgroundColor: 'transparent',
     marginLeft: '3rem',
-    border: '1px solid #1FA2FF ',
+    border: '1px solid #89023e',
     color: mainTheme.palette.defaultLight.main,
     padding: '.75rem 1rem',
     borderRadius: '2rem',
     '&:hover': {
-      backgroundImage: `linear-gradient(#1FA2FF  20%,#12D8FA)`,
+      backgroundImage: `linear-gradient(#89023e  20%, #000)`,
     },
   },
   paper: {
