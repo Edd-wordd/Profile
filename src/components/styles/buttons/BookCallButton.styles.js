@@ -21,15 +21,22 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '2rem',
     '&:hover': {
       backgroundImage: `linear-gradient(#89023e  20%, #000)`,
+      cursor: 'pointer',
     },
   },
   paper: {
     backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(2, 4, 3),
-    width: '30%',
+    padding: theme.spacing(5, 4, 3),
+    width: '20%',
     borderRadius: '5px',
     zIndex: 1000,
-
+  },
+  alert:{
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    zIndex: 1000,
   },
   form: {
     '& .MuiTextField-root': {
@@ -40,7 +47,13 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   textField: {
-    paddingRight: theme.spacing(1),
+    '& .MuiInputBase-root': {
+      marginBottom: '-.35rem',
+    },
+    // paddingRight: theme.spacing(1),
+    [theme.breakpoints.down('xs')]: {
+      paddingRight: theme.spacing(0),
+    },
   },
   formHeader: {
     borderBottom: '1.5px solid black',
@@ -55,12 +68,10 @@ const useStyles = makeStyles((theme) => ({
   },
   spinner: {
     color: 'white',
-    // center the spinner on the page
     position: 'absolute',
     left: '50%',
     top: '50%',
     transform: 'translate(-50%, -50%)',
-    // move spinner down a bit
     marginTop: '25rem',
   },
   calendlyBtn: {
@@ -76,13 +87,7 @@ const useStyles = makeStyles((theme) => ({
       cursor: 'pointer',
     },
   },
-  closeBtn: {
-    color: 'grey',
-    cursor: 'pointer',
-    padding: '0 1rem',
-    display: 'inline-block',
-    float: 'right',
-  },
+
 }))
 
 export { useStyles }
