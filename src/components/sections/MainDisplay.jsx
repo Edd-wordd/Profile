@@ -47,7 +47,7 @@ function MainDisplay(props) {
                     <Button
                       variant="contained"
                       className={classes.button}
-                      startIcon={<ComputerIcon />}
+                      endIcon={<ComputerIcon />}
                       size="large"
                     >
                       {props.buttonOneText}
@@ -59,7 +59,7 @@ function MainDisplay(props) {
                     <Button
                       variant="contained"
                       className={classes.button}
-                      startIcon={<MobileFriendlyIcon />}
+                      endIcon={<MobileFriendlyIcon />}
                       size="large"
                     >
                       {props.buttonTwoText}

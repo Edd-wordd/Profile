@@ -4,7 +4,7 @@ import mainTheme from '../../../theme'
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
-    height: '850px',
+    height: '90vh',
     borderRadius: '0 0 15% 0',
     backgroundSize: 'cover',
     backgroundPosition: 'center center',
@@ -25,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: theme.spacing(7),
+    textShadow: '0 0 0.75em #000, 0 0 0.75em #000',
   },
   mainParagraph: {
     margin: '2.5em 0 5rem 0',
@@ -36,23 +37,23 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     margin: theme.spacing(1),
-    backgroundColor: '#FE6B8B', //light pink peach color
+    backgroundColor: mainTheme.palette.primary.main,
     color: mainTheme.palette.defaultLight.main,
-    minWidth: '300px',
+    minWidth: '200px',
     fontSize: theme.spacing(1.75),
     letterSpacing: theme.spacing(0.15),
     opacity: '85%',
     '&:hover': {
-      backgroundColor: '#FE6B8B',
+      backgroundColor: mainTheme.palette.primary.main,
       opacity: '100%',
     },
   },
-  //   Ipad view stylings
+  //   Ipad view styling
   titleWrapperMobileView: {
     paddingTop: theme.spacing(30),
   },
   mainTitleMobileView: {
-    fontWeight: 700,
+    fontWeight: 500,
     fontSize: theme.spacing(8),
     letterSpacing: theme.spacing(0.5),
     display: 'flex',
@@ -60,6 +61,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     color: mainTheme.palette.defaultLight.main,
     marginLeft: theme.spacing(3),
+
   },
   mainParagraphMobileView: {
     margin: '1.5em 0 5rem 0',
@@ -71,7 +73,7 @@ const useStyles = makeStyles((theme) => ({
   },
   buttonMobileView: {
     margin: theme.spacing(1),
-    backgroundColor: '#FE6B8B', //light pink peach color
+    backgroundColor: mainTheme.palette.primary.main, //light pink peach color
     color: mainTheme.palette.defaultLight.main,
     opacity: '85%',
   },
