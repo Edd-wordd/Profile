@@ -8,4 +8,10 @@ export function checkPreviousDate(date) {
 }
 
 
-
+export function handleChange(value, state) {
+  if (window.scrollY >= value) {
+    state(true)
+  } else {
+    state(false)
+  }
+}
