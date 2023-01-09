@@ -4,19 +4,23 @@ import Zoom from '@material-ui/core/Zoom'
 import { Transition } from 'react-transition-group'
 import { ButtonLink, SectionHeader } from '../index'
 import { useStyles } from '../styles/sections/WhoWeAre.styles'
+import { handleChange } from "../../utils";
 
 const coreValues = [
   {
+    id: 1000,
     coreTitle: 'Best Practices',
     coreValue:
       'We believe in high quality work, and keep our team members practicing the industry standards while developing new innovative ways.',
   },
   {
+    id: 1001,
     coreTitle: 'Industry Standards',
     coreValue:
       'We believe in high quality work, and keep our team members practicing the industry standards while developing new innovative ways.',
   },
   {
+    id: 1002,
     coreTitle: 'Culture',
     coreValue:
       'We believe in high quality work, and keep our team members practicing the industry standards while developing new innovative ways.',
@@ -27,14 +31,9 @@ function WhoWeAre(props) {
   const classes = useStyles(props)
   const [inProp, setInProp] = React.useState(false)
 
-  const handleChange = () => {
-    if (window.scrollY >= 400) {
-      setInProp(true)
-    } else {
-      setInProp(false)
-    }
-  }
-  window.addEventListener('scroll', handleChange)
+  window.addEventListener('scroll', function () {
+    handleChange(400, setInProp)
+  })
 
   return (
     <>
@@ -58,7 +57,7 @@ function WhoWeAre(props) {
       <Container maxWidth="xl">
         <Grid container direction="row" justify="space-evenly" alignItems="center">
           {coreValues.map((value, index) => (
-            <Transition in={setInProp} timeout={1000} key={index}>
+            <Transition in={setInProp} timeout={1000} key={value.id}>
               {(state) => (
                 <Zoom in={inProp} mountOnEnter unmountOnExit timeout={2000}>
                   <Paper variant="outlined" className={classes.boxes}>
