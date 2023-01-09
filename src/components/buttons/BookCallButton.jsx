@@ -108,7 +108,7 @@ export default function BookCallButton(props) {
       : 'Please enter a valid full name!'
     invalidInputs.phoneNumber = formInput.phoneNumber.trim().match(phoneRegex)
       ? ''
-      : 'Please enter a valid phone number!'
+      : 'Please enter a valid phone #!'
     invalidInputs.email = formInput.email.trim().match(emailRegex)
       ? ''
       : 'Please enter a valid email!'
