@@ -6,21 +6,25 @@ import { useStyles } from '../styles/sections/GetStarted.styles'
 
 const getStartedSteps = [
   {
+    id: 1000,
     title: '1. Call us!',
     description:
       'We believe in high quality work, and keep our team members practicing the industry standards while developing new innovative ways.',
   },
   {
+    id: 1001,
     title: '2. Discuss your Ideas!',
     description:
       'We believe in high quality work, and keep our team members practicing the industry standards while developing new innovative ways.',
   },
   {
+    id: 1002,
     title: '3. Plan your Design!',
     description:
       'We believe in high quality work, and keep our team members practicing the industry standards while developing new innovative ways.',
   },
   {
+    id: 1003,
     title: '4. Deploy your Website!',
     description:
       'We believe in high quality work, and keep our team members practicing the industry standards while developing new innovative ways.',
@@ -53,7 +57,7 @@ function GetStarted(props) {
       </Grid>
       <Grid container direction="row" justify="center" alignItems="center">
         {getStartedSteps.map((step, index) => (
-          <Paper variant="outlined" className={classes.boxes} key={index}>
+          <Paper variant="outlined" className={classes.boxes} key={step.id}>
             <Grid container direction="row" justify="center" alignItems="center">
               <Typography variant="subtitle1">{step.title}</Typography>
               <Typography paragraph variant="body1" style={{ color: '#808080' }}>
@@ -67,7 +71,7 @@ function GetStarted(props) {
         <Grid container direction="row" justify="center">
           <Typography paragraph variant="body1" style={{ color: '#808080' }}>
             'We believe in high quality work, and keep our team members practicing the industry
-            standards while developing new innovative ways.',
+            standards while developing new innovative ways'
           </Typography>
         </Grid>
       </Container>
