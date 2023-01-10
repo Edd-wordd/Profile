@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/core'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    width: 450,
+    width: theme.spacing(50),
     height: 'auto',
     margin: '4rem 2.5rem 8rem 0rem',
     [theme.breakpoints.down('sm')]: {
@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   media: {
-    height: 250,
+    height: theme.spacing(30),
   },
 }))
 
