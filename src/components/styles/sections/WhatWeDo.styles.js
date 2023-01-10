@@ -1,24 +1,9 @@
 import { makeStyles } from '@material-ui/core/styles'
-
+import mainTheme from "../../../theme";
 const useStyles = makeStyles((theme) => ({
-  root: {},
-  paragraphWrapper: { margin: '3rem 0' },
-  paraInfo: {
-    letterSpacing: theme.spacing(0.25),
-    lineHeight: theme.spacing(0.25),
-  },
-  boxes: {
-    width: '600px',
-    height: 'auto',
-    padding: theme.spacing(2),
-    margin: theme.spacing(1),
-    marginBottom: theme.spacing(3),
-    [theme.breakpoints.down('xs')]: {
-      width: '100%',
-    },
-  },
-  box1: {
-    width: '600px',
+  root: {paddingBottom: theme.spacing(5)},
+  leftSideInfoWrapper: {
+    width: theme.spacing(70),
     height: 'auto',
     border: 'none',
     padding: '5rem 1.5rem',
@@ -27,8 +12,8 @@ const useStyles = makeStyles((theme) => ({
       width: '100%',
     },
   },
-  box2: {
-    width: '600px',
+  coreValueSection: {
+    width: theme.spacing(75),
     height: 'auto',
     border: 'none',
     padding: '3rem 1.5rem',
@@ -37,18 +22,22 @@ const useStyles = makeStyles((theme) => ({
       width: '100%',
     },
   },
-
+  coreValueWrapper: { padding: '1rem 0rem 0rem 0rem' },
+  coreValue: {
+    fontWeight: 500,
+    fontSize: theme.spacing(2)
+  },
   icons: {
-    color: ' #FE6B8B',
-    width: '50px',
+    color: mainTheme.palette.primary_300.main,
+    width: theme.spacing(5),
     height: 'auto',
-    padding: '1rem 0rem 0rem 2rem',
+    padding: '1rem 1rem 0rem 2rem',
   },
-  bulletPoint: {
-    fontWeight: 700,
-    fontSize: '1.2rem',
+  bottomInfoWrapper: { marginBottom: '3rem' },
+  bottomInfo: {
+    letterSpacing: theme.spacing(0.05),
+    lineHeight: theme.spacing(0.20),
   },
-  coreValue: { padding: '1rem 0rem 0rem 0rem' },
 }))
 
 export { useStyles }
