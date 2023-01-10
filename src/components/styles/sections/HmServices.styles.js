@@ -7,10 +7,10 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(5),
   },
   sectionTitle: {
-      position: 'absolute',
+    position: 'absolute',
     paddingBottom: theme.spacing(7),
     marginBottom: theme.spacing(6),
-    background: '#0f0c29', //dark purple color
+    background: mainTheme.palette.secondary.main,
     color: mainTheme.palette.defaultLight.main,
     [theme.breakpoints.down('md')]: {
       marginBottom: theme.spacing(0),
@@ -30,9 +30,8 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
     height: 'auto',
     padding: '.75rem 1.5rem',
-    backgroundColor: '#ded5ef', // Light purple color
-    color: '#818181',
-
+    backgroundColor: mainTheme.palette.primary_300.main,
+    color: mainTheme.palette.charcoal.secondary,
     '&#card_0': {
       marginTop: theme.spacing(1),
       marginBottom: theme.spacing(5),
