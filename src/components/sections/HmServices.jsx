@@ -11,38 +11,43 @@ import GroupAddIcon from '@material-ui/icons/GroupAdd'
 import MultilineChartIcon from '@material-ui/icons/MultilineChart'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
 import { useStyles } from '../styles/sections/HmServices.styles'
+import { handleChange } from "../../utils";
 
-const icons = [MultilineChartIcon, ComputerIcon, DescriptionIcon]
-const icons2 = [PhoneIphoneIcon, ShoppingCartIcon, GroupAddIcon]
+const icons = [MultilineChartIcon, ComputerIcon, DescriptionIcon, PhoneIphoneIcon, ShoppingCartIcon, GroupAddIcon]
+
 const serviceCardsOne = [
   {
+    id: 2000,
     serviceTitle: 'SEO',
     serviceDetail:
       ' Lorem ipsum dolor, sit amet consectetur adipisicing elit.Placeat,facere, quasi animi rerum sed repellendus non ratione dignissimos consequuntur dolores?',
   },
   {
+    id: 2001,
     serviceTitle: 'Website Development',
     serviceDetail:
       ' Lorem ipsum dolor, sit amet consectetur adipisicing elit.Placeat,facere, quasi animi rerum sed repellendus non ratione dignissimos consequuntur dolores?',
   },
   {
+    id: 2002,
     serviceTitle: 'Content Writing',
     serviceDetail:
       ' Lorem ipsum dolor, sit amet consectetur adipisicing elit.Placeat,facere, quasi animi rerum sed repellendus non ratione dignissimos consequuntur dolores?',
   },
-]
-const serviceCardsTwo = [
   {
+    id: 2003,
     serviceTitle: 'Mobile App Development',
     serviceDetail:
       ' Lorem ipsum dolor, sit amet consectetur adipisicing elit.Placeat,facere, quasi animi rerum sed repellendus non ratione dignissimos consequuntur dolores?',
   },
   {
+    id: 2004,
     serviceTitle: 'eCommerce Development',
     serviceDetail:
       ' Lorem ipsum dolor, sit amet consectetur adipisicing elit.Placeat,facere, quasi animi rerum sed repellendus non ratione dignissimos consequuntur dolores?',
   },
   {
+    id: 2005,
     serviceTitle: 'Maintance & Support',
     serviceDetail:
       ' Lorem ipsum dolor, sit amet consectetur adipisicing elit.Placeat,facere, quasi animi rerum sed repellendus non ratione dignissimos consequuntur dolores?',
@@ -52,14 +57,9 @@ function HmServices(props) {
   const classes = useStyles(props)
   const [inProp, setInProp] = React.useState(false)
 
-  const handleChange = () => {
-    if (window.scrollY >= 750) {
-      setInProp(true)
-    } else {
-      setInProp(false)
-    }
-  }
-  window.addEventListener('scroll', handleChange)
+  window.addEventListener('scroll', function() {
+    handleChange(750, setInProp)
+  })
 
   return (
     <div className={classes.root}>
@@ -68,23 +68,27 @@ function HmServices(props) {
         <Hidden smUp>
           <SectionHeader title="Our Services" subTitle="Let us Help build the Future!" />
         </Hidden>
-
         <Grid
           container
           direction="row"
           justify="center"
           alignItems="center"
-          className={classes.boxWrapper}
+          className={classes.cardWrapper}
         >
+          <Hidden xsDown>
+            <Grid container direction="row" justify="center" className={classes.sectionTitle}>
+              <SectionHeader title="Our Services" subTitle="Let us Help build the Future!" />
+            </Grid>
+          </Hidden>
           {serviceCardsOne.map((service, index) => {
             const Icon = icons[index]
             return (
-              <Transition in={setInProp} timeout={1000} key={index}>
+            <Transition in={setInProp} timeout={1000} key={service.id}>
                 {(state) => (
-                  <Slide direction="right" in={inProp} mountOnEnter unmountOnExit timeout={3000}>
-                    <Paper elevation={10} id={`box_${index}`} className={classes.boxes}>
+                  <Slide direction={index >= 0 && index <= 2 ? 'right' : 'left'} in={inProp} mountOnEnter unmountOnExit timeout={3000} >
+                    <Paper elevation={10} id={`card_${index}`} className={classes.cards} >
                       <Icon className={classes.icons} />
-                      <Typography variant="h5" className={classes.boxTitle}>
+                      <Typography variant="h5" className={classes.cardTitle}>
                         {service.serviceTitle}
                       </Typography>
                       <Typography paragraph>{service.serviceDetail}</Typography>
@@ -95,33 +99,7 @@ function HmServices(props) {
             )
           })}
         </Grid>
-        {/* Section Title shows on Ipads and up */}
-        <Hidden xsDown>
-          <Grid container direction="row" justify="center" className={classes.sectionTitle}>
-            <SectionHeader title="Our Services" subTitle="Let us Help build the Future!" />
-          </Grid>
-        </Hidden>
 
-        <Grid container direction="row" justify="center">
-          {serviceCardsTwo.map((service, index) => {
-            const Icon = icons2[index]
-            return (
-              <Transition in={setInProp} timeout={1000} key={index}>
-                {(state) => (
-                  <Slide direction="left" in={inProp} mountOnEnter unmountOnExit timeout={3000}>
-                    <Paper elevation={10} id={`boxes_${index}`} className={classes.boxes}>
-                      <Icon className={classes.icons} />
-                      <Typography variant="h5" className={classes.boxTitle}>
-                        {service.serviceTitle}
-                      </Typography>
-                      <Typography paragraph>{service.serviceDetail}</Typography>
-                    </Paper>
-                  </Slide>
-                )}
-              </Transition>
-            )
-          })}
-        </Grid>
       </Container>
     </div>
   )
