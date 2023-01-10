@@ -3,74 +3,46 @@ import { Container, Typography, Grid, Link, Paper, Slide } from '@material-ui/co
 import { SectionHeader } from '../index'
 import TypeIt from 'typeit-react'
 import CheckCircleIcon from '@material-ui/icons/CheckCircle'
-import { Transition } from 'react-transition-group'
 import { useStyles } from '../styles/sections/WhatWeDo.styles'
 
 const bulletPoints = [
   {
+    id: 2000,
     bulletpoint: 'Lorem, ipsum dolor sit amet consectetur edward is he',
     delay: 0,
   },
   {
+    id: 2001,
     bulletpoint: '2Lorem, ipsum dolor sit amet consectetur edward is he',
     delay: 600,
   },
   {
+    id: 2002,
     bulletpoint: '3Lorem, ipsum dolor sit amet consectetur edward is he',
     delay: 1200,
   },
   {
+    id: 2003,
     bulletpoint: '4Lorem, ipsum dolor sit amet consectetur edward is he',
     delay: 1800,
   },
   {
+    id: 2004,
     bulletpoint: '5Lorem, ipsum dolor sit amet consectetur edward is he',
     delay: 2400,
-  },
-]
-const servicePoints = [
-  {
-    title: 'reimagine',
-    details:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor adrerum possimus modi repudiandae',
-  },
-  {
-    title: 'reimagine',
-    details:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor adrerum possimus modi repudiandae',
-  },
-  {
-    title: 'reimagine',
-    details:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor adrerum possimus modi repudiandae',
-  },
-  {
-    title: 'reimagine',
-    details:
-      'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor adrerum possimus modi repudiandae',
   },
 ]
 
 function WhatWeDo(props) {
   const classes = useStyles(props)
-  const [inProp, setInProp] = React.useState(false)
 
-  const handleChange = () => {
-    if (window.scrollY >= 2500) {
-      setInProp(true)
-    } else {
-      setInProp(false)
-    }
-  }
-  window.addEventListener('scroll', handleChange)
   return (
     <>
       <SectionHeader title="Heres what We Do!" subTitle="See the difference" />
-
       <Grid container direction="row" justify="center">
         <Paper variant="outlined" className={classes.box1}>
           <Typography variant="subtitle1">
-            <b>THese little details make the diference</b>
+            <b>These little details make the difference</b>
           </Typography>
           <Typography paragraph variant="body1">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor ad rerum possimus modi
@@ -87,7 +59,7 @@ function WhatWeDo(props) {
         </Paper>
         <Paper variant="outlined" className={classes.box2}>
           {bulletPoints.map((value, index) => (
-            <Grid container direction="row" justify="flex-start" alignItems="center" key={index}>
+            <Grid container direction="row" justify="flex-start" alignItems="center" key={value.id}>
               <CheckCircleIcon className={classes.icons} />
               <Typography variant="body1" className={classes.coreValue}>
                 <TypeIt
@@ -119,24 +91,6 @@ function WhatWeDo(props) {
             </Typography>
           </Grid>
         </Container>
-
-        {servicePoints.map((service, index) => (
-          <Transition in={setInProp} timeout={2000} key={index}>
-            {(state) => (
-              <Slide in={inProp} timeout={2500} direction="up">
-                <Paper elevation={6} className={classes.boxes}>
-                  <Typography variant="subtitle1">
-                    <b>{service.title}</b>
-                  </Typography>
-                  <Typography paragraph variant="body1" className={classes.coreValue}>
-                    {service.details}
-                    <Link> Learn More</Link>
-                  </Typography>
-                </Paper>
-              </Slide>
-            )}
-          </Transition>
-        ))}
       </Grid>
     </>
   )
