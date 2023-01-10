@@ -18,7 +18,6 @@ function Home() {
       <WhoWeAre />
       <HmServices />
       <Questions />
-      <Resources />
       <GetStarted />
     </div>
   )
