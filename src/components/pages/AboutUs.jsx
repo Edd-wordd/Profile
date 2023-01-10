@@ -1,5 +1,5 @@
 import React from 'react'
-import { MainDisplay, MissionStatement, GetInTouch, WhatWeDo, Resources } from "../index";
+import { MainDisplay, MissionStatement, WhatWeDo, Resources } from "../index";
 
 function AboutUs() {
   return (
@@ -14,7 +14,6 @@ function AboutUs() {
       <WhatWeDo />
       <MissionStatement />
       <Resources />
-      <GetInTouch />
     </>
   )
 }

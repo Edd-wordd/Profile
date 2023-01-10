@@ -12,9 +12,8 @@ const useStyles = makeStyles((theme) => ({
     transitionTimingFunction: 'ease-in',
     transition: '.3s',
   },
-
   active: {
-    backgroundColor: mainTheme.palette.defaultDark.main,
+    backgroundColor: mainTheme.palette.defaultDark.secondary,
     margin: '-2rem -.5rem',
     position: 'fixed',
     height: theme.spacing(14),
@@ -22,7 +21,6 @@ const useStyles = makeStyles((theme) => ({
     zIndex: '999',
     transitionTimingFunction: 'ease-in',
     transition: '.5s',
-
     },
   // Logo for desktop version
   mainLogo: {
@@ -51,9 +49,9 @@ const useStyles = makeStyles((theme) => ({
     transitionTimingFunction: 'ease-in',
     transition: '.5s',
     '&:hover': {
-      color: mainTheme.palette.primary_100.main,
+      color: mainTheme.palette.primary_300.main,
       backgroundColor: 'transparent',
-      textShadow: `1px 1px ${mainTheme.palette.primary_100.main}`,
+      textShadow: `1px 1px ${mainTheme.palette.primary_300.main}`,
     },
   },
   btnDisplay: {
@@ -65,8 +63,8 @@ const useStyles = makeStyles((theme) => ({
   },
   // the selected tab on navbar
   selectedTab: {
-    color: mainTheme.palette.primary_100.main,
-    textShadow: `1px 1px ${mainTheme.palette.primary_100.main}`,
+    color: mainTheme.palette.primary_300.main,
+    textShadow: `1px 1px ${mainTheme.palette.primary_300.main}`,
     marginBottom: '.5rem',
     textDecoration: 'line-through',
     "&:hover": {
