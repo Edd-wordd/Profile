@@ -67,6 +67,7 @@ const mainTheme = createMuiTheme({
     },
     primary_100: {
       main: '#ffd9da', // Light Pink
+      secondary: '#f4f1fa' //Light Purple
     },
     primary_300: {
       main: '#ded5ef', // light purple

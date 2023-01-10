@@ -1,18 +1,18 @@
 import { makeStyles } from '@material-ui/core/styles'
+import mainTheme from "../../../theme";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: '#f4f1fa', //light purple color
-    paddingBottom: '10px',
+    backgroundColor: mainTheme.palette.primary_100.secondary,//light purple color
+    paddingBottom: theme.spacing(5),
   },
-
   headingWrapper: {
     paddingTop: theme.spacing(3),
   },
   icons: {
     width: theme.spacing(6),
     height: 'auto',
-    color: '#616161', // light grey color
+    color: mainTheme.palette.charcoal.secondary, // light grey color
   },
   line: {
     width: theme.spacing(23),
@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     borderBottom: '3px dotted #c0c0c0',
   },
   boxes: {
-    width: '300px',
+    width: theme.spacing(37),
     height: 'auto',
     border: 'none',
     padding: theme.spacing(4),
