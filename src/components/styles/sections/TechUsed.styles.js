@@ -1,4 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles'
+import mainTheme from "../../../theme";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -26,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   icon: {
-    color: 'white',
+    color: mainTheme.palette.defaultLight.main,
     width: '125px',
     height: 'auto',
     padding: theme.spacing(4.5),
@@ -36,15 +37,15 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   iconTitle: {
-    color: 'white',
+    color: mainTheme.palette.defaultLight.main,
     fontSize: theme.spacing(4),
   },
   header: {
-    color: 'white',
+    color: mainTheme.palette.defaultLight.main,
     padding: '3rem 0rem 0rem 0rem',
   },
   headerWrapper: {
-    color: 'white',
+    color: mainTheme.palette.defaultLight.main,
     paddingBottom: theme.spacing(1),
   },
 }))
