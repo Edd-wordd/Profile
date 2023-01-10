@@ -6,6 +6,7 @@ import { useStyles } from '../styles/sections/ServicesOffered.styles'
 
 const services = [
   {
+    id: 5000,
     serviceId: 'content-writing',
     serviceImg: '../../public/assets/thom-bradley-ap8jsn3B9gI-unsplash.jpg',
     serviceOffered: 'Content Writing',
@@ -13,6 +14,7 @@ const services = [
       ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magnam pariatur consectetur, quidem quasi modi culpa delectus quisquam suscipit eveniet eius ratione vitae omni dolorum nam unde repellendus hic exercitationem.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis rem in earum beatae, maxime quod repellendus rerum voluptatem doloribus vero provident voluptatum reiciendis sed suscipit dignissimos ipsam commodi eveniet eos? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia maiores dolorem sequi consequatur eaque mollitia temporibus voluptas, a quisquam? Voluptate sunt veritatis corporis delectus nobis omnis eligendi accusamus ad est.',
   },
   {
+    id: 5001,
     serviceId: 'seo',
     serviceImg: '../../public/assets/lukas-blazek-mcSDtbWXUZU-unsplash.jpg',
     serviceOffered: 'SEO (Search Engine Optimization)',
@@ -20,6 +22,7 @@ const services = [
       ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magnam pariatur consectetur, quidem quasi modi culpa delectus quisquam suscipit eveniet eius ratione vitae omni dolorum nam unde repellendus hic exercitationem.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis rem in earum beatae, maxime quod repellendus rerum voluptatem doloribus vero provident voluptatum reiciendis sed suscipit dignissimos ipsam commodi eveniet eos? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia maiores dolorem sequi consequatur eaque mollitia temporibus voluptas, a quisquam? Voluptate sunt veritatis corporis delectus nobis omnis eligendi accusamus ad est.',
   },
   {
+    id: 5002,
     serviceId: 'mobile-app',
     serviceImg: '../../public/assets/phil-desforges-Hxp_xDXsOSs-unsplash.jpg',
     serviceOffered: 'Mobile App Development',
@@ -27,6 +30,7 @@ const services = [
       ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magnam pariatur consectetur, quidem quasi modi culpa delectus quisquam suscipit eveniet eius ratione vitae omni dolorum nam unde repellendus hic exercitationem.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis rem in earum beatae, maxime quod repellendus rerum voluptatem doloribus vero provident voluptatum reiciendis sed suscipit dignissimos ipsam commodi eveniet eos? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia maiores dolorem sequi consequatur eaque mollitia temporibus voluptas, a quisquam? Voluptate sunt veritatis corporis delectus nobis omnis eligendi accusamus ad est.',
   },
   {
+    id: 5003,
     serviceId: 'eCommerce',
     serviceImg: '../../public/assets/thom-bradley-ap8jsn3B9gI-unsplash.jpg',
     serviceOffered: 'eCommerce Website Development',
@@ -34,6 +38,7 @@ const services = [
       ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magnam pariatur consectetur, quidem quasi modi culpa delectus quisquam suscipit eveniet eius ratione vitae omni dolorum nam unde repellendus hic exercitationem.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis rem in earum beatae, maxime quod repellendus rerum voluptatem doloribus vero provident voluptatum reiciendis sed suscipit dignissimos ipsam commodi eveniet eos? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia maiores dolorem sequi consequatur eaque mollitia temporibus voluptas, a quisquam? Voluptate sunt veritatis corporis delectus nobis omnis eligendi accusamus ad est.',
   },
   {
+    id: 5004,
     serviceId: 'web-design',
     serviceImg: '../../public/assets/thom-bradley-ap8jsn3B9gI-unsplash.jpg',
     serviceOffered: 'Website Design & Development',
@@ -41,6 +46,7 @@ const services = [
       ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magnam pariatur consectetur, quidem quasi modi culpa delectus quisquam suscipit eveniet eius ratione vitae omni dolorum nam unde repellendus hic exercitationem.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis rem in earum beatae, maxime quod repellendus rerum voluptatem doloribus vero provident voluptatum reiciendis sed suscipit dignissimos ipsam commodi eveniet eos? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia maiores dolorem sequi consequatur eaque mollitia temporibus voluptas, a quisquam? Voluptate sunt veritatis corporis delectus nobis omnis eligendi accusamus ad est.',
   },
   {
+    id: 5005,
     serviceId: 'web-maintenance',
     serviceImg: '../../public/assets/thom-bradley-ap8jsn3B9gI-unsplash.jpg',
     serviceOffered: 'Website/App Maintenance & Support',
@@ -58,7 +64,7 @@ function ServicesOffered(props) {
       <Container maxWidth="xl">
 
         {services.map((service, index) => (
-          <div key={index}>
+          <div key={service.id}>
             <Grid
               container
               direction="row"
@@ -96,9 +102,9 @@ function ServicesOffered(props) {
                 >
                   <Link to={'/services/' + service.serviceId} className={classes.links}>
                     <Button
-                      className={classes.btn}
-                      startIcon={<MenuBookIcon />}
-                      variant="outlined"
+                      endIcon={<MenuBookIcon />}
+                      variant="contained"
+                      color="primary"
                       size="large"
                     >
                       Learn More
