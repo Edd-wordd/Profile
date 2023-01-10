@@ -31,7 +31,6 @@ const useStyles = makeStyles((theme) => ({
     height: '1px',
     background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
   },
-
   titles: {
     paddingBottom: theme.spacing(3),
     [theme.breakpoints.down('md')]: {
@@ -41,15 +40,10 @@ const useStyles = makeStyles((theme) => ({
   btnWrapper: {
     padding: theme.spacing(6),
   },
-  btn: {
-    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-    color: mainTheme.palette.defaultLight.main,
-    border: 'none',
-  },
   img: {
     width: '600px',
     height: 'auto',
-    borderRadius: '1%',
+    borderRadius: '5px',
     [theme.breakpoints.down('md')]: {
       width: '100%',
     },
@@ -57,8 +51,8 @@ const useStyles = makeStyles((theme) => ({
   servicePara: {
     width: '700px',
     height: 'auto',
-    color: '#808080', //light grey
-    letterSpacing: theme.spacing(0.25),
+    color: mainTheme.palette.charcoal.secondary,
+    letterSpacing: theme.spacing(0.20),
     [theme.breakpoints.down('md')]: {
       width: '100%',
     },
