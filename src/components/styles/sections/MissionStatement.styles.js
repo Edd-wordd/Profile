@@ -1,28 +1,17 @@
 import { makeStyles } from '@material-ui/core/styles'
-
+import mainTheme from "../../../theme";
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundImage: `url(https://images.unsplash.com/photo-1632386474725-138bbf6e3f41?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80)`,
-    backgroundColor: '#f4f1fa',
-    padding: '2rem 0rem',
-    backgroundPosition: 'center',
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-
-
-
+    backgroundColor: mainTheme.palette.primary_100.secondary,
+    padding: '2.5rem 0rem',
   },
   wrapper: {
     padding: '2rem 0rem',
   },
-  paper: {
-    padding: '2rem',
-    // backgroundColor: '#f4f1fa',
-  },
   icons: {
-    width: '50px',
+    width: theme.spacing(5),
     height: 'auto',
-    color: '#616161',
+    color: mainTheme.palette.charcoal.secondary,
   },
   missionStatement: {
     lineHeight: theme.spacing(0.25),
