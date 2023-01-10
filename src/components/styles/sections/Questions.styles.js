@@ -9,38 +9,17 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: 'cover',
     backgroundAttachment: 'fixed',
     backgroundPosition: 'center center',
+    paddingBottom: '5rem',
   },
   titleWrapper: {
     color: mainTheme.palette.defaultLight.main,
     padding: '2rem 0rem',
   },
-
-  smBoxWrapper: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    padding: '3rem 0rem',
-  },
-  smBoxes: {
-    width: '125px',
-    height: 'auto',
-    padding: theme.spacing(2),
-    margin: '3rem .5rem',
-    backgroundColor: 'rgba(255, 255, 255, 0.17)',
-    color: mainTheme.palette.defaultLight.main,
-    [theme.breakpoints.down('lg')]: {
-      margin: '3rem .17rem ',
-    },
-    [theme.breakpoints.down('xs')]: {
-      padding: theme.spacing(1.5),
-      margin: '3rem .5rem ',
-    },
-  },
   lgBoxes: {
-    border: `1px solid ${mainTheme.palette.defaultLight.main}`,
-    width: '550px',
+    width: theme.spacing(60),
     height: 'auto',
     margin: '1rem 1rem',
-    backgroundColor: 'rgba(255, 255, 255, 0.17)',
+    backgroundColor: 'rgba(255, 255, 255, 0.30)',
     padding: '.5rem 1rem ',
   },
   btmQuestion: {
@@ -53,15 +32,8 @@ const useStyles = makeStyles((theme) => ({
   para: {
     color: mainTheme.palette.defaultLight.main,
   },
-  icons: {
-    width: '100px',
-    height: 'auto',
-  },
-  smIcon: {
-    margin: '-.5rem 0rem',
-  },
   word: {
-    color: '#FE6B8B', // pinkish orange color
+    color: mainTheme.palette.primary.main,
     fontSize: theme.spacing(3),
     fontWeight: '600',
   },
@@ -70,10 +42,11 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: 'underline',
     padding: '.5rem .5rem',
     '&:hover': {
-      background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+      background: mainTheme.palette.primary.main,
+      opacity: '.7',
       transform: 'scale(1.05)',
       padding: '.5rem .5rem',
-      borderRadius: '5%',
+      borderRadius: '5px',
     },
   },
 }))
