@@ -39,8 +39,8 @@ function WhatWeDo(props) {
   return (
     <>
       <SectionHeader title="Heres what We Do!" subTitle="See the difference" />
-      <Grid container direction="row" justify="center">
-        <Paper variant="outlined" className={classes.box1}>
+      <Grid container direction="row" justify="center" className={classes.root}>
+        <Paper variant="outlined" className={classes.leftSideInfoWrapper}>
           <Typography variant="subtitle1">
             <b>These little details make the difference</b>
           </Typography>
@@ -57,13 +57,13 @@ function WhatWeDo(props) {
             repudiandae
           </Typography>
         </Paper>
-        <Paper variant="outlined" className={classes.box2}>
+        <Paper variant="outlined" className={classes.coreValueSection}>
           {bulletPoints.map((value, index) => (
             <Grid container direction="row" justify="flex-start" alignItems="center" key={value.id}>
               <CheckCircleIcon className={classes.icons} />
-              <Typography variant="body1" className={classes.coreValue}>
+              <Typography variant="body1" className={classes.coreValueWrapper}>
                 <TypeIt
-                  className={classes.bulletPoint}
+                  className={classes.coreValue}
                   options={{
                     strings: [`${value.bulletpoint}`],
                     speed: 125,
@@ -77,8 +77,8 @@ function WhatWeDo(props) {
           ))}
         </Paper>
         <Container maxWidth="lg">
-          <Grid className={classes.paragraphWrapper}>
-            <Typography paragraph variant="body1" className={classes.paraInfo}>
+          <Grid className={classes.bottomInfoWrapper}>
+            <Typography paragraph variant="body1" className={classes.bottomInfo}>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, officiis ea! Atque,
               ratione cumque. Fugiat earum eius doloribus quo repudiandae, maiores excepturi officia
               iusto consequuntur quis odio labore, commodi minima? Lorem ipsum dolor sit amet
