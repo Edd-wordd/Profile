@@ -69,10 +69,10 @@ const mainTheme = createMuiTheme({
       main: '#ffd9da', // Light Pink
     },
     primary_300: {
-      main: '#1D2B64', // light blue grey (timber-wolf)
+      main: '#ded5ef', // light purple
     },
     secondary: {
-      main: '#e8eddf', // really light blue-green (alabaster)
+      main: '#0f0c29', // dark purple
     },
     text: {
       primary: '#282623', // dark gray
@@ -84,9 +84,9 @@ const mainTheme = createMuiTheme({
     defaultLight: {
       main: '#f5f5f5', // white
     },
-
     charcoal: {
       main: '#333533', // charcoal color (jet)
+      secondary: '#818181', //light grey
     },
   },
 })
