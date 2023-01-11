@@ -1,5 +1,5 @@
 import React from 'react'
-import { Typography, Paper, Grid, Container, TextField, Button, MenuItem } from '@material-ui/core'
+import { Typography, Paper, Grid, Container, TextField, Button, MenuItem, Hidden } from "@material-ui/core";
 import { useStyles } from '../styles/forms/ContactForm.styles'
 import { Alert, AlertTitle, Snackbar } from '@mui/material'
 import { checkPreviousDate } from "../../utils";
@@ -166,7 +166,6 @@ function ContactForm(props) {
     e.preventDefault()
     const data = new FormData(e.target)
     data.append('timeStamp', new Date())
-    console.log(Object.fromEntries(data.entries()))
     if (validate()) {
       setAlert(true)
       setError(false)
@@ -180,9 +179,7 @@ function ContactForm(props) {
         startDate: '',
         whereDidYouHearAboutUs: '',
       })
-      console.log('form is valid')
     }
-
   }
 
 
@@ -191,7 +188,6 @@ function ContactForm(props) {
       ...value,
       [e.target.name]: e.target.value,
     })
-
   }
   const validate = () => {
     const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
@@ -223,20 +219,20 @@ function ContactForm(props) {
             direction="column"
             justify="center"
             alignItems="flex-start"
-            className={classes.info}
+            className={classes.leftSideInfoWrapper}
             item
             xl={6}
             lg={5}
             md={10}
             xs={12}
           >
-            <Typography variant="h1" className={classes.heading}>
+            <Typography variant="h1" className={classes.infoHeading}>
               Need to get in Touch?
             </Typography>
-            <Typography variant="h6" className={classes.message}>
+            <Typography variant="h6" className={classes.infoSubTitle}>
               Send Us A Message
             </Typography>
-            <Typography variant="body1" className={classes.paragraph}>
+            <Typography variant="body1" className={classes.infoParagraph}>
               Please complete the form below, click here to Book an Appointment, give us a call or
               click the message box on the lower right! Either way, we look forward to talking with
               you!
@@ -244,9 +240,6 @@ function ContactForm(props) {
           </Grid>
           <Grid item lg={5}>
             <Paper elevation={3} className={classes.formPaper}>
-              <Typography className={classes.formHeader}>
-                Please fill this form out! Let us know what we can do for you!
-              </Typography>
               <form className={classes.form} noValidate autoComplete="off" onSubmit={handleSubmit}>
                 {!alert && error && (
                   <Snackbar open={error} autoHideDuration={6000} onClose={() => setError(false)}>
@@ -263,13 +256,26 @@ function ContactForm(props) {
                   </Snackbar>
                 )}
                 <div>
+                  <Hidden smDown>
                   {alert && (
-                    <Alert onClose={() => setAlert(false)} severity="success">
+                    <Alert onClose={() => setAlert(false)} severity="success" className={classes.successAlert}>
                       <AlertTitle>Success</AlertTitle>
                       Your form has been sent Successfully!
                       <strong>Thank you!</strong>
                     </Alert>
                   )}
+                  </Hidden>
+                  <Hidden mdUp>
+                    {alert && (
+                      <Snackbar open={alert} autoHideDuration={6000} onClose={() => setAlert(false)} >
+                      <Alert onClose={() => setAlert(false)} severity="success"   >
+                        <AlertTitle>Success</AlertTitle>
+                        Your form has been sent Successfully!
+                        <strong>Thank you!</strong>
+                      </Alert>
+                    </Snackbar>
+                    )}
+                  </Hidden>
                   <Grid container direction="row" justify="center" alignItems="center">
                     {formFieldInputs.map((values) => (
                       <TextField
