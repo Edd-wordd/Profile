@@ -3,16 +3,16 @@ import mainTheme from '../../../theme'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundImage: `url(https://images.unsplash.com/photo-1616004655123-818cbd4b3143?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80)`,
+    backgroundImage: `url(https://images.unsplash.com/photo-1635742153653-479b2c8abd9a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80)`,
     width: '100%',
     height: 'auto',
     backgroundSize: 'cover',
     backgroundAttachment: 'fixed',
     backgroundPosition: 'center center',
-    padding: '20rem 0 5rem 0',
+    padding: '15rem 0 5rem 0',
   },
   mainContent: {
-    padding: '0 0 6rem 0',
+    paddingBottom: theme.spacing(10),
     [theme.breakpoints.down('sm')]: {
       padding: '0 0 1.5rem 0',
     },
@@ -28,12 +28,13 @@ const useStyles = makeStyles((theme) => ({
   pics: {
     minWidth: '600px',
     maxHeight: '400px',
-    borderRadius: theme.spacing(1),
+    borderRadius: '5px',
+    objectFit: 'cover',
     [theme.breakpoints.down('sm')]: {
       minWidth: '300px',
       minHeight: '300px',
       padding: '2.5rem 0',
-      borderRadius: theme.spacing(1),
+      borderRadius: '5px',
     },
   },
   mainDescription: {

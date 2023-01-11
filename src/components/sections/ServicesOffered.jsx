@@ -7,7 +7,7 @@ import { useStyles } from '../styles/sections/ServicesOffered.styles'
 const services = [
   {
     id: 5000,
-    serviceId: 'content-writing',
+    serviceName: 'content-writing',
     serviceImg: '../../public/assets/thom-bradley-ap8jsn3B9gI-unsplash.jpg',
     serviceOffered: 'Content Writing',
     serviceDetails:
@@ -15,7 +15,7 @@ const services = [
   },
   {
     id: 5001,
-    serviceId: 'seo',
+    serviceName: 'seo',
     serviceImg: '../../public/assets/lukas-blazek-mcSDtbWXUZU-unsplash.jpg',
     serviceOffered: 'SEO (Search Engine Optimization)',
     serviceDetails:
@@ -23,7 +23,7 @@ const services = [
   },
   {
     id: 5002,
-    serviceId: 'mobile-app',
+    serviceName: 'mobile-app',
     serviceImg: '../../public/assets/phil-desforges-Hxp_xDXsOSs-unsplash.jpg',
     serviceOffered: 'Mobile App Development',
     serviceDetails:
@@ -31,7 +31,7 @@ const services = [
   },
   {
     id: 5003,
-    serviceId: 'eCommerce',
+    serviceName: 'eCommerce',
     serviceImg: '../../public/assets/thom-bradley-ap8jsn3B9gI-unsplash.jpg',
     serviceOffered: 'eCommerce Website Development',
     serviceDetails:
@@ -39,7 +39,7 @@ const services = [
   },
   {
     id: 5004,
-    serviceId: 'web-design',
+    serviceName: 'web-design',
     serviceImg: '../../public/assets/thom-bradley-ap8jsn3B9gI-unsplash.jpg',
     serviceOffered: 'Website Design & Development',
     serviceDetails:
@@ -47,7 +47,7 @@ const services = [
   },
   {
     id: 5005,
-    serviceId: 'web-maintenance',
+    serviceName: 'web-maintenance',
     serviceImg: '../../public/assets/thom-bradley-ap8jsn3B9gI-unsplash.jpg',
     serviceOffered: 'Website/App Maintenance & Support',
     serviceDetails:
@@ -76,14 +76,14 @@ function ServicesOffered(props) {
               <Hidden mdDown>
                 <Grid>
                   <Box display={index % 2 === 0 ? (display = '') : (display = 'none')}>
-                    <img alt={service.serviceId} className={classes.img} src={service.serviceImg} />
+                    <img alt={service.serviceName} className={classes.img} src={service.serviceImg} />
                   </Box>
                 </Grid>
               </Hidden>
               <Hidden mdUp>
                 <Grid>
                   <Box display="">
-                    <img alt={service.serviceId} className={classes.img} src={service.serviceImg} />
+                    <img alt={service.serviceName} className={classes.img} src={service.serviceImg} />
                   </Box>
                 </Grid>
               </Hidden>
@@ -100,7 +100,7 @@ function ServicesOffered(props) {
                   alignItems="flex-end"
                   className={classes.btnWrapper}
                 >
-                  <Link to={'/services/' + service.serviceId} className={classes.links}>
+                  <Link to={'/services/' + service.serviceName} className={classes.links}>
                     <Button
                       endIcon={<MenuBookIcon />}
                       variant="contained"
@@ -115,7 +115,7 @@ function ServicesOffered(props) {
               <Hidden mdDown>
                 <Grid>
                   <Box display={index % 2 === 1 ? (display = '') : (display = 'none')}>
-                    <img alt={service.serviceId} className={classes.img} src={service.serviceImg} />
+                    <img alt={service.serviceName} className={classes.img} src={service.serviceImg} />
                   </Box>
                 </Grid>
               </Hidden>
