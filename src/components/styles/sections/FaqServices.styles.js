@@ -4,7 +4,7 @@ import mainTheme from '../../../theme'
 const useStyles = makeStyles((theme) => ({
   root: {},
   accordion: {
-    width: '600px',
+    width: '800px',
     backgroundColor: mainTheme.palette.defaultLight.main,
     [theme.breakpoints.down('sm')]: {
       width: '375px',
