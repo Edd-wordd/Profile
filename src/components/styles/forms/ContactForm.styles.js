@@ -11,6 +11,38 @@ const useStyles = makeStyles((theme) => ({
     backgroundPosition: 'center center',
     padding: '12rem 0rem 5rem 0rem',
   },
+  leftSideInfoWrapper: {
+    width: '35%',
+  },
+  infoHeading: {
+    color: mainTheme.palette.defaultLight.main,
+    fontSize: theme.spacing(6),
+    letterSpacing: '.15rem',
+    fontWeight: 600,
+    [theme.breakpoints.down('xs')]: {
+      fontSize: theme.spacing(3),
+    },
+  },
+  infoSubTitle: {
+    padding: '1.5rem 0rem 0rem 0rem',
+    color: mainTheme.palette.defaultLight.main,
+    letterSpacing: '.15rem',
+  },
+  infoParagraph: {
+    color: mainTheme.palette.defaultLight.main,
+    padding: '.25rem 5rem 1.5rem 0rem',
+    lineHeight: '1.5rem',
+    letterSpacing: '.15rem',
+  },
+  formPaper: {
+    padding: theme.spacing(4),
+    paddingTop: theme.spacing(6),
+    [theme.breakpoints.down('xs')]: {
+      padding: theme.spacing(1.5),
+      paddingBottom: theme.spacing(1),
+      paddingTop: theme.spacing(6),
+    },
+  },
   form: {
     '& .MuiTextField-root': {
       marginTop: theme.spacing(2),
@@ -21,30 +53,25 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   textField: {
-    marginBottom: theme.spacing(-1)
-  },
-  formHeader: {
-    borderBottom: '1.5px solid black',
-    padding: '1.5rem 4.5rem',
-  },
-  radio: {
-    paddingLeft: theme.spacing(4.5),
+    marginBottom: theme.spacing(-1),
     [theme.breakpoints.down('xs')]: {
-      paddingLeft: theme.spacing(1),
+      width: '100% !important',
     },
   },
-  selectInputWrapper: {
-    paddingLeft: theme.spacing(4),
-    margin: '1.5rem 0rem',
+  successAlert:{
+    width: '35%',
+    position: 'absolute',
+    top: '50%',
+    left: '70.5%',
+    transform: 'translate(-50%, -50%)',
+    zIndex: 1000,
     [theme.breakpoints.down('xs')]: {
-      padding: theme.spacing(1),
-    },
-  },
-  selectInput: {
-    width: '50%',
-    marginTop: theme.spacing(0.5),
-    [theme.breakpoints.down('xs')]: {
-      width: '100%',
+      width: '80%',
+      position: 'absolute',
+      top: '95%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)',
+      zIndex: 1000,
     },
   },
   submitBtn: {
@@ -54,46 +81,12 @@ const useStyles = makeStyles((theme) => ({
     justify: 'center',
     marginLeft: 'auto',
     [theme.breakpoints.down('xs')]: {
-      margin: '1rem 4.5rem',
+      margin: '1rem 0 4rem 5.5rem',
     },
   },
-  formPaper: {
-    padding: theme.spacing(4),
-    [theme.breakpoints.down('xs')]: {
-      padding: theme.spacing(1.5),
-      paddingBottom: theme.spacing(1),
-    },
-  },
-  heading: {
-    color: mainTheme.palette.defaultLight.main,
-    fontSize: theme.spacing(6),
-    letterSpacing: '.15rem',
-    fontWeight: 600,
-    [theme.breakpoints.down('xs')]: {
-      fontSize: theme.spacing(3),
-    },
-  },
-  paragraph: {
-    color: mainTheme.palette.defaultLight.main,
-    padding: '.25rem 5rem 1.5rem 0rem',
-    lineHeight: '1.5rem',
-    letterSpacing: '.15rem',
-  },
-  info: {
-    width: '35%',
-  },
-  message: {
-    padding: '1.5rem 0rem 0rem 0rem',
-    color: mainTheme.palette.defaultLight.main,
-    letterSpacing: '.15rem',
-  },
-  // companyCard: {
-  //   width: '250px',
-  //   height: 'auto',
-  //   margin: '0rem 5rem',
-  //   padding: theme.spacing(3),
-  //   background: 'linear-gradient(45deg,#CC95C0,#1FA2FF  , #12D8FA , #A6FFCB )',
-  //   border: 'none',
-  // },
+
+
+
+
 }))
 export { useStyles }
