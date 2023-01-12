@@ -1,21 +1,20 @@
 import { makeStyles } from '@material-ui/core'
-import mainTheme from '../../../theme'
 
 const useStyles = makeStyles((theme) => ({
-  root: {},
-  accordion: {
-    width: '800px',
-    backgroundColor: mainTheme.palette.defaultLight.main,
-    [theme.breakpoints.down('sm')]: {
-      width: '375px',
-    },
-  },
-  mainInfo: {
+  infoWrapper: {
     padding: '2rem 0rem',
   },
-  questionWrapper: {
+  accordionWrapper: {
     padding: '2rem 0rem 8rem 0rem',
   },
+  accordion: {
+    width: theme.spacing(100),
+    backgroundColor: theme.palette.defaultLight.main,
+    [theme.breakpoints.down('sm')]: {
+      width: theme.spacing(40),
+    },
+  },
+
 }))
 
 export { useStyles }
