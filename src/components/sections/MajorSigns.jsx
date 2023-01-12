@@ -22,13 +22,15 @@ const MajorSigns = (props) => {
           <Typography>{props.majorSignInfo}</Typography>
         </Grid>
         <Grid container direction="row" justify="center" alignItems="center">
-          <Grid lg={4} item>
+          <Grid >
             <Paper className={classes.paper}>
               <Typography variant="h5" className={classes.paperTitle}>
                 {props.majorTitle_1}
               </Typography>
               <Typography>{props.majorInfo_1}</Typography>
             </Paper>
+          </Grid>
+          <Grid >
             <Paper className={classes.paper}>
               <Typography variant="h5" className={classes.paperTitle}>
                 {props.majorTitle_2}
@@ -36,18 +38,15 @@ const MajorSigns = (props) => {
               <Typography>{props.majorInfo_2}</Typography>
             </Paper>
           </Grid>
-          <Hidden mdDown>
-            <Grid lg={4} item>
-              <img className={classes.image} alt="image3" src={props.majorImage} />
-            </Grid>
-          </Hidden>
-          <Grid lg={4} item>
+          <Grid >
             <Paper className={classes.paper}>
               <Typography variant="h5" className={classes.paperTitle}>
                 {props.majorTitle_3}
               </Typography>
               <Typography>{props.majorInfo_3}</Typography>
             </Paper>
+          </Grid>
+        <Grid>
             <Paper className={classes.paper}>
               <Typography variant="h5" className={classes.paperTitle}>
                 {props.majorTitle_4}
