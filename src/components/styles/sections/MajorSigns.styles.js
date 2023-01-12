@@ -14,27 +14,21 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   paper: {
-    padding: '1.5rem 1.5rem',
-    margin: theme.spacing(4),
-    color: theme.palette.text.secondary,
+    padding: '1.5rem 1rem',
+    margin: '1rem 1rem',
+    color: theme.palette.defaultLight.main,
+    backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    backdropFilter: 'blur(10px)',
     borderRadius: '5px',
+    width: theme.spacing(30),
     [theme.breakpoints.down('md')]: {
       margin: theme.spacing(1),
-    },
-  },
-  image: {
-    margin: theme.spacing(0.5),
-    borderRadius: '5px',
-    width: '400px',
-    height: '400px',
-    [theme.breakpoints.down('md')]: {
-      width: '100%',
     },
   },
   paperTitle: {
     fontSize: theme.spacing(3),
     fontWeight: 500,
-    color: theme.palette.text.primary,
+    color: theme.palette.defaultLight.main,
     marginBottom: theme.spacing(1),
     [theme.breakpoints.down('md')]: {
       fontSize: theme.spacing(2),
