@@ -55,7 +55,7 @@ function FaqServices(props) {
           direction="row"
           justify="center"
           alignItems="center"
-          className={classes.mainInfo}
+          className={classes.infoWrapper}
         >
           <Typography paragraph>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet veniam ipsum aliquid
@@ -71,7 +71,7 @@ function FaqServices(props) {
           direction="row"
           justify="space-evenly"
           alignItems="center"
-          className={classes.questionWrapper}
+          className={classes.accordionWrapper}
         >
           <Grid>
             {questions.map((question, index) => {
