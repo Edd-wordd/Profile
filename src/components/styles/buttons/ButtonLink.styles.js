@@ -1,5 +1,4 @@
 import { makeStyles } from '@material-ui/core'
-import mainTheme from '../../../theme'
 
 const useStyles = makeStyles((theme) => ({
   btnWrapper: {
@@ -8,25 +7,25 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'flex-end',
     paddingRight: theme.spacing(15),
     [theme.breakpoints.down('sm')]: {
-      display: "flex",
-      justifyContent: "center",
+      display: 'flex',
+      justifyContent: 'center',
       paddingRight: theme.spacing(0),
     },
   },
   button: {
-    background: "transparent",
-    color: mainTheme.palette.primary.main,
+    background: 'transparent',
+    color: theme.palette.primary.main,
     border: 'none',
     boxShadow: 'none',
     textDecoration: 'underline',
-    "&:hover": {
-      background: "transparent",
-      color: mainTheme.palette.primary.main,
+    '&:hover': {
+      background: 'transparent',
+      color: theme.palette.primary.main,
       border: 'none',
       boxShadow: 'none',
       textDecoration: 'underline',
-      fontSize: theme.spacing(2)
-    }
+      fontSize: theme.spacing(2),
+    },
   },
 }))
 

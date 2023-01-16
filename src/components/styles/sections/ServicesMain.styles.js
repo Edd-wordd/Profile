@@ -1,5 +1,4 @@
 import { makeStyles } from '@material-ui/core/styles'
-import mainTheme from "../../../theme";
 const useStyles = makeStyles((theme) => ({
   paragraphWrapper: { margin: '3rem 0' },
   paraInfo: {
@@ -15,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
       width: '100%',
     },
   },
-  coreValue: { color: mainTheme.palette.charcoal.secondary }, // light grey color
+  coreValue: { color: theme.palette.charcoal.secondary }, // light grey color
 }))
 
 export { useStyles }

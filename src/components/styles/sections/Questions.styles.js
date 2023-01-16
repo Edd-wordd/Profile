@@ -1,5 +1,4 @@
 import { makeStyles } from '@material-ui/core'
-import mainTheme from '../../../theme'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -12,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: '5rem',
   },
   titleWrapper: {
-    color: mainTheme.palette.defaultLight.main,
+    color: theme.palette.defaultLight.main,
     padding: '2rem 0rem',
   },
   lgBoxes: {
@@ -26,23 +25,23 @@ const useStyles = makeStyles((theme) => ({
     padding: '3rem 0rem 0rem 0rem',
   },
   question: {
-    color: mainTheme.palette.defaultLight.main,
+    color: theme.palette.defaultLight.main,
     fontWeight: 600,
   },
   para: {
-    color: mainTheme.palette.defaultLight.main,
+    color: theme.palette.defaultLight.main,
   },
   word: {
-    color: mainTheme.palette.primary.main,
+    color: theme.palette.primary.main,
     fontSize: theme.spacing(3),
     fontWeight: '600',
   },
   links: {
-    color: mainTheme.palette.defaultLight.main,
+    color: theme.palette.defaultLight.main,
     textDecoration: 'underline',
     padding: '.5rem .5rem',
     '&:hover': {
-      background: mainTheme.palette.primary.main,
+      background: theme.palette.primary.main,
       opacity: '.7',
       transform: 'scale(1.05)',
       padding: '.5rem .5rem',

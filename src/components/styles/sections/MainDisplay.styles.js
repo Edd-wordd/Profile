@@ -1,5 +1,4 @@
 import { makeStyles } from '@material-ui/core'
-import mainTheme from '../../../theme'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 500,
     fontSize: theme.spacing(8),
     letterSpacing: theme.spacing(0.5),
-    color: mainTheme.palette.defaultLight.main,
+    color: theme.palette.defaultLight.main,
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -33,18 +32,18 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    color: mainTheme.palette.defaultLight.main,
+    color: theme.palette.defaultLight.main,
   },
   button: {
     margin: theme.spacing(1),
-    backgroundColor: mainTheme.palette.primary.main,
-    color: mainTheme.palette.defaultLight.main,
+    backgroundColor: theme.palette.primary.main,
+    color: theme.palette.defaultLight.main,
     minWidth: '200px',
     fontSize: theme.spacing(1.75),
     letterSpacing: theme.spacing(0.15),
     opacity: '85%',
     '&:hover': {
-      backgroundColor: mainTheme.palette.primary.main,
+      backgroundColor: theme.palette.primary.main,
       opacity: '100%',
     },
   },
@@ -59,9 +58,8 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    color: mainTheme.palette.defaultLight.main,
+    color: theme.palette.defaultLight.main,
     marginLeft: theme.spacing(3),
-
   },
   mainParagraphMobileView: {
     margin: '1.5em 0 5rem 0',
@@ -69,12 +67,12 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    color: mainTheme.palette.defaultLight.main,
+    color: theme.palette.defaultLight.main,
   },
   buttonMobileView: {
     margin: theme.spacing(1),
-    backgroundColor: mainTheme.palette.primary.main, //light pink peach color
-    color: mainTheme.palette.defaultLight.main,
+    backgroundColor: theme.palette.primary.main, //light pink peach color
+    color: theme.palette.defaultLight.main,
     opacity: '85%',
   },
   buttonStyle: {
