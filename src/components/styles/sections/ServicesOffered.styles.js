@@ -1,5 +1,4 @@
 import { makeStyles } from '@material-ui/core/styles'
-import mainTheme from '../../../theme'
 
 const useStyles = makeStyles((theme) => ({
   titleWrapper: {
@@ -7,7 +6,7 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     paddingBottom: theme.spacing(2),
-    color: mainTheme.palette.charcoal.main,
+    color: theme.palette.charcoal.main,
   },
   subTitle: { marginTop: theme.spacing(2) },
   wrapper: {
@@ -51,8 +50,8 @@ const useStyles = makeStyles((theme) => ({
   servicePara: {
     width: '700px',
     height: 'auto',
-    color: mainTheme.palette.charcoal.secondary,
-    letterSpacing: theme.spacing(0.20),
+    color: theme.palette.charcoal.secondary,
+    letterSpacing: theme.spacing(0.2),
     [theme.breakpoints.down('md')]: {
       width: '100%',
     },

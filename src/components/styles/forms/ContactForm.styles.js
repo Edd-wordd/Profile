@@ -1,5 +1,4 @@
 import { makeStyles } from '@material-ui/core/styles'
-import mainTheme from '../../../theme'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -15,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     width: '35%',
   },
   infoHeading: {
-    color: mainTheme.palette.defaultLight.main,
+    color: theme.palette.defaultLight.main,
     fontSize: theme.spacing(6),
     letterSpacing: '.15rem',
     fontWeight: 600,
@@ -25,11 +24,11 @@ const useStyles = makeStyles((theme) => ({
   },
   infoSubTitle: {
     padding: '1.5rem 0rem 0rem 0rem',
-    color: mainTheme.palette.defaultLight.main,
+    color: theme.palette.defaultLight.main,
     letterSpacing: '.15rem',
   },
   infoParagraph: {
-    color: mainTheme.palette.defaultLight.main,
+    color: theme.palette.defaultLight.main,
     padding: '.25rem 5rem 1.5rem 0rem',
     lineHeight: '1.5rem',
     letterSpacing: '.15rem',
@@ -58,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
       width: '100% !important',
     },
   },
-  successAlert:{
+  successAlert: {
     width: '35%',
     position: 'absolute',
     top: '50%',
@@ -84,9 +83,5 @@ const useStyles = makeStyles((theme) => ({
       margin: '1rem 0 4rem 5.5rem',
     },
   },
-
-
-
-
 }))
 export { useStyles }
