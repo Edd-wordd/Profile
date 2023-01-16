@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: 'transparent',
     marginLeft: '3rem',
     border: '1px solid #89023e',
-    color: mainTheme.palette.defaultLight.main,
+    color: theme.palette.defaultLight.main,
     padding: '.75rem 1rem',
     borderRadius: '2rem',
     '&:hover': {
@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '5px',
     zIndex: 1000,
   },
-  alert:{
+  alert: {
     position: 'absolute',
     top: '50%',
     left: '50%',
@@ -87,7 +87,6 @@ const useStyles = makeStyles((theme) => ({
       cursor: 'pointer',
     },
   },
-
 }))
 
 export { useStyles }

@@ -1,10 +1,9 @@
 import { makeStyles } from '@material-ui/core/styles'
-import mainTheme from '../../../theme'
 
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: '#0f0c29',
-    color: mainTheme.palette.defaultLight.main,
+    color: theme.palette.defaultLight.main,
     width: '100%',
     height: 'auto',
   },
@@ -71,7 +70,7 @@ const useStyles = makeStyles((theme) => ({
   },
   links: {
     textDecoration: 'none',
-    color: mainTheme.palette.defaultLight.main,
+    color: theme.palette.defaultLight.main,
     fontWeight: 'lighter',
     letterSpacing: '1px',
   },
@@ -80,7 +79,7 @@ const useStyles = makeStyles((theme) => ({
   },
   copyrightLinks: {
     textDecoration: 'none',
-    color: mainTheme.palette.defaultLight.main,
+    color: theme.palette.defaultLight.main,
   },
 }))
 export { useStyles }

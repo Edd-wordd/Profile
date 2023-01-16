@@ -1,5 +1,4 @@
 import { makeStyles } from '@material-ui/core/styles'
-import mainTheme from '../../../theme'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   mainTitle: {
     borderBottom: '1px solid #FF8E53',
     marginBottom: theme.spacing(2),
-    color: mainTheme.palette.defaultLight.main,
+    color: theme.palette.defaultLight.main,
     [theme.breakpoints.down('sm')]: {
       fontSize: '1.75rem',
     },
@@ -40,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
   mainDescription: {
     width: '600px',
     height: 'auto',
-    color: mainTheme.palette.defaultLight.main,
+    color: theme.palette.defaultLight.main,
     letterSpacing: theme.spacing(0.25),
     [theme.breakpoints.down('md')]: {
       width: '100%',

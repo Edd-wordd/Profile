@@ -1,5 +1,4 @@
 import { makeStyles } from '@material-ui/core/styles'
-import mainTheme from '../../../theme'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -13,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     transition: '.3s',
   },
   active: {
-    backgroundColor: mainTheme.palette.defaultDark.secondary,
+    backgroundColor: theme.palette.defaultDark.secondary,
     margin: '-2rem -.5rem',
     position: 'fixed',
     height: theme.spacing(14),
@@ -21,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     zIndex: '999',
     transitionTimingFunction: 'ease-in',
     transition: '.5s',
-    },
+  },
   // Logo for desktop version
   mainLogo: {
     width: '6em',
@@ -30,28 +29,28 @@ const useStyles = makeStyles((theme) => ({
   // Logo for mobile version
   mobileLogoImg: {
     margin: '1rem 0 .5rem  -.5rem',
-    height: theme.spacing(15)
+    height: theme.spacing(15),
   },
   mobileBtn: {
     paddingBottom: theme.spacing(2),
     marginTop: '-2.5rem',
-    backgroundColor: mainTheme.palette.defaultDark.secondary,
+    backgroundColor: theme.palette.defaultDark.secondary,
     textAlign: 'center',
-    borderBottom: `1px solid ${mainTheme.palette.defaultLight.main}`,
+    borderBottom: `1px solid ${theme.palette.defaultLight.main}`,
   },
   // style for the tabs (links on the navbar)
   tab: {
     fontSize: 16,
     fontWeight: 500,
     padding: '1.5rem 0 1.5rem 0',
-    color: mainTheme.palette.defaultLight.main,
+    color: theme.palette.defaultLight.main,
     letterSpacing: '.3rem',
     transitionTimingFunction: 'ease-in',
     transition: '.5s',
     '&:hover': {
-      color: mainTheme.palette.primary_300.main,
+      color: theme.palette.primary_300.main,
       backgroundColor: 'transparent',
-      textShadow: `1px 1px ${mainTheme.palette.primary_300.main}`,
+      textShadow: `1px 1px ${theme.palette.primary_300.main}`,
     },
   },
   btnDisplay: {
@@ -63,22 +62,22 @@ const useStyles = makeStyles((theme) => ({
   },
   // the selected tab on navbar
   selectedTab: {
-    color: mainTheme.palette.primary_300.main,
-    textShadow: `1px 1px ${mainTheme.palette.primary_300.main}`,
+    color: theme.palette.primary_300.main,
+    textShadow: `1px 1px ${theme.palette.primary_300.main}`,
     marginBottom: '.5rem',
     textDecoration: 'line-through',
-    "&:hover": {
+    '&:hover': {
       textDecoration: 'line-through',
     },
   },
   hamIcon: {
     paddingTop: '2.75rem',
     marginLeft: '-2rem',
-    color: mainTheme.palette.defaultLight.main,
+    color: theme.palette.defaultLight.main,
   },
   // styling for the logo and hamburger icon when on mobile view
   setMobileNavDropdown: {
-    backgroundColor: mainTheme.palette.defaultDark.secondary,
+    backgroundColor: theme.palette.defaultDark.secondary,
   },
   mobileNavDropdown: {
     backgroundColor: 'transparent',
