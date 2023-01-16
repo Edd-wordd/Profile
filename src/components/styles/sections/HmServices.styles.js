@@ -1,21 +1,20 @@
 import { makeStyles } from '@material-ui/core'
-import mainTheme from '../../../theme'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: mainTheme.palette.defaultLight.main,
+    backgroundColor: theme.palette.defaultLight.main,
     paddingBottom: theme.spacing(5),
   },
   sectionTitle: {
     position: 'absolute',
     paddingBottom: theme.spacing(7),
     marginBottom: theme.spacing(6),
-    background: mainTheme.palette.secondary.main,
-    color: mainTheme.palette.defaultLight.main,
+    background: theme.palette.secondary.main,
+    color: theme.palette.defaultLight.main,
     [theme.breakpoints.down('md')]: {
       marginBottom: theme.spacing(0),
-      background: mainTheme.palette.defaultLight.main,
-      color: mainTheme.palette.defaultDark.main,
+      background: theme.palette.defaultLight.main,
+      color: theme.palette.defaultDark.main,
     },
   },
   cardWrapper: {
@@ -30,8 +29,8 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
     height: 'auto',
     padding: '.75rem 1.5rem',
-    backgroundColor: mainTheme.palette.primary_300.main,
-    color: mainTheme.palette.charcoal.secondary,
+    backgroundColor: theme.palette.primary_300.main,
+    color: theme.palette.charcoal.secondary,
     '&#card_0': {
       marginTop: theme.spacing(1),
       marginBottom: theme.spacing(5),
@@ -78,7 +77,7 @@ const useStyles = makeStyles((theme) => ({
   icons: {
     width: '20%',
     height: 'auto',
-    color: mainTheme.palette.defaultLight.main,
+    color: theme.palette.defaultLight.main,
   },
   cardTitle: {
     paddingTop: theme.spacing(1),

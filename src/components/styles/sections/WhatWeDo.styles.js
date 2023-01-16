@@ -1,7 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles'
-import mainTheme from "../../../theme";
 const useStyles = makeStyles((theme) => ({
-  root: {paddingBottom: theme.spacing(5)},
+  root: { paddingBottom: theme.spacing(5) },
   leftSideInfoWrapper: {
     width: theme.spacing(70),
     height: 'auto',
@@ -25,10 +24,10 @@ const useStyles = makeStyles((theme) => ({
   coreValueWrapper: { padding: '1rem 0rem 0rem 0rem' },
   coreValue: {
     fontWeight: 500,
-    fontSize: theme.spacing(2)
+    fontSize: theme.spacing(2),
   },
   icons: {
-    color: mainTheme.palette.primary_300.main,
+    color: theme.palette.primary_300.main,
     width: theme.spacing(5),
     height: 'auto',
     padding: '1rem 1rem 0rem 2rem',
@@ -36,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
   bottomInfoWrapper: { marginBottom: '3rem' },
   bottomInfo: {
     letterSpacing: theme.spacing(0.05),
-    lineHeight: theme.spacing(0.20),
+    lineHeight: theme.spacing(0.2),
   },
 }))
 

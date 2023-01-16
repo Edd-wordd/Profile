@@ -1,13 +1,12 @@
 import { makeStyles } from '@material-ui/core/styles'
-import mainTheme from '../../../theme'
 
 const useStyles = makeStyles((theme) => ({
   root: {
     padding: theme.spacing(2),
-    color: mainTheme.palette.defaultLight.main,
+    color: theme.palette.defaultLight.main,
   },
   information: {
-    color: mainTheme.palette.defaultLight.main,
+    color: theme.palette.defaultLight.main,
     padding: '2rem 10rem',
     [theme.breakpoints.down('md')]: {
       padding: theme.spacing(2),

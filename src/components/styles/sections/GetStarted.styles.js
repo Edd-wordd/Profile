@@ -1,9 +1,8 @@
 import { makeStyles } from '@material-ui/core/styles'
-import mainTheme from "../../../theme";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: mainTheme.palette.primary_100.secondary,//light purple color
+    backgroundColor: theme.palette.primary_100.secondary, //light purple color
     paddingBottom: theme.spacing(5),
   },
   headingWrapper: {
@@ -12,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
   icons: {
     width: theme.spacing(6),
     height: 'auto',
-    color: mainTheme.palette.charcoal.secondary, // light grey color
+    color: theme.palette.charcoal.secondary, // light grey color
   },
   line: {
     width: theme.spacing(23),
