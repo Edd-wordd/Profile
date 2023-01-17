@@ -55,14 +55,12 @@ const services = [
   },
 ]
 
-
 function ServicesOffered(props) {
   const classes = useStyles(props)
   let display = ''
   return (
     <>
       <Container maxWidth="xl">
-
         {services.map((service, index) => (
           <div key={service.id}>
             <Grid
@@ -76,14 +74,22 @@ function ServicesOffered(props) {
               <Hidden mdDown>
                 <Grid>
                   <Box display={index % 2 === 0 ? (display = '') : (display = 'none')}>
-                    <img alt={service.serviceName} className={classes.img} src={service.serviceImg} />
+                    <img
+                      alt={service.serviceName}
+                      className={classes.img}
+                      src={service.serviceImg}
+                    />
                   </Box>
                 </Grid>
               </Hidden>
               <Hidden mdUp>
                 <Grid>
                   <Box display="">
-                    <img alt={service.serviceName} className={classes.img} src={service.serviceImg} />
+                    <img
+                      alt={service.serviceName}
+                      className={classes.img}
+                      src={service.serviceImg}
+                    />
                   </Box>
                 </Grid>
               </Hidden>
@@ -115,7 +121,11 @@ function ServicesOffered(props) {
               <Hidden mdDown>
                 <Grid>
                   <Box display={index % 2 === 1 ? (display = '') : (display = 'none')}>
-                    <img alt={service.serviceName} className={classes.img} src={service.serviceImg} />
+                    <img
+                      alt={service.serviceName}
+                      className={classes.img}
+                      src={service.serviceImg}
+                    />
                   </Box>
                 </Grid>
               </Hidden>
