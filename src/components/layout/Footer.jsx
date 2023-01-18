@@ -64,11 +64,12 @@ function Footer(props) {
           <Link className={classes.links} href="https://www.twitter.com" target="_blank">
             <TwitterIcon className={classes.icons} />
           </Link>
-          <Link href="/contact">
+          <Link href="/contact" className={classes.link}>
             <Button
               variant="contained"
+              color="primary"
               className={classes.button}
-              startIcon={<ComputerIcon />}
+              endIcon={<ComputerIcon />}
               size="large"
             >
               Let's get started
