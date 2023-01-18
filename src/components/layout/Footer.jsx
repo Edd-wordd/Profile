@@ -19,15 +19,8 @@ function Footer(props) {
   const classes = useStyles(props)
   return (
     <div className={classes.root}>
-      <Grid
-        container
-        direction="row"
-        justify="space-evenly"
-        alignItems="center"
-        className={classes.wrapper}
-      >
+      <Grid container direction="row" justify="space-evenly" alignItems="center">
         {/* Services Link Section */}
-        {/*<Grid>*/}
         <Paper className={classes.boxes}>
           <Typography variant="h6">Services</Typography>
           {servicesFooterLinks.map((link, index) => (
@@ -38,8 +31,6 @@ function Footer(props) {
             </Typography>
           ))}
         </Paper>
-        {/*</Grid>*/}
-        {/*<Grid>*/}
         <Paper className={classes.box1}>
           <Typography variant="h6">Company Info:</Typography>
           <Typography>
@@ -58,16 +49,8 @@ function Footer(props) {
             </Link>
           </Typography>
           <Typography>Las Vegas, Nevada U.S.A</Typography>
-          <Link href="/contact">
-            <Button
-              variant="contained"
-              className={classes.button}
-              startIcon={<ComputerIcon />}
-              size="large"
-            >
-              Let's get started
-            </Button>
-          </Link>
+        </Paper>
+        <Paper className={classes.box1}>
           <Typography variant="h6">Connect With Us: </Typography>
           <Link className={classes.links} href="https://www.facebook.com" target="_blank">
             <FacebookIcon className={classes.icons} />
@@ -81,10 +64,18 @@ function Footer(props) {
           <Link className={classes.links} href="https://www.twitter.com" target="_blank">
             <TwitterIcon className={classes.icons} />
           </Link>
+          <Link href="/contact">
+            <Button
+              variant="contained"
+              className={classes.button}
+              startIcon={<ComputerIcon />}
+              size="large"
+            >
+              Let's get started
+            </Button>
+          </Link>
         </Paper>
-        {/*</Grid>*/}
         {/* Footer Logo */}
-        {/*<Grid item>*/}
         <Link href="/">
           <img
             src="../../../public/assets/black.png"
@@ -93,7 +84,6 @@ function Footer(props) {
           />
         </Link>
       </Grid>
-      {/*</Grid>*/}
       {/* Copyright Section */}
       <Grid container item direction="row" justify="center">
         <span className={classes.line}></span>

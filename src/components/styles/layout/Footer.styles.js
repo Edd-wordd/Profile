@@ -2,19 +2,13 @@ import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: '#0f0c29',
+    backgroundColor: theme.palette.secondary.main,
     color: theme.palette.defaultLight.main,
     width: '100%',
     height: 'auto',
   },
-  wrapper: {
-    paddingLeft: '10rem',
-    [theme.breakpoints.down('xs')]: {
-      padding: 0,
-    },
-  },
   mainLogo: {
-    width: '35%',
+    width: '300px',
     height: 'auto',
     [theme.breakpoints.down('xs')]: {
       width: '100%',
@@ -31,24 +25,24 @@ const useStyles = makeStyles((theme) => ({
   },
 
   boxes: {
-    width: '500px',
-    height: 'auto',
-    backgroundColor: 'transparent',
-    color: 'white',
-    padding: theme.spacing(1),
-    margin: theme.spacing(1),
-    fontWeight: 200,
-  },
-  box1: {
     width: '250px',
     height: 'auto',
     backgroundColor: 'transparent',
-    color: 'white',
-    padding: theme.spacing(1),
-    margin: theme.spacing(1),
-    paddingTop: '5rem',
+    color: theme.palette.defaultLight.main,
+    fontWeight: 200,
+    [theme.breakpoints.down('xs')]: {
+      margin: '2rem 0',
+    },
+  },
+  box1: {
+    width: '200px',
+    height: 'auto',
+    backgroundColor: 'transparent',
+    color: theme.palette.defaultLight.main,
+    marginTop: '-3rem',
     [theme.breakpoints.down('xs')]: {
       paddingTop: '0rem',
+      margin: '2rem 0',
     },
   },
   icons: {
@@ -65,8 +59,8 @@ const useStyles = makeStyles((theme) => ({
   },
   button: {
     background: 'linear-gradient(45deg,#CC95C0,#1FA2FF  , #12D8FA , #A6FFCB )',
-    color: 'white',
-    margin: '2rem 0rem',
+    color: theme.palette.defaultLight.main,
+    marginTop: '1rem',
   },
   links: {
     textDecoration: 'none',
