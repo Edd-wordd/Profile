@@ -58,9 +58,16 @@ const useStyles = makeStyles((theme) => ({
     margin: '.3rem 1rem',
   },
   button: {
-    background: 'linear-gradient(45deg,#CC95C0,#1FA2FF  , #12D8FA , #A6FFCB )',
     color: theme.palette.defaultLight.main,
     marginTop: '1rem',
+    '&:hover': {
+      opacity: '.8',
+    },
+  },
+  link: {
+    '&:hover': {
+      textDecoration: 'none',
+    },
   },
   links: {
     textDecoration: 'none',
