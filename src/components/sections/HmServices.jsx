@@ -11,9 +11,15 @@ import GroupAddIcon from '@material-ui/icons/GroupAdd'
 import MultilineChartIcon from '@material-ui/icons/MultilineChart'
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
 import { useStyles } from '../styles/sections/HmServices.styles'
-import { handleChange } from "../../utils";
 
-const icons = [MultilineChartIcon, ComputerIcon, DescriptionIcon, PhoneIphoneIcon, ShoppingCartIcon, GroupAddIcon]
+const icons = [
+  MultilineChartIcon,
+  ComputerIcon,
+  DescriptionIcon,
+  PhoneIphoneIcon,
+  ShoppingCartIcon,
+  GroupAddIcon,
+]
 
 const serviceCardsOne = [
   {
@@ -53,16 +59,31 @@ const serviceCardsOne = [
       ' Lorem ipsum dolor, sit amet consectetur adipisicing elit.Placeat,facere, quasi animi rerum sed repellendus non ratione dignissimos consequuntur dolores?',
   },
 ]
+
 function HmServices(props) {
   const classes = useStyles(props)
   const [inProp, setInProp] = React.useState(false)
-
-  window.addEventListener('scroll', function() {
-    handleChange(750, setInProp)
+  const servicesSlide = (entries) => {
+    entries.forEach((entry) => {
+      // guard clause
+      if (!entry.isIntersecting) return
+      if (entry.isIntersecting) {
+        setInProp(true)
+      }
+    })
+  }
+  const servicesObserver = new IntersectionObserver(servicesSlide, {
+    root: null,
+    threshold: 0.2,
   })
 
+  React.useEffect(() => {
+    const target = document.querySelector('#services')
+    servicesObserver.observe(target)
+  }, [])
+
   return (
-    <div className={classes.root}>
+    <div className={classes.root} id="services">
       <Container maxWidth="xl">
         {/* Section title only shows on mobile */}
         <Hidden smUp>
@@ -83,10 +104,16 @@ function HmServices(props) {
           {serviceCardsOne.map((service, index) => {
             const Icon = icons[index]
             return (
-            <Transition in={setInProp} timeout={1000} key={service.id}>
+              <Transition in={setInProp} timeout={1000} key={service.id}>
                 {(state) => (
-                  <Slide direction={index >= 0 && index <= 2 ? 'right' : 'left'} in={inProp} mountOnEnter unmountOnExit timeout={3000} >
-                    <Paper elevation={10} id={`card_${index}`} className={classes.cards} >
+                  <Slide
+                    direction={index >= 0 && index <= 2 ? 'right' : 'left'}
+                    in={inProp}
+                    mountOnEnter
+                    unmountOnExit
+                    timeout={3000}
+                  >
+                    <Paper elevation={10} id={`card_${index}`} className={classes.cards}>
                       <Icon className={classes.icons} />
                       <Typography variant="h5" className={classes.cardTitle}>
                         {service.serviceTitle}
@@ -99,7 +126,6 @@ function HmServices(props) {
             )
           })}
         </Grid>
-
       </Container>
     </div>
   )
