@@ -64,14 +64,13 @@ function HmServices(props) {
   const classes = useStyles(props)
   const [inProp, setInProp] = React.useState(false)
   const servicesSlide = (entries, observer) => {
-    entries.forEach((entry) => {
-      // guard clause
-      if (!entry.isIntersecting) return
-      if (entry.isIntersecting) {
-        setInProp(true)
-      }
-    })
-    observer.unobserve(entries.target)
+    const [entry] = entries
+    // guard clause
+    if (!entry.isIntersecting) return
+    if (entry.isIntersecting) {
+      setInProp(true)
+      observer.unobserve(entries.target)
+    }
   }
   const servicesObserver = new IntersectionObserver(servicesSlide, {
     root: null,
