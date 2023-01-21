@@ -3,7 +3,6 @@ import { Paper, Container, Typography, Grid, Grow } from '@material-ui/core'
 import { SectionHeader, ButtonLink } from '../index'
 import { Transition } from 'react-transition-group'
 import { useStyles } from '../styles/sections/ServicesMain.styles'
-import { handleChange } from '../../utils'
 
 const coreValues = [
   {
@@ -35,9 +34,23 @@ const coreValues = [
 function ServicesMain(props) {
   const classes = useStyles(props)
   const [inProp, setInProp] = React.useState(false)
+  const cardObs = function (entries, observer) {
+    const [entry] = entries
+    // guard clause
+    if (!entry.isIntersecting) return
+    if (entry.isIntersecting) {
+      setInProp(true)
+      observer.unobserve(entries.target)
+    }
+  }
 
-  window.addEventListener('scroll', function () {
-    handleChange(400, setInProp)
+  const serviceCardObserver = new IntersectionObserver(cardObs, {
+    root: null,
+    threshold: 0.5,
+  })
+  React.useEffect(() => {
+    const target = document.querySelector('#servicesMain')
+    serviceCardObserver.observe(target)
   })
 
   return (
@@ -59,7 +72,13 @@ function ServicesMain(props) {
         </Grid>
       </Container>
       <Container maxWidth="xl">
-        <Grid container direction="row" justify="space-evenly" alignItems="center">
+        <Grid
+          container
+          direction="row"
+          justify="space-evenly"
+          alignItems="center"
+          id="servicesMain"
+        >
           {coreValues.map((value, index) => (
             <Transition in={setInProp} timeout={2000} key={value.id}>
               {(state) => (
