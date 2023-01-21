@@ -3,7 +3,7 @@ import { Paper, Container, Typography, Grid, Grow } from '@material-ui/core'
 import { SectionHeader, ButtonLink } from '../index'
 import { Transition } from 'react-transition-group'
 import { useStyles } from '../styles/sections/ServicesMain.styles'
-import { handleChange } from "../../utils";
+import { handleChange } from '../../utils'
 
 const coreValues = [
   {
@@ -36,7 +36,7 @@ function ServicesMain(props) {
   const classes = useStyles(props)
   const [inProp, setInProp] = React.useState(false)
 
-  window.addEventListener('scroll', function(){
+  window.addEventListener('scroll', function () {
     handleChange(400, setInProp)
   })
 
@@ -77,10 +77,7 @@ function ServicesMain(props) {
             </Transition>
           ))}
         </Grid>
-        <ButtonLink
-          linkOne="/contact"
-          btnOneText="Get Started"
-        />
+        <ButtonLink linkOne="/contact" btnOneText="Get Started" />
       </Container>
     </>
   )
