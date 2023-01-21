@@ -4,7 +4,7 @@ import Zoom from '@material-ui/core/Zoom'
 import { Transition } from 'react-transition-group'
 import { ButtonLink, SectionHeader } from '../index'
 import { useStyles } from '../styles/sections/WhoWeAre.styles'
-import { handleChange } from "../../utils";
+import { handleChange } from '../../utils'
 
 const coreValues = [
   {
@@ -31,9 +31,26 @@ function WhoWeAre(props) {
   const classes = useStyles(props)
   const [inProp, setInProp] = React.useState(false)
 
-  window.addEventListener('scroll', function () {
-    handleChange(400, setInProp)
+  const cardsObs = (entries, observer) => {
+    entries.forEach((entry) => {
+      // guard clause
+      if (!entry.isIntersecting) return
+      if (entry.isIntersecting) {
+        setInProp(true)
+      }
+    })
+    observer.unobserve(entries.target)
+  }
+
+  const cardObserver = new IntersectionObserver(cardsObs, {
+    root: null,
+    threshold: 0.5,
   })
+
+  React.useEffect(() => {
+    const target = document.querySelector('#cards')
+    cardObserver.observe(target)
+  }, [])
 
   return (
     <>
@@ -54,7 +71,7 @@ function WhoWeAre(props) {
         </Grid>
       </Container>
 
-      <Container maxWidth="xl">
+      <Container maxWidth="xl" id="cards">
         <Grid container direction="row" justify="space-evenly" alignItems="center">
           {coreValues.map((value, index) => (
             <Transition in={setInProp} timeout={1000} key={value.id}>
@@ -73,10 +90,7 @@ function WhoWeAre(props) {
             </Transition>
           ))}
         </Grid>
-        <ButtonLink
-          linkOne="/contact"
-          btnOneText="Request a free Quote"
-        />
+        <ButtonLink linkOne="/contact" btnOneText="Request a free Quote" />
       </Container>
     </>
   )
