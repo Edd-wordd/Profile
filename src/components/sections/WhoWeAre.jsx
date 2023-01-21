@@ -4,7 +4,6 @@ import Zoom from '@material-ui/core/Zoom'
 import { Transition } from 'react-transition-group'
 import { ButtonLink, SectionHeader } from '../index'
 import { useStyles } from '../styles/sections/WhoWeAre.styles'
-import { handleChange } from '../../utils'
 
 const coreValues = [
   {
@@ -32,13 +31,12 @@ function WhoWeAre(props) {
   const [inProp, setInProp] = React.useState(false)
 
   const cardsObs = (entries, observer) => {
-    entries.forEach((entry) => {
-      // guard clause
-      if (!entry.isIntersecting) return
-      if (entry.isIntersecting) {
-        setInProp(true)
-      }
-    })
+    const [entry] = entries
+    // guard clause
+    if (!entry.isIntersecting) return
+    if (entry.isIntersecting) {
+      setInProp(true)
+    }
     observer.unobserve(entries.target)
   }
 
