@@ -1,8 +1,17 @@
 import React from 'react'
-import { Typography, Paper, Grid, Container, TextField, Button, MenuItem, Hidden } from "@material-ui/core";
+import {
+  Typography,
+  Paper,
+  Grid,
+  Container,
+  TextField,
+  Button,
+  MenuItem,
+  Hidden,
+} from '@material-ui/core'
 import { useStyles } from '../styles/forms/ContactForm.styles'
 import { Alert, AlertTitle, Snackbar } from '@mui/material'
-import { checkPreviousDate } from "../../utils";
+import { checkPreviousDate } from '../../utils'
 
 const formFieldInputs = [
   {
@@ -125,7 +134,6 @@ const formFieldInputs = [
     fullWidth: true,
     select: true,
   },
-
 ]
 
 const selectInputs = [
@@ -182,7 +190,6 @@ function ContactForm(props) {
     }
   }
 
-
   const handleChange = (e) => {
     setValue({
       ...value,
@@ -190,14 +197,13 @@ function ContactForm(props) {
     })
   }
   const validate = () => {
-    const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    const emailRegex =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     const phoneRegex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/
     const nameRegex = '^[a-zA-Z]{2,20}$'
 
     let errors = {}
-    errors.firstName = value.firstName.trim().match(nameRegex)
-      ? ''
-      : 'Please enter your first name'
+    errors.firstName = value.firstName.trim().match(nameRegex) ? '' : 'Please enter your first name'
     errors.lastName = value.lastName.trim().match(nameRegex) ? '' : 'Please enter your last name'
     errors.phoneNumber = value.phoneNumber.trim().split('-').join('').match(phoneRegex)
       ? ''
@@ -205,11 +211,14 @@ function ContactForm(props) {
     errors.email = value.email.trim().match(emailRegex) ? '' : 'Please enter valid email'
     errors.companyName = value.companyName.trim() ? '' : 'Please enter company name or url'
     errors.message = value.message ? '' : 'Please let us know how we can help you'
-    errors.startDate = checkPreviousDate(value.startDate) ? '' : 'Please enter a start date for your project'
+    errors.startDate = checkPreviousDate(value.startDate)
+      ? ''
+      : 'Please enter a start date for your project'
     errors.whereDidYouHearAboutUs = value.whereDidYouHearAboutUs ? '' : 'Please select a source'
     setError({ ...errors })
     return Object.values(errors).every((errValues) => errValues === '')
   }
+
   return (
     <div className={classes.root}>
       <Container maxWidth="xl">
@@ -257,23 +266,31 @@ function ContactForm(props) {
                 )}
                 <div>
                   <Hidden smDown>
-                  {alert && (
-                    <Alert onClose={() => setAlert(false)} severity="success" className={classes.successAlert}>
-                      <AlertTitle>Success</AlertTitle>
-                      Your form has been sent Successfully!
-                      <strong>Thank you!</strong>
-                    </Alert>
-                  )}
-                  </Hidden>
-                  <Hidden mdUp>
                     {alert && (
-                      <Snackbar open={alert} autoHideDuration={6000} onClose={() => setAlert(false)} >
-                      <Alert onClose={() => setAlert(false)} severity="success"   >
+                      <Alert
+                        onClose={() => setAlert(false)}
+                        severity="success"
+                        className={classes.successAlert}
+                      >
                         <AlertTitle>Success</AlertTitle>
                         Your form has been sent Successfully!
                         <strong>Thank you!</strong>
                       </Alert>
-                    </Snackbar>
+                    )}
+                  </Hidden>
+                  <Hidden mdUp>
+                    {alert && (
+                      <Snackbar
+                        open={alert}
+                        autoHideDuration={6000}
+                        onClose={() => setAlert(false)}
+                      >
+                        <Alert onClose={() => setAlert(false)} severity="success">
+                          <AlertTitle>Success</AlertTitle>
+                          Your form has been sent Successfully!
+                          <strong>Thank you!</strong>
+                        </Alert>
+                      </Snackbar>
                     )}
                   </Hidden>
                   <Grid container direction="row" justify="center" alignItems="center">
@@ -286,6 +303,7 @@ function ContactForm(props) {
                         onChange={handleChange}
                         value={value[values.name]}
                         className={classes.textField}
+                        autoFocus={values.name === 'firstName'}
                       >
                         {selectInputs.map((value) => (
                           <MenuItem key={value.label} {...value}>
