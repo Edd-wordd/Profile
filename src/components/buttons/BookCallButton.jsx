@@ -99,7 +99,8 @@ export default function BookCallButton(props) {
 
   const validateForm = () => {
     const phoneRegex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/
-    const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    const emailRegex =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     const fullNameRegex = '^[a-zA-Z]{2,20} [a-zA-Z]{2,20}$'
 
     const invalidInputs = {}
@@ -124,7 +125,7 @@ export default function BookCallButton(props) {
   const handleSubmit = (e) => {
     e.preventDefault()
     const data = new FormData(e.target)
-    data.append("timeStamp", new Date())
+    data.append('timeStamp', new Date())
     console.log(Object.fromEntries(data.entries()))
     if (validateForm()) {
       setError(false)
@@ -193,7 +194,11 @@ export default function BookCallButton(props) {
                   </Alert>
                 )}
                 {alert && !error && (
-                  <Alert onClose={() => setAlert(false)} severity="success" className={classes.alert}>
+                  <Alert
+                    onClose={() => setAlert(false)}
+                    severity="success"
+                    className={classes.alert}
+                  >
                     <AlertTitle>Success</AlertTitle>
                     Your message has been sent!
                   </Alert>
@@ -209,10 +214,11 @@ export default function BookCallButton(props) {
                       key={value.id}
                       {...value}
                       error={!!error[value.name]}
-                      helperText={ error[value.name] || " " }
+                      helperText={error[value.name] || ' '}
                       className={classes.textField}
                       value={formInput[value.name]}
                       onChange={handleChange}
+                      autoFocus={value.name === 'fullName'}
                     />
                   ))}
                   <PopupButton
