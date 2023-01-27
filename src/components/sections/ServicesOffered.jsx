@@ -77,6 +77,7 @@ function ServicesOffered(props) {
                 <Grid>
                   <Box display={index % 2 === 0 ? (display = '') : (display = 'none')}>
                     <img
+                      loading="lazy"
                       alt={service.serviceName}
                       className={classes.img}
                       src={service.serviceImg}
