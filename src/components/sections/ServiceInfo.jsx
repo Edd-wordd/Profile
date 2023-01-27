@@ -169,7 +169,7 @@ function ServiceInfo(props) {
                   className={classes.mainContent}
                 >
                   <Box>
-                    <img alt="image4" src={service.image} className={classes.pics} />
+                    <img loading="lazy" alt="image4" src={service.image} className={classes.pics} />
                   </Box>
                   <Grid>
                     <Typography variant="h4" className={classes.mainTitle}>
