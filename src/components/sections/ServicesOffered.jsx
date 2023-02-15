@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Box, Container, Typography, Grid, Button, Hidden } from '@material-ui/core'
 import MenuBookIcon from '@material-ui/icons/MenuBook'
@@ -66,6 +66,11 @@ const services = [
 function ServicesOffered(props) {
   const classes = useStyles(props)
   let display = ''
+
+  const scrollToTop = () => {
+    window.scrollTo(0, 0)
+  }
+
   return (
     <>
       <Container maxWidth="xl">
@@ -122,6 +127,7 @@ function ServicesOffered(props) {
                     size="large"
                     component={Link}
                     to={service.path}
+                    onClick={scrollToTop}
                   >
                     Learn More
                   </Button>
