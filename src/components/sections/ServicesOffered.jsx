@@ -7,6 +7,7 @@ import { useStyles } from '../styles/sections/ServicesOffered.styles'
 const services = [
   {
     id: 5000,
+    path: '/services/content-writing',
     serviceName: 'content-writing',
     serviceImg: '../../public/assets/thom-bradley-ap8jsn3B9gI-unsplash.jpg',
     // serviceImg:
@@ -17,6 +18,7 @@ const services = [
   },
   {
     id: 5001,
+    path: '/services/seo',
     serviceName: 'seo',
     serviceImg: '../../public/assets/lukas-blazek-mcSDtbWXUZU-unsplash.jpg',
     serviceOffered: 'SEO (Search Engine Optimization)',
@@ -25,6 +27,7 @@ const services = [
   },
   {
     id: 5002,
+    path: '/services/mobile-app',
     serviceName: 'mobile-app',
     serviceImg: '../../public/assets/phil-desforges-Hxp_xDXsOSs-unsplash.jpg',
     serviceOffered: 'Mobile App Development',
@@ -33,6 +36,7 @@ const services = [
   },
   {
     id: 5003,
+    path: '/services/eCommerce',
     serviceName: 'eCommerce',
     serviceImg: '../../public/assets/thom-bradley-ap8jsn3B9gI-unsplash.jpg',
     serviceOffered: 'eCommerce Website Development',
@@ -41,6 +45,7 @@ const services = [
   },
   {
     id: 5004,
+    path: '/services/branding',
     serviceName: 'web-design',
     serviceImg: '../../public/assets/thom-bradley-ap8jsn3B9gI-unsplash.jpg',
     serviceOffered: 'Website Design & Development',
@@ -49,6 +54,7 @@ const services = [
   },
   {
     id: 5005,
+    path: '/services/branding',
     serviceName: 'web-maintenance',
     serviceImg: '../../public/assets/thom-bradley-ap8jsn3B9gI-unsplash.jpg',
     serviceOffered: 'Website/App Maintenance & Support',
@@ -109,16 +115,16 @@ function ServicesOffered(props) {
                   alignItems="flex-end"
                   className={classes.btnWrapper}
                 >
-                  <Link to={'/services/' + service.serviceName} className={classes.links}>
-                    <Button
-                      endIcon={<MenuBookIcon />}
-                      variant="contained"
-                      color="primary"
-                      size="large"
-                    >
-                      Learn More
-                    </Button>
-                  </Link>
+                  <Button
+                    endIcon={<MenuBookIcon />}
+                    variant="contained"
+                    color="primary"
+                    size="large"
+                    component={Link}
+                    to={service.path}
+                  >
+                    Learn More
+                  </Button>
                 </Grid>
               </Grid>
               <Hidden mdDown>
