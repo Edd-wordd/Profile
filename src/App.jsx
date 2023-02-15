@@ -25,23 +25,23 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-    <Router>
-      <NavBar />
-      <div className={classes.root}>
-        <Switch>
-          {/* remember to put the home route last!!! */}
-          <Route exact path="/privacypolicy" component={PrivacyPolicy} />
-          <Route exact path="/portfolio" component={Portfolio} />
-          <Route exact path="/about" component={AboutUs} />
-          <Route exact path="/services/:id" component={ServiceInfo} />
-          <Route exact path="/services" component={Services} />
-          <Route exact path="/contact" component={Contact} />
-          <Route exact path="/" component={Home} />
-          <Route component={NotFound} />
-        </Switch>
-        <Footer />
-      </div>
-    </Router>
+      <Router>
+        <NavBar />
+        <div className={classes.root}>
+          <Switch>
+            {/* remember to put the home route last!!! */}
+            <Route exact path="/privacypolicy" component={PrivacyPolicy} />
+            <Route exact path="/portfolio" component={Portfolio} />
+            <Route exact path="/about" component={AboutUs} />
+            <Route exact path="/services/:id" component={ServiceInfo} />
+            <Route exact path="/services" component={Services} />
+            <Route exact path="/contact" component={Contact} />
+            <Route exact path="/" component={Home} />
+            <Route component={NotFound} />
+          </Switch>
+          <Footer />
+        </div>
+      </Router>
     </ThemeProvider>
   )
 }
