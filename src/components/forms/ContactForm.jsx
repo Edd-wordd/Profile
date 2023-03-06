@@ -27,7 +27,7 @@ const formFieldInputs = [
       shrink: true,
     },
     style: {
-      width: '46%',
+      width: '45%',
     },
   },
   {
@@ -60,7 +60,7 @@ const formFieldInputs = [
       shrink: true,
     },
     style: {
-      width: '46%',
+      width: '45%',
     },
   },
   {
