@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
   },
   textField: {
     marginBottom: theme.spacing(-1),
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       width: '100% !important',
     },
   },
