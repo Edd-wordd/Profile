@@ -45,7 +45,7 @@ const services = [
   },
   {
     id: 5004,
-    path: '/services/branding',
+    path: '/services/web-design',
     serviceName: 'web-design',
     serviceImg: '../../public/assets/thom-bradley-ap8jsn3B9gI-unsplash.jpg',
     serviceOffered: 'Website Design & Development',
@@ -54,7 +54,7 @@ const services = [
   },
   {
     id: 5005,
-    path: '/services/branding',
+    path: '/services/web-maintenance',
     serviceName: 'web-maintenance',
     serviceImg: '../../public/assets/thom-bradley-ap8jsn3B9gI-unsplash.jpg',
     serviceOffered: 'Website/App Maintenance & Support',
