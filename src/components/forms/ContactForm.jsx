@@ -9,8 +9,8 @@ import {
   MenuItem,
   Hidden,
 } from '@material-ui/core'
-import { useStyles } from '../styles/forms/ContactForm.styles'
 import { Alert, AlertTitle, Snackbar } from '@mui/material'
+import { useStyles } from '../styles/forms/ContactForm.styles'
 import { checkPreviousDate } from '../../utils'
 
 const formFieldInputs = [
@@ -170,26 +170,6 @@ function ContactForm(props) {
     whereDidYouHearAboutUs: '',
   })
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    const data = new FormData(e.target)
-    data.append('timeStamp', new Date())
-    if (validate()) {
-      setAlert(true)
-      setError(false)
-      setValue({
-        firstName: '',
-        lastName: '',
-        phoneNumber: '',
-        email: '',
-        companyName: '',
-        message: '',
-        startDate: '',
-        whereDidYouHearAboutUs: '',
-      })
-    }
-  }
-
   const handleChange = (e) => {
     setValue({
       ...value,
@@ -202,7 +182,7 @@ function ContactForm(props) {
     const phoneRegex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/
     const nameRegex = '^[a-zA-Z]{2,20}$'
 
-    let errors = {}
+    const errors = {}
     errors.firstName = value.firstName.trim().match(nameRegex) ? '' : 'Please enter your first name'
     errors.lastName = value.lastName.trim().match(nameRegex) ? '' : 'Please enter your last name'
     errors.phoneNumber = value.phoneNumber.trim().split('-').join('').match(phoneRegex)
@@ -217,6 +197,38 @@ function ContactForm(props) {
     errors.whereDidYouHearAboutUs = value.whereDidYouHearAboutUs ? '' : 'Please select a source'
     setError({ ...errors })
     return Object.values(errors).every((errValues) => errValues === '')
+  }
+
+  // if there are no errors, set the alert to true
+  setAlert(true)
+  // and set the error to false
+  setError(false)
+
+  const handleSubmit = (e) => {
+    // prevent the form from refreshing the page
+    e.preventDefault()
+    // create a FormData object to store the form data
+    const data = new FormData(e.target)
+    // add a timestamp to the form data
+    data.append('timeStamp', new Date())
+    // check the form data for errors
+    if (validate()) {
+      // if there are no errors, set the alert to true
+      setAlert(true)
+      // and set the error to false
+      setError(false)
+      // reset the form values to empty strings
+      setValue({
+        firstName: '',
+        lastName: '',
+        phoneNumber: '',
+        email: '',
+        companyName: '',
+        message: '',
+        startDate: '',
+        whereDidYouHearAboutUs: '',
+      })
+    }
   }
 
   return (
