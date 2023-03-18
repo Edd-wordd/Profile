@@ -32,7 +32,15 @@ const serviceInfo = [
     path: '/services/seo',
     title: 'SEO',
     description:
-      ' SEO Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      'At monaTech, we offer comprehensive SEO (Search Engine Optimization) services to help our clients increase their online visibility, drive traffic to their website, and generate more leads and sales. Our team of SEO experts is well-versed in the latest techniques and best practices for optimizing websites and content for search engines.\n' +
+      '\n' +
+      "Our SEO services begin with a thorough analysis of our clients' websites, including technical aspects such as site speed, mobile-friendliness, and crawlability, as well as content and keyword research to identify areas for improvement. We then develop a customized SEO strategy that includes on-page optimization, off-page optimization, and ongoing monitoring and reporting.\n" +
+      '\n' +
+      "Our on-page optimization services include optimizing website structure, meta tags, headings, and content to ensure maximum relevancy and keyword density. We also provide content recommendations and optimization to ensure that our clients' websites provide valuable and engaging content that resonates with their target audience.\n" +
+      '\n' +
+      'Off-page optimization includes building high-quality backlinks from relevant and authoritative sources, as well as local search optimization for clients with physical locations. We also offer ongoing monitoring and reporting to track the effectiveness of our SEO strategies and make adjustments as needed to ensure continued success.\n' +
+      '\n' +
+      "At our web/software company, we are committed to delivering results-driven SEO services that help our clients achieve their business goals. Whether it's increasing website traffic, generating more leads and sales, or improving online visibility, we have the expertise and experience to help our clients succeed in the competitive online landscape.",
     image:
       'https://images.unsplash.com/photo-1651559111403-3a0ecfb93c09?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
     majorTitle_1: 'SEO 1',
