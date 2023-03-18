@@ -54,7 +54,7 @@ const serviceCardsOne = [
   },
   {
     id: 2005,
-    serviceTitle: 'Maintance & Support',
+    serviceTitle: 'Maintenance & Support',
     serviceDetail:
       'Our web and app maintenance and support service, designed to keep your digital presence operating at peak performance. Our team of expert developers and technicians are on standby 24/7 to handle any technical issues, updates or fixes that your website or app may need. With our proactive monitoring and preventative measures, you can rest assured that your online business will run smoothly and efficiently, leaving you free to focus on what really matters - growing your brand.',
   },
