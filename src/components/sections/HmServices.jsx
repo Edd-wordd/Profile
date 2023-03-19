@@ -105,7 +105,7 @@ function HmServices(props) {
             const Icon = icons[index]
             return (
               <Transition in={setInProp} timeout={1000} key={service.id}>
-                {(state) => (
+                {() => (
                   <Slide
                     direction={index >= 0 && index <= 2 ? 'right' : 'left'}
                     in={inProp}

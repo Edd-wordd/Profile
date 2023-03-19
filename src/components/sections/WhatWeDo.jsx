@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Typography, Grid, Link, Paper, Slide } from '@material-ui/core'
+import { Container, Typography, Grid, Paper } from '@material-ui/core'
 import { SectionHeader } from '../index'
 import TypeIt from 'typeit-react'
 import CheckCircleIcon from '@material-ui/icons/CheckCircle'
@@ -58,7 +58,7 @@ function WhatWeDo(props) {
           </Typography>
         </Paper>
         <Paper variant="outlined" className={classes.coreValueSection}>
-          {bulletPoints.map((value, index) => (
+          {bulletPoints.map((value) => (
             <Grid container direction="row" justify="flex-start" alignItems="center" key={value.id}>
               <CheckCircleIcon className={classes.icons} />
               <Typography variant="body1" className={classes.coreValueWrapper}>

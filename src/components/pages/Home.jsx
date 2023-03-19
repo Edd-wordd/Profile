@@ -1,5 +1,5 @@
 import React from 'react'
-import { WhoWeAre, HmServices, Questions, GetStarted, MainDisplay, Resources } from '../index'
+import { WhoWeAre, HmServices, Questions, GetStarted, MainDisplay } from '../index'
 
 function Home() {
   return (
