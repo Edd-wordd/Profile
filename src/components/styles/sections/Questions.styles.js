@@ -27,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
   question: {
     color: theme.palette.defaultLight.main,
     fontWeight: 600,
+    textAlign: 'center',
   },
   para: {
     color: theme.palette.defaultLight.main,

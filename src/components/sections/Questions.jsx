@@ -1,35 +1,39 @@
 import React from 'react'
-import { Container, Typography, Grid, Link, Paper} from '@material-ui/core'
+import { Container, Typography, Grid, Link, Paper } from '@material-ui/core'
 import { SectionHeader } from '../index'
 import { useStyles } from '../styles/sections/Questions.styles'
 
 const sectionOneQuestions = [
   {
     id: 2000,
-    question: 'Do you have a great mobile app idea?',
+    question: "What are my company's goals and objectives?",
     details:
-      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit.',
+      "Before deciding whether you need a digital presence for your company provided by a software company, it's important to consider your company's goals and objectives. Are you looking to increase brand awareness, generate leads, drive sales, or improve customer engagement? Your goals will help determine the type of digital presence you need, as well as the software company that can provide it.",
     link: '/services/mobile-app',
   },
   {
     id: 2001,
-    question: 'Does your business need a online presence?',
+    question: 'Who is my target audience?',
     details:
-      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit.',
+      "It's important to consider your target audience when deciding on a digital presence for your company. Are they primarily on social media, or do they use search engines to find information? Understanding your audience's behavior and preferences can help determine which digital channels and software companies will be most effective in reaching them.\n" +
+      '\n',
     link: '/services/web-design',
   },
   {
     id: 2002,
-    question: 'Is your site outdated and in need of a revamp?',
+    question: 'What are my competitors doing?',
     details:
-      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit.',
+      "It's also important to consider what your competitors are doing when it comes to digital presence. Are they active on social media? Do they have a strong website presence? Understanding how your competitors are using digital channels can help you determine the best way to differentiate your company and stand out in your industry.",
     link: '/services/web-maintenance',
   },
   {
     id: 2003,
-    question: 'Are you not getting the traction you expected?',
+    question: 'What resources do I have available?',
     details:
-      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet consectetur adipisicing elit.',
+      "It's important to consider what resources you have available to implement and maintain a digital presence. Do you have in-house staff with the necessary skills and expertise to create and manage a website, social media profiles, or digital marketing campaigns? Or will you need to outsource these tasks to a software company? Understanding your resources can help determine the best approach for implementing a digital presence for your company.\n" +
+      '\n' +
+      '\n' +
+      '\n',
     link: '/services/seo',
   },
 ]
@@ -69,12 +73,9 @@ function Questions(props) {
         >
           <Typography variant="h6" className={classes.question}>
             If you answered <span className={classes.word}>YES</span> to any of these questions,
-            then consider our services below to help you get started
+            reach out to us for a consultation on how we can help you establish and enhance your
+            digital presence. then consider our services to help you get started
             <span className={classes.word}>!!!</span>
-          </Typography>
-          <Typography paragraph className={classes.para}>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Lorem ipsum dolor, sit amet
-            consectetur adipisicing elit.
           </Typography>
         </Grid>
       </Container>
