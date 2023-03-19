@@ -77,9 +77,9 @@ function WhoWeAre(props) {
 
       <Container maxWidth="xl" id="cards">
         <Grid container direction="row" justify="space-evenly" alignItems="center">
-          {coreValues.map((value, index) => (
+          {coreValues.map((value) => (
             <Transition in={setInProp} timeout={1000} key={value.id}>
-              {(state) => (
+              {() => (
                 <Zoom in={inProp} mountOnEnter unmountOnExit timeout={2000}>
                   <Paper variant="outlined" className={classes.boxes}>
                     <Typography variant="subtitle1">

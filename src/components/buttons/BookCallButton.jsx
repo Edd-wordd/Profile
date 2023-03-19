@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Fade, Modal, Button, TextField, Typography } from '@material-ui/core'
+import { Fade, Modal, Button, TextField } from '@material-ui/core'
 import { PopupButton } from 'react-calendly'
 import { Alert, AlertTitle, Backdrop } from '@mui/material'
 import CircularProgress from '@mui/material/CircularProgress'
@@ -100,7 +100,7 @@ export default function BookCallButton(props) {
   const validateForm = () => {
     const phoneRegex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/
     const emailRegex =
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     const fullNameRegex = '^[a-zA-Z]{2,20} [a-zA-Z]{2,20}$'
 
     const invalidInputs = {}
