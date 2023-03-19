@@ -38,7 +38,6 @@ const questions = [
   },
 ]
 
-
 function FaqServices(props) {
   const classes = useStyles(props)
   const [expanded, setExpanded] = React.useState('panel1')
@@ -74,7 +73,7 @@ function FaqServices(props) {
           className={classes.accordionWrapper}
         >
           <Grid>
-            {questions.map((question, index) => {
+            {questions.map((question) => {
               return (
                 <Accordion
                   className={classes.accordion}
@@ -86,7 +85,9 @@ function FaqServices(props) {
                     <Typography>{question.question}</Typography>
                   </AccordionSummary>
                   <AccordionDetails>
-                    <Typography>this is in the {question.question} {question.details}</Typography>
+                    <Typography>
+                      this is in the {question.question} {question.details}
+                    </Typography>
                   </AccordionDetails>
                 </Accordion>
               )

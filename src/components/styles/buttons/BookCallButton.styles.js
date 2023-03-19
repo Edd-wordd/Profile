@@ -1,5 +1,4 @@
 import { makeStyles } from '@material-ui/core/styles'
-import mainTheme from '../../../theme'
 
 const useStyles = makeStyles((theme) => ({
   modal: {
