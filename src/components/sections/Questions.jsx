@@ -48,7 +48,7 @@ function Questions(props) {
       </Grid>
       <Container maxWidth="lg">
         <Grid container direction="row" justify="center">
-          {sectionOneQuestions.map((question, index) => (
+          {sectionOneQuestions.map((question) => (
             <Paper key={question.id} variant="outlined" className={classes.lgBoxes}>
               <Typography variant="h6" className={classes.question}>
                 {question.question}

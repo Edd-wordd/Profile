@@ -1,5 +1,5 @@
 import React from 'react'
-import { ContactForm, GetInTouch } from '../index'
+import { ContactForm } from '../index'
 
 function Contact() {
   return (

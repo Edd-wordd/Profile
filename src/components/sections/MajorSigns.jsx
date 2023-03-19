@@ -1,6 +1,6 @@
 import React from 'react'
 import { SectionHeader } from '../index'
-import { Grid, Typography, Container, Paper, Hidden } from '@material-ui/core'
+import { Grid, Typography, Container, Paper } from '@material-ui/core'
 import { useStyles } from '../styles/sections/MajorSigns.styles'
 
 const MajorSigns = (props) => {
@@ -22,7 +22,7 @@ const MajorSigns = (props) => {
           <Typography>{props.majorSignInfo}</Typography>
         </Grid>
         <Grid container direction="row" justify="center" alignItems="center">
-          <Grid >
+          <Grid>
             <Paper className={classes.paper}>
               <Typography variant="h5" className={classes.paperTitle}>
                 {props.majorTitle_1}
@@ -30,7 +30,7 @@ const MajorSigns = (props) => {
               <Typography>{props.majorInfo_1}</Typography>
             </Paper>
           </Grid>
-          <Grid >
+          <Grid>
             <Paper className={classes.paper}>
               <Typography variant="h5" className={classes.paperTitle}>
                 {props.majorTitle_2}
@@ -38,7 +38,7 @@ const MajorSigns = (props) => {
               <Typography>{props.majorInfo_2}</Typography>
             </Paper>
           </Grid>
-          <Grid >
+          <Grid>
             <Paper className={classes.paper}>
               <Typography variant="h5" className={classes.paperTitle}>
                 {props.majorTitle_3}
@@ -46,7 +46,7 @@ const MajorSigns = (props) => {
               <Typography>{props.majorInfo_3}</Typography>
             </Paper>
           </Grid>
-        <Grid>
+          <Grid>
             <Paper className={classes.paper}>
               <Typography variant="h5" className={classes.paperTitle}>
                 {props.majorTitle_4}

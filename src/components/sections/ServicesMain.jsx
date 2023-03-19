@@ -79,9 +79,9 @@ function ServicesMain(props) {
           alignItems="center"
           id="servicesMain"
         >
-          {coreValues.map((value, index) => (
+          {coreValues.map((value) => (
             <Transition in={setInProp} timeout={2000} key={value.id}>
-              {(state) => (
+              {() => (
                 <Grow in={inProp} timeout={2000}>
                   <Paper elevation={2} className={classes.boxes} key={value.id}>
                     <Typography variant="subtitle1">
