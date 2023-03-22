@@ -61,18 +61,16 @@ function WhatWeDo(props) {
           {bulletPoints.map((value) => (
             <Grid container direction="row" justify="flex-start" alignItems="center" key={value.id}>
               <CheckCircleIcon className={classes.icons} />
-              <Typography variant="body1" className={classes.coreValueWrapper}>
-                <TypeIt
-                  className={classes.coreValue}
-                  options={{
-                    strings: [`${value.bulletpoint}`],
-                    speed: 125,
-                    waitUntilVisible: true,
-                    cursor: false,
-                    startDelay: `${value.delay}`,
-                  }}
-                ></TypeIt>
-              </Typography>
+              <TypeIt
+                className={classes.coreValue}
+                options={{
+                  strings: [`${value.bulletpoint}`],
+                  speed: 125,
+                  waitUntilVisible: true,
+                  cursor: false,
+                  startDelay: `${value.delay}`,
+                }}
+              />
             </Grid>
           ))}
         </Paper>
