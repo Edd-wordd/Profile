@@ -199,11 +199,6 @@ function ContactForm(props) {
     return Object.values(errors).every((errValues) => errValues === '')
   }
 
-  // if there are no errors, set the alert to true
-  setAlert(true)
-  // and set the error to false
-  setError(false)
-
   const handleSubmit = (e) => {
     // prevent the form from refreshing the page
     e.preventDefault()
