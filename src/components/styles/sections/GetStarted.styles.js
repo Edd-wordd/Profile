@@ -6,7 +6,7 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(5),
   },
   headingWrapper: {
-    paddingTop: theme.spacing(3),
+    padding: theme.spacing(3),
   },
   icons: {
     width: theme.spacing(6),
@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   },
   boxes: {
     width: theme.spacing(37),
-    height: 'auto',
+    minHeight: theme.spacing(30),
     border: 'none',
     padding: theme.spacing(4),
     margin: '0rem 1.5rem 0rem 1rem',
