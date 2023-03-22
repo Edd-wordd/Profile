@@ -246,12 +246,19 @@ function ContactForm(props) {
               Need to get in Touch?
             </Typography>
             <Typography variant="h6" className={classes.infoSubTitle}>
-              Send Us A Message
+              Send Us A Message!!!
             </Typography>
             <Typography variant="body1" className={classes.infoParagraph}>
-              Please complete the form below, click here to Book an Appointment, give us a call or
-              click the message box on the lower right! Either way, we look forward to talking with
-              you!
+              Whether you have a question, comment, or simply want to say hello, we're all ears.
+              <br />
+              <br />
+              Don't hesitate to send us a message using the contact form. Our team of experts is
+              always ready to assist you in any way we can. We pride ourselves in giving top-notch
+              costumer service and will do everything we can to ensure your complete satisfaction.
+              <br />
+              <br />
+              So go ahead, drop us a line! We cant wait to hear from you and see how we can help you
+              achieve your software development goals.
             </Typography>
           </Grid>
           <Grid item lg={5}>
