@@ -21,7 +21,6 @@ const useStyles = makeStyles((theme) => ({
       width: '100%',
     },
   },
-  coreValueWrapper: { padding: '1rem 0rem 0rem 0rem' },
   coreValue: {
     fontWeight: 500,
     fontSize: theme.spacing(2),
