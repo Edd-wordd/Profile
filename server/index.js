@@ -32,18 +32,19 @@ app.get('/', (req, res) => {
 
 app.post('/api/form', (req, res) => {
   let data = req.body
+  console.log(process.env)
+
   let smtpTransport = nodemailer.createTransport({
     service: 'Gmail',
     port: 465,
     auth: {
-      user: 'edward.plasencio@gmail.com',
-      pass: 'qraqnwkcmgjuyjof',
+      user: `edward.plasencio@gmail.com`,
     },
   })
 
   let mailOptions = {
     from: data.email,
-    to: 'edward.plasencio@gmail.com',
+    to: `edward.plasencio@gmail.com`,
     subject: `Inquiry from monaTech`,
     html: `
       <h3>Details</h3>
