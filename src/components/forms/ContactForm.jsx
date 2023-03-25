@@ -12,6 +12,7 @@ import {
 import { Alert, AlertTitle, Snackbar } from '@mui/material'
 import { useStyles } from '../styles/forms/ContactForm.styles'
 import { checkPreviousDate } from '../../utils'
+import axios from 'axios'
 
 const formFieldInputs = [
   {
@@ -110,7 +111,7 @@ const formFieldInputs = [
     id: '1008',
     name: 'startDate',
     variant: 'outlined',
-    label: 'Start Date',
+    label: 'Project Start Date',
     required: false,
     fullWidth: true,
     type: 'date',
@@ -207,12 +208,11 @@ function ContactForm(props) {
     // add a timestamp to the form data
     data.append('timeStamp', new Date())
     // check the form data for errors
+    console.log(Object.fromEntries(data))
+
+    const simpleData = Object.fromEntries(data)
     if (validate()) {
-      // if there are no errors, set the alert to true
-      setAlert(true)
-      // and set the error to false
       setError(false)
-      // reset the form values to empty strings
       setValue({
         firstName: '',
         lastName: '',
@@ -223,6 +223,15 @@ function ContactForm(props) {
         startDate: '',
         whereDidYouHearAboutUs: '',
       })
+      axios
+        .post('/api/form', simpleData)
+        .then((res) => {
+          console.log(res)
+          setAlert(true)
+        })
+        .catch((err) => {
+          console.log(err)
+        })
     }
   }
 
