@@ -6,6 +6,9 @@ const bodyParser = require('body-parser')
 const nodemailer = require('nodemailer')
 const cors = require('cors')
 const smtpTransport = require('nodemailer/lib/mailer')
+const dotenv = require('dotenv')
+
+dotenv.config()
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -26,25 +29,21 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cors())
 
-app.get('/', (req, res) => {
-  res.send('Welcome to my app!')
-})
-
 app.post('/api/form', (req, res) => {
-  let data = req.body
-  console.log(process.env)
+  const data = req.body
 
   let smtpTransport = nodemailer.createTransport({
     service: 'Gmail',
     port: 465,
     auth: {
-      user: `edward.plasencio@gmail.com`,
+      user: process.env.REACT_APP_COMPANY_EMAIL,
+      pass: process.env.REACT_APP_COMPANY_EMAIL_PASSWORD,
     },
   })
 
-  let mailOptions = {
+  const mailOptions = {
     from: data.email,
-    to: `edward.plasencio@gmail.com`,
+    to: process.env.REACT_APP_COMPANY_EMAIL,
     subject: `Inquiry from monaTech`,
     html: `
       <h3>Details</h3>
@@ -63,9 +62,9 @@ app.post('/api/form', (req, res) => {
   }
   smtpTransport.sendMail(mailOptions, (error, response) => {
     if (error) {
-      res.send(error)
+      res.status(500).send(`Error: ${error}`)
     } else {
-      res.send('Success')
+      res.status(200).send('Success')
     }
   })
 
