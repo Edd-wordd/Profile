@@ -243,7 +243,7 @@ function ContactForm(props) {
     const phoneRegex = /^\+(?:[0-9] ?){6,14}[0-9]$/
     if (phone.trim().match(phoneRegex)) {
       const myHeaders = new Headers()
-      myHeaders.append('apikey', 'GIB3A34mUj4lMeoT38zEpKyrTOV0K4OA')
+      myHeaders.append('apikey', 'SERCRET API KEY')
       const requestOptions = {
         method: 'GET',
         redirect: 'follow',
