@@ -177,18 +177,16 @@ function ContactForm(props) {
       [e.target.name]: e.target.value,
     })
   }
+
   const validate = () => {
     const emailRegex =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    const phoneRegex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/
     const nameRegex = '^[a-zA-Z]{2,20}$'
 
     const errors = {}
     errors.firstName = value.firstName.trim().match(nameRegex) ? '' : 'Please enter your first name'
     errors.lastName = value.lastName.trim().match(nameRegex) ? '' : 'Please enter your last name'
-    errors.phoneNumber = value.phoneNumber.trim().split('-').join('').match(phoneRegex)
-      ? ''
-      : 'Please enter valid phone number'
+    errors.phoneNumber = phoneCheck(value.phoneNumber) ? '' : 'Please enter valid phone number'
     errors.email = value.email.trim().match(emailRegex) ? '' : 'Please enter valid email'
     errors.companyName = value.companyName.trim() ? '' : 'Please enter company name or url'
     errors.message = value.message ? '' : 'Please let us know how we can help you'
@@ -200,14 +198,10 @@ function ContactForm(props) {
     return Object.values(errors).every((errValues) => errValues === '')
   }
 
-  const handleSubmit = (e) => {
-    // prevent the form from refreshing the page
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // create a FormData object to store the form data
     const data = new FormData(e.target)
-    // add a timestamp to the form data
     data.append('timeStamp', new Date())
-    // check the form data for errors
     console.log(Object.fromEntries(data))
 
     const simpleData = Object.fromEntries(data)
@@ -223,16 +217,53 @@ function ContactForm(props) {
         startDate: '',
         whereDidYouHearAboutUs: '',
       })
-      axios
-        .post('/api/form', simpleData)
-        .then((res) => {
-          console.log(res)
-          setAlert(true)
-        })
-        .catch((err) => {
-          console.log(err)
-        })
+      try {
+        const phoneIsValid = await phoneCheck(simpleData.phoneNumber)
+        if (phoneIsValid) {
+          axios
+            .post('/api/form', simpleData)
+            .then((res) => {
+              console.log(res)
+              setAlert(true)
+            })
+            .catch((err) => {
+              console.log(err)
+            })
+        } else {
+          setError({ phoneNumber: 'Please enter valid phone number' })
+        }
+      } catch (error) {
+        console.log(error)
+        setError({ phoneNumber: 'Please enter valid phone number' })
+      }
     }
+  }
+
+  const phoneCheck = async (phone) => {
+    const phoneRegex = /^\+(?:[0-9] ?){6,14}[0-9]$/
+    if (phone.trim().match(phoneRegex)) {
+      const myHeaders = new Headers()
+      myHeaders.append('apikey', 'GIB3A34mUj4lMeoT38zEpKyrTOV0K4OA')
+      const requestOptions = {
+        method: 'GET',
+        redirect: 'follow',
+        headers: myHeaders,
+      }
+      try {
+        const response = await fetch(
+          `https://api.apilayer.com/number_verification/validate?number=${phone}`,
+          requestOptions
+        )
+        const data = await response.json()
+        console.log(data)
+        return data.valid
+      } catch (error) {
+        console.error(error)
+        return false
+      }
+    }
+
+    return false
   }
 
   return (
@@ -274,8 +305,16 @@ function ContactForm(props) {
             <Paper elevation={3} className={classes.formPaper}>
               <form className={classes.form} noValidate autoComplete="off" onSubmit={handleSubmit}>
                 {!alert && error && (
-                  <Snackbar open={error} autoHideDuration={6000} onClose={() => setError(false)}>
-                    <Alert onClose={() => setError(false)} variant="filled" severity="error">
+                  <Snackbar
+                    open={Boolean(error)}
+                    autoHideDuration={6000}
+                    onClose={() => setError(Boolean(false))}
+                  >
+                    <Alert
+                      onClose={() => setError(Boolean(false))}
+                      variant="filled"
+                      severity="error"
+                    >
                       <AlertTitle>Error</AlertTitle>
                       {`You are missing ${
                         Object.values(error).filter((err) => err !== '').length
@@ -291,7 +330,7 @@ function ContactForm(props) {
                   <Hidden smDown>
                     {alert && (
                       <Alert
-                        onClose={() => setAlert(false)}
+                        onClose={() => setAlert(Boolean(false))}
                         severity="success"
                         className={classes.successAlert}
                       >
@@ -304,11 +343,11 @@ function ContactForm(props) {
                   <Hidden mdUp>
                     {alert && (
                       <Snackbar
-                        open={alert}
+                        open={Boolean(alert)}
                         autoHideDuration={6000}
-                        onClose={() => setAlert(false)}
+                        onClose={() => setAlert(Boolean(false))}
                       >
-                        <Alert onClose={() => setAlert(false)} severity="success">
+                        <Alert onClose={() => setAlert(Boolean(false))} severity="success">
                           <AlertTitle>Success</AlertTitle>
                           Your form has been sent Successfully!
                           <strong>Thank you!</strong>
