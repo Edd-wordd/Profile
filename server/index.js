@@ -5,7 +5,6 @@ const helmet = require('helmet')
 const bodyParser = require('body-parser')
 const nodemailer = require('nodemailer')
 const cors = require('cors')
-const smtpTransport = require('nodemailer/lib/mailer')
 const dotenv = require('dotenv')
 
 dotenv.config()
@@ -60,7 +59,7 @@ app.post('/api/form', (req, res) => {
       <p>${data.message}</p>
     `,
   }
-  smtpTransport.sendMail(mailOptions, (error, response) => {
+  smtpTransport.sendMail(mailOptions, (error) => {
     if (error) {
       res.status(500).send(`Error: ${error}`)
     } else {
@@ -70,3 +69,29 @@ app.post('/api/form', (req, res) => {
 
   smtpTransport.close()
 })
+
+// const myHeaders = new Headers()
+// myHeaders.append('apikey', process.env.REACT_APP_PHONE_NUMBER_API_KEY)
+//
+// const requestOptions = {
+//   method: 'GET',
+//   redirect: 'follow',
+//   headers: myHeaders,
+// }
+//
+// console.log(requestOptions)
+// app.post('/api/phone', (req, res) => {
+//   const data = req.body
+//   const phone = data.phoneNumber
+//   const url = `https://api.apilayer.com/number_verification/validate?number=${phone}`
+//
+//   fetch(url, requestOptions)
+//     .then((res) => res.json())
+//     .then((json) => {
+//       console.log(json)
+//       res.send(json)
+//     })
+//     .catch((err) => {
+//       res.send(err)
+//     })
+// })
