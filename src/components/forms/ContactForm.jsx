@@ -197,7 +197,47 @@ function ContactForm(props) {
     setError({ ...errors })
     return Object.values(errors).every((errValues) => errValues === '')
   }
-
+  //
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault()
+  //   const data = new FormData(e.target)
+  //   data.append('timeStamp', new Date())
+  //   console.log(Object.fromEntries(data))
+  //
+  //   const simpleData = Object.fromEntries(data)
+  //   if (validate()) {
+  //     setError(false)
+  //     setValue({
+  //       firstName: '',
+  //       lastName: '',
+  //       phoneNumber: '',
+  //       email: '',
+  //       companyName: '',
+  //       message: '',
+  //       startDate: '',
+  //       whereDidYouHearAboutUs: '',
+  //     })
+  //     try {
+  //       const phoneIsValid = await phoneCheck(simpleData.phoneNumber)
+  //       if (phoneIsValid) {
+  //         axios
+  //           .post('/api/form', simpleData)
+  //           .then((res) => {
+  //             console.log(res)
+  //             setAlert(true)
+  //           })
+  //           .catch((err) => {
+  //             console.log(err)
+  //           })
+  //       } else {
+  //         setError({ phoneNumber: 'Please enter valid phone number' })
+  //       }
+  //     } catch (error) {
+  //       console.log(error)
+  //       setError({ phoneNumber: 'Please enter valid phone number' })
+  //     }
+  //   }
+  // }
   const handleSubmit = async (e) => {
     e.preventDefault()
     const data = new FormData(e.target)
@@ -205,7 +245,8 @@ function ContactForm(props) {
     console.log(Object.fromEntries(data))
 
     const simpleData = Object.fromEntries(data)
-    if (validate()) {
+    const phoneIsValid = await phoneCheck(simpleData.phoneNumber)
+    if (validate() && phoneIsValid) {
       setError(false)
       setValue({
         firstName: '',
@@ -218,24 +259,20 @@ function ContactForm(props) {
         whereDidYouHearAboutUs: '',
       })
       try {
-        const phoneIsValid = await phoneCheck(simpleData.phoneNumber)
-        if (phoneIsValid) {
-          axios
-            .post('/api/form', simpleData)
-            .then((res) => {
-              console.log(res)
-              setAlert(true)
-            })
-            .catch((err) => {
-              console.log(err)
-            })
-        } else {
-          setError({ phoneNumber: 'Please enter valid phone number' })
-        }
+        axios
+          .post('/api/form', simpleData)
+          .then((res) => {
+            console.log(res)
+            setAlert(true)
+          })
+          .catch((err) => {
+            console.log(err)
+          })
       } catch (error) {
         console.log(error)
-        setError({ phoneNumber: 'Please enter valid phone number' })
       }
+    } else if (!phoneIsValid) {
+      setError({ phoneNumber: 'Please enter valid phone number' })
     }
   }
 
@@ -243,7 +280,7 @@ function ContactForm(props) {
     const phoneRegex = /^\+(?:[0-9] ?){6,14}[0-9]$/
     if (phone.trim().match(phoneRegex)) {
       const myHeaders = new Headers()
-      myHeaders.append('apikey', 'SERCRET API KEY')
+      myHeaders.append('apikey', 'SECRET')
       const requestOptions = {
         method: 'GET',
         redirect: 'follow',
