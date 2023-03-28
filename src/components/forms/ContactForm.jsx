@@ -187,8 +187,10 @@ function ContactForm(props) {
     errors.firstName = value.firstName.trim().match(nameRegex) ? '' : 'Please enter your first name'
     errors.lastName = value.lastName.trim().match(nameRegex) ? '' : 'Please enter your last name'
     errors.phoneNumber = phoneCheck(value.phoneNumber) ? '' : 'Please enter valid phone number'
-    errors.email = value.email.trim().match(emailRegex) ? '' : 'Please enter valid email'
+    // errors.email = value.email.trim().match(emailRegex) ? '' : 'Please enter valid email'
+    errors.email = emailCheck(value.email) ? '' : 'Please enter valid email'
     errors.companyName = value.companyName.trim() ? '' : 'Please enter company name or url'
+
     errors.message = value.message ? '' : 'Please let us know how we can help you'
     errors.startDate = checkPreviousDate(value.startDate)
       ? ''
@@ -243,7 +245,7 @@ function ContactForm(props) {
     const phoneRegex = /^\+(?:[0-9] ?){6,14}[0-9]$/
     if (phone.trim().match(phoneRegex)) {
       const myHeaders = new Headers()
-      myHeaders.append('apikey', 'SECRET_API_KEY')
+      myHeaders.append('apikey', 'GIB3A34mUj4lMeoT38zEpKyrTOV0K4OA')
       const requestOptions = {
         method: 'GET',
         redirect: 'follow',
@@ -263,6 +265,34 @@ function ContactForm(props) {
       }
     }
 
+    return false
+  }
+
+  const emailCheck = async (email) => {
+    const emailRegex =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    if (email.trim().match(emailRegex)) {
+      const myHeaders = new Headers()
+      myHeaders.append('apikey', 'GIB3A34mUj4lMeoT38zEpKyrTOV0K4OA')
+
+      const requestOptions = {
+        method: 'GET',
+        redirect: 'follow',
+        headers: myHeaders,
+      }
+      try {
+        const response = await fetch(
+          `https://api.apilayer.com/email_verification/check?email=${email}`,
+          requestOptions
+        )
+        const data = await response.json()
+        console.log(data)
+        return data
+      } catch (error) {
+        console.error(error)
+        return false
+      }
+    }
     return false
   }
 
