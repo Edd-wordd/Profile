@@ -448,10 +448,10 @@ function ContactForm(props) {
                   type="submit"
                   size="large"
                   variant="contained"
-                  aria-label="large outlined button"
                   color="primary"
                   id="submit"
-                  disabled={alert || error || isButtonDisabled}
+                  disabled={!!(alert || error || isButtonDisabled)}
+                  aria-label="Submit Form"
                 >
                   SUBMIT
                 </Button>
