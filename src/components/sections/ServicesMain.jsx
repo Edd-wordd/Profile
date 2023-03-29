@@ -81,7 +81,7 @@ function ServicesMain(props) {
           id="servicesMain"
         >
           {coreValues.map((value) => (
-            <Transition in={setInProp} timeout={2000} key={value.id}>
+            <Transition in={!!setInProp} timeout={2000} key={value.id}>
               {() => (
                 <Grow in={inProp} timeout={2000}>
                   <Paper elevation={2} className={classes.boxes} key={value.id}>
