@@ -69,7 +69,7 @@ function HmServices(props) {
     if (!entry.isIntersecting) return
     if (entry.isIntersecting) {
       setInProp(true)
-      observer.unobserve(entries.target)
+      observer.unobserve(entry.target)
     }
   }
   const servicesObserver = new IntersectionObserver(servicesSlide, {
@@ -80,6 +80,9 @@ function HmServices(props) {
   React.useEffect(() => {
     const target = document.querySelector('#services')
     servicesObserver.observe(target)
+    return () => {
+      servicesObserver.unobserve(target)
+    }
   }, [])
 
   return (
