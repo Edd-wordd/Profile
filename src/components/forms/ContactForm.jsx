@@ -179,18 +179,12 @@ function ContactForm(props) {
   }
 
   const validate = () => {
-    const emailRegex =
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     const nameRegex = '^[a-zA-Z]{2,20}$'
 
     const errors = {}
     errors.firstName = value.firstName.trim().match(nameRegex) ? '' : 'Please enter your first name'
     errors.lastName = value.lastName.trim().match(nameRegex) ? '' : 'Please enter your last name'
-    errors.phoneNumber = phoneCheck(value.phoneNumber) ? '' : 'Please enter valid phone number'
-    // errors.email = value.email.trim().match(emailRegex) ? '' : 'Please enter valid email'
-    errors.email = emailCheck(value.email) ? '' : 'Please enter valid email'
     errors.companyName = value.companyName.trim() ? '' : 'Please enter company name or url'
-
     errors.message = value.message ? '' : 'Please let us know how we can help you'
     errors.startDate = checkPreviousDate(value.startDate)
       ? ''
@@ -207,11 +201,14 @@ function ContactForm(props) {
     console.log(Object.fromEntries(data))
 
     const simpleData = Object.fromEntries(data)
-    const phoneIsValid = await phoneCheck(simpleData.phoneNumber)
+    const [phoneIsValid, emailIsValid] = await Promise.all([
+      phoneCheck(simpleData.phoneNumber),
+      emailCheck(simpleData.email),
+    ])
 
     // guard clause
-    if (!validate()) return
-    if (validate() && phoneIsValid) {
+    if (!validate() && !phoneIsValid && !emailIsValid) return
+    if (validate() && phoneIsValid && emailIsValid) {
       setError(false)
       setValue({
         firstName: '',
@@ -227,7 +224,7 @@ function ContactForm(props) {
         axios
           .post('/api/form', simpleData)
           .then((res) => {
-            console.log(res)
+            console.log(res, 'data is here')
             setAlert(true)
           })
           .catch((err) => {
@@ -236,8 +233,11 @@ function ContactForm(props) {
       } catch (error) {
         console.log(error)
       }
-    } else if (!phoneIsValid) {
-      setError({ phoneNumber: 'Please enter valid phone number' })
+    } else {
+      setError({
+        phoneNumber: 'Please enter valid phone number',
+        email: 'Please enter valid email',
+      })
     }
   }
 
@@ -245,7 +245,7 @@ function ContactForm(props) {
     const phoneRegex = /^\+(?:[0-9] ?){6,14}[0-9]$/
     if (phone.trim().match(phoneRegex)) {
       const myHeaders = new Headers()
-      myHeaders.append('apikey', 'GIB3A34mUj4lMeoT38zEpKyrTOV0K4OA')
+      myHeaders.append('apikey', 'SECRET_KEY')
       const requestOptions = {
         method: 'GET',
         redirect: 'follow',
@@ -257,7 +257,7 @@ function ContactForm(props) {
           requestOptions
         )
         const data = await response.json()
-        console.log(data)
+        console.log(data, 'data in phoneCheck APi')
         return data.valid
       } catch (error) {
         console.error(error)
@@ -270,10 +270,11 @@ function ContactForm(props) {
 
   const emailCheck = async (email) => {
     const emailRegex =
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/
+
     if (email.trim().match(emailRegex)) {
       const myHeaders = new Headers()
-      myHeaders.append('apikey', 'GIB3A34mUj4lMeoT38zEpKyrTOV0K4OA')
+      myHeaders.append('apikey', 'SECRET_KEY')
 
       const requestOptions = {
         method: 'GET',
@@ -286,15 +287,131 @@ function ContactForm(props) {
           requestOptions
         )
         const data = await response.json()
-        console.log(data)
+        console.log(data, 'data in emailCheck API')
         return data
       } catch (error) {
         console.error(error)
         return false
       }
     }
+
     return false
   }
+
+  //   const errors = {}
+  //   errors.firstName = value.firstName.trim().match(nameRegex) ? '' : 'Please enter your first name'
+  //   errors.lastName = value.lastName.trim().match(nameRegex) ? '' : 'Please enter your last name'
+  //   errors.phoneNumber = phoneCheck(value.phoneNumber) ? '' : 'Please enter valid phone number'
+  //   // errors.email = value.email.trim().match(emailRegex) ? '' : 'Please enter valid email'
+  //   errors.email = emailCheck(value.email) ? '' : 'Please enter valid email'
+  //   errors.companyName = value.companyName.trim() ? '' : 'Please enter company name or url'
+  //
+  //   errors.message = value.message ? '' : 'Please let us know how we can help you'
+  //   errors.startDate = checkPreviousDate(value.startDate)
+  //     ? ''
+  //     : 'Please enter a start date for your project'
+  //   errors.whereDidYouHearAboutUs = value.whereDidYouHearAboutUs ? '' : 'Please select a source'
+  //   setError({ ...errors })
+  //   return Object.values(errors).every((errValues) => errValues === '')
+  // }
+  //
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault()
+  //   const data = new FormData(e.target)
+  //   data.append('timeStamp', new Date())
+  //   console.log(Object.fromEntries(data))
+  //
+  //   const simpleData = Object.fromEntries(data)
+  //   const phoneIsValid = await phoneCheck(simpleData.phoneNumber)
+  //   const emailIsValid = await emailCheck(simpleData.email)
+  //
+  //   // guard clause
+  //   if (!validate() && !phoneIsValid && !emailIsValid) return
+  //   if (validate() && phoneIsValid) {
+  //     setError(false)
+  //     setValue({
+  //       firstName: '',
+  //       lastName: '',
+  //       phoneNumber: '',
+  //       email: '',
+  //       companyName: '',
+  //       message: '',
+  //       startDate: '',
+  //       whereDidYouHearAboutUs: '',
+  //     })
+  //     try {
+  //       axios
+  //         .post('/api/form', simpleData)
+  //         .then((res) => {
+  //           console.log(res, 'data is here')
+  //           setAlert(true)
+  //         })
+  //         .catch((err) => {
+  //           console.log(err)
+  //         })
+  //     } catch (error) {
+  //       console.log(error)
+  //     }
+  //   } else if (!phoneIsValid) {
+  //     setError({ phoneNumber: 'Please enter valid phone number' })
+  //     setError({ email: 'Please enter valid email' })
+  //   }
+  // }
+  //
+  // const phoneCheck = async (phone) => {
+  //   const phoneRegex = /^\+(?:[0-9] ?){6,14}[0-9]$/
+  //   if (phone.trim().match(phoneRegex)) {
+  //     const myHeaders = new Headers()
+  //     myHeaders.append('apikey', 'GIB3A34mUj4lMeoT38zEpKyrTOV0K4OA')
+  //     const requestOptions = {
+  //       method: 'GET',
+  //       redirect: 'follow',
+  //       headers: myHeaders,
+  //     }
+  //     try {
+  //       const response = await fetch(
+  //         `https://api.apilayer.com/number_verification/validate?number=${phone}`,
+  //         requestOptions
+  //       )
+  //       const data = await response.json()
+  //       console.log(data, 'data in phoneCheck APi')
+  //       return data.valid
+  //     } catch (error) {
+  //       console.error(error)
+  //       return false
+  //     }
+  //   }
+  //
+  //   return false
+  // }
+  //
+  // const emailCheck = async (email) => {
+  //   const emailRegex =
+  //     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  //   if (email.trim().match(emailRegex)) {
+  //     const myHeaders = new Headers()
+  //     myHeaders.append('apikey', 'GIB3A34mUj4lMeoT38zEpKyrTOV0K4OA')
+  //
+  //     const requestOptions = {
+  //       method: 'GET',
+  //       redirect: 'follow',
+  //       headers: myHeaders,
+  //     }
+  //     try {
+  //       const response = await fetch(
+  //         `https://api.apilayer.com/email_verification/check?email=${email}`,
+  //         requestOptions
+  //       )
+  //       const data = await response.json()
+  //       console.log(data, 'data in emailCheck API')
+  //       return data
+  //     } catch (error) {
+  //       console.error(error)
+  //       return false
+  //     }
+  //   }
+  //   return false
+  // }
 
   return (
     <div className={classes.root}>
