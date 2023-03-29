@@ -276,7 +276,7 @@ function ContactForm(props) {
       setError({
         ...errors,
         phoneNumber: 'Please enter valid phone number',
-        // email: 'Please enter valid email',
+        email: 'Please enter valid email',
       })
       return
     }
@@ -308,10 +308,26 @@ function ContactForm(props) {
         console.log(error)
         setIsButtonDisabled(false)
       }
-    } else {
+    } else if (!phoneIsValid && !emailIsValid) {
       setError({
         phoneNumber: 'Please enter valid phone number',
         email: 'Please enter valid email',
+      })
+      setIsButtonDisabled(false)
+    } else if (!emailIsValid) {
+      setError({
+        email: 'Please enter valid email',
+      })
+      setIsButtonDisabled(false)
+    } else if (!phoneIsValid) {
+      setError({
+        phoneNumber: 'Please enter valid phone number',
+      })
+      setIsButtonDisabled(false)
+    } else {
+      setError({
+        phoneNumber: 'Please enter valid phone number',
+        // email: 'Please enter valid email',
       })
       setIsButtonDisabled(false)
     }
