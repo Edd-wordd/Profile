@@ -42,7 +42,7 @@ function WhoWeAre(props) {
     if (entry.isIntersecting) {
       setInProp(true)
     }
-    observer.unobserve(entries.target)
+    observer.unobserve(entry.target)
   }
 
   const cardObserver = new IntersectionObserver(cardsObs, {
