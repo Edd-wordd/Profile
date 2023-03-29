@@ -160,6 +160,7 @@ function ContactForm(props) {
   const classes = useStyles(props)
   const [error, setError] = React.useState(false)
   const [alert, setAlert] = React.useState(false)
+  const [isButtonDisabled, setIsButtonDisabled] = React.useState(false)
   const [value, setValue] = React.useState({
     firstName: '',
     lastName: '',
@@ -178,16 +179,72 @@ function ContactForm(props) {
     })
   }
 
+  const phoneCheck = async (phone) => {
+    const phoneRegex = /^\+(?:[0-9] ?){6,14}[0-9]$/
+    if (phone.trim().match(phoneRegex)) {
+      const myHeaders = new Headers()
+      myHeaders.append('apikey', 'GIB3A34mUj4lMeoT38zEpKyrTOV0K4OA')
+      const requestOptions = {
+        method: 'GET',
+        redirect: 'follow',
+        headers: myHeaders,
+      }
+      try {
+        const response = await fetch(
+          `https://api.apilayer.com/number_verification/validate?number=${phone}`,
+          requestOptions
+        )
+        const data = await response.json()
+        console.log(data, 'data in phoneCheck APi')
+        return data.valid
+      } catch (error) {
+        console.error(error)
+        return false
+      }
+    }
+
+    return false
+  }
+
+  const emailCheck = async (email) => {
+    const emailRegex = /^([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63})$/
+
+    // /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/
+
+    if (email.trim().match(emailRegex)) {
+      const myHeaders = new Headers()
+      myHeaders.append('apikey', 'GIB3A34mUj4lMeoT38zEpKyrTOV0K4OA')
+
+      const requestOptions = {
+        method: 'GET',
+        redirect: 'follow',
+        headers: myHeaders,
+      }
+      try {
+        const response = await fetch(
+          `https://api.apilayer.com/email_verification/check?email=${email}`,
+          requestOptions
+        )
+        const data = await response.json()
+        console.log(data, 'data in emailCheck API')
+        console.log(data.smtp_check, 'data.smtp_check')
+        return data.smtp_check
+      } catch (error) {
+        console.error(error)
+        return false
+      }
+    }
+
+    return false
+  }
+
+  let errors = {}
   const validate = () => {
-    const emailRegex =
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     const nameRegex = '^[a-zA-Z]{2,20}$'
 
-    const errors = {}
+    errors = {}
     errors.firstName = value.firstName.trim().match(nameRegex) ? '' : 'Please enter your first name'
     errors.lastName = value.lastName.trim().match(nameRegex) ? '' : 'Please enter your last name'
-    errors.phoneNumber = phoneCheck(value.phoneNumber) ? '' : 'Please enter valid phone number'
-    errors.email = value.email.trim().match(emailRegex) ? '' : 'Please enter valid email'
     errors.companyName = value.companyName.trim() ? '' : 'Please enter company name or url'
     errors.message = value.message ? '' : 'Please let us know how we can help you'
     errors.startDate = checkPreviousDate(value.startDate)
@@ -200,16 +257,30 @@ function ContactForm(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+
+    setIsButtonDisabled(true)
+
     const data = new FormData(e.target)
     data.append('timeStamp', new Date())
     console.log(Object.fromEntries(data))
 
     const simpleData = Object.fromEntries(data)
-    const phoneIsValid = await phoneCheck(simpleData.phoneNumber)
 
-    // guard clause
-    if (!validate()) return
-    if (validate() && phoneIsValid) {
+    const [phoneIsValid, emailIsValid] = await Promise.all([
+      phoneCheck(simpleData.phoneNumber),
+      emailCheck(simpleData.email),
+    ])
+
+    if (!validate()) {
+      setIsButtonDisabled(false)
+      setError({
+        ...errors,
+        phoneNumber: 'Please enter valid phone number',
+        // email: 'Please enter valid email',
+      })
+      return
+    }
+    if (validate() && phoneIsValid && emailIsValid) {
       setError(false)
       setValue({
         firstName: '',
@@ -225,45 +296,25 @@ function ContactForm(props) {
         axios
           .post('/api/form', simpleData)
           .then((res) => {
-            console.log(res)
+            console.log(res, 'data is here')
             setAlert(true)
+            setIsButtonDisabled(false)
           })
           .catch((err) => {
             console.log(err)
+            setIsButtonDisabled(false)
           })
       } catch (error) {
         console.log(error)
+        setIsButtonDisabled(false)
       }
-    } else if (!phoneIsValid) {
-      setError({ phoneNumber: 'Please enter valid phone number' })
+    } else {
+      setError({
+        phoneNumber: 'Please enter valid phone number',
+        email: 'Please enter valid email',
+      })
+      setIsButtonDisabled(false)
     }
-  }
-
-  const phoneCheck = async (phone) => {
-    const phoneRegex = /^\+(?:[0-9] ?){6,14}[0-9]$/
-    if (phone.trim().match(phoneRegex)) {
-      const myHeaders = new Headers()
-      myHeaders.append('apikey', 'SECRET_API_KEY')
-      const requestOptions = {
-        method: 'GET',
-        redirect: 'follow',
-        headers: myHeaders,
-      }
-      try {
-        const response = await fetch(
-          `https://api.apilayer.com/number_verification/validate?number=${phone}`,
-          requestOptions
-        )
-        const data = await response.json()
-        console.log(data)
-        return data.valid
-      } catch (error) {
-        console.error(error)
-        return false
-      }
-    }
-
-    return false
   }
 
   return (
@@ -384,7 +435,7 @@ function ContactForm(props) {
                   aria-label="large outlined button"
                   color="primary"
                   id="submit"
-                  disabled={alert || error}
+                  disabled={alert || error || isButtonDisabled}
                 >
                   SUBMIT
                 </Button>
