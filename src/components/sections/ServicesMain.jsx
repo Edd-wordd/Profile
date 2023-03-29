@@ -40,7 +40,7 @@ function ServicesMain(props) {
     if (!entry.isIntersecting) return
     if (entry.isIntersecting) {
       setInProp(true)
-      observer.unobserve(entries.target)
+      observer.unobserve(entry.target)
     }
   }
 
@@ -48,10 +48,11 @@ function ServicesMain(props) {
     root: null,
     threshold: 0.5,
   })
+
   React.useEffect(() => {
     const target = document.querySelector('#servicesMain')
     serviceCardObserver.observe(target)
-  })
+  }, [])
 
   return (
     <>
