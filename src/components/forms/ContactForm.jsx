@@ -160,6 +160,7 @@ function ContactForm(props) {
   const classes = useStyles(props)
   const [error, setError] = React.useState(false)
   const [alert, setAlert] = React.useState(false)
+  const [isButtonDisabled, setIsButtonDisabled] = React.useState(false)
   const [value, setValue] = React.useState({
     firstName: '',
     lastName: '',
@@ -206,8 +207,9 @@ function ContactForm(props) {
   }
 
   const emailCheck = async (email) => {
-    const emailRegex =
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/
+    const emailRegex = /^([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63})$/
+
+    // /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/
 
     if (email.trim().match(emailRegex)) {
       const myHeaders = new Headers()
@@ -225,7 +227,8 @@ function ContactForm(props) {
         )
         const data = await response.json()
         console.log(data, 'data in emailCheck API')
-        return data
+        console.log(data.smtp_check, 'data.smtp_check')
+        return data.smtp_check
       } catch (error) {
         console.error(error)
         return false
@@ -254,6 +257,9 @@ function ContactForm(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+
+    setIsButtonDisabled(true)
+
     const data = new FormData(e.target)
     data.append('timeStamp', new Date())
     console.log(Object.fromEntries(data))
@@ -265,13 +271,12 @@ function ContactForm(props) {
       emailCheck(simpleData.email),
     ])
 
-    // if (!validate() && !phoneIsValid && !emailIsValid) return
-
     if (!validate()) {
+      setIsButtonDisabled(false)
       setError({
         ...errors,
         phoneNumber: 'Please enter valid phone number',
-        email: 'Please enter valid email',
+        // email: 'Please enter valid email',
       })
       return
     }
@@ -293,18 +298,22 @@ function ContactForm(props) {
           .then((res) => {
             console.log(res, 'data is here')
             setAlert(true)
+            setIsButtonDisabled(false)
           })
           .catch((err) => {
             console.log(err)
+            setIsButtonDisabled(false)
           })
       } catch (error) {
         console.log(error)
+        setIsButtonDisabled(false)
       }
     } else {
       setError({
         phoneNumber: 'Please enter valid phone number',
         email: 'Please enter valid email',
       })
+      setIsButtonDisabled(false)
     }
   }
 
@@ -426,7 +435,7 @@ function ContactForm(props) {
                   aria-label="large outlined button"
                   color="primary"
                   id="submit"
-                  disabled={alert || error}
+                  disabled={alert || error || isButtonDisabled}
                 >
                   SUBMIT
                 </Button>
