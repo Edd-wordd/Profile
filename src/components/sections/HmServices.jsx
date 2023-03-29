@@ -107,7 +107,7 @@ function HmServices(props) {
           {serviceCardsOne.map((service, index) => {
             const Icon = icons[index]
             return (
-              <Transition in={setInProp} timeout={1000} key={service.id}>
+              <Transition in={!!setInProp} timeout={1000} key={service.id}>
                 {() => (
                   <Slide
                     direction={index >= 0 && index <= 2 ? 'right' : 'left'}
