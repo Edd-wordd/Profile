@@ -1,6 +1,6 @@
 import React from 'react'
-import { Card, Grid, Container, CardActionArea, Typography } from '@material-ui/core'
-import { CardActions, CardContent, CardMedia, Button } from '@material-ui/core'
+import { Card, Grid, Container, CardActionArea, Typography } from '@mui/material'
+import { CardActions, CardContent, CardMedia, Button } from '@mui/material'
 import { RWebShare } from 'react-web-share'
 import { useStyles } from '../styles/sections/Resources.styles'
 import { SectionHeader } from '../index'

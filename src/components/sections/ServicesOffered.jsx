@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Box, Container, Typography, Grid, Button, Hidden } from '@material-ui/core'
-import MenuBookIcon from '@material-ui/icons/MenuBook'
+import { Box, Container, Typography, Grid, Button, Hidden } from '@mui/material'
+import MenuBookIcon from '@mui/icons-material/MenuBook'
 import { useStyles } from '../styles/sections/ServicesOffered.styles'
 
 const services = [
