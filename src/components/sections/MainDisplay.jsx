@@ -1,8 +1,8 @@
 import React from 'react'
-import { Button, Box, Link } from '@material-ui/core'
-import { Container, Typography, Grid, Hidden } from '@material-ui/core'
-import ComputerIcon from '@material-ui/icons/Computer'
-import MobileFriendlyIcon from '@material-ui/icons/MobileFriendly'
+import { Button, Box, Link } from '@mui/material'
+import { Container, Typography, Grid, Hidden } from '@mui/material'
+import ComputerIcon from '@mui/icons-material/Computer'
+import MobileFriendlyIcon from '@mui/icons-material/MobileFriendly'
 import { useStyles } from '../styles/sections/MainDisplay.styles'
 
 function MainDisplay(props) {

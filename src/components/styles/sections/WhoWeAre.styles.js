@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/core'
+import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles((theme) => ({
   paragraphWrapper: { margin: '3rem 0' },

@@ -1,6 +1,6 @@
 import React from 'react'
-import { Container, Typography, Grid, Hidden, Paper } from '@material-ui/core'
-import BeenhereIcon from '@material-ui/icons/Beenhere'
+import { Container, Typography, Grid, Hidden, Paper } from '@mui/material'
+import BeenhereIcon from '@mui/icons-material/Beenhere'
 import { ButtonLink, SectionHeader } from '../index'
 import { useStyles } from '../styles/sections/GetStarted.styles'
 

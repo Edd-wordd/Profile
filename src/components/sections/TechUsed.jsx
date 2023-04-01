@@ -1,12 +1,12 @@
 import React from 'react'
-import { Typography, Grid, Paper } from '@material-ui/core'
-import ChildCareIcon from '@material-ui/icons/ChildCare'
-import AdbIcon from '@material-ui/icons/Adb'
-import FlightIcon from '@material-ui/icons/Flight'
-import RedditIcon from '@material-ui/icons/Reddit'
-import TwitterIcon from '@material-ui/icons/Twitter'
-import SportsMotorsportsIcon from '@material-ui/icons/SportsMotorsports'
-import TypeIt from 'typeit-react'
+import { Typography, Grid, Paper } from '@mui/material'
+import ChildCareIcon from '@mui/icons-material/ChildCare'
+import AdbIcon from '@mui/icons-material/Adb'
+import FlightIcon from '@mui/icons-material/Flight'
+import RedditIcon from '@mui/icons-material/Reddit'
+import TwitterIcon from '@mui/icons-material/Twitter'
+import SportsMotorsportsIcon from '@mui/icons-material/SportsMotorsports'
+// import TypeIt from 'typeit-react'
 import { useStyles } from '../styles/sections/TechUsed.styles'
 
 const icons = [AdbIcon, ChildCareIcon, FlightIcon, RedditIcon, TwitterIcon, SportsMotorsportsIcon]
@@ -48,13 +48,13 @@ function TechUsed(props) {
     <div className={classes.root}>
       <Grid container direction="row" justify="center" className={classes.headerWrapper}>
         <Typography variant="h3" className={classes.header}>
-          <TypeIt
-            options={{
-              strings: ['Technologies!'],
-              speed: 125,
-              waitUntilVisible: true,
-            }}
-          ></TypeIt>
+          {/*<TypeIt*/}
+          {/*  options={{*/}
+          {/*    strings: ['Technologies!'],*/}
+          {/*    speed: 125,*/}
+          {/*    waitUntilVisible: true,*/}
+          {/*  }}*/}
+          {/*></TypeIt>*/}
         </Typography>
       </Grid>
       <Grid container direction="row" justify="space-between" alignItems="center">
@@ -73,7 +73,7 @@ function TechUsed(props) {
               key={index}
             >
               <Paper elevation={0} className={classes.boxes}>
-                <Icon className={classes.icon} />
+                {/*<Icon className={classes.icon} />*/}
                 <Grid item container direction="row" justify="center" alignItems="center">
                   <Typography variant="subtitle1" className={classes.iconTitle}>
                     <b>{value.coreTitle}</b>

@@ -1,5 +1,8 @@
 import React from 'react'
 import {
+  Alert,
+  AlertTitle,
+  Snackbar,
   Typography,
   Paper,
   Grid,
@@ -8,8 +11,7 @@ import {
   Button,
   MenuItem,
   Hidden,
-} from '@material-ui/core'
-import { Alert, AlertTitle, Snackbar } from '@mui/material'
+} from '@mui/material'
 import { useStyles } from '../styles/forms/ContactForm.styles'
 import { checkPreviousDate } from '../../utils'
 import axios from 'axios'
