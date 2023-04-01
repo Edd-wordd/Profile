@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Typography, Grid, Link, Paper } from '@material-ui/core'
+import { Container, Typography, Grid, Link, Paper } from '@mui/material'
 import { SectionHeader } from '../index'
 import { useStyles } from '../styles/sections/Questions.styles'
 

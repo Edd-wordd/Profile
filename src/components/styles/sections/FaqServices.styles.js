@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/core'
+import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles((theme) => ({
   infoWrapper: {
@@ -14,7 +14,6 @@ const useStyles = makeStyles((theme) => ({
       width: theme.spacing(40),
     },
   },
-
 }))
 
 export { useStyles }

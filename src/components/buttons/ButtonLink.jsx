@@ -1,22 +1,35 @@
+// import React from 'react'
+// import { Button, Grid, Link } from '@mui/material'
+// import { useStyles } from '../styles/buttons/ButtonLink.styles'
+//
+// function ButtonLink(props) {
+//   const classes = useStyles(props)
+//
+//   return (
+//     <div>
+//       <Grid className={classes.btnWrapper}>
+//         <Link href={props.linkOne}>
+//           {/*endIcon={<ArrowForward />}*/}
+//           <Button className={classes.button} size="large">
+//             {props.btnOneText}
+//           </Button>
+//         </Link>
+//       </Grid>
+//     </div>
+//   )
+// }
+//
+// export default ButtonLink
 import React from 'react'
-import { Button, Grid, Link } from '@material-ui/core'
-import ArrowForward from '@material-ui/icons/ArrowForward'
-import { useStyles } from '../styles/buttons/ButtonLink.styles'
+import { Grid, Link } from '@mui/material'
+import { CustomButton, BtnWrapper } from '../styles/buttons/ButtonLink.styles'
 
 function ButtonLink(props) {
-  const classes = useStyles(props)
-
   return (
     <div>
-      <Grid className={classes.btnWrapper}>
+      <Grid component={BtnWrapper}>
         <Link href={props.linkOne}>
-          <Button
-            className={classes.button}
-            endIcon={<ArrowForward />}
-            size="large"
-          >
-            {props.btnOneText}
-          </Button>
+          <CustomButton size="large">{props.btnOneText}</CustomButton>
         </Link>
       </Grid>
     </div>

@@ -1,15 +1,15 @@
 import React from 'react'
-import { Grid, Typography, Paper, Hidden } from '@material-ui/core'
-import Container from '@material-ui/core/Container'
-import PhoneIphoneIcon from '@material-ui/icons/PhoneIphone'
-import ComputerIcon from '@material-ui/icons/Computer'
+import { Grid, Typography, Paper, Hidden, Container } from '@mui/material'
+import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone'
+import ComputerIcon from '@mui/icons-material/Computer'
+import DescriptionIcon from '@mui/icons-material/Description'
+import MultilineChartIcon from '@mui/icons-material/MultilineChart'
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
+import GroupAddIcon from '@mui/icons-material/GroupAdd'
+
 import { SectionHeader } from '../index'
-import { Transition } from 'react-transition-group'
-import Slide from '@material-ui/core/Slide'
-import DescriptionIcon from '@material-ui/icons/Description'
-import GroupAddIcon from '@material-ui/icons/GroupAdd'
-import MultilineChartIcon from '@material-ui/icons/MultilineChart'
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart'
+import Transition from 'react-transition-group/Transition'
+import { Slide } from '@mui/material'
 import { useStyles } from '../styles/sections/HmServices.styles'
 
 const icons = [
@@ -117,8 +117,8 @@ function HmServices(props) {
                     timeout={3000}
                   >
                     <Paper elevation={10} id={`card_${index}`} className={classes.cards}>
-                      <Icon className={classes.icons} />
                       <Typography variant="h5" className={classes.cardTitle}>
+                        <Icon className={classes.cardIcon} />
                         {service.serviceTitle}
                       </Typography>
                       <Typography paragraph>{service.serviceDetail}</Typography>

@@ -1,8 +1,8 @@
 import React from 'react'
-import { Container, Typography, Grid, Paper } from '@material-ui/core'
+import { Container, Typography, Grid, Paper } from '@mui/material'
 import { SectionHeader } from '../index'
-import TypeIt from 'typeit-react'
-import CheckCircleIcon from '@material-ui/icons/CheckCircle'
+// import TypeIt from 'typeit-react'
+import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import { useStyles } from '../styles/sections/WhatWeDo.styles'
 
 const bulletPoints = [
@@ -61,16 +61,16 @@ function WhatWeDo(props) {
           {bulletPoints.map((value) => (
             <Grid container direction="row" justify="flex-start" alignItems="center" key={value.id}>
               <CheckCircleIcon className={classes.icons} />
-              <TypeIt
-                className={classes.coreValue}
-                options={{
-                  strings: [`${value.bulletpoint}`],
-                  speed: 125,
-                  waitUntilVisible: true,
-                  cursor: false,
-                  startDelay: `${value.delay}`,
-                }}
-              />
+              {/*<TypeIt*/}
+              {/*  className={classes.coreValue}*/}
+              {/*  options={{*/}
+              {/*    strings: [`${value.bulletpoint}`],*/}
+              {/*    speed: 125,*/}
+              {/*    waitUntilVisible: true,*/}
+              {/*    cursor: false,*/}
+              {/*    startDelay: `${value.delay}`,*/}
+              {/*  }}*/}
+              {/*/>*/}
             </Grid>
           ))}
         </Paper>

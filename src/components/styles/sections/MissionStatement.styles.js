@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/core/styles'
+import { makeStyles } from '@mui/styles'
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.primary_100.secondary,

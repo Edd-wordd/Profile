@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, Button, Hidden, Grid } from '@material-ui/core'
+import { Link, Button, Hidden, Grid } from '@mui/material'
 import { Fade as Hamburger } from 'hamburger-react'
 import { BookCallButton } from '../index'
 import { useStyles } from '../styles/layout/NavBar.styles'
