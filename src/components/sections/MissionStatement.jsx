@@ -1,7 +1,7 @@
 import React from 'react'
-import { Typography, Grid, Container } from '@material-ui/core'
+import { Typography, Grid, Container } from '@mui/material'
 import { SectionHeader } from '../index'
-import GroupIcon from '@material-ui/icons/Group'
+import GroupIcon from '@mui/icons-material/Group'
 import { useStyles } from '../styles/sections/MissionStatement.styles'
 
 function MissionStatement(props) {

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Hidden, Typography, Grid } from '@material-ui/core'
+import { Hidden, Typography, Grid } from '@mui/material'
 import { useStyles } from '../styles/sections/SectionHeader.styles'
 
 function SectionHeader(props) {

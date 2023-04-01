@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Typography, Grid, Container } from '@material-ui/core'
+import { Box, Typography, Grid, Container } from '@mui/material'
 import { MajorSigns, FaqServices } from '../index'
 import { useStyles } from '../styles/sections/ServiceInfo.styles'
 

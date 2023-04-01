@@ -1,8 +1,8 @@
 import React from 'react'
 import { SectionHeader } from '../index'
-import { Grid, Typography, Container } from '@material-ui/core'
-import { Accordion, AccordionSummary, AccordionDetails } from '@material-ui/core'
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
+import { Grid, Typography, Container } from '@mui/material'
+import { Accordion, AccordionSummary, AccordionDetails } from '@mui/material'
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import { useStyles } from '../styles/sections/FaqServices.styles'
 
 const questions = [

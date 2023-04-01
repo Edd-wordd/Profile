@@ -1,6 +1,6 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import { makeStyles } from '@material-ui/core/styles'
+import { makeStyles } from '@mui/styles'
 import NavBar from '../src/components/layout/NavBar'
 import Portfolio from '../src/components/pages/Portfolio'
 import AboutUs from '../src/components/pages/AboutUs'
@@ -11,7 +11,7 @@ import Footer from '../src/components/layout/Footer'
 import ServiceInfo from './components/sections/ServiceInfo'
 import PrivacyPolicy from './components/pages/PrivacyPolicy'
 import NotFound from './components/sections/NotFound'
-import { ThemeProvider } from '@material-ui/core/styles'
+import { ThemeProvider } from '@mui/material'
 import theme from './theme'
 
 const useStyles = makeStyles(() => ({

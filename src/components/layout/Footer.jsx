@@ -1,10 +1,10 @@
 import React from 'react'
-import { Hidden, Typography, Link, Paper, Button, Grid } from '@material-ui/core'
-import FacebookIcon from '@material-ui/icons/Facebook'
-import LinkedInIcon from '@material-ui/icons/LinkedIn'
-import InstagramIcon from '@material-ui/icons/Instagram'
-import ComputerIcon from '@material-ui/icons/Computer'
-import TwitterIcon from '@material-ui/icons/Twitter'
+import { Hidden, Typography, Link, Paper, Button, Grid } from '@mui/material'
+import FacebookIcon from '@mui/icons-material/Facebook'
+import LinkedInIcon from '@mui/icons-material/LinkedIn'
+import InstagramIcon from '@mui/icons-material/Instagram'
+import ComputerIcon from '@mui/icons-material/Computer'
+import TwitterIcon from '@mui/icons-material/Twitter'
 import { useStyles } from '../styles/layout/Footer.styles'
 
 const servicesFooterLinks = [

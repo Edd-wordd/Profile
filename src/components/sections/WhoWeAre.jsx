@@ -1,7 +1,7 @@
 import React from 'react'
-import { Container, Typography, Grid, Paper } from '@material-ui/core'
-import Zoom from '@material-ui/core/Zoom'
-import { Transition } from 'react-transition-group'
+import { Container, Typography, Grid, Paper } from '@mui/material'
+import { Zoom } from '@mui/material'
+import Transition from 'react-transition-group/Transition'
 import { ButtonLink, SectionHeader } from '../index'
 import { useStyles } from '../styles/sections/WhoWeAre.styles'
 

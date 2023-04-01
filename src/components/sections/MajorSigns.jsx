@@ -1,6 +1,6 @@
 import React from 'react'
 import { SectionHeader } from '../index'
-import { Grid, Typography, Container, Paper } from '@material-ui/core'
+import { Grid, Typography, Container, Paper } from '@mui/material'
 import { useStyles } from '../styles/sections/MajorSigns.styles'
 
 const MajorSigns = (props) => {
