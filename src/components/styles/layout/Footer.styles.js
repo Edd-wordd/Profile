@@ -1,86 +1,77 @@
-import { makeStyles } from '@mui/styles'
+import { styled } from '@mui/system'
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    backgroundColor: theme.palette.secondary.main,
-    color: theme.palette.defaultLight.main,
+const FooterBackground = styled('div')(({ theme }) => ({
+  backgroundColor: theme.palette.secondary.main,
+  color: theme.palette.defaultLight.main,
+  width: '100%',
+  height: 'auto',
+  paddingTop: '3rem',
+  overflowX: 'hidden',
+}))
+
+const SectionCards = styled('div')(({ theme }) => ({
+  width: '20rem',
+  minHeight: '13rem',
+  backgroundColor: 'transparent !important',
+  color: `${theme.palette.defaultLight.main} !important`,
+  fontWeight: 200,
+  boxShadow: 'none !important',
+  [theme.breakpoints.down('xs')]: {
+    margin: '2rem 0 !important',
+  },
+}))
+
+const FooterButton = styled('button')(({ theme }) => ({
+  color: theme.palette.defaultLight.main,
+  marginTop: '1rem',
+  '&:hover': {
+    opacity: '.8',
+  },
+}))
+
+const FooterMainLogo = styled('div')(({ theme }) => ({
+  width: '25rem',
+  height: 'auto',
+  [theme.breakpoints.down('xs')]: {
     width: '100%',
     height: 'auto',
   },
-  mainLogo: {
-    width: '300px',
+  '& img': {
+    maxWidth: '100%',
     height: 'auto',
-    [theme.breakpoints.down('xs')]: {
-      width: '100%',
-      height: 'auto',
-    },
-  },
-  line: {
-    marginTop: '1.2rem',
-    marginRight: '.75rem',
-    marginBottom: '1rem',
-    width: '85%',
-    height: '1px',
-    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-  },
-
-  boxes: {
-    width: '250px',
-    height: 'auto',
-    backgroundColor: 'transparent',
-    color: theme.palette.defaultLight.main,
-    fontWeight: 200,
-    [theme.breakpoints.down('xs')]: {
-      margin: '2rem 0',
-    },
-  },
-  box1: {
-    width: '200px',
-    height: 'auto',
-    backgroundColor: 'transparent',
-    color: theme.palette.defaultLight.main,
-    marginTop: '-3rem',
-    [theme.breakpoints.down('xs')]: {
-      paddingTop: '0rem',
-      margin: '2rem 0',
-    },
-  },
-  icons: {
-    width: '35px',
-    height: 'auto',
-  },
-  diamond: {
-    width: '10px',
-    height: '10px',
-    border: '2px solid #343a40',
-    transform: 'rotate(45deg)',
-    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-    margin: '.3rem 1rem',
-  },
-  button: {
-    color: theme.palette.defaultLight.main,
-    marginTop: '1rem',
-    '&:hover': {
-      opacity: '.8',
-    },
-  },
-  link: {
-    '&:hover': {
-      textDecoration: 'none',
-    },
-  },
-  links: {
-    textDecoration: 'none',
-    color: theme.palette.defaultLight.main,
-    fontWeight: 'lighter',
-    letterSpacing: '1px',
-  },
-  copyright: {
-    padding: '0 0 1rem 0',
-  },
-  copyrightLinks: {
-    textDecoration: 'none',
-    color: theme.palette.defaultLight.main,
   },
 }))
-export { useStyles }
+
+const FooterLink = styled('a')(({ theme }) => ({
+  textDecoration: 'none',
+  color: theme.palette.defaultLight.main,
+  fontWeight: 'lighter',
+  letterSpacing: '1px',
+}))
+
+const FooterDiamond = styled('div')(({ theme }) => ({
+  width: '10px',
+  height: '10px',
+  border: '2px solid #343a40',
+  transform: 'rotate(45deg)',
+  background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+  margin: '.3rem 1rem',
+}))
+
+const FooterLine = styled('div')(({ theme }) => ({
+  marginTop: '1.2rem',
+  marginRight: '.75rem',
+  marginBottom: '1rem',
+  width: '90%',
+  height: '1px',
+  background: 'linear-gradient(45deg, #89023e 30%, #c72c61 90%)',
+}))
+export {
+  FooterBackground,
+  SectionCards,
+  FooterButton,
+  FooterMainLogo,
+  FooterLink,
+  FooterDiamond,
+  FooterLine,
+}
