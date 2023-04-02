@@ -1,28 +1,72 @@
+// import React from 'react'
+// import { Hidden, Grid } from '@mui/material'
+// import {
+//   TitleWrapper,
+//   Title,
+//   SubTitle,
+//   LineL,
+//   Diamond,
+//   LineR,
+//   DiamondWrapper,
+// } from '../styles/sections/SectionHeader.styles'
+//
+// function SectionHeader(props) {
+//   return (
+//     <>
+//       <Grid container component={TitleWrapper}>
+//         <Title variant="h4">{props.title}</Title>
+//         <Grid container item component={DiamondWrapper}>
+//           <Hidden xsDown>
+//             <LineL />
+//             <Diamond />
+//             <LineR />
+//           </Hidden>
+//           <Hidden smUp>
+//             <LineL />
+//             <Diamond />
+//             <LineR />
+//           </Hidden>
+//         </Grid>
+//         <SubTitle variant="h6">{props.subTitle}</SubTitle>
+//       </Grid>
+//     </>
+//   )
+// }
+//
+// export default SectionHeader
+
 import React from 'react'
-import { Hidden, Typography, Grid } from '@mui/material'
-import { useStyles } from '../styles/sections/SectionHeader.styles'
+import { Hidden, Grid, Typography } from '@mui/material'
+import {
+  TitleWrapper,
+  DiamondWrapper,
+  LineL,
+  LineR,
+  Diamond,
+  Title,
+  SubTitle,
+} from '../styles/sections/SectionHeader.styles'
 
 function SectionHeader(props) {
-  const classes = useStyles(props)
   return (
     <>
-      <Grid className={classes.titleWrapper} container direction="row" justify="center">
-        <Typography variant="h4" className={classes.title}>
+      <Grid container component={TitleWrapper}>
+        <Typography variant="h4" component={Title}>
           {props.title}
         </Typography>
-        <Grid container item direction="row" justify="center">
+        <Grid container item component={DiamondWrapper}>
           <Hidden xsDown>
-            <div className={classes.lineL}></div>
-            <div className={classes.diamond}></div>
-            <div className={classes.lineR}></div>
+            <LineL />
+            <Diamond />
+            <LineR />
           </Hidden>
           <Hidden smUp>
-            <div className={classes.lineL}></div>
-            <div className={classes.diamond}></div>
-            <div className={classes.lineR}></div>
+            <LineL />
+            <Diamond />
+            <LineR />
           </Hidden>
         </Grid>
-        <Typography className={classes.subTitle} variant="h6">
+        <Typography variant="h6" component={SubTitle}>
           {props.subTitle}
         </Typography>
       </Grid>
