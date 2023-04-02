@@ -30,7 +30,7 @@ function WhoWeAre(props) {
 
   return (
     <>
-      <SectionHeader title="Who We Are" subTitle="Bring you ideas to life!" />
+      <SectionHeader title="Who We Are" subTitle="Bring you ideas to life!" />w{' '}
       <Container maxWidth="lg">
         <Grid sx={{ margin: '3rem 0' }}>
           <Typography paragraph variant="body1" sx={{ lineHeight: '1.75rem' }}>
@@ -47,7 +47,6 @@ function WhoWeAre(props) {
           </Typography>
         </Grid>
       </Container>
-
       <Container maxWidth="xl" id="cards">
         <Grid container direction="row" justifyContent="space-evenly" alignItems="center">
           {companyValues.map((value) => (
