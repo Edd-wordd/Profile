@@ -1,72 +1,29 @@
-// import React from 'react'
-// import { Hidden, Grid } from '@mui/material'
-// import {
-//   TitleWrapper,
-//   Title,
-//   SubTitle,
-//   LineL,
-//   Diamond,
-//   LineR,
-//   DiamondWrapper,
-// } from '../styles/sections/SectionHeader.styles'
-//
-// function SectionHeader(props) {
-//   return (
-//     <>
-//       <Grid container component={TitleWrapper}>
-//         <Title variant="h4">{props.title}</Title>
-//         <Grid container item component={DiamondWrapper}>
-//           <Hidden xsDown>
-//             <LineL />
-//             <Diamond />
-//             <LineR />
-//           </Hidden>
-//           <Hidden smUp>
-//             <LineL />
-//             <Diamond />
-//             <LineR />
-//           </Hidden>
-//         </Grid>
-//         <SubTitle variant="h6">{props.subTitle}</SubTitle>
-//       </Grid>
-//     </>
-//   )
-// }
-//
-// export default SectionHeader
-
 import React from 'react'
-import { Hidden, Grid, Typography } from '@mui/material'
+import { Grid, Typography } from '@mui/material'
 import {
   TitleWrapper,
-  DiamondWrapper,
-  LineL,
-  LineR,
+  LeftSideLine,
+  RightSideLine,
   Diamond,
-  Title,
-  SubTitle,
 } from '../styles/sections/SectionHeader.styles'
 
 function SectionHeader(props) {
   return (
     <>
       <Grid container component={TitleWrapper}>
-        <Typography variant="h4" component={Title}>
+        <Typography variant="h4" sx={{ paddingBottom: '1rem' }} component="h4">
           {props.title}
         </Typography>
-        <Grid container item component={DiamondWrapper}>
-          <Hidden xsDown>
-            <LineL />
-            <Diamond />
-            <LineR />
-          </Hidden>
-          <Hidden smUp>
-            <LineL />
-            <Diamond />
-            <LineR />
-          </Hidden>
+        <Grid
+          container
+          item
+          sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+        >
+          <LeftSideLine />
+          <Diamond />
+          <RightSideLine />
         </Grid>
-        <Typography variant="h6" component={SubTitle}>
+        <Typography variant="h6" sx={{ marginTop: '1rem' }} component="h6">
           {props.subTitle}
         </Typography>
       </Grid>
