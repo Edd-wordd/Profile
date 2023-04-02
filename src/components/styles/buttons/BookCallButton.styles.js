@@ -19,7 +19,8 @@ const useStyles = makeStyles((theme) => ({
     padding: '.75rem 1rem',
     borderRadius: '2rem',
     '&:hover': {
-      backgroundImage: `linear-gradient(#89023e  20%, #000)`,
+      backgroundImage: `linear-gradient(45deg, #89023e 30%, #c72c61 90%)
+`,
       cursor: 'pointer',
     },
   },

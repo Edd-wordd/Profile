@@ -12,11 +12,10 @@ const TitleWrapper = styled('div')(({ theme }) => ({
 }))
 
 const LeftSideLine = styled('div')(({ theme }) => ({
-  marginTop: '.8rem',
   marginRight: '.75rem',
   width: '25%',
   height: '1px',
-  background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+  background: 'linear-gradient(45deg, #89023e 30%, #c72c61 90%)',
   [theme.breakpoints.down('xs')]: {
     display: 'none',
   },
@@ -27,18 +26,17 @@ const Diamond = styled('div')(({ theme }) => ({
   height: '20px',
   border: '4px solid #343a40',
   transform: 'rotate(45deg)',
-  background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+  background: 'linear-gradient(45deg, #89023e 30%, #c72c61 90%)',
   [theme.breakpoints.down('xs')]: {
     display: 'none',
   },
 }))
 
 const RightSideLine = styled('div')(({ theme }) => ({
-  marginTop: '.8rem',
   marginLeft: '.75rem',
   width: '25%',
   height: '1px',
-  background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+  background: 'linear-gradient(45deg, #89023e 30%, #c72c61 90%)\n',
   [theme.breakpoints.down('xs')]: {
     display: 'none',
   },
