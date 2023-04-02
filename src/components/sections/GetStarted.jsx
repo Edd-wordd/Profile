@@ -3,11 +3,16 @@ import { Container, Typography, Grid, Hidden, Paper } from '@mui/material'
 import BeenhereIcon from '@mui/icons-material/Beenhere'
 import { ButtonLink, SectionHeader } from '../index'
 import getStartedSteps from '../../data/getStartedData'
-import { DottedLine, Card, IconWrapper } from '../styles/sections/GetStarted.styles'
+import {
+  DottedLine,
+  Card,
+  IconWrapper,
+  GetStartedBackground,
+} from '../styles/sections/GetStarted.styles'
 
 function GetStarted() {
   return (
-    <div sx={{ paddingBottom: '6rem', backgroundColor: '#f4f1fa' }}>
+    <GetStartedBackground>
       <Grid sx={{ padding: '1.5rem' }}>
         <SectionHeader title="How to get Started?" subTitle="The right time is NOW!" />
       </Grid>
@@ -58,7 +63,7 @@ function GetStarted() {
         </Grid>
       </Container>
       <ButtonLink linkOne="/contact" btnOneText="Get Started" />
-    </div>
+    </GetStartedBackground>
   )
 }
 

@@ -1,5 +1,9 @@
 import { styled } from '@mui/system'
 
+const GetStartedBackground = styled('div')(({ theme }) => ({
+  paddingBottom: '3rem',
+  backgroundColor: '#f4f1fa',
+}))
 const Card = styled('div')(({ theme }) => ({
   width: theme.spacing(37),
   minHeight: theme.spacing(30),
@@ -30,4 +34,4 @@ const IconWrapper = styled('div')(({ theme }) => ({
   },
 }))
 
-export { DottedLine, Card, IconWrapper }
+export { DottedLine, Card, IconWrapper, GetStartedBackground }
