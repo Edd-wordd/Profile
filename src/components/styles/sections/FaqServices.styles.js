@@ -1,19 +1,11 @@
-import { makeStyles } from '@mui/styles'
+import { styled } from '@mui/system'
+import { Grid } from '@mui/material'
 
-const useStyles = makeStyles((theme) => ({
-  infoWrapper: {
-    padding: '2rem 0rem',
-  },
-  accordionWrapper: {
-    padding: '2rem 0rem 8rem 0rem',
-  },
-  accordion: {
-    width: theme.spacing(100),
-    backgroundColor: theme.palette.defaultLight.main,
-    [theme.breakpoints.down('sm')]: {
-      width: theme.spacing(40),
-    },
-  },
+const CustomAccordion = styled(Grid)(({ theme }) => ({
+  width: '100%',
+  maxWidth: theme.spacing(100),
+  marginTop: theme.spacing(0.5),
+  backgroundColor: theme.palette.defaultLight.main,
 }))
 
-export { useStyles }
+export { CustomAccordion }

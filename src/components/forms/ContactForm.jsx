@@ -106,7 +106,7 @@ const formFieldInputs = [
     },
     required: true,
     multiline: true,
-    rowsMax: 4,
+    rowsmax: 4,
     fullWidth: true,
   },
   {
