@@ -8,40 +8,9 @@ import TwitterIcon from '@mui/icons-material/Twitter'
 import SportsMotorsportsIcon from '@mui/icons-material/SportsMotorsports'
 // import TypeIt from 'typeit-react'
 import { useStyles } from '../styles/sections/TechUsed.styles'
+import techUsed from '../../data/techData'
 
 const icons = [AdbIcon, ChildCareIcon, FlightIcon, RedditIcon, TwitterIcon, SportsMotorsportsIcon]
-const coreValues = [
-  {
-    coreTitle: 'JavaScript',
-    coreValue:
-      'We believe in high quality work, and keep our team members practicing the industry standards while developing new innovative ways.',
-  },
-  {
-    coreTitle: 'ReactJS',
-    coreValue:
-      'We believe in high quality work, and keep our team members practicing the industry standards while developing new innovative ways.',
-  },
-  {
-    coreTitle: 'React Native',
-    coreValue:
-      'We believe in high quality work, and keep our team members practicing the industry standards while developing new innovative ways.',
-  },
-  {
-    coreTitle: 'WordPress',
-    coreValue:
-      'We believe in high quality work, and keep our team members practicing the industry standards while developing new innovative ways.',
-  },
-  {
-    coreTitle: 'Shopify',
-    coreValue:
-      'We believe in high quality work, and keep our team members practicing the industry standards while developing new innovative ways.',
-  },
-  {
-    coreTitle: 'Figma',
-    coreValue:
-      'We believe in high quality work, and keep our team members practicing the industry standards while developing new innovative ways.',
-  },
-]
 function TechUsed(props) {
   const classes = useStyles(props)
   return (
@@ -58,7 +27,7 @@ function TechUsed(props) {
         </Typography>
       </Grid>
       <Grid container direction="row" justify="space-between" alignItems="center">
-        {coreValues.map((value, index) => {
+        {techUsed.map((value, index) => {
           const Icon = icons[index]
           return (
             <Grid
@@ -76,7 +45,7 @@ function TechUsed(props) {
                 {/*<Icon className={classes.icon} />*/}
                 <Grid item container direction="row" justify="center" alignItems="center">
                   <Typography variant="subtitle1" className={classes.iconTitle}>
-                    <b>{value.coreTitle}</b>
+                    <b>{value.tech}</b>
                   </Typography>
                 </Grid>
               </Paper>
