@@ -1,67 +1,121 @@
 import React from 'react'
-import { Hidden, Typography, Link, Paper, Button, Grid } from '@mui/material'
+import { Grid, Typography, Link, Paper, Button, Hidden } from '@mui/material'
 import FacebookIcon from '@mui/icons-material/Facebook'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import InstagramIcon from '@mui/icons-material/Instagram'
-import ComputerIcon from '@mui/icons-material/Computer'
 import TwitterIcon from '@mui/icons-material/Twitter'
-import { useStyles } from '../styles/layout/Footer.styles'
+import ComputerIcon from '@mui/icons-material/Computer'
 import footerLinks from '../../data/footerData'
+import logo from '../../../public/assets/black.png'
+import {
+  FooterBackground,
+  SectionCards,
+  FooterMainLogo,
+  FooterButton,
+  FooterLink,
+  FooterDiamond,
+  FooterLine,
+} from '../styles/layout/Footer.styles'
 
-function Footer(props) {
-  const classes = useStyles(props)
+function Footer() {
   return (
-    <div className={classes.root}>
-      <Grid container direction="row" justify="space-evenly" alignItems="center">
-        {/* Services Link Section */}
-        <Paper className={classes.boxes}>
+    <FooterBackground>
+      <Grid container direction="row" justifyContent="center" alignItems="center">
+        <Paper component={SectionCards}>
           <Typography variant="h6">Services</Typography>
           {footerLinks.map((link, index) => (
             <Typography key={index} variant="subtitle1">
-              <Link className={classes.links} href={link.path}>
+              <Link
+                href={link.path}
+                sx={{
+                  textDecoration: 'none',
+                  color: '#f5f5f5',
+                  fontWeight: 'lighter',
+                  letterSpacing: '1px',
+                  '&:hover': { textDecoration: 'underline' },
+                }}
+              >
                 {link.label}
               </Link>
             </Typography>
           ))}
         </Paper>
-        <Paper className={classes.box1}>
+        <Paper component={SectionCards}>
           <Typography variant="h6">Company Info:</Typography>
-          <Typography>
-            Phone:
-            <Link className={classes.links} href="tel:9158671023">
-              +1 (999) 811-1003
-            </Link>
-          </Typography>
-          <Typography>
-            Email:
-            <Link
-              className={classes.links}
-              href="mailto:edd_wordd@icloud.com?subject=Mona Tech General Inquires"
-            >
-              &nbsp;info@monatech.com
-            </Link>
-          </Typography>
-          <Typography>Las Vegas, Nevada U.S.A</Typography>
+          <address>
+            <Typography>
+              Phone:
+              <Link component={FooterLink} href="tel:9158671023">
+                +1 (999) 811-1003
+              </Link>
+            </Typography>
+            <Typography>
+              Email:
+              <Link
+                component={FooterLink}
+                href="mailto:edd_wordd@icloud.com?subject=Mona Tech General Inquires"
+              >
+                &nbsp;info@monatech.com
+              </Link>
+            </Typography>
+            <Typography>Las Vegas, Nevada U.S.A</Typography>
+          </address>
         </Paper>
-        <Paper className={classes.box1}>
+        <Paper component={SectionCards}>
           <Typography variant="h6">Connect With Us: </Typography>
-          <Link className={classes.links} href="https://www.facebook.com" target="_blank">
-            <FacebookIcon className={classes.icons} />
-          </Link>
-          <Link className={classes.links} href="https://www.linkedin.com/" target="_blank">
-            <LinkedInIcon className={classes.icons} />
-          </Link>
-          <Link className={classes.links} href="https://www.instagram.com" target="_blank">
-            <InstagramIcon className={classes.icons} />
-          </Link>
-          <Link className={classes.links} href="https://www.twitter.com" target="_blank">
-            <TwitterIcon className={classes.icons} />
-          </Link>
-          <Link href="/contact" className={classes.link}>
+          <nav>
+            <Link
+              component={FooterLink}
+              href="https://www.facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
+              <FacebookIcon sx={{ width: '50px', height: 'auto' }} />
+            </Link>
+            <Link
+              component={FooterLink}
+              href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
+              <LinkedInIcon sx={{ width: '50px', height: 'auto' }} />
+            </Link>
+            <Link
+              component={FooterLink}
+              href="https://www.instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <InstagramIcon sx={{ width: '50px', height: 'auto' }} />
+            </Link>
+            <Link
+              component={FooterLink}
+              href="https://www.twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Twitter"
+            >
+              <TwitterIcon sx={{ width: '50px', height: 'auto' }} />
+            </Link>
+          </nav>
+          <Link
+            href="/contact"
+            sx={{
+              marginTop: '1.2rem',
+              marginRight: '.75rem',
+              marginBottom: '1rem',
+              width: '85%',
+              height: '1px',
+              background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+            }}
+          >
             <Button
               variant="contained"
               color="primary"
-              className={classes.button}
+              component={FooterButton}
               endIcon={<ComputerIcon />}
               size="large"
             >
@@ -70,36 +124,34 @@ function Footer(props) {
           </Link>
         </Paper>
         {/* Footer Logo */}
-        <Link href="/">
-          <img
-            src="../../../public/assets/black.png"
-            alt="mona-tech-logo"
-            className={classes.mainLogo}
-          />
-        </Link>
+        <FooterMainLogo>
+          <Link href="/">
+            <img src={logo} alt="mona-tech-logo" />
+          </Link>
+        </FooterMainLogo>
       </Grid>
       {/* Copyright Section */}
-      <Grid container item direction="row" justify="center">
-        <span className={classes.line}></span>
+      <Grid container item direction="row" justifyContent="center">
+        <FooterLine />
       </Grid>
-      <Grid container direction="row" justify="center" className={classes.copyright}>
+      <Grid container direction="row" justifyContent="center" sx={{ padding: '0 0 1rem 0' }}>
         <Grid>
           <Typography>© Copyright {new Date().getFullYear()} | All Rights Reserved</Typography>
         </Grid>
         <Hidden xsDown>
           <Grid>
-            <div className={classes.diamond}></div>
+            <FooterDiamond />
           </Grid>
         </Hidden>
         <Grid>
           <Typography>
-            <Link href="/privacypolicy" className={classes.copyrightLinks}>
+            <Link href="/privacypolicy" sx={{ textDecoration: 'none', color: '#f5f5f5' }}>
               Privacy Policy
             </Link>{' '}
           </Typography>
         </Grid>
       </Grid>
-    </div>
+    </FooterBackground>
   )
 }
 
