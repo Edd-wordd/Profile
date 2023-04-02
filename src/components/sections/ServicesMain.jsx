@@ -3,33 +3,7 @@ import { Paper, Container, Typography, Grid, Grow } from '@mui/material'
 import { SectionHeader, ButtonLink } from '../index'
 import Transition from 'react-transition-group/Transition'
 import { useStyles } from '../styles/sections/ServicesMain.styles'
-
-const coreValues = [
-  {
-    id: 4000,
-    coreTitle: 'Best Practices',
-    coreValue:
-      'We believe in high quality work, and keep our team members practicing the industry standards while developing new innovative ways.',
-  },
-  {
-    id: 4001,
-    coreTitle: 'Industry Standards',
-    coreValue:
-      'We believe in high quality work, and keep our team members practicing the industry standards while developing new innovative ways.',
-  },
-  {
-    id: 4002,
-    coreTitle: 'Quality Work',
-    coreValue:
-      'We believe in high quality work, and keep our team members practicing the industry standards while developing new innovative ways.',
-  },
-  {
-    id: 4003,
-    coreTitle: 'Innovative Ideas',
-    coreValue:
-      'We believe in high quality work, and keep our team members practicing the industry standards while developing new innovative ways.',
-  },
-]
+import coreServiceValues from '../../data/serviceMainData'
 
 function ServicesMain(props) {
   const classes = useStyles(props)
@@ -80,7 +54,7 @@ function ServicesMain(props) {
           alignItems="center"
           id="servicesMain"
         >
-          {coreValues.map((value) => (
+          {coreServiceValues.map((value) => (
             <Transition in={!!setInProp} timeout={2000} key={value.id}>
               {() => (
                 <Grow in={inProp} timeout={2000}>

@@ -4,32 +4,7 @@ import { Zoom } from '@mui/material'
 import Transition from 'react-transition-group/Transition'
 import { ButtonLink, SectionHeader } from '../index'
 import { useStyles } from '../styles/sections/WhoWeAre.styles'
-
-// how to new line in a string
-// https://stackoverflow.com/questions/10805125/how-to-write-multiline-strings-in-javascript
-const coreValues = [
-  {
-    id: 1000,
-    coreTitle: 'Best Practices',
-    coreValue: `We always start with a deep understanding of our clients' needs and goals. 
-    - We use cutting-edge technologies to develop solutions that are scalable, secure, and future-proof. 
-    - We are committed to delivering projects on time and within budget. 
-    - We prioritize communication and transparency throughout the entire development process. 
-    - We never compromise on quality or performance.`,
-  },
-  {
-    id: 1001,
-    coreTitle: 'Industry Standards',
-    coreValue:
-      "We adhere to the highest industry standards and take pride in our reputation for delivering reliable and secure solutions. We understand the importance of protecting our clients' sensitive data and take all necessary measures to ensure their privacy and security.",
-  },
-  {
-    id: 1002,
-    coreTitle: 'Culture',
-    coreValue:
-      'We foster a culture of creativity, collaboration, and innovation. Our team members are encouraged to explore new ideas, experiment with different approaches, and share their knowledge and expertise with each other. This culture of learning and growth enables us to continually improve our services and provide our clients with the best possible solutions.',
-  },
-]
+import companyValues from '../../data/whoWeAreData'
 
 function WhoWeAre(props) {
   const classes = useStyles(props)
@@ -77,16 +52,16 @@ function WhoWeAre(props) {
 
       <Container maxWidth="xl" id="cards">
         <Grid container direction="row" justify="space-evenly" alignItems="center">
-          {coreValues.map((value) => (
+          {companyValues.map((value) => (
             <Transition in={!!setInProp} timeout={1000} key={value.id}>
               {() => (
                 <Zoom in={inProp} mountOnEnter unmountOnExit timeout={2000}>
                   <Paper variant="outlined" className={classes.boxes}>
                     <Typography variant="subtitle1">
-                      <b>{value.coreTitle}</b>
+                      <b>{value.title}</b>
                     </Typography>
                     <Typography paragraph variant="body1" style={{ color: '#808080' }}>
-                      {value.coreValue}
+                      {value.description}
                     </Typography>
                   </Paper>
                 </Zoom>
