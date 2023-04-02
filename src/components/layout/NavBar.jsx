@@ -3,13 +3,7 @@ import { Link, Button, Hidden, Grid } from '@mui/material'
 import { Fade as Hamburger } from 'hamburger-react'
 import { BookCallButton } from '../index'
 import { useStyles } from '../styles/layout/NavBar.styles'
-
-// store the data for the tab labels and routes
-const tabs = [
-  { label: 'About Us', route: '/about' },
-  { label: 'Services', route: '/services' },
-  { label: 'Contact Us', route: '/contact' },
-]
+import tabs from '../../data/navbarData'
 
 function NavBar(props) {
   const classes = useStyles(props)

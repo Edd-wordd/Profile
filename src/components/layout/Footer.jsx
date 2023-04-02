@@ -6,14 +6,7 @@ import InstagramIcon from '@mui/icons-material/Instagram'
 import ComputerIcon from '@mui/icons-material/Computer'
 import TwitterIcon from '@mui/icons-material/Twitter'
 import { useStyles } from '../styles/layout/Footer.styles'
-
-const servicesFooterLinks = [
-  { path: '/services/seo', label: 'Seo Services' },
-  { path: '/services/web-design', label: 'Website Development' },
-  { path: '/services/eCommerce', label: 'eCommerce Development' },
-  { path: '/services/mobile-app', label: 'Mobile App Development' },
-  { path: '/services/web-maintenance', label: 'Website Maintenance & Support' },
-]
+import footerLinks from '../../data/footerData'
 
 function Footer(props) {
   const classes = useStyles(props)
@@ -23,7 +16,7 @@ function Footer(props) {
         {/* Services Link Section */}
         <Paper className={classes.boxes}>
           <Typography variant="h6">Services</Typography>
-          {servicesFooterLinks.map((link, index) => (
+          {footerLinks.map((link, index) => (
             <Typography key={index} variant="subtitle1">
               <Link className={classes.links} href={link.path}>
                 {link.label}
