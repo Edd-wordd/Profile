@@ -1,5 +1,8 @@
 import React from 'react'
-import { MainDisplay, MissionStatement, WhatWeDo, Resources } from "../index";
+import MainDisplay from '../../components/sections/MainDisplay'
+import MissionStatement from '../../components/sections/MissionStatement'
+import WhatWeDo from '../../components/sections/WhatWeDo'
+import Resources from '../../components/sections/Resources'
 
 function AboutUs() {
   return (
