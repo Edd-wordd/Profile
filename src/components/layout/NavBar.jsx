@@ -6,6 +6,7 @@ import { useStyles } from '../styles/layout/NavBar.styles'
 import tabs from '../../data/navbarData'
 import { useEffect } from 'react'
 import { useTheme } from '@mui/system'
+import NavBarButton from '../buttons/NavBarButton'
 
 function NavBar(props) {
   const classes = useStyles(props)
@@ -54,35 +55,12 @@ function NavBar(props) {
                 {tabs.map((tab, index) => {
                   return (
                     <Grid item xs={12} className={classes.mobileBtn} key={index}>
-                      <Button
-                        key={tab.route}
-                        href={tab.route}
-                        sx={{
-                          fontSize: 16,
-                          fontWeight: 500,
-                          padding: '1.5rem 0 1.5rem 0',
-                          color: theme.palette.defaultLight.main,
-                          letterSpacing: '.3rem',
-                          transitionTimingFunction: 'ease-in',
-                          transition: '.5s',
-                          '&:hover': {
-                            color: theme.palette.primary_300.main,
-                            backgroundColor: 'transparent',
-                            textShadow: `1px 1px ${theme.palette.primary_300.main}`,
-                          },
-                          ...(window.location.pathname === tab.route && {
-                            color: theme.palette.primary_300.main,
-                            textShadow: `1px 1px ${theme.palette.primary_300.main}`,
-                            marginBottom: '.5rem',
-                            textDecoration: 'line-through',
-                            '&:hover': {
-                              textDecoration: 'line-through',
-                            },
-                          }),
-                        }}
-                      >
-                        {tab.label}
-                      </Button>
+                      <NavBarButton
+                        key={index}
+                        tab={tab}
+                        theme={theme}
+                        windowLocation={window.location}
+                      />
                     </Grid>
                   )
                 })}
@@ -104,37 +82,14 @@ function NavBar(props) {
               </Link>
             </Grid>
             <Grid item sm={8} md={7} lg={7} className={classes.btnDisplay}>
-              {tabs.map((tab) => {
+              {tabs.map((tab, index) => {
                 return (
-                  <Button
-                    key={tab.route}
-                    href={tab.route}
-                    sx={{
-                      fontSize: 16,
-                      fontWeight: 500,
-                      padding: '1.5rem 0 1.5rem 0',
-                      color: theme.palette.defaultLight.main,
-                      letterSpacing: '.3rem',
-                      transitionTimingFunction: 'ease-in',
-                      transition: '.5s',
-                      '&:hover': {
-                        color: theme.palette.primary_300.main,
-                        backgroundColor: 'transparent',
-                        textShadow: `1px 1px ${theme.palette.primary_300.main}`,
-                      },
-                      ...(window.location.pathname === tab.route && {
-                        color: theme.palette.primary_300.main,
-                        textShadow: `1px 1px ${theme.palette.primary_300.main}`,
-                        marginBottom: '.5rem',
-                        textDecoration: 'line-through',
-                        '&:hover': {
-                          textDecoration: 'line-through',
-                        },
-                      }),
-                    }}
-                  >
-                    {tab.label}
-                  </Button>
+                  <NavBarButton
+                    key={index}
+                    tab={tab}
+                    theme={theme}
+                    windowLocation={window.location}
+                  />
                 )
               })}
             </Grid>
