@@ -1,29 +1,34 @@
 import React from 'react'
-import { Link, Button, Hidden, Grid } from '@mui/material'
+import { Link, Button, Grid, Box } from '@mui/material'
 import { Fade as Hamburger } from 'hamburger-react'
 import { BookCallButton } from '../index'
 import { useStyles } from '../styles/layout/NavBar.styles'
 import tabs from '../../data/navbarData'
+import { useEffect } from 'react'
+import { useTheme } from '@mui/system'
 
 function NavBar(props) {
   const classes = useStyles(props)
   const [isShowingMenu, setIsShowingMenu] = React.useState(false) // default state for mobile menu
   const [navbar, setNavbar] = React.useState(false)
+  const theme = useTheme()
 
   const changeNavbarBackground = () => {
-    if (window.scrollY >= 80) {
-      setNavbar(true)
-    } else {
-      setNavbar(false)
-    }
+    setNavbar(window.scrollY >= 80)
   }
 
-  window.addEventListener('scroll', changeNavbarBackground)
+  useEffect(() => {
+    window.addEventListener('scroll', changeNavbarBackground)
+
+    return () => {
+      window.removeEventListener('scroll', changeNavbarBackground)
+    }
+  }, [])
 
   return (
     <>
       <div className={navbar ? classes.active : classes.root}>
-        <Hidden lgUp>
+        <Box display={{ xs: 'block', md: 'block', lg: 'none' }}>
           {/* smaller menu */}
           <Grid container>
             <Grid
@@ -39,7 +44,7 @@ function NavBar(props) {
                   />
                 </Link>
               </Grid>
-              <Grid item xs={1} className={classes.hamIcon}>
+              <Grid className={classes.hamIcon}>
                 <Hamburger toggled={isShowingMenu} toggle={setIsShowingMenu} duration={0.7} />
               </Grid>
             </Grid>
@@ -50,10 +55,31 @@ function NavBar(props) {
                   return (
                     <Grid item xs={12} className={classes.mobileBtn} key={index}>
                       <Button
-                        className={`${classes.tab}  ${
-                          window.location.pathname === tab.route && classes.selectedTab
-                        }`}
+                        key={tab.route}
                         href={tab.route}
+                        sx={{
+                          fontSize: 16,
+                          fontWeight: 500,
+                          padding: '1.5rem 0 1.5rem 0',
+                          color: theme.palette.defaultLight.main,
+                          letterSpacing: '.3rem',
+                          transitionTimingFunction: 'ease-in',
+                          transition: '.5s',
+                          '&:hover': {
+                            color: theme.palette.primary_300.main,
+                            backgroundColor: 'transparent',
+                            textShadow: `1px 1px ${theme.palette.primary_300.main}`,
+                          },
+                          ...(window.location.pathname === tab.route && {
+                            color: theme.palette.primary_300.main,
+                            textShadow: `1px 1px ${theme.palette.primary_300.main}`,
+                            marginBottom: '.5rem',
+                            textDecoration: 'line-through',
+                            '&:hover': {
+                              textDecoration: 'line-through',
+                            },
+                          }),
+                        }}
                       >
                         {tab.label}
                       </Button>
@@ -63,9 +89,10 @@ function NavBar(props) {
               </>
             )}
           </Grid>
-        </Hidden>
-        <Hidden mdDown>
-          {/* larger menu */}
+        </Box>
+        {/* larger menu */}
+
+        <Box display={{ xs: 'none', md: 'none', lg: 'block' }}>
           <Grid container>
             <Grid item sm={4} md={2} lg={2}>
               <Link href="/">
@@ -81,10 +108,30 @@ function NavBar(props) {
                 return (
                   <Button
                     key={tab.route}
-                    className={`${classes.tab} ${
-                      window.location.pathname === tab.route && classes.selectedTab
-                    }`}
                     href={tab.route}
+                    sx={{
+                      fontSize: 16,
+                      fontWeight: 500,
+                      padding: '1.5rem 0 1.5rem 0',
+                      color: theme.palette.defaultLight.main,
+                      letterSpacing: '.3rem',
+                      transitionTimingFunction: 'ease-in',
+                      transition: '.5s',
+                      '&:hover': {
+                        color: theme.palette.primary_300.main,
+                        backgroundColor: 'transparent',
+                        textShadow: `1px 1px ${theme.palette.primary_300.main}`,
+                      },
+                      ...(window.location.pathname === tab.route && {
+                        color: theme.palette.primary_300.main,
+                        textShadow: `1px 1px ${theme.palette.primary_300.main}`,
+                        marginBottom: '.5rem',
+                        textDecoration: 'line-through',
+                        '&:hover': {
+                          textDecoration: 'line-through',
+                        },
+                      }),
+                    }}
                   >
                     {tab.label}
                   </Button>
@@ -95,7 +142,7 @@ function NavBar(props) {
               <BookCallButton />
             </Grid>
           </Grid>
-        </Hidden>
+        </Box>
       </div>
     </>
   )
