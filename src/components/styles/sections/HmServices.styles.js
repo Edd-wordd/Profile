@@ -23,57 +23,57 @@ const useStyles = makeStyles((theme) => ({
       paddingTop: theme.spacing(0),
     },
   },
-  cards: {
-    position: 'relative',
-    width: '400px',
-    margin: theme.spacing(1),
-    height: 'auto',
-    padding: '.75rem 1.5rem',
-    backgroundColor: theme.palette.primary_300.main,
-    color: theme.palette.charcoal.secondary,
-    '&#card_0': {
-      marginTop: theme.spacing(1),
-      marginBottom: theme.spacing(5),
-      marginLeft: theme.spacing(9),
-      [theme.breakpoints.down('md')]: {
-        margin: theme.spacing(1),
-      },
-    },
-    '&#card_1': {
-      marginBottom: theme.spacing(22),
-      marginTop: theme.spacing(5),
-      [theme.breakpoints.down('md')]: {
-        margin: theme.spacing(1),
-      },
-    },
-    '&#card_2': {
-      marginTop: theme.spacing(1),
-      marginRight: theme.spacing(9),
-      marginBottom: theme.spacing(5),
-      [theme.breakpoints.down('md')]: {
-        margin: theme.spacing(1),
-      },
-    },
-    '&#card_3': {
-      marginTop: theme.spacing(-20),
-      [theme.breakpoints.down('md')]: {
-        margin: theme.spacing(1),
-      },
-    },
-    '&#card_4': {
-      marginBottom: theme.spacing(10),
-      marginTop: theme.spacing(5),
-      [theme.breakpoints.down('md')]: {
-        margin: theme.spacing(1),
-      },
-    },
-    '&#card_5': {
-      marginTop: theme.spacing(-20),
-      [theme.breakpoints.down('md')]: {
-        margin: theme.spacing(1),
-      },
-    },
-  },
+  // cards: {
+  //   position: 'relative',
+  //   width: '400px',
+  //   margin: theme.spacing(1),
+  //   minHeight: '700px !important',
+  //   padding: '.75rem 1.5rem',
+  //   backgroundColor: theme.palette.primary_300.main,
+  //   color: theme.palette.charcoal.secondary,
+  //   '&#card_0': {
+  //     marginTop: theme.spacing(1),
+  //     marginBottom: theme.spacing(5),
+  //     marginLeft: theme.spacing(9),
+  //     [theme.breakpoints.down('md')]: {
+  //       margin: theme.spacing(1),
+  //     },
+  //   },
+  //   '&#card_1': {
+  //     marginBottom: theme.spacing(22),
+  //     marginTop: theme.spacing(5),
+  //     [theme.breakpoints.down('md')]: {
+  //       margin: theme.spacing(1),
+  //     },
+  //   },
+  //   '&#card_2': {
+  //     marginTop: theme.spacing(1),
+  //     marginRight: theme.spacing(9),
+  //     marginBottom: theme.spacing(5),
+  //     [theme.breakpoints.down('md')]: {
+  //       margin: theme.spacing(1),
+  //     },
+  //   },
+  //   '&#card_3': {
+  //     marginTop: theme.spacing(-20),
+  //     [theme.breakpoints.down('md')]: {
+  //       margin: theme.spacing(1),
+  //     },
+  //   },
+  //   '&#card_4': {
+  //     marginBottom: theme.spacing(10),
+  //     marginTop: theme.spacing(5),
+  //     [theme.breakpoints.down('md')]: {
+  //       margin: theme.spacing(1),
+  //     },
+  //   },
+  //   '&#card_5': {
+  //     marginTop: theme.spacing(-20),
+  //     [theme.breakpoints.down('md')]: {
+  //       margin: theme.spacing(1),
+  //     },
+  //   },
+  // },
   icons: {
     width: '20%',
     height: 'auto',

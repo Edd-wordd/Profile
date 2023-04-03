@@ -8,9 +8,9 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import GroupAddIcon from '@mui/icons-material/GroupAdd'
 import serviceCardDetails from '../../data/hmServicesData'
 import { SectionHeader } from '../index'
-import Transition from 'react-transition-group/Transition'
 import { Slide } from '@mui/material'
 import { useStyles } from '../styles/sections/HmServices.styles'
+import { useTheme } from '@mui/system'
 
 const icons = [
   MultilineChartIcon,
@@ -22,6 +22,7 @@ const icons = [
 ]
 
 function HmServices(props) {
+  const theme = useTheme()
   const classes = useStyles(props)
   const [inProp, setInProp] = React.useState(false)
   const servicesSlide = (entries, observer) => {
@@ -72,26 +73,92 @@ function HmServices(props) {
           </Hidden>
           {serviceCardDetails.map((service, index) => {
             const Icon = icons[index]
+            const cardStyles = [
+              {
+                mt: 0,
+                mb: 0,
+                ml: 0,
+                minHeight: '250px',
+                [theme.breakpoints.down('md')]: {
+                  m: 1,
+                },
+              },
+              {
+                mt: 0,
+                mb: 0,
+                minHeight: '250px',
+
+                [theme.breakpoints.down('md')]: {
+                  m: 1,
+                },
+              },
+              {
+                mt: 0,
+                mr: 0,
+                mb: 0,
+                minHeight: '250px',
+
+                [theme.breakpoints.down('md')]: {
+                  m: 1,
+                },
+              },
+              {
+                mt: 1,
+                minHeight: '250px',
+
+                [theme.breakpoints.down('md')]: {
+                  m: 1,
+                },
+              },
+              {
+                mt: 0,
+                mb: 0,
+                minHeight: '250px',
+
+                [theme.breakpoints.down('md')]: {
+                  m: 1,
+                },
+              },
+              {
+                mt: 0,
+                minHeight: '250px',
+
+                [theme.breakpoints.down('md')]: {
+                  m: 1,
+                },
+              },
+            ]
             return (
-              <Transition in={!!setInProp} timeout={1000} key={service.id}>
-                {() => (
-                  <Slide
-                    direction={index >= 0 && index <= 2 ? 'right' : 'left'}
-                    in={inProp}
-                    mountOnEnter
-                    unmountOnExit
-                    timeout={3000}
-                  >
-                    <Paper elevation={10} id={`card_${index}`} className={classes.cards}>
-                      <Typography variant="h5" className={classes.cardTitle}>
-                        <Icon className={classes.cardIcon} />
-                        {service.serviceTitle}
-                      </Typography>
-                      <Typography paragraph>{service.serviceDescription}</Typography>
-                    </Paper>
-                  </Slide>
-                )}
-              </Transition>
+              <Slide
+                key={service.id}
+                direction={index >= 0 && index <= 2 ? 'right' : 'left'}
+                in={inProp}
+                mountOnEnter
+                unmountOnExit
+                timeout={3000}
+              >
+                <Paper
+                  elevation={10}
+                  id={`card_${index}`}
+                  sx={{
+                    position: 'relative',
+                    width: '400px',
+                    m: 1,
+                    height: 'auto',
+                    py: '0.75rem',
+                    px: '1.5rem',
+                    backgroundColor: theme.palette.primary_300.main,
+                    color: theme.palette.charcoal.secondary,
+                    ...cardStyles[index],
+                  }}
+                >
+                  <Typography variant="h5" sx={{ display: 'flex', alignItems: 'center' }}>
+                    <Icon className={classes.cardIcon} />
+                    {service.serviceTitle}
+                  </Typography>
+                  <Typography paragraph>{service.serviceDescription}</Typography>
+                </Paper>
+              </Slide>
             )
           })}
         </Grid>
