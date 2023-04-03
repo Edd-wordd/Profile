@@ -56,12 +56,17 @@ function HmServices(props) {
         <Grid
           container
           direction="row"
-          justify="center"
+          justifyContent="center"
           alignItems="center"
           className={classes.cardWrapper}
         >
           <Hidden xsDown>
-            <Grid container direction="row" justify="center" className={classes.sectionTitle}>
+            <Grid
+              container
+              direction="row"
+              justifyContent="center"
+              className={classes.sectionTitle}
+            >
               <SectionHeader title="Our Services" subTitle="Let us Help build the Future!" />
             </Grid>
           </Hidden>

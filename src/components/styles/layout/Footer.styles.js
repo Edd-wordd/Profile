@@ -6,7 +6,6 @@ const FooterBackground = styled('div')(({ theme }) => ({
   width: '100%',
   height: 'auto',
   paddingTop: '5rem',
-  overflowX: 'hidden',
 }))
 
 const SectionCards = styled('div')(({ theme }) => ({
