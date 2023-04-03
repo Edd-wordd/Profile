@@ -28,15 +28,15 @@ const useStyles = makeStyles((theme) => ({
   },
   // Logo for mobile version
   mobileLogoImg: {
-    margin: '1rem 0 .5rem  -.5rem',
-    height: theme.spacing(15),
+    width: '6em',
+    margin: '1.5rem 0 .5rem  -.5rem',
   },
   mobileBtn: {
-    paddingBottom: theme.spacing(2),
+    paddingBottom: theme.spacing(3),
     marginTop: '-2.5rem',
     backgroundColor: theme.palette.defaultDark.secondary,
     textAlign: 'center',
-    borderBottom: `1px solid ${theme.palette.defaultLight.main}`,
+    border: 'none',
   },
   // style for the tabs (links on the navbar)
   tab: {
