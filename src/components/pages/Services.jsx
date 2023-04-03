@@ -1,5 +1,9 @@
 import React from 'react'
-import { ServicesOffered, ServicesMain, TechUsed, GetStarted, MainDisplay } from '../index'
+import ServicesOffered from '../../components/sections/ServicesOffered'
+import ServicesMain from '../../components/sections/ServicesMain'
+import TechUsed from '../../components/sections/TechUsed'
+import GetStarted from '../../components/sections/GetStarted'
+import MainDisplay from '../../components/sections/MainDisplay'
 
 function Services() {
   return (

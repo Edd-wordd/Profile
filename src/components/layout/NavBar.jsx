@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, Button, Grid, Box } from '@mui/material'
 import { Fade as Hamburger } from 'hamburger-react'
-import { BookCallButton } from '../index'
+import BookCallButton from '../buttons/BookCallButton'
 import { useStyles } from '../styles/layout/NavBar.styles'
 import tabs from '../../data/navbarData'
 import { useEffect } from 'react'
