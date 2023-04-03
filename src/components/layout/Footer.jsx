@@ -10,8 +10,6 @@ import {
   FooterBackground,
   SectionCards,
   FooterMainLogo,
-  FooterButton,
-  FooterLink,
   FooterDiamond,
   FooterLine,
 } from '../styles/layout/Footer.styles'
@@ -44,14 +42,14 @@ function Footer() {
           <address>
             <Typography>
               Phone:
-              <Link component={FooterLink} href="tel:9158671023">
+              <Link sw={{ color: '#89023e' }} href="tel:9158671023">
                 +1 (999) 811-1003
               </Link>
             </Typography>
             <Typography>
               Email:
               <Link
-                component={FooterLink}
+                sw={{ color: '#89023e' }}
                 href="mailto:edd_wordd@icloud.com?subject=Mona Tech General Inquires"
               >
                 &nbsp;info@monatech.com
@@ -64,7 +62,7 @@ function Footer() {
           <Typography variant="h6">Connect With Us: </Typography>
           <nav>
             <Link
-              component={FooterLink}
+              sw={{ color: '#89023e' }}
               href="https://www.facebook.com"
               target="_blank"
               rel="noopener noreferrer"
@@ -73,7 +71,7 @@ function Footer() {
               <FacebookIcon sx={{ width: '50px', height: 'auto' }} />
             </Link>
             <Link
-              component={FooterLink}
+              sw={{ color: '#89023e' }}
               href="https://www.linkedin.com/"
               target="_blank"
               rel="noopener noreferrer"
@@ -82,7 +80,7 @@ function Footer() {
               <LinkedInIcon sx={{ width: '50px', height: 'auto' }} />
             </Link>
             <Link
-              component={FooterLink}
+              sw={{ color: '#89023e' }}
               href="https://www.instagram.com"
               target="_blank"
               rel="noopener noreferrer"
@@ -91,7 +89,7 @@ function Footer() {
               <InstagramIcon sx={{ width: '50px', height: 'auto' }} />
             </Link>
             <Link
-              component={FooterLink}
+              sw={{ color: '#89023e' }}
               href="https://www.twitter.com"
               target="_blank"
               rel="noopener noreferrer"
@@ -111,13 +109,7 @@ function Footer() {
               background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
             }}
           >
-            <Button
-              variant="contained"
-              color="primary"
-              component={FooterButton}
-              endIcon={<ComputerIcon />}
-              size="large"
-            >
+            <Button variant="contained" color="primary" endIcon={<ComputerIcon />} size="large">
               Let's get started
             </Button>
           </Link>
