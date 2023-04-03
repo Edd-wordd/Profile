@@ -7,6 +7,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '0 0 15% 0',
     backgroundSize: 'cover',
     backgroundPosition: 'center center',
+    overflowX: 'hidden',
     [theme.breakpoints.down('xs')]: {
       borderRadius: '0 0 0 0',
       borderBottom: `0`,
@@ -35,17 +36,12 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.defaultLight.main,
   },
   button: {
-    margin: theme.spacing(1),
+    margin: `${theme.spacing(1.5)}!important`,
     backgroundColor: theme.palette.primary.main,
-    color: theme.palette.defaultLight.main,
-    minWidth: '200px',
-    fontSize: theme.spacing(1.75),
-    letterSpacing: theme.spacing(0.15),
-    opacity: '85%',
-    '&:hover': {
-      backgroundColor: theme.palette.primary.main,
-      opacity: '100%',
-    },
+    minWidth: '200px !important',
+    fontSize: `${theme.spacing(1.75)}!important`,
+    letterSpacing: `${theme.spacing(0.15)}!important`,
+    opacity: '85%  !important',
   },
   //   Ipad view styling
   titleWrapperMobileView: {
