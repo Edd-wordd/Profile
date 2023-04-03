@@ -12,6 +12,7 @@ const FooterBackground = styled('div')(({ theme }) => ({
 const SectionCards = styled('div')(({ theme }) => ({
   width: '20rem',
   minHeight: '13rem',
+  padding: '5rem 0 3rem 0',
   backgroundColor: 'transparent !important',
   color: `${theme.palette.defaultLight.main} !important`,
   fontWeight: 200,
@@ -30,8 +31,9 @@ const FooterButton = styled('button')(({ theme }) => ({
 }))
 
 const FooterMainLogo = styled('div')(({ theme }) => ({
-  width: '25rem',
+  width: '16rem',
   height: 'auto',
+  // paddingTop: '-3rem',
   [theme.breakpoints.down('xs')]: {
     width: '100%',
     height: 'auto',
