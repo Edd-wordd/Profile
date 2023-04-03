@@ -1,7 +1,6 @@
 import React from 'react'
 import { Container, Typography, Grid, Paper } from '@mui/material'
-import { SectionHeader } from '../index'
-// import TypeIt from 'typeit-react'
+import SectionHeader from '../../components/sections/SectionHeader'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import { useStyles } from '../styles/sections/WhatWeDo.styles'
 import bulletPoints from '../../data/whatWeDoData'

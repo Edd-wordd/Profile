@@ -6,6 +6,10 @@ const bodyParser = require('body-parser')
 const nodemailer = require('nodemailer')
 const cors = require('cors')
 const dotenv = require('dotenv')
+const webpack = require('webpack')
+const webpackConfig = require('../webpack.config')
+const webpackDevMiddleware = require('webpack-dev-middleware')
+const webpackHotMiddleware = require('webpack-hot-middleware')
 
 dotenv.config()
 
@@ -16,6 +20,15 @@ const publicDir = path.join(__dirname, '..', 'public')
 app.use('/public', express.static(publicDir))
 
 app.use(helmet())
+if (process.env.NODE_ENV !== 'production') {
+  const compiler = webpack(webpackConfig)
+  app.use(
+    webpackDevMiddleware(compiler, {
+      publicPath: webpackConfig.output.publicPath,
+    })
+  )
+  app.use(webpackHotMiddleware(compiler))
+}
 
 app.use(morgan('common'))
 // Generic front-end route, React will handle client-side routing

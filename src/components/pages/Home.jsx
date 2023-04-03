@@ -1,5 +1,9 @@
 import React from 'react'
-import { WhoWeAre, HmServices, Questions, GetStarted, MainDisplay } from '../index'
+import WhoWeAre from '../../components/sections/WhoWeAre'
+import HmServices from '../../components/sections/HmServices'
+import Questions from '../../components/sections/Questions'
+import GetStarted from '../../components/sections/GetStarted'
+import MainDisplay from '../../components/sections/MainDisplay'
 
 function Home() {
   return (

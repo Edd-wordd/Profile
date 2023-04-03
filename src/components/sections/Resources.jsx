@@ -3,7 +3,7 @@ import { Card, Grid, Container, CardActionArea, Typography } from '@mui/material
 import { CardActions, CardContent, CardMedia, Button } from '@mui/material'
 import { RWebShare } from 'react-web-share'
 import { useStyles } from '../styles/sections/Resources.styles'
-import { SectionHeader } from '../index'
+import SectionHeader from '../../components/sections/SectionHeader'
 import blogPosts from '../../data/resourceData'
 
 function Resources(props) {
