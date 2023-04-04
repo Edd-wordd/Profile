@@ -16,7 +16,12 @@ function Resources(props) {
           {blogPosts.map((card, index) => (
             <Card className={classes.root} key={index}>
               <CardActionArea>
-                <CardMedia className={classes.media} image={card.image} title="resources" />
+                <CardMedia
+                  className={classes.media}
+                  image={card.image}
+                  title="resources"
+                  loading="lazy"
+                />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
                     {card.title}
