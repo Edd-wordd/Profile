@@ -17,7 +17,7 @@ function MainDisplay(props) {
     >
       <>
         <Box display={{ xs: 'block', sm: 'block', md: 'none', lg: 'none' }}>
-          {/* smaller view */}
+          {/* For smaller viewports */}
           <Container maxWidth="lg" className={classes.titleWrapperMobileView}>
             <Grid container direction="column" justifyContent="center">
               <Typography variant="h1" className={classes.mainTitleMobileView}>
@@ -31,7 +31,7 @@ function MainDisplay(props) {
             </Grid>
           </Container>
         </Box>
-        {/* larger view */}
+        {/* For larger viewports */}
         <Box display={{ xs: 'none', sm: 'none', md: 'block', lg: 'block' }}>
           <Container maxWidth="lg" className={classes.titleWrapper}>
             <Typography variant="h1" className={classes.mainTitle}>
@@ -41,7 +41,7 @@ function MainDisplay(props) {
               {props.mainViewSubtitle}
             </Typography>
             <Grid container direction="row" justifyContent="center">
-              {props.buttonOneText ? (
+              {props.buttonOneText && (
                 <Link href={props.buttonLink} className={classes.buttonStyle}>
                   <Button
                     variant="contained"
@@ -52,8 +52,8 @@ function MainDisplay(props) {
                     {props.buttonOneText}
                   </Button>
                 </Link>
-              ) : null}
-              {props.buttonTwoText ? (
+              )}
+              {props.buttonTwoText && (
                 <Link href={props.buttonLink2} className={classes.buttonStyle}>
                   <Button
                     variant="contained"
@@ -64,7 +64,7 @@ function MainDisplay(props) {
                     {props.buttonTwoText}
                   </Button>
                 </Link>
-              ) : null}
+              )}
             </Grid>
           </Container>
         </Box>
