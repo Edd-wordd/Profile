@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Container, Typography, Grid, Paper } from '@mui/material'
 import { Zoom } from '@mui/material'
 import Transition from 'react-transition-group/Transition'
@@ -8,42 +8,45 @@ import companyValues from '../../data/whoWeAreData'
 import { WhoWeAreCards } from '../styles/sections/WhoWeAre.styles'
 
 function WhoWeAre(props) {
-  const [inProp, setInProp] = React.useState(false)
+  const [inProp, setInProp] = useState(false)
 
-  const cardsObs = (entries, observer) => {
-    const [entry] = entries
-    if (!entry.isIntersecting) return
-    if (entry.isIntersecting) {
-      setInProp(true)
-    }
-    observer.unobserve(entry.target)
-  }
+  const cardObserver = useRef(
+    new IntersectionObserver(
+      ([entry], observer) => {
+        if (entry.isIntersecting) {
+          setInProp(true)
+          observer.unobserve(entry.target)
+        }
+      },
+      { root: null, threshold: 0.5 }
+    )
+  )
 
-  const cardObserver = new IntersectionObserver(cardsObs, {
-    root: null,
-    threshold: 0.5,
-  })
-
-  React.useEffect(() => {
+  useEffect(() => {
     const target = document.querySelector('#cards')
-    cardObserver.observe(target)
+    if (target) {
+      cardObserver.current.observe(target)
+    }
+    return () => cardObserver.current.disconnect()
   }, [])
 
   return (
     <>
-      <SectionHeader title="Who We Are" subTitle="Bring your digital ideas to life!" />
+      <SectionHeader
+        title="Who We Are | Digital Innovation Team"
+        subTitle="Bring your digital ideas to life!"
+      />
       <Container maxWidth="lg">
         <Grid sx={{ margin: '3rem 0' }}>
           <Typography paragraph variant="body1" sx={{ lineHeight: '1.75rem' }}>
-            Welcome to our world of digital innovation! We are a team of skilled technologists and
-            problem solvers, passionate about harnessing the power of technology to transform
-            businesses and lives. Our mission is to provide innovative web and software solutions
-            that meet the evolving needs of our clients, no matter how complex. We specialize in web
-            design, mobile app development, custom software solutions, and digital marketing. We
-            thrive on challenges and believe that great ideas can come from anyone, anywhere. With
-            our creative and collaborative approach, we bring fresh perspectives to every project,
+            Welcome to our world of digital innovation! As a team of skilled technologists and
+            problem solvers, we're passionate about using technology to transform businesses and
+            lives. We offer a range of services including web design, mobile app development, custom
+            software solutions, and digital marketing. Our mission is to provide innovative
+            solutions that meet the evolving needs of our clients, no matter how complex. With our
+            creative and collaborative approach, we bring fresh perspectives to every project,
             delivering tailored solutions that exceed expectations. Let's embark on a journey of
-            digital transformation together, and bring your vision to life!
+            digital transformation together and bring your vision to life!
           </Typography>
         </Grid>
       </Container>
@@ -66,7 +69,7 @@ function WhoWeAre(props) {
             </Transition>
           ))}
         </Grid>
-        <ButtonLink linkOne="/contact" btnOneText="Request a free Quote" />
+        <ButtonLink linkOne="/contact" btnOneText="Request a Free Quote | Contact Us Today" />
       </Container>
     </>
   )
