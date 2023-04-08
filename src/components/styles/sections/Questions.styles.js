@@ -13,21 +13,22 @@ const QuestionsBackground = styled('div')(({ theme }) => ({
 const QuestionLinks = styled('a')(({ theme }) => ({
   color: theme.palette.defaultLight.main,
   textDecoration: 'underline',
-  padding: '.5rem .5rem',
+  padding: '.5rem',
   '&:hover': {
     background: theme.palette.primary.main,
     opacity: '.7',
     transform: 'scale(1.05)',
-    padding: '.5rem .5rem',
+    padding: '.5rem',
     borderRadius: '5px',
     color: theme.palette.defaultLight.main,
     textDecoration: 'none',
   },
 }))
+
 const Span = styled('span')(({ theme }) => ({
   color: theme.palette.primary.main,
   fontSize: '1.5rem',
-  fontWeight: '600',
+  fontWeight: 600,
 }))
 
 export { QuestionsBackground, QuestionLinks, Span }

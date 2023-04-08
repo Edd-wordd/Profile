@@ -1,31 +1,31 @@
 const questionDetails = [
   {
     id: 2000,
-    question: "What are my company's goals and objectives?",
+    question: 'How to determine if my company needs a digital presence?',
     details:
-      "Before deciding whether you need a digital presence for your company provided by a software company, it's important to consider your company's goals and objectives. Are you looking to increase brand awareness, generate leads, drive sales, or improve customer engagement? Your goals will help determine the type of digital presence you need, as well as the software company that can provide it.",
+      "Before deciding on a digital presence for your company, it's important to consider your company's goals and objectives. Are you looking to increase brand awareness, generate leads, drive sales, or improve customer engagement? Understanding your goals will help determine the type of digital presence you need and the software company that can provide it.",
     link: '/services/mobile-app',
   },
   {
     id: 2001,
-    question: 'Who is my target audience?',
+    question: 'How to reach my target audience with digital channels?',
     details:
-      "It's important to consider your target audience when deciding on a digital presence for your company. Are they primarily on social media, or do they use search engines to find information? Understanding your audience's behavior and preferences can help determine which digital channels and software companies will be most effective in reaching them.\n" +
+      "Understanding your target audience's behavior and preferences is crucial to determine which digital channels and software companies will be most effective in reaching them. Do they use search engines to find information, or are they primarily on social media? Consider your audience's preferences to choose the most suitable digital channels and software company for your business.\n" +
       '\n',
     link: '/services/web-design',
   },
   {
     id: 2002,
-    question: 'What are my competitors doing?',
+    question: 'How to differentiate my company in the digital space?',
     details:
-      "It's also important to consider what your competitors are doing when it comes to digital presence. Are they active on social media? Do they have a strong website presence? Understanding how your competitors are using digital channels can help you determine the best way to differentiate your company and stand out in your industry.",
+      "To stand out in your industry, it's important to understand how your competitors are using digital channels. Analyze your competitors' digital presence and identify opportunities to differentiate your company. A software company can help you implement a strong digital presence that sets you apart from your competitors.",
     link: '/services/web-maintenance',
   },
   {
     id: 2003,
-    question: 'What resources do I have available?',
+    question: 'How to implement a digital presence with limited resources?',
     details:
-      "It's important to consider what resources you have available to implement and maintain a digital presence. Do you have in-house staff with the necessary skills and expertise to create and manage a website, social media profiles, or digital marketing campaigns? Or will you need to outsource these tasks to a software company? Understanding your resources can help determine the best approach for implementing a digital presence for your company.\n" +
+      "Creating and maintaining a digital presence requires resources, including skilled staff and software expertise. Determine whether you have in-house staff to create and manage a website, social media profiles, or digital marketing campaigns. If you don't have the necessary resources, consider outsourcing these tasks to a software company that can help you implement and maintain your digital presence effectively.\n" +
       '\n' +
       '\n' +
       '\n',
