@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   titleWrapper: {
-    paddingTop: theme.spacing(30),
+    paddingTop: theme.spacing(50),
   },
   mainTitle: {
     fontWeight: 500,
@@ -38,12 +38,12 @@ const useStyles = makeStyles((theme) => ({
   button: {
     margin: `${theme.spacing(1.5)}!important`,
     backgroundColor: theme.palette.primary.main,
-    minWidth: '200px !important',
+    minWidth: '250px !important',
     fontSize: `${theme.spacing(1.75)}!important`,
     letterSpacing: `${theme.spacing(0.15)}!important`,
     opacity: '85%  !important',
+    padding: '3rem 0',
   },
-  //   Ipad view styling
   titleWrapperMobileView: {
     paddingTop: theme.spacing(30),
   },
@@ -67,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
   },
   buttonMobileView: {
     margin: theme.spacing(1),
-    backgroundColor: theme.palette.primary.main, //light pink peach color
+    backgroundColor: theme.palette.primary.main,
     color: theme.palette.defaultLight.main,
     opacity: '85%',
   },
