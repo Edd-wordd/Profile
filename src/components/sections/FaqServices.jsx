@@ -1,5 +1,5 @@
 import React from 'react'
-import { SectionHeader } from '../index'
+import SectionHeader from '../../components/sections/SectionHeader'
 import { Grid, Typography, Container } from '@mui/material'
 import { Accordion, AccordionSummary, AccordionDetails } from '@mui/material'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'

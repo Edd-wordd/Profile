@@ -1,7 +1,11 @@
 const path = require('path')
 const autoprefixer = require('autoprefixer')
+const webpack = require('webpack')
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 
 module.exports = {
+  mode: process.env.NODE_ENV || 'development',
+
   entry: {
     main: path.resolve(__dirname, 'src', 'main.jsx'),
   },
@@ -20,8 +24,12 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
+          options: {
+            plugins: ['react-refresh/babel'],
+          },
         },
       },
+
       {
         test: /\.css$/,
         exclude: /node_modules/,
@@ -49,4 +57,9 @@ module.exports = {
   resolve: {
     extensions: ['*', '.js', '.jsx'],
   },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new ReactRefreshWebpackPlugin(),
+    process.env.NODE_ENV === 'development' && new ReactRefreshWebpackPlugin(),
+  ].filter(Boolean),
 }

@@ -7,7 +7,12 @@ import MultilineChartIcon from '@mui/icons-material/MultilineChart'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import GroupAddIcon from '@mui/icons-material/GroupAdd'
 import serviceCardDetails from '../../data/hmServicesData'
+<<<<<<< HEAD
 import { SectionHeader } from '../index'
+=======
+import SectionHeader from '../../components/sections/SectionHeader'
+import Transition from 'react-transition-group/Transition'
+>>>>>>> master
 import { Slide } from '@mui/material'
 import { useStyles } from '../styles/sections/HmServices.styles'
 import { useTheme } from '@mui/system'

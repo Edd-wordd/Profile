@@ -1,6 +1,6 @@
 import React from 'react'
 import { Typography, Grid, Container } from '@mui/material'
-import { SectionHeader } from '../index'
+import SectionHeader from '../../components/sections/SectionHeader'
 import { Background } from '../styles/sections/MissionStatement.styles'
 
 function MissionStatement() {

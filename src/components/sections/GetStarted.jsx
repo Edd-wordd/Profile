@@ -1,8 +1,9 @@
 import React from 'react'
 import { Container, Typography, Grid, Hidden, Paper } from '@mui/material'
 import BeenhereIcon from '@mui/icons-material/Beenhere'
-import { ButtonLink, SectionHeader } from '../index'
 import getStartedSteps from '../../data/getStartedData'
+import ButtonLink from '../buttons/ButtonLink'
+import SectionHeader from '../../components/sections/SectionHeader'
 import {
   DottedLine,
   Card,

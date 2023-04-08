@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container, Typography, Grid, Link, Paper } from '@mui/material'
-import { SectionHeader } from '../index'
+import SectionHeader from '../../components/sections/SectionHeader'
 import questionDetails from '../../data/questionsData'
 import { QuestionsBackground, QuestionLinks, Span } from '../styles/sections/Questions.styles'
 

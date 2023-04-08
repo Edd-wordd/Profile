@@ -1,5 +1,5 @@
 import React from 'react'
-import { SectionHeader } from '../index'
+import SectionHeader from '../../components/sections/SectionHeader'
 import { Grid, Typography, Container, Paper } from '@mui/material'
 import { useStyles } from '../styles/sections/MajorSigns.styles'
 
