@@ -1,28 +1,23 @@
 const bulletPoints = [
   {
     id: 2000,
-    bulletpoint: 'Lorem, ipsum dolor sit amet consectetur edward is he',
-    delay: 0,
+    bulletPoint: 'Customized strategies for distinct needs & objectives',
   },
   {
     id: 2001,
-    bulletpoint: '2Lorem, ipsum dolor sit amet consectetur edward is he',
-    delay: 600,
+    bulletPoint: 'Mastery of cutting-edge, secure, & adaptable technologies',
   },
   {
     id: 2002,
-    bulletpoint: '3Lorem, ipsum dolor sit amet consectetur edward is he',
-    delay: 1200,
+    bulletPoint: 'Upholding top-tier standards in software development',
   },
   {
     id: 2003,
-    bulletpoint: '4Lorem, ipsum dolor sit amet consectetur edward is he',
-    delay: 1800,
+    bulletPoint: 'Fostering innovation, teamwork, and inventive thinking',
   },
   {
     id: 2004,
-    bulletpoint: '5Lorem, ipsum dolor sit amet consectetur edward is he',
-    delay: 2400,
+    bulletPoint: 'Prompt project delivery, budget adherence, & excellence',
   },
 ]
 
