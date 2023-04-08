@@ -38,7 +38,7 @@ function WhoWeAre(props) {
       />
       <Container maxWidth="lg">
         <Grid sx={{ margin: '3rem 0' }}>
-          <Typography paragraph variant="body1" sx={{ lineHeight: '1.75rem' }}>
+          <Typography paragraph variant="body1" sx={{ lineHeight: '2rem' }}>
             Welcome to our world of digital innovation! As a team of skilled technologists and
             problem solvers, we're passionate about using technology to transform businesses and
             lives. We offer a range of services including web design, mobile app development, custom

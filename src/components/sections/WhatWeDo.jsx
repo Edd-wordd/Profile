@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Typography, Grid, Paper } from '@mui/material'
+import { Typography, Grid, Paper, Box } from '@mui/material'
 import SectionHeader from '../../components/sections/SectionHeader'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
 import { useStyles } from '../styles/sections/WhatWeDo.styles'
@@ -10,57 +10,61 @@ function WhatWeDo(props) {
 
   return (
     <>
-      <SectionHeader title="Heres what We Do!" subTitle="See the difference" />
-      <Grid container direction="row" justify="center" className={classes.root}>
-        <Paper variant="outlined" className={classes.leftSideInfoWrapper}>
-          <Typography variant="subtitle1">
-            <b>These little details make the difference</b>
+      <SectionHeader title="Our Strategy" subTitle="Discover the Distinction in Our Methodology" />
+      <Grid
+        className={classes.root}
+        item
+        lg={12}
+        md={10}
+        sm={10}
+        container
+        direction="row"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <Paper elevation={0} className={classes.leftSideInfoWrapper}>
+          <Typography
+            variant="subtitle1"
+            component="h2"
+            sx={{ fontWeight: 'bold', paddingBottom: '1rem', fontSize: '18px' }}
+          >
+            Unmatched Precision in Bespoke Software Development
           </Typography>
-          <Typography paragraph variant="body1">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor ad rerum possimus modi
-            repudiandaeorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor ad rerum
-            possimus modi repudiandaeorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor
-            ad rerum possimus modi repudiandaeorem, ipsum dolor sit amet consectetur adipisicing
-            elit. Dolor ad rerum possimus modi repudiandaeorem, ipsum dolor sit amet consectetur
-            adipisicing elit. Dolor ad rerum possimus modi repudiandaeorem, ipsum dolor sit amet
-            consectetur adipisicing elit. Dolor ad rerum possimus modi repudiandaeorem, ipsum dolor
-            sit amet consectetur adipisicing elit. Dolor ad rerum possimus modi repudiandaeorem,
-            ipsum dolor sit amet consectetur adipisicing elit. Dolor ad rerum possimus modi
-            repudiandae
+          <Typography paragraph sx={{ lineHeight: '2rem' }}>
+            At monaTech, client satisfaction is our top priority, which is why we deliver customized
+            solutions that are both efficient and effective. Our dedication to detail and staying
+            current with the latest technologies enables us to provide software applications that
+            are scalable, secure, and ready for the future. This commitment has positioned us as
+            industry leaders, delivering dependable and secure applications that address the
+            distinct needs and objectives of our clients.
           </Typography>
         </Paper>
-        <Paper variant="outlined" className={classes.coreValueSection}>
+        <Paper elevation={0} className={classes.coreValueSection}>
           {bulletPoints.map((value) => (
-            <Grid container direction="row" justify="flex-start" alignItems="center" key={value.id}>
-              <CheckCircleIcon className={classes.icons} />
-              {/*<TypeIt*/}
-              {/*  className={classes.coreValue}*/}
-              {/*  options={{*/}
-              {/*    strings: [`${value.bulletpoint}`],*/}
-              {/*    speed: 125,*/}
-              {/*    waitUntilVisible: true,*/}
-              {/*    cursor: false,*/}
-              {/*    startDelay: `${value.delay}`,*/}
-              {/*  }}*/}
-              {/*/>*/}
+            <Grid container alignItems="center" key={value.id}>
+              <Box display={{ xs: 'none', sm: 'none', md: 'block', lg: 'block' }}>
+                <CheckCircleIcon className={classes.icons} />
+              </Box>
+              <Typography variant="body1" className={classes.coreValue} component="span">
+                {value.bulletpoint}
+              </Typography>
             </Grid>
           ))}
         </Paper>
-        <Container maxWidth="lg">
-          <Grid className={classes.bottomInfoWrapper}>
-            <Typography paragraph variant="body1" className={classes.bottomInfo}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, officiis ea! Atque,
-              ratione cumque. Fugiat earum eius doloribus quo repudiandae, maiores excepturi officia
-              iusto consequuntur quis odio labore, commodi minima? Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Deserunt, officiis ea! Atque, ratione cumque. Fugiat
-              earum eius doloribus quo repudiandae, maiores excepturi officia iusto consequuntur
-              quis odio labore, commodi minima? Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Deserunt, officiis ea! Atque, ratione cumque. Fugiat earum eius doloribus quo
-              repudiandae, maiores excepturi officia iusto consequuntur quis odio labore, commodi
-              minima?8
-            </Typography>
-          </Grid>
-        </Container>
+        <Grid className={classes.bottomInfoWrapper} item lg={8} md={8} sm={10}>
+          <Typography
+            className={classes.bottomInfo}
+            sx={{ paddingBottom: '4rem', lineHeight: '2rem' }}
+          >
+            At monaTech, we are dedicated to offering bespoke software development solutions
+            tailored to the specific needs and goals of our clients. Our team of experts utilizes
+            cutting-edge technologies to build scalable, secure, and future-proof applications that
+            meet the highest industry standards. We foster a culture of creativity, collaboration,
+            and innovation to remain at the forefront of technological advancements, ensuring
+            projects are completed on time and within budget without sacrificing quality. Get in
+            touch with us today to experience the difference for yourself.
+          </Typography>
+        </Grid>
       </Grid>
     </>
   )
