@@ -1,25 +1,23 @@
-// https://stackoverflow.com/questions/10805125/how-to-write-multiline-strings-in-javascript
 const companyValues = [
   {
     id: 1000,
-    title: 'Best Practices',
-    description: `We always start with a deep understanding of our clients' needs and goals. 
-    - We use cutting-edge technologies to develop solutions that are scalable, secure, and future-proof. 
-    - We are committed to delivering projects on time and within budget. 
-    - We prioritize communication and transparency throughout the entire development process. 
-    - We never compromise on quality or performance.`,
+    title: 'Best Practices in Software Development',
+    description: `Our company is dedicated to following the best practices in custom software development to ensure client satisfaction:
+    - We begin with an in-depth understanding of your unique needs and goals for tailored, efficient solutions.
+    - Our team leverages the latest technologies for scalable, secure, and future-proof software applications.
+    - We prioritize timely project delivery within budget without compromising on quality.`,
   },
   {
     id: 1001,
-    title: 'Industry Standards',
+    title: 'Compliance with Industry Standards',
     description:
-      "We adhere to the highest industry standards and take pride in our reputation for delivering reliable and secure solutions. We understand the importance of protecting our clients' sensitive data and take all necessary measures to ensure their privacy and security.",
+      "Our team adheres to the highest industry standards in software engineering, delivering reliable, secure applications. We stay up-to-date with the latest security protocols and data protection measures, ensuring the confidentiality of our clients' sensitive information.",
   },
   {
     id: 1002,
-    title: 'Culture',
+    title: 'Innovative Culture and Collaboration',
     description:
-      'We foster a culture of creativity, collaboration, and innovation. Our team members are encouraged to explore new ideas, experiment with different approaches, and share their knowledge and expertise with each other. This culture of learning and growth enables us to continually improve our services and provide our clients with the best possible solutions.',
+      'Our software development team fosters a culture of creativity, collaboration, and innovation. By encouraging the exploration of new ideas and continuous learning, we stay at the forefront of technology trends. This enables us to deliver cutting-edge solutions to our clients and establish ourselves as leaders in the industry.',
   },
 ]
 
