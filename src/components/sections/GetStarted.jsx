@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Typography, Grid, Hidden, Paper } from '@mui/material'
+import { Container, Typography, Grid, Paper, Hidden } from '@mui/material'
 import BeenhereIcon from '@mui/icons-material/Beenhere'
 import getStartedSteps from '../../data/getStartedData'
 import ButtonLink from '../buttons/ButtonLink'
@@ -15,8 +15,12 @@ function GetStarted() {
   return (
     <GetStartedBackground>
       <Grid sx={{ padding: '1.5rem' }}>
-        <SectionHeader title="How to get Started?" subTitle="The right time is NOW!" />
+        <SectionHeader
+          title="How to Get Started with Our Services"
+          subTitle="Start your journey today!"
+        />
       </Grid>
+
       <Grid
         container
         direction="row"
@@ -44,26 +48,30 @@ function GetStarted() {
       </Grid>
 
       <Grid container direction="row" justifyContent="center" alignItems="center">
-        {getStartedSteps.map((step, index) => (
-          <Paper variant="outlined" key={step.id} component={Card}>
+        {getStartedSteps.map((step) => (
+          <Paper key={step.id} component={Card} variant="outlined">
             <Grid container direction="row" justifyContent="center" alignItems="center">
-              <Typography variant="subtitle1">{step.title}</Typography>
-              <Typography paragraph variant="body1" style={{ color: '#808080' }}>
+              <Typography variant="subtitle1" sx={{ fontWeight: 'bold' }}>
+                {step.title}
+              </Typography>
+              <Typography paragraph variant="body1" sx={{ color: 'text.secondary' }}>
                 {step.description}
               </Typography>
             </Grid>
           </Paper>
         ))}
       </Grid>
+
       <Container maxWidth="lg">
         <Grid container direction="row" justifyContent="center">
-          <Typography paragraph variant="body1" style={{ color: '#808080' }}>
-            "We don't just deliver top-notch quality, we innovate it into every project we touch -
-            that's the hallmark of our commitment."
+          <Typography paragraph variant="body1" sx={{ color: 'text.secondary' }}>
+            "At monaTech, we are dedicated to delivering exceptional quality that is innovative and
+            unique to each project."
           </Typography>
         </Grid>
       </Container>
-      <ButtonLink linkOne="/contact" btnOneText="Get Started" />
+
+      <ButtonLink linkOne="/contact" btnOneText="Get Started with Us Now" />
     </GetStartedBackground>
   )
 }

@@ -1,9 +1,12 @@
 import { styled } from '@mui/system'
 
+// A container for the "Get Started" section
 const GetStartedBackground = styled('div')(({ theme }) => ({
   paddingBottom: '3rem',
   backgroundColor: '#f4f1fa',
 }))
+
+// A card displaying one step of the "Get Started" process
 const Card = styled('div')(({ theme }) => ({
   width: theme.spacing(37),
   minHeight: theme.spacing(30),
@@ -15,6 +18,8 @@ const Card = styled('div')(({ theme }) => ({
     width: '100%',
   },
 }))
+
+// A dotted line used to separate steps in the "Get Started" section
 const DottedLine = styled('div')(({ theme }) => ({
   width: theme.spacing(23),
   padding: '0rem 5rem',
@@ -25,6 +30,7 @@ const DottedLine = styled('div')(({ theme }) => ({
   },
 }))
 
+// An icon wrapper used to display icons in the "Get Started" section
 const IconWrapper = styled('div')(({ theme }) => ({
   width: theme.spacing(3),
   height: 'auto',
