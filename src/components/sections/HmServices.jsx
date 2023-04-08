@@ -75,54 +75,43 @@ function HmServices(props) {
             const Icon = icons[index]
             const cardStyles = [
               {
-                mt: 0,
-                mb: 0,
-                ml: 0,
+                mb: 8,
                 minHeight: '250px',
                 [theme.breakpoints.down('md')]: {
                   m: 1,
                 },
               },
               {
-                mt: 0,
-                mb: 0,
+                mb: 17,
                 minHeight: '250px',
-
                 [theme.breakpoints.down('md')]: {
                   m: 1,
                 },
               },
               {
-                mt: 0,
-                mr: 0,
-                mb: 0,
+                mb: 8,
                 minHeight: '250px',
-
                 [theme.breakpoints.down('md')]: {
                   m: 1,
                 },
               },
               {
-                mt: 1,
+                mb: 10,
                 minHeight: '250px',
-
                 [theme.breakpoints.down('md')]: {
                   m: 1,
                 },
               },
               {
-                mt: 0,
-                mb: 0,
+                mb: 2,
                 minHeight: '250px',
-
                 [theme.breakpoints.down('md')]: {
                   m: 1,
                 },
               },
               {
-                mt: 0,
+                mb: 10,
                 minHeight: '250px',
-
                 [theme.breakpoints.down('md')]: {
                   m: 1,
                 },
