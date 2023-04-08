@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import { Grid, Typography, Paper, Hidden, Container, Box } from '@mui/material'
 import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone'
 import ComputerIcon from '@mui/icons-material/Computer'
@@ -23,134 +23,122 @@ const icons = [
 
 function HmServices(props) {
   const theme = useTheme()
+  const servicesRef = useRef(null)
   const classes = useStyles(props)
   const [inProp, setInProp] = React.useState(false)
+
   const servicesSlide = (entries, observer) => {
     const [entry] = entries
+
     // guard clause
     if (!entry.isIntersecting) return
-    if (entry.isIntersecting) {
-      setInProp(true)
-      observer.unobserve(entry.target)
-    }
+
+    setInProp(true)
+    observer.unobserve(entry.target)
   }
+
   const servicesObserver = new IntersectionObserver(servicesSlide, {
     root: null,
     threshold: 0.2,
   })
 
-  React.useEffect(() => {
-    const target = document.querySelector('#services')
-    servicesObserver.observe(target)
+  useEffect(() => {
+    const target = servicesRef.current
+    if (target) {
+      servicesObserver.observe(target)
+    }
+
     return () => {
-      servicesObserver.unobserve(target)
+      if (target) {
+        servicesObserver.unobserve(target)
+      }
     }
   }, [])
 
   return (
-    <div className={classes.root} id="services">
-      <Container maxWidth="xl">
-        <Box display={{ xs: 'block', sm: 'none', md: 'none', lg: 'none' }}>
-          <SectionHeader title="Our Services" subTitle="Let us Help build the Future!" />
-        </Box>
-        <Grid
-          container
-          direction="row"
-          justifyContent="center"
-          alignItems="center"
-          className={classes.cardWrapper}
-        >
+    <div className={classes.root} id="services" ref={servicesRef}>
+      <Box display={{ xs: 'block', sm: 'none', md: 'none', lg: 'none' }}>
+        <SectionHeader
+          title="Our Services - Helping to Build the Future"
+          subTitle="Discover the Range of Services We Offer to Help Your Business Grow"
+        />
+      </Box>
+      <Grid
+        container
+        direction="row"
+        justifyContent="center"
+        alignItems="center"
+        className={classes.cardWrapper}
+      >
+        <Grid container direction="row" justifyContent="center" className={classes.sectionTitle}>
           <Box display={{ xs: 'none', sm: 'none', md: 'block', lg: 'block' }}>
-            <Grid
-              container
-              direction="row"
-              justifyContent="center"
-              className={classes.sectionTitle}
-            >
-              <SectionHeader title="Our Services" subTitle="Let us Help build the Future!" />
-            </Grid>
+            <SectionHeader
+              title="Our Services - Helping to Build the Future"
+              subTitle="Discover the Range of Services We Offer to Help Your Business Grow"
+            />
           </Box>
-          {serviceCardDetails.map((service, index) => {
-            const Icon = icons[index]
-            const cardStyles = [
-              {
-                mb: 8,
-                minHeight: '250px',
-                [theme.breakpoints.down('md')]: {
-                  m: 1,
-                },
-              },
-              {
-                mb: 17,
-                minHeight: '250px',
-                [theme.breakpoints.down('md')]: {
-                  m: 1,
-                },
-              },
-              {
-                mb: 8,
-                minHeight: '250px',
-                [theme.breakpoints.down('md')]: {
-                  m: 1,
-                },
-              },
-              {
-                mb: 10,
-                minHeight: '250px',
-                [theme.breakpoints.down('md')]: {
-                  m: 1,
-                },
-              },
-              {
-                mb: 2,
-                minHeight: '250px',
-                [theme.breakpoints.down('md')]: {
-                  m: 1,
-                },
-              },
-              {
-                mb: 10,
-                minHeight: '250px',
-                [theme.breakpoints.down('md')]: {
-                  m: 1,
-                },
-              },
-            ]
-            return (
-              <Slide
-                key={service.id}
-                direction={index >= 0 && index <= 2 ? 'right' : 'left'}
-                in={inProp}
-                mountOnEnter
-                unmountOnExit
-                timeout={3000}
-              >
-                <Paper
-                  elevation={10}
-                  id={`card_${index}`}
-                  sx={{
-                    position: 'relative',
-                    width: '400px',
-                    m: 1,
-                    height: 'auto',
-                    py: '0.75rem',
-                    px: '1.5rem',
-                    backgroundColor: theme.palette.primary_300.main,
-                    color: theme.palette.charcoal.secondary,
-                    ...cardStyles[index],
-                  }}
-                >
-                  <Typography variant="h5" sx={{ display: 'flex', alignItems: 'center' }}>
-                    <Icon className={classes.cardIcon} />
-                    {service.serviceTitle}
-                  </Typography>
-                  <Typography paragraph>{service.serviceDescription}</Typography>
-                </Paper>
-              </Slide>
-            )
-          })}
         </Grid>
-      </Container>
+        {serviceCardDetails.map((service, index) => {
+          const Icon = icons[index]
+          const cardStyles = [
+            {
+              mb: 15,
+              [theme.breakpoints.down('md')]: {
+                mt: 8,
+              },
+            },
+            {
+              mb: 23,
+            },
+            {
+              mb: 15,
+            },
+            {
+              mb: 12,
+            },
+            {
+              mb: 3,
+            },
+            {
+              mb: 10,
+            },
+          ]
+          return (
+            <Slide
+              key={service.id}
+              direction={index >= 0 && index <= 2 ? 'right' : 'left'}
+              in={inProp}
+              mountOnEnter
+              unmountOnExit
+              timeout={3000}
+            >
+              <Paper
+                elevation={10}
+                id={`card_${index}`}
+                sx={{
+                  position: 'relative',
+                  width: '400px',
+                  m: 1,
+                  minHeight: '215px',
+                  py: '0.75rem',
+                  px: '1.5rem',
+                  backgroundColor: theme.palette.primary_300.main,
+                  color: theme.palette.charcoal.secondary,
+                  ...cardStyles[index],
+                  [theme.breakpoints.down('md')]: {
+                    m: 1,
+                  },
+                }}
+              >
+                <Typography variant="h5" sx={{ display: 'flex', alignItems: 'center' }}>
+                  <Icon sx={{ width: '12%', height: 'auto' }} /> {service.serviceTitle}
+                </Typography>
+                <Typography paragraph>{service.serviceDescription}</Typography>
+              </Paper>
+            </Slide>
+          )
+        })}
+      </Grid>
     </div>
   )
 }
