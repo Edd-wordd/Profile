@@ -1,29 +1,36 @@
 import { makeStyles } from '@mui/styles'
+
 const useStyles = makeStyles((theme) => ({
-  root: { paddingBottom: theme.spacing(5) },
+  root: {
+    paddingBottom: theme.spacing(7),
+  },
   leftSideInfoWrapper: {
-    width: theme.spacing(70),
+    width: theme.spacing(65),
     height: 'auto',
-    border: 'none',
-    padding: '5rem 1.5rem',
     marginBottom: theme.spacing(1),
-    [theme.breakpoints.down('xs')]: {
+    padding: '4rem 8rem 4rem 0',
+    [theme.breakpoints.down('sm')]: {
       width: '100%',
+      padding: '1rem',
     },
   },
   coreValueSection: {
-    width: theme.spacing(75),
+    padding: '3.5rem 0',
+    width: theme.spacing(63),
     height: 'auto',
-    border: 'none',
-    padding: '3rem 1.5rem',
     marginBottom: theme.spacing(1),
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('sm')]: {
       width: '100%',
+      padding: '1rem',
     },
   },
   coreValue: {
     fontWeight: 500,
     fontSize: theme.spacing(2),
+    paddingTop: '1rem',
+    [theme.breakpoints.down('sm')]: {
+      fontStyle: 'italic',
+    },
   },
   icons: {
     color: theme.palette.primary_300.main,
@@ -34,7 +41,10 @@ const useStyles = makeStyles((theme) => ({
   bottomInfoWrapper: { marginBottom: '3rem' },
   bottomInfo: {
     letterSpacing: theme.spacing(0.05),
-    lineHeight: theme.spacing(0.2),
+    lineHeight: theme.spacing(3),
+    [theme.breakpoints.down('sm')]: {
+      padding: '1rem',
+    },
   },
 }))
 
