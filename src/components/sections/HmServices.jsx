@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, Typography, Paper, Hidden, Container } from '@mui/material'
+import { Grid, Typography, Paper, Hidden, Container, Box } from '@mui/material'
 import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone'
 import ComputerIcon from '@mui/icons-material/Computer'
 import DescriptionIcon from '@mui/icons-material/Description'
@@ -50,10 +50,9 @@ function HmServices(props) {
   return (
     <div className={classes.root} id="services">
       <Container maxWidth="xl">
-        {/* Section title only shows on mobile */}
-        <Hidden smUp>
+        <Box display={{ xs: 'block', sm: 'none', md: 'none', lg: 'none' }}>
           <SectionHeader title="Our Services" subTitle="Let us Help build the Future!" />
-        </Hidden>
+        </Box>
         <Grid
           container
           direction="row"
@@ -61,7 +60,7 @@ function HmServices(props) {
           alignItems="center"
           className={classes.cardWrapper}
         >
-          <Hidden xsDown>
+          <Box display={{ xs: 'none', sm: 'none', md: 'block', lg: 'block' }}>
             <Grid
               container
               direction="row"
@@ -70,7 +69,7 @@ function HmServices(props) {
             >
               <SectionHeader title="Our Services" subTitle="Let us Help build the Future!" />
             </Grid>
-          </Hidden>
+          </Box>
           {serviceCardDetails.map((service, index) => {
             const Icon = icons[index]
             const cardStyles = [
