@@ -9,7 +9,10 @@ function Questions() {
     <>
       <QuestionsBackground>
         <Grid sx={{ color: '#f5f5f5', padding: '2rem 0rem' }}>
-          <SectionHeader title="Important Questions" subTitle="Evaluate your digital needs!" />
+          <SectionHeader
+            title="Digital Presence Evaluation"
+            subTitle="Answer these questions to determine your digital needs"
+          />
         </Grid>
         <Container maxWidth="lg">
           <Grid container direction="row" justifyContent="center">
