@@ -3,7 +3,7 @@ import { Card, Grid, Container, CardActionArea, Typography } from '@mui/material
 import { CardActions, CardContent, CardMedia, Button } from '@mui/material'
 import { RWebShare } from 'react-web-share'
 import { useStyles } from '../styles/sections/Resources.styles'
-import { SectionHeader } from '../index'
+import SectionHeader from '../../components/sections/SectionHeader'
 import blogPosts from '../../data/resourceData'
 
 function Resources(props) {
@@ -16,7 +16,12 @@ function Resources(props) {
           {blogPosts.map((card, index) => (
             <Card className={classes.root} key={index}>
               <CardActionArea>
-                <CardMedia className={classes.media} image={card.image} title="resources" />
+                <CardMedia
+                  className={classes.media}
+                  image={card.image}
+                  title="resources"
+                  loading="lazy"
+                />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
                     {card.title}
