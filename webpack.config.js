@@ -58,7 +58,11 @@ module.exports = {
     extensions: ['*', '.js', '.jsx'],
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
+    new webpack.HotModuleReplacementPlugin({
+      multiStep: true,
+      fullBuildTimeout: 3000,
+      requestTimeout: 1000,
+    }),
     new ReactRefreshWebpackPlugin(),
     process.env.NODE_ENV === 'development' && new ReactRefreshWebpackPlugin(),
   ].filter(Boolean),
