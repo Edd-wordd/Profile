@@ -46,7 +46,7 @@ function WhatWeDo(props) {
                 <CheckCircleIcon className={classes.icons} />
               </Box>
               <Typography variant="body1" className={classes.coreValue} component="span">
-                {value.bulletpoint}
+                {value.bulletPoint}
               </Typography>
             </Grid>
           ))}
