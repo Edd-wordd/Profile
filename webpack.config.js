@@ -10,9 +10,11 @@ module.exports = {
     main: path.resolve(__dirname, 'src', 'main.jsx'),
   },
   output: {
-    path: path.join(__dirname, 'public'),
+    // path: path.join(__dirname, 'public'),
     filename: '[name].min.js',
     publicPath: '/public',
+    path: path.resolve(__dirname, 'tmp'),
+    // Other output options...
   },
   optimization: {
     minimize: true,
@@ -27,6 +29,14 @@ module.exports = {
           options: {
             plugins: ['react-refresh/babel'],
           },
+        },
+      },
+      {
+        test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
+        loader: 'file-loader',
+        options: {
+          name: 'media/[name].[hash:8].[ext]',
+          esModule: false,
         },
       },
 
@@ -57,6 +67,7 @@ module.exports = {
   resolve: {
     extensions: ['*', '.js', '.jsx'],
   },
+
   plugins: [
     new webpack.HotModuleReplacementPlugin({
       multiStep: true,
