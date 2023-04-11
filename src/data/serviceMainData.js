@@ -1,27 +1,27 @@
 const coreServiceValues = [
   {
     id: 4000,
-    coreTitle: 'Best Practices',
+    coreTitle: 'Excellence in Execution',
     coreValue:
-      'We believe in high quality work, and keep our team members practicing the industry standards while developing new innovative ways.',
+      'Our commitment to best practices ensures the delivery of high-quality work, with a focus on industry standards and innovation.',
   },
   {
     id: 4001,
-    coreTitle: 'Industry Standards',
+    coreTitle: 'Adherence to Standards',
     coreValue:
-      'We believe in high quality work, and keep our team members practicing the industry standards while developing new innovative ways.',
+      'By strictly adhering to industry standards, we maintain a strong foundation for our services, fostering stability and reliability for our clients.',
   },
   {
     id: 4002,
-    coreTitle: 'Quality Work',
+    coreTitle: 'Uncompromising Quality',
     coreValue:
-      'We believe in high quality work, and keep our team members practicing the industry standards while developing new innovative ways.',
+      'Our dedication to quality work guarantees exceptional results, achieved through a combination of expertise, diligence, and attention to detail.',
   },
   {
     id: 4003,
-    coreTitle: 'Innovative Ideas',
+    coreTitle: 'Pioneering Solutions',
     coreValue:
-      'We believe in high quality work, and keep our team members practicing the industry standards while developing new innovative ways.',
+      'We cultivate a culture of innovation, encouraging our team to explore and develop groundbreaking ideas that keep us at the forefront of our industry.',
   },
 ]
 
