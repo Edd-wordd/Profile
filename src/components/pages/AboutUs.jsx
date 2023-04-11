@@ -8,11 +8,12 @@ function AboutUs() {
   return (
     <>
       <MainDisplay
-        mobileViewTitle="The story of us!"
-        mobileViewSubtitle="lets go get this"
-        mainViewTitle="A guaranteed method to building your business!"
-        mainViewSubtitle="-Letting you focus on what you do best"
+        mobileViewTitle="Our Unique Journey Together"
+        mobileViewSubtitle="Achieving Success Together"
+        mainViewTitle="Proven Strategies for Business Growth"
+        mainViewSubtitle="Empowering You to Excel in Your Expertise"
         href={`https://images.unsplash.com/photo-1600049780189-60f39be1949f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80`}
+        alt="Image of business people building a company"
       />
       <WhatWeDo />
       <MissionStatement />
