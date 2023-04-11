@@ -14,16 +14,17 @@ function FaqServices() {
   }
   return (
     <>
-      <SectionHeader title="FAQ" subTitle="Ask Away" />
+      <SectionHeader
+        title="Frequently Asked Questions About Our Website and Software Services"
+        subTitle="Get the answers you need"
+      />
       <Container maxWidth="lg" sx={{ paddingBottom: '4rem' }}>
         <Grid sx={{ padding: '3rem 0rem' }}>
           <Typography component="p">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet veniam ipsum aliquid
-            explicabo. Harum ipsa blanditiis eaque ducimus dolores libero corrupti eligendi debitis.
-            Nulla delectus tempore aliquid. Beatae, blanditiis. Necessitatibus? Lorem ipsum dolor
-            sit amet consectetur, adipisicing elit. Nemo quasi beatae, doloremque aliquam deserunt
-            veritatis perspiciatis molestias sequi libero dolorem, natus quibusdam ex atque, sit
-            sapiente odit quidem eum autem.{' '}
+            At monaTech, we strive to provide our clients with the best possible website and
+            software services. If you have questions about our services, you've come to the right
+            place! Below, you'll find answers to some of the most frequently asked questions we
+            receive from our clients.
           </Typography>
         </Grid>
         <Grid container justifyContent="center">
@@ -38,10 +39,12 @@ function FaqServices() {
                       onChange={handleChange(`${question.rank}`)}
                     >
                       <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                        <Typography component="h2">{question.questions}</Typography>
+                        <Typography component="h2" variant="h5">
+                          {question.question}
+                        </Typography>
                       </AccordionSummary>
                       <AccordionDetails>
-                        <Typography component="p">{question.answers}</Typography>
+                        <Typography component="p">{question.answer}</Typography>
                       </AccordionDetails>
                     </Accordion>
                   </CustomAccordion>
