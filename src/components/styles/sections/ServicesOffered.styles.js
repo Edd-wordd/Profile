@@ -1,6 +1,14 @@
 import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    backgroundImage: `url(https://images.unsplash.com/photo-1625014053925-88bef4805a76?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1964&q=80)`,
+    width: '100%',
+    height: 'auto',
+    backgroundSize: 'cover',
+    backgroundAttachment: 'fixed',
+    backgroundPosition: 'center center',
+  },
   titleWrapper: {
     marginTop: theme.spacing(6),
   },
@@ -13,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
   },
   wrapper: {
     padding: '5rem 0rem',
+
     [theme.breakpoints.down('md')]: {
       padding: '2rem 0rem',
     },
