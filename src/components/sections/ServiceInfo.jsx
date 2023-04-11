@@ -19,7 +19,7 @@ function ServiceInfo(props) {
                 <Grid
                   container
                   direction="row"
-                  justify="space-evenly"
+                  justifyContent="space-evenly"
                   alignItems="center"
                   className={classes.mainContent}
                 >

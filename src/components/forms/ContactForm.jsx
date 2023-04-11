@@ -198,11 +198,11 @@ function ContactForm(props) {
   return (
     <div className={classes.root}>
       <Container maxWidth="xl">
-        <Grid container direction="row" justify="center">
+        <Grid container direction="row" justifyContent="center">
           <Grid
             container
             direction="column"
-            justify="center"
+            justifyContent="center"
             alignItems="flex-start"
             className={classes.leftSideInfoWrapper}
             item
@@ -211,25 +211,28 @@ function ContactForm(props) {
             md={10}
             xs={12}
           >
-            <Typography variant="h1" className={classes.infoHeading}>
-              Need to get in Touch?
+            <Typography variant="h2" className={classes.infoHeading}>
+              Get in Touch with Our Experts
             </Typography>
             <Typography variant="h6" className={classes.infoSubTitle}>
-              Send Us A Message!!!
+              Reach Out for Any Questions or Support
             </Typography>
             <Typography variant="body1" className={classes.infoParagraph}>
-              Whether you have a question, comment, or simply want to say hello, we're all ears.
+              Our team is here to help you with any inquiries, concerns, or feedback you may have.
+              Whether you're looking for assistance on a project, seeking expert advice, or just
+              want to say hello, don't hesitate to reach out.
               <br />
               <br />
-              Don't hesitate to send us a message using the contact form. Our team of experts is
-              always ready to assist you in any way we can. We pride ourselves in giving top-notch
-              costumer service and will do everything we can to ensure your complete satisfaction.
+              Use our contact form to send us a message, and our team of specialists will be ready
+              to provide the support you need. We pride ourselves on delivering exceptional customer
+              service and are committed to ensuring your satisfaction.
               <br />
               <br />
-              So go ahead, drop us a line! We cant wait to hear from you and see how we can help you
-              achieve your software development goals.
+              Contact us today! We look forward to hearing from you and discovering how we can help
+              you achieve your software development objectives.
             </Typography>
           </Grid>
+
           <Grid item lg={5}>
             <Paper elevation={3} className={classes.formPaper}>
               <form className={classes.form} noValidate autoComplete="off" onSubmit={handleSubmit}>
@@ -284,7 +287,7 @@ function ContactForm(props) {
                       </Snackbar>
                     )}
                   </Hidden>
-                  <Grid container direction="row" justify="center" alignItems="center">
+                  <Grid container direction="row" justifyContent="center" alignItems="center">
                     {formFieldInputs.map((values) => (
                       <TextField
                         key={values.id}
@@ -305,18 +308,21 @@ function ContactForm(props) {
                     ))}
                   </Grid>
                 </div>
-                <Button
-                  className={classes.submitBtn}
-                  type="submit"
-                  size="large"
-                  variant="contained"
-                  color="primary"
-                  id="submit"
-                  disabled={!!(alert || error || isButtonDisabled)}
-                  aria-label="Submit Form"
-                >
-                  SUBMIT
-                </Button>
+                <Grid container direction="row" justifyContent="flex-end" alignItems="center">
+                  <Button
+                    // className={classes.submitBtn}
+                    sx={{ margin: '1.5rem 0rem', padding: '.5rem 4rem' }}
+                    type="submit"
+                    size="large"
+                    variant="contained"
+                    color="primary"
+                    id="submit"
+                    disabled={!!(alert || error || isButtonDisabled)}
+                    aria-label="Submit Form"
+                  >
+                    SUBMIT
+                  </Button>
+                </Grid>
               </form>
             </Paper>
           </Grid>

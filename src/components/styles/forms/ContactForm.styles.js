@@ -73,15 +73,13 @@ const useStyles = makeStyles((theme) => ({
       zIndex: 1000,
     },
   },
-  submitBtn: {
-    margin: '1.5rem 0rem',
-    padding: '.5rem 4rem',
-    display: 'flex',
-    justify: 'center',
-    marginLeft: 'auto',
-    [theme.breakpoints.down('xs')]: {
-      margin: '1rem 0 4rem 5.5rem',
-    },
-  },
+  // submitBtn: {
+  //   margin: '1.5rem 0rem',
+  //   padding: '.5rem 4rem',
+  //   marginLeft: 'auto',
+  //   [theme.breakpoints.down('xs')]: {
+  //     margin: '1rem 0 4rem 5.5rem',
+  //   },
+  // },
 }))
 export { useStyles }
