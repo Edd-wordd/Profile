@@ -7,7 +7,6 @@ import serviceSectionDetails from '../../data/serviceOfferedData'
 
 function ServicesOffered(props) {
   const classes = useStyles(props)
-  let display = ''
 
   const scrollToTop = () => {
     window.scrollTo(0, 0)
@@ -21,36 +20,34 @@ function ServicesOffered(props) {
             <Grid
               container
               direction="row"
-              justify="space-around"
+              justifyContent="space-around"
               alignItems="center"
               className={classes.wrapper}
               id={`wrapper_${index}`}
             >
               <Hidden mdDown>
-                <Grid>
-                  <Box display={index % 2 === 0 ? (display = '') : (display = 'none')}>
+                <Grid item>
+                  {index % 2 === 0 && (
                     <img
                       loading="lazy"
                       alt={service.serviceName}
                       className={classes.img}
                       src={service.serviceImg}
                     />
-                  </Box>
+                  )}
                 </Grid>
               </Hidden>
               <Hidden mdUp>
-                <Grid>
-                  <Box display="">
-                    <img
-                      loading="lazy"
-                      alt={service.serviceName}
-                      className={classes.img}
-                      src={service.serviceImg}
-                    />
-                  </Box>
+                <Grid item>
+                  <img
+                    loading="lazy"
+                    alt={service.serviceName}
+                    className={classes.img}
+                    src={service.serviceImg}
+                  />
                 </Grid>
               </Hidden>
-              <Grid>
+              <Grid item>
                 <Typography variant="h4" className={classes.titles}>
                   {service.serviceOffered}
                 </Typography>
@@ -59,7 +56,7 @@ function ServicesOffered(props) {
                 <Grid
                   container
                   direction="column"
-                  justify="center"
+                  justifyContent="center"
                   alignItems="flex-end"
                   className={classes.btnWrapper}
                 >
@@ -77,15 +74,15 @@ function ServicesOffered(props) {
                 </Grid>
               </Grid>
               <Hidden mdDown>
-                <Grid>
-                  <Box display={index % 2 === 1 ? (display = '') : (display = 'none')}>
+                <Grid item>
+                  {index % 2 === 1 && (
                     <img
                       loading="lazy"
                       alt={service.serviceName}
                       className={classes.img}
                       src={service.serviceImg}
                     />
-                  </Box>
+                  )}
                 </Grid>
               </Hidden>
             </Grid>

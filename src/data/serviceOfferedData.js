@@ -4,11 +4,9 @@ const serviceSectionDetails = [
     path: '/services/content-writing',
     serviceName: 'content-writing',
     serviceImg: '../../public/assets/thom-bradley-ap8jsn3B9gI-unsplash.jpg',
-    // serviceImg:
-    //   'https://images.unsplash.com/photo-1504610926078-a1611febcad3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80',
-    serviceOffered: 'Content Writing',
+    serviceOffered: 'Expert Content Writing Services',
     serviceDetails:
-      ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magnam pariatur consectetur, quidem quasi modi culpa delectus quisquam suscipit eveniet eius ratione vitae omni dolorum nam unde repellendus hic exercitationem.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis rem in earum beatae, maxime quod repellendus rerum voluptatem doloribus vero provident voluptatum reiciendis sed suscipit dignissimos ipsam commodi eveniet eos? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia maiores dolorem sequi consequatur eaque mollitia temporibus voluptas, a quisquam? Voluptate sunt veritatis corporis delectus nobis omnis eligendi accusamus ad est.',
+      'Our content writing services are designed to captivate your audience with engaging and informative content. Our experienced writers craft compelling stories tailored to your brand, ensuring an enhanced online presence and increased conversions. Trust our team to deliver top-notch content that meets your unique requirements and resonates with your target audience.',
   },
   {
     id: 5001,
@@ -17,16 +15,16 @@ const serviceSectionDetails = [
     serviceImg: '../../public/assets/lukas-blazek-mcSDtbWXUZU-unsplash.jpg',
     serviceOffered: 'SEO (Search Engine Optimization)',
     serviceDetails:
-      ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magnam pariatur consectetur, quidem quasi modi culpa delectus quisquam suscipit eveniet eius ratione vitae omni dolorum nam unde repellendus hic exercitationem.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis rem in earum beatae, maxime quod repellendus rerum voluptatem doloribus vero provident voluptatum reiciendis sed suscipit dignissimos ipsam commodi eveniet eos? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia maiores dolorem sequi consequatur eaque mollitia temporibus voluptas, a quisquam? Voluptate sunt veritatis corporis delectus nobis omnis eligendi accusamus ad est.',
+      'Maximize your online visibility with our cutting-edge SEO services. We provide comprehensive strategies to boost your search engine rankings and drive organic traffic to your website. Our team of SEO experts utilizes the latest techniques and tools to optimize your site for search engines, ensuring that your website stays ahead of the competition.',
   },
   {
     id: 5002,
     path: '/services/mobile-app',
     serviceName: 'mobile-app',
     serviceImg: '../../public/assets/phil-desforges-Hxp_xDXsOSs-unsplash.jpg',
-    serviceOffered: 'Mobile App Development',
+    serviceOffered: 'Mobile App Development Solutions',
     serviceDetails:
-      ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magnam pariatur consectetur, quidem quasi modi culpa delectus quisquam suscipit eveniet eius ratione vitae omni dolorum nam unde repellendus hic exercitationem.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis rem in earum beatae, maxime quod repellendus rerum voluptatem doloribus vero provident voluptatum reiciendis sed suscipit dignissimos ipsam commodi eveniet eos? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia maiores dolorem sequi consequatur eaque mollitia temporibus voluptas, a quisquam? Voluptate sunt veritatis corporis delectus nobis omnis eligendi accusamus ad est.',
+      'Transform your ideas into innovative mobile apps with our custom mobile app development services. Our expert developers create seamless user experiences, blending cutting-edge technology with intuitive design. We specialize in developing engaging, feature-rich apps that cater to the diverse needs of your target audience, ensuring your business stays ahead of the curve.',
   },
   {
     id: 5003,
@@ -35,7 +33,7 @@ const serviceSectionDetails = [
     serviceImg: '../../public/assets/thom-bradley-ap8jsn3B9gI-unsplash.jpg',
     serviceOffered: 'eCommerce Website Development',
     serviceDetails:
-      ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magnam pariatur consectetur, quidem quasi modi culpa delectus quisquam suscipit eveniet eius ratione vitae omni dolorum nam unde repellendus hic exercitationem.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis rem in earum beatae, maxime quod repellendus rerum voluptatem doloribus vero provident voluptatum reiciendis sed suscipit dignissimos ipsam commodi eveniet eos? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia maiores dolorem sequi consequatur eaque mollitia temporibus voluptas, a quisquam? Voluptate sunt veritatis corporis delectus nobis omnis eligendi accusamus ad est.',
+      'Expand your business online with our tailor-made eCommerce website development solutions. Our experienced team creates user-friendly, responsive, and secure online stores that ensure a seamless shopping experience for your customers. With our end-to-end eCommerce development services, you can scale your online presence and drive sales effortlessly.',
   },
   {
     id: 5004,
@@ -44,7 +42,7 @@ const serviceSectionDetails = [
     serviceImg: '../../public/assets/thom-bradley-ap8jsn3B9gI-unsplash.jpg',
     serviceOffered: 'Website Design & Development',
     serviceDetails:
-      ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magnam pariatur consectetur, quidem quasi modi culpa delectus quisquam suscipit eveniet eius ratione vitae omni dolorum nam unde repellendus hic exercitationem.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis rem in earum beatae, maxime quod repellendus rerum voluptatem doloribus vero provident voluptatum reiciendis sed suscipit dignissimos ipsam commodi eveniet eos? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia maiores dolorem sequi consequatur eaque mollitia temporibus voluptas, a quisquam? Voluptate sunt veritatis corporis delectus nobis omnis eligendi accusamus ad est.',
+      'Elevate your online presence with our bespoke website design and development services. Our team of creative designers and skilled developers collaborate to build visually appealing, user-friendly, and responsive websites that align with your business goals. From concept to launch, we ensure your website leaves a lasting impression on your audience.',
   },
   {
     id: 5005,
@@ -53,7 +51,7 @@ const serviceSectionDetails = [
     serviceImg: '../../public/assets/thom-bradley-ap8jsn3B9gI-unsplash.jpg',
     serviceOffered: 'Website/App Maintenance & Support',
     serviceDetails:
-      ' Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium magnam pariatur consectetur, quidem quasi modi culpa delectus quisquam suscipit eveniet eius ratione vitae omni dolorum nam unde repellendus hic exercitationem.Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis rem in earum beatae, maxime quod repellendus rerum voluptatem doloribus vero provident voluptatum reiciendis sed suscipit dignissimos ipsam commodi eveniet eos? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia maiores dolorem sequi consequatur eaque mollitia temporibus voluptas, a quisquam? Voluptate sunt veritatis corporis delectus nobis omnis eligendi accusamus ad est.',
+      'Keep your website or app running smoothly with our comprehensive maintenance and support services. Our team of experts provides ongoing updates, bug fixes, and performance optimizations to ensure your digital assets remain up-to-date and secure. With our reliable support, you can focus on your core business while we take care of your online presence. Trust our dedicated team to maintain the highest level of functionality and user satisfaction for your website or app, ensuring a seamless experience for your customers and long-term success for your business.',
   },
 ]
 
