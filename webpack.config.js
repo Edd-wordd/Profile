@@ -10,10 +10,10 @@ module.exports = {
     main: path.resolve(__dirname, 'src', 'main.jsx'),
   },
   output: {
-    // path: path.join(__dirname, 'public'),
+    path: path.join(__dirname, 'public'),
     filename: '[name].min.js',
     publicPath: '/public',
-    path: path.resolve(__dirname, 'tmp'),
+    // path: path.resolve(__dirname, 'tmp'),
     // Other output options...
   },
   optimization: {
@@ -66,6 +66,13 @@ module.exports = {
   },
   resolve: {
     extensions: ['*', '.js', '.jsx'],
+  },
+  devServer: {
+    contentBase: path.join(__dirname, 'public'),
+    historyApiFallback: true,
+    hot: true,
+    publicPath: '/public',
+    port: 3000,
   },
 
   plugins: [
