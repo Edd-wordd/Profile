@@ -8,23 +8,20 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: theme.spacing(2),
     color: theme.palette.charcoal.main,
   },
-  subTitle: { marginTop: theme.spacing(2) },
+  subTitle: {
+    marginTop: theme.spacing(2),
+  },
   wrapper: {
-    backgroundImage: `linear-gradient(45deg,#f4f1fa  30%,#fff 90%)`,
     padding: '5rem 0rem',
     [theme.breakpoints.down('md')]: {
       padding: '2rem 0rem',
     },
-    '&#wrapper_0': {
-      backgroundImage: `linear-gradient(45deg,#fff 30%,#f4f1fa 90%)`,
-    },
-    '&#wrapper_2': {
-      backgroundImage: `linear-gradient(45deg,#fff 30%,#f4f1fa 90%)`,
-    },
-    '&#wrapper_4': {
-      backgroundImage: `linear-gradient(45deg,#fff 30%,#f4f1fa 90%)`,
-    },
   },
+  wrapperBg: (index) => ({
+    backgroundImage: `linear-gradient(45deg, ${index % 2 === 0 ? '#f4f1fa' : '#fff'} 30%, ${
+      index % 2 === 0 ? '#fff' : '#f4f1fa'
+    } 90%)`,
+  }),
   line: {
     width: '350px',
     height: '1px',
@@ -52,6 +49,7 @@ const useStyles = makeStyles((theme) => ({
     height: 'auto',
     color: theme.palette.charcoal.secondary,
     letterSpacing: theme.spacing(0.2),
+    lineHeight: '1.5rem',
     [theme.breakpoints.down('md')]: {
       width: '100%',
     },
