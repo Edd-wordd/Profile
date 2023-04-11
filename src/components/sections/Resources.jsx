@@ -12,15 +12,16 @@ function Resources(props) {
     <div>
       <SectionHeader title="Our Resources" subTitle="We make things happen" />
       <Container maxWidth="xl">
-        <Grid container direction="row" justify="center" alignItems="center">
+        <Grid container direction="row" justifyContent="center" alignItems="center">
           {blogPosts.map((card, index) => (
             <Card className={classes.root} key={index}>
               <CardActionArea>
                 <CardMedia
                   className={classes.media}
                   image={card.image}
-                  title="resources"
+                  title={card.title}
                   loading="lazy"
+                  alt={card.title}
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
