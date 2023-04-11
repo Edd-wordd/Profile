@@ -13,5 +13,4 @@ const useStyles = makeStyles((theme) => ({
     height: theme.spacing(30),
   },
 }))
-
 export { useStyles }

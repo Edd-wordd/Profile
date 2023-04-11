@@ -10,6 +10,7 @@ const webpack = require('webpack')
 const webpackConfig = require('../webpack.config')
 const webpackDevMiddleware = require('webpack-dev-middleware')
 const webpackHotMiddleware = require('webpack-hot-middleware')
+const fs = require('fs')
 
 dotenv.config()
 
@@ -17,6 +18,7 @@ const app = express()
 const port = process.env.PORT || 3000
 
 const publicDir = path.join(__dirname, '..', 'public')
+// const publicDir = path.join(__dirname, '..', 'tmp')
 app.use('/public', express.static(publicDir))
 
 app.use(helmet())
@@ -32,7 +34,20 @@ if (process.env.NODE_ENV !== 'production') {
 
 app.use(morgan('common'))
 // Generic front-end route, React will handle client-side routing
-app.get('/*', (_, res) => res.sendFile(path.join(publicDir, 'index.html')))
+// app.get('/*', (_, res) => res.sendFile(path.join(publicDir, 'index.html')))
+
+app.get('*', (_, res, next) => {
+  if (process.env.NODE_ENV === 'production') {
+    res.sendFile(path.join(publicDir, 'index.html'))
+  } else {
+    const indexPath = path.join(publicDir, 'index.html')
+    if (fs.existsSync(indexPath)) {
+      res.sendFile(indexPath)
+    } else {
+      next()
+    }
+  }
+})
 
 // eslint-disable-next-line no-console
 app.listen(port, () => console.log('Server is running and ready for you'))
@@ -40,6 +55,8 @@ app.listen(port, () => console.log('Server is running and ready for you'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cors())
+
+// Your existing email and other API code
 
 app.post('/api/form', (req, res) => {
   const data = req.body
