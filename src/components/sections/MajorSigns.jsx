@@ -8,20 +8,20 @@ const MajorSigns = (props) => {
   return (
     <div className={classes.root}>
       <SectionHeader
-        title={`Major Signs you need ${props.title}`}
-        subTitle="here is what you need"
+        title={`Top Indicators That You Require ${props.title}`}
+        subTitle="Key Factors to Consider"
       />
       <Container maxWidth="lg">
         <Grid
           container
           direction="row"
-          justify="center"
+          justifyContent="center"
           alignItems="center"
           className={classes.information}
         >
           <Typography>{props.majorSignInfo}</Typography>
         </Grid>
-        <Grid container direction="row" justify="center" alignItems="center">
+        <Grid container direction="row" justifyContent="center" alignItems="center">
           <Grid>
             <Paper className={classes.paper}>
               <Typography variant="h5" className={classes.paperTitle}>

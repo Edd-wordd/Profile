@@ -12,7 +12,7 @@ export const formFieldInputs = [
       shrink: true,
     },
     style: {
-      width: '45%',
+      width: '43%',
     },
   },
   {
@@ -45,7 +45,7 @@ export const formFieldInputs = [
       shrink: true,
     },
     style: {
-      width: '45%',
+      width: '43%',
     },
   },
   {
