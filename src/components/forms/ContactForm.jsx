@@ -4,6 +4,7 @@ import { checkPreviousDate } from '../../utils'
 import axios from 'axios'
 import { formFieldInputs } from '../../data/contactFormData'
 import { selectInputs } from '../../data/contactFormData'
+import CircularProgress from '@mui/material/CircularProgress'
 import {
   Alert,
   AlertTitle,
@@ -16,12 +17,15 @@ import {
   Button,
   MenuItem,
   Hidden,
+  Backdrop,
 } from '@mui/material'
 
 function ContactForm(props) {
   const classes = useStyles(props)
+  const [open, setOpen] = React.useState(false)
   const [error, setError] = React.useState(false)
   const [alert, setAlert] = React.useState(false)
+  const [isLoading, setIsLoading] = React.useState(false)
   const [isButtonDisabled, setIsButtonDisabled] = React.useState(false)
   const [value, setValue] = React.useState({
     firstName: '',
@@ -121,6 +125,8 @@ function ContactForm(props) {
     e.preventDefault()
 
     setIsButtonDisabled(true)
+    setIsLoading(true)
+    setOpen(true)
 
     const data = new FormData(e.target)
     data.append('timeStamp', new Date())
@@ -140,6 +146,8 @@ function ContactForm(props) {
         phoneNumber: 'Please enter valid phone number',
         email: 'Please enter valid email',
       })
+      setOpen(false)
+      setIsLoading(false)
       return
     }
     if (validate() && phoneIsValid && emailIsValid) {
@@ -175,23 +183,31 @@ function ContactForm(props) {
         phoneNumber: 'Please enter valid phone number',
         email: 'Please enter valid email',
       })
+      setOpen(false)
+      setIsLoading(false)
       setIsButtonDisabled(false)
     } else if (!emailIsValid) {
       setError({
         email: 'Please enter valid email',
       })
       setIsButtonDisabled(false)
+      setOpen(false)
+      setIsLoading(false)
     } else if (!phoneIsValid) {
       setError({
         phoneNumber: 'Please enter valid phone number',
       })
       setIsButtonDisabled(false)
+      setOpen(false)
+      setIsLoading(false)
     } else {
       setError({
         phoneNumber: 'Please enter valid phone number',
         // email: 'Please enter valid email',
       })
       setIsButtonDisabled(false)
+      setOpen(false)
+      setIsLoading(false)
     }
   }
 
@@ -232,7 +248,11 @@ function ContactForm(props) {
               you achieve your software development objectives.
             </Typography>
           </Grid>
-
+          {isLoading ? (
+            <Backdrop open>
+              <CircularProgress color="primary" />
+            </Backdrop>
+          ) : null}
           <Grid item lg={5}>
             <Paper elevation={3} className={classes.formPaper}>
               <form className={classes.form} noValidate autoComplete="off" onSubmit={handleSubmit}>
