@@ -30,7 +30,7 @@ function ContactForm(props) {
   const [value, setValue] = React.useState({
     firstName: '',
     lastName: '',
-    phoneNumber: '',
+    phoneNumber: `+1`,
     email: '',
     companyName: '',
     message: '',
@@ -162,11 +162,15 @@ function ContactForm(props) {
         startDate: '',
         whereDidYouHearAboutUs: '',
       })
+      setOpen(false)
+      setIsLoading(false)
       try {
         axios
           .post('/api/form', simpleData)
           .then((res) => {
             console.log(res, 'data is here')
+            // setOpen(false)
+            // setIsLoading(false)
             setAlert(true)
             setIsButtonDisabled(false)
           })
