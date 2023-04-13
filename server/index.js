@@ -18,8 +18,11 @@ const app = express()
 const port = process.env.PORT || 3000
 
 const publicDir = path.join(__dirname, '..', 'public')
-// const publicDir = path.join(__dirname, '..', 'tmp')
 app.use('/public', express.static(publicDir))
+
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(cors())
 
 app.use(helmet())
 if (process.env.NODE_ENV !== 'production') {
@@ -52,12 +55,6 @@ app.get('*', (_, res, next) => {
 // eslint-disable-next-line no-console
 app.listen(port, () => console.log('Server is running and ready for you'))
 
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true }))
-app.use(cors())
-
-// Your existing email and other API code
-
 app.post('/api/form', (req, res) => {
   const data = req.body
 
@@ -65,14 +62,14 @@ app.post('/api/form', (req, res) => {
     service: 'Gmail',
     port: 465,
     auth: {
-      user: process.env.REACT_APP_COMPANY_EMAIL,
+      user: process.env.REACT_APP_COMPANY_USER_EMAIL,
       pass: process.env.REACT_APP_COMPANY_EMAIL_PASSWORD,
     },
   })
 
   const mailOptions = {
     from: data.email,
-    to: process.env.REACT_APP_COMPANY_EMAIL,
+    to: process.env.REACT_APP_COMPANY_RECIPIENT_EMAIL,
     subject: `Inquiry from monaTech`,
     html: `
       <h3>Details</h3>
@@ -91,6 +88,7 @@ app.post('/api/form', (req, res) => {
   }
   smtpTransport.sendMail(mailOptions, (error) => {
     if (error) {
+      console.log(error)
       res.status(500).send(`Error: ${error}`)
     } else {
       res.status(200).send('Success')
@@ -99,29 +97,3 @@ app.post('/api/form', (req, res) => {
 
   smtpTransport.close()
 })
-
-// const myHeaders = new Headers()
-// myHeaders.append('apikey', process.env.REACT_APP_PHONE_NUMBER_API_KEY)
-//
-// const requestOptions = {
-//   method: 'GET',
-//   redirect: 'follow',
-//   headers: myHeaders,
-// }
-//
-// console.log(requestOptions)
-// app.post('/api/phone', (req, res) => {
-//   const data = req.body
-//   const phone = data.phoneNumber
-//   const url = `https://api.apilayer.com/number_verification/validate?number=${phone}`
-//
-//   fetch(url, requestOptions)
-//     .then((res) => res.json())
-//     .then((json) => {
-//       console.log(json)
-//       res.send(json)
-//     })
-//     .catch((err) => {
-//       res.send(err)
-//     })
-// })
