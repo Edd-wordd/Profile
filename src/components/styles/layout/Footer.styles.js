@@ -33,15 +33,6 @@ const FooterMainLogo = styled('div')(({ theme }) => ({
   },
 }))
 
-const FooterDiamond = styled('div')(({ theme }) => ({
-  width: '10px',
-  height: '10px',
-  border: '2px solid #343a40',
-  transform: 'rotate(45deg)',
-  background: 'linear-gradient(45deg, #89023e 30%, #c72c61 90%)',
-  margin: '.3rem 1rem',
-}))
-
 const FooterLine = styled('div')(({ theme }) => ({
   marginTop: '1.2rem',
   marginRight: '.75rem',
@@ -50,4 +41,4 @@ const FooterLine = styled('div')(({ theme }) => ({
   height: '1px',
   background: 'linear-gradient(45deg, #89023e 30%, #c72c61 90%)',
 }))
-export { FooterBackground, SectionCards, FooterMainLogo, FooterDiamond, FooterLine }
+export { FooterBackground, SectionCards, FooterMainLogo, FooterLine }
