@@ -10,7 +10,6 @@ import {
   FooterBackground,
   SectionCards,
   FooterMainLogo,
-  FooterDiamond,
   FooterLine,
 } from '../styles/layout/Footer.styles'
 
@@ -128,18 +127,6 @@ function Footer() {
       <Grid container direction="row" justifyContent="center" sx={{ padding: '0 0 1rem 0' }}>
         <Grid>
           <Typography>© Copyright {new Date().getFullYear()} | All Rights Reserved</Typography>
-        </Grid>
-        <Hidden xsDown>
-          <Grid>
-            <FooterDiamond />
-          </Grid>
-        </Hidden>
-        <Grid>
-          <Typography>
-            <Link href="/privacypolicy" sx={{ textDecoration: 'none', color: '#f5f5f5' }}>
-              Privacy Policy
-            </Link>{' '}
-          </Typography>
         </Grid>
       </Grid>
     </FooterBackground>

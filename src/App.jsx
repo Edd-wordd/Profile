@@ -9,7 +9,6 @@ import Contact from '../src/components/pages/Contact'
 import Home from '../src/components/pages/Home'
 import Footer from '../src/components/layout/Footer'
 import ServiceInfo from './components/sections/ServiceInfo'
-import PrivacyPolicy from './components/pages/PrivacyPolicy'
 import NotFound from './components/sections/NotFound'
 import { ThemeProvider } from '@mui/material'
 import theme from './theme'
@@ -30,7 +29,6 @@ function App() {
         <div className={classes.root}>
           <Switch>
             {/* remember to put the home route last!!! */}
-            <Route exact path="/privacypolicy" component={PrivacyPolicy} />
             <Route exact path="/portfolio" component={Portfolio} />
             <Route exact path="/about" component={AboutUs} />
             <Route exact path="/services/:id" component={ServiceInfo} />
