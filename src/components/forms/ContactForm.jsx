@@ -30,7 +30,7 @@ function ContactForm(props) {
   const [value, setValue] = React.useState({
     firstName: '',
     lastName: '',
-    phoneNumber: `+1`,
+    phoneNumber: '',
     email: '',
     companyName: '',
     message: '',
@@ -47,7 +47,9 @@ function ContactForm(props) {
 
   const phoneCheck = async (phone) => {
     const phoneRegex = /^\+(?:[0-9] ?){6,14}[0-9]$/
-    if (phone.trim().match(phoneRegex)) {
+    const formatedPhone = '+1' + phone
+    console.log(formatedPhone)
+    if (formatedPhone.trim().match(phoneRegex)) {
       const myHeaders = new Headers()
       myHeaders.append('apikey', 'GIB3A34mUj4lMeoT38zEpKyrTOV0K4OA')
       const requestOptions = {
@@ -57,7 +59,7 @@ function ContactForm(props) {
       }
       try {
         const response = await fetch(
-          `https://api.apilayer.com/number_verification/validate?number=${phone}`,
+          `https://api.apilayer.com/number_verification/validate?number=${formatedPhone}`,
           requestOptions
         )
         const data = await response.json()
