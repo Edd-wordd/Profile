@@ -15,7 +15,7 @@ const MajorSigns = (props) => {
         <Grid
           container
           direction="row"
-          justifyContent="center"
+          justifyContent="space-evenly"
           alignItems="center"
           className={classes.information}
         >
@@ -24,7 +24,7 @@ const MajorSigns = (props) => {
         <Grid container direction="row" justifyContent="center" alignItems="center">
           <Grid>
             <Paper className={classes.paper}>
-              <Typography variant="h5" className={classes.paperTitle}>
+              <Typography variant="h6" className={classes.paperTitle}>
                 {props.majorTitle_1}
               </Typography>
               <Typography>{props.majorInfo_1}</Typography>
@@ -32,7 +32,7 @@ const MajorSigns = (props) => {
           </Grid>
           <Grid>
             <Paper className={classes.paper}>
-              <Typography variant="h5" className={classes.paperTitle}>
+              <Typography variant="h6" className={classes.paperTitle}>
                 {props.majorTitle_2}
               </Typography>
               <Typography>{props.majorInfo_2}</Typography>
@@ -40,7 +40,7 @@ const MajorSigns = (props) => {
           </Grid>
           <Grid>
             <Paper className={classes.paper}>
-              <Typography variant="h5" className={classes.paperTitle}>
+              <Typography variant="h6" className={classes.paperTitle}>
                 {props.majorTitle_3}
               </Typography>
               <Typography>{props.majorInfo_3}</Typography>
@@ -48,7 +48,7 @@ const MajorSigns = (props) => {
           </Grid>
           <Grid>
             <Paper className={classes.paper}>
-              <Typography variant="h5" className={classes.paperTitle}>
+              <Typography variant="h6" className={classes.paperTitle}>
                 {props.majorTitle_4}
               </Typography>
               <Typography>{props.majorInfo_4}</Typography>
