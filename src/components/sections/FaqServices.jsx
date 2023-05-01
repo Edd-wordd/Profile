@@ -39,9 +39,7 @@ function FaqServices() {
                       onChange={handleChange(`${question.rank}`)}
                     >
                       <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                        <Typography component="h2" variant="h5">
-                          {question.question}
-                        </Typography>
+                        <Typography component="h3">{question.question}</Typography>
                       </AccordionSummary>
                       <AccordionDetails>
                         <Typography component="p">{question.answer}</Typography>
