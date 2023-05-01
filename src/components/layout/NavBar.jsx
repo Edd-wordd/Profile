@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link, Button, Grid, Box } from '@mui/material'
 import { Fade as Hamburger } from 'hamburger-react'
-import BookCallButton from '../buttons/BookCallButton'
 import { useStyles } from '../styles/layout/NavBar.styles'
 import tabs from '../../data/navbarData'
 import { useEffect } from 'react'
 import { useTheme } from '@mui/system'
 import NavBarButton from '../buttons/NavBarButton'
+import CalendyButton from '../buttons/CalendyButton'
 
 function NavBar(props) {
   const classes = useStyles(props)
@@ -94,7 +94,7 @@ function NavBar(props) {
               })}
             </Grid>
             <Grid item sm={8} md={7} lg={3} className={classes.btnDisplay}>
-              <BookCallButton />
+              <CalendyButton />
             </Grid>
           </Grid>
         </Box>
