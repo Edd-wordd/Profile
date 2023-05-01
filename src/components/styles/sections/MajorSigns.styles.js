@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: 'rgba(255, 255, 255, 0.2)',
     borderRadius: '5px',
     width: theme.spacing(30),
-    minHeight: theme.spacing(30),
+    minHeight: theme.spacing(38),
     [theme.breakpoints.down('md')]: {
       margin: theme.spacing(1),
     },
