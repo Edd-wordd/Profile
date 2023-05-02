@@ -4,7 +4,7 @@ import { useStyles } from '../styles/buttons/CalendyButton.styles'
 
 function CalendyButton(props) {
   const classes = useStyles(props)
-  const url = process.env.REACT_APP_CALENDLY_URL
+  const url = process.env.REACT_APP_CALENDY_URL
 
   return (
     <div>
