@@ -61,25 +61,12 @@ const useStyles = makeStyles((theme) => ({
     width: '35%',
     position: 'absolute',
     top: '50%',
-    left: '70.5%',
+    left: '50%',
     transform: 'translate(-50%, -50%)',
     zIndex: 1000,
     [theme.breakpoints.down('xs')]: {
       width: '80%',
-      position: 'absolute',
-      top: '95%',
-      left: '50%',
-      transform: 'translate(-50%, -50%)',
-      zIndex: 1000,
     },
   },
-  // submitBtn: {
-  //   margin: '1.5rem 0rem',
-  //   padding: '.5rem 4rem',
-  //   marginLeft: 'auto',
-  //   [theme.breakpoints.down('xs')]: {
-  //     margin: '1rem 0 4rem 5.5rem',
-  //   },
-  // },
 }))
 export { useStyles }
