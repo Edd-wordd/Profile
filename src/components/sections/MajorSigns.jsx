@@ -1,9 +1,9 @@
 import React from 'react'
-import SectionHeader from '../../components/sections/SectionHeader'
 import { Grid, Typography, Container, Paper } from '@mui/material'
+import SectionHeader from './SectionHeader'
 import { useStyles } from '../styles/sections/MajorSigns.styles'
 
-const MajorSigns = (props) => {
+function MajorSigns(props) {
   const classes = useStyles(props)
   return (
     <div className={classes.root}>

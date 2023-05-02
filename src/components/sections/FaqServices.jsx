@@ -1,10 +1,16 @@
 import React from 'react'
-import SectionHeader from '../../components/sections/SectionHeader'
-import { Grid, Typography, Container } from '@mui/material'
-import { Accordion, AccordionSummary, AccordionDetails } from '@mui/material'
+import {
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+  Grid,
+  Typography,
+  Container,
+} from '@mui/material'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import { CustomAccordion } from '../styles/sections/FaqServices.styles'
 import faqQuestions from '../../data/faqData'
+import SectionHeader from './SectionHeader'
 
 function FaqServices() {
   const [expanded, setExpanded] = React.useState('panel1')
@@ -21,7 +27,7 @@ function FaqServices() {
       <Container maxWidth="lg" sx={{ paddingBottom: '4rem' }}>
         <Grid sx={{ padding: '3rem 0rem' }}>
           <Typography component="p">
-            At monaTech, we strive to provide our clients with the best possible website and
+            `At monaTech, we strive to provide our clients with the best possible website and
             software services. If you have questions about our services, you've come to the right
             place! Below, you'll find answers to some of the most frequently asked questions we
             receive from our clients.

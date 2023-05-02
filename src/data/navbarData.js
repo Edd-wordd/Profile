@@ -1,8 +1,8 @@
 // store the data for the tab labels and routes
 const tabs = [
-  { label: 'About Us', route: '/about' },
-  { label: 'Services', route: '/services' },
-  { label: 'Contact Us', route: '/contact' },
+  { id: 9000, label: 'About Us', route: '/about' },
+  { id: 9001, label: 'Services', route: '/services' },
+  { id: 9002, label: 'Contact Us', route: '/contact' },
 ]
 
 export default tabs

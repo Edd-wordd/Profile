@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react'
-import { Grid, Typography, Paper, Hidden, Container, Box } from '@mui/material'
+import { Grid, Typography, Paper, Box, Slide } from '@mui/material'
+import { useTheme } from '@mui/system'
 import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone'
 import ComputerIcon from '@mui/icons-material/Computer'
 import DescriptionIcon from '@mui/icons-material/Description'
@@ -7,10 +8,8 @@ import MultilineChartIcon from '@mui/icons-material/MultilineChart'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart'
 import GroupAddIcon from '@mui/icons-material/GroupAdd'
 import serviceCardDetails from '../../data/hmServicesData'
-import SectionHeader from '../../components/sections/SectionHeader'
-import { Slide } from '@mui/material'
+import SectionHeader from './SectionHeader'
 import { useStyles } from '../styles/sections/HmServices.styles'
-import { useTheme } from '@mui/system'
 
 const icons = [
   MultilineChartIcon,
@@ -131,7 +130,8 @@ function HmServices(props) {
                 }}
               >
                 <Typography variant="h5" sx={{ display: 'flex', alignItems: 'center' }}>
-                  <Icon sx={{ width: '12%', height: 'auto' }} /> {service.serviceTitle}
+                  <Icon sx={{ width: '12%', height: 'auto' }} />
+                  {service.serviceTitle}
                 </Typography>
                 <Typography paragraph>{service.serviceDescription}</Typography>
               </Paper>

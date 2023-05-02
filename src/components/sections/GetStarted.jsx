@@ -3,7 +3,7 @@ import { Container, Typography, Grid, Paper, Hidden } from '@mui/material'
 import BeenhereIcon from '@mui/icons-material/Beenhere'
 import getStartedSteps from '../../data/getStartedData'
 import ButtonLink from '../buttons/ButtonLink'
-import SectionHeader from '../../components/sections/SectionHeader'
+import SectionHeader from './SectionHeader'
 import {
   DottedLine,
   Card,

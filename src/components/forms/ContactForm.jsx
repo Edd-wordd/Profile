@@ -1,10 +1,5 @@
 import React from 'react'
-import { useStyles } from '../styles/forms/ContactForm.styles'
-import { checkPreviousDate } from '../../utils'
 import axios from 'axios'
-import { formFieldInputs } from '../../data/contactFormData'
-import { selectInputs } from '../../data/contactFormData'
-import CircularProgress from '@mui/material/CircularProgress'
 import {
   Alert,
   AlertTitle,
@@ -19,6 +14,10 @@ import {
   Hidden,
   Backdrop,
 } from '@mui/material'
+import CircularProgress from '@mui/material/CircularProgress'
+import { formFieldInputs, selectInputs } from '../../data/contactFormData'
+import { checkPreviousDate } from '../../utils'
+import { useStyles } from '../styles/forms/ContactForm.styles'
 
 function ContactForm(props) {
   const classes = useStyles(props)
@@ -65,8 +64,8 @@ function ContactForm(props) {
         const data = await response.json()
         console.log(data, 'data in phoneCheck APi')
         return data.valid
-      } catch (error) {
-        console.error(error)
+      } catch (err) {
+        console.error(err)
         return false
       }
     }
@@ -97,8 +96,8 @@ function ContactForm(props) {
         console.log(data, 'data in emailCheck API')
         console.log(data.smtp_check, 'data.smtp_check')
         return data.smtp_check
-      } catch (error) {
-        console.error(error)
+      } catch (err) {
+        console.error(err)
         return false
       }
     }

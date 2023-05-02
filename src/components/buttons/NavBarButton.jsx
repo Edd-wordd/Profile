@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from '@mui/material'
 
-const NavButton = ({ tab, theme, windowLocation }) => {
+function NavButton({ tab, theme, windowLocation }) {
   return (
     <Button
       key={tab.route}
