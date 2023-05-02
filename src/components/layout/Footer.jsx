@@ -116,7 +116,7 @@ function Footer() {
         {/* Footer Logo */}
         <FooterMainLogo>
           <Link href="/">
-            <img src="../../../public/assets/black.png" alt="mona-tech-logo" />
+            <img src="../../../public/assets/black.webp" alt="mona-tech-logo" />
           </Link>
         </FooterMainLogo>
       </Grid>
