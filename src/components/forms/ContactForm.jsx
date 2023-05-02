@@ -50,7 +50,7 @@ function ContactForm(props) {
     console.log(formatedPhone)
     if (formatedPhone.trim().match(phoneRegex)) {
       const myHeaders = new Headers()
-      myHeaders.append('apikey', 'GIB3A34mUj4lMeoT38zEpKyrTOV0K4OA')
+      myHeaders.append('apikey', process.env.REACT_APP_PHONE_NUMBER_VERIFICATION_API_KEY)
       const requestOptions = {
         method: 'GET',
         redirect: 'follow',
@@ -58,9 +58,11 @@ function ContactForm(props) {
       }
       try {
         const response = await fetch(
-          `https://api.apilayer.com/number_verification/validate?number=${formatedPhone}`,
+          `${process.env.REACT_APP_PHONE_NUMBER_VERIFICATION_API_URL}${formatedPhone}`,
           requestOptions
         )
+        console.log('Response:', response) // Add this line to log the response
+        console.log(process.env.REACT_APP_PHONE_NUMBER_VERIFICATION_API)
 
         const data = await response.json()
         console.log(data, 'data in phoneCheck APi')
@@ -79,7 +81,7 @@ function ContactForm(props) {
 
     if (email.trim().match(emailRegex)) {
       const myHeaders = new Headers()
-      myHeaders.append('apikey', 'GIB3A34mUj4lMeoT38zEpKyrTOV0K4OA')
+      myHeaders.append('apikey', process.env.REACT_APP_EMAIL_VERIFICATION_API_KEY)
 
       const requestOptions = {
         method: 'GET',
@@ -88,9 +90,11 @@ function ContactForm(props) {
       }
       try {
         const response = await fetch(
-          `https://api.apilayer.com/email_verification/check?email=${email}`,
+          `${process.env.REACT_APP_EMAIL_VERIFICATION_API_URL}${email}`,
           requestOptions
         )
+        console.log('Response:', response) // Add this line to log the response
+
         const data = await response.json()
         console.log(data, 'data in emailCheck API')
         console.log(data.smtp_check, 'data.smtp_check')
