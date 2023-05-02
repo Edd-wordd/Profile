@@ -5,7 +5,7 @@ const serviceSectionDetails = [
     description:
       'Boost your online presence with high-quality, engaging content crafted by our expert writers. We specialize in creating well-researched and SEO-optimized articles, blog posts, and more.',
     image:
-      'https://images.unsplash.com/photo-1648348329481-93f85519a868?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60',
+      'https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80',
     majorTitle_1: 'SEO-Optimized Content',
     majorTitle_2: 'Engaging Blog Posts',
     majorTitle_3: 'Informative Articles',
@@ -32,12 +32,9 @@ const serviceSectionDetails = [
       "We initiate our SEO services with an in-depth analysis of clients' websites, assessing technical aspects like site speed, mobile-friendliness, and crawlability. Our content and keyword research pinpoints improvement areas. Subsequently, we craft a tailored SEO strategy encompassing on-page optimization, off-page optimization, and consistent monitoring and reporting." +
       '\n' +
       "Our on-page optimization entails optimizing website structure, meta tags, headings, and content for maximum relevancy and keyword density. We also offer content recommendations and optimization to ensure clients' websites deliver valuable and engaging content for their target audience." +
-      '\n' +
-      'Off-page optimization involves acquiring high-quality backlinks from pertinent and authoritative sources, as well as local search optimization for clients with physical locations. We provide ongoing monitoring and reporting to gauge the efficacy of our SEO strategies and make necessary adjustments for sustained success.' +
-      '\n' +
-      'At MonaTech, we are devoted to offering results-oriented SEO services that empower our clients to reach their business objectives, be it increased website traffic, more leads and sales, or enhanced online visibility. We have the proficiency and experience to help clients excel in the competitive digital landscape.',
+      '\n',
     image:
-      'https://images.unsplash.com/photo-1651559111403-3a0ecfb93c09?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
+      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2315&q=80',
     majorTitle_1: 'SEO Strategy',
     majorTitle_2: 'On-Page Optimization',
     majorTitle_3: 'Off-Page Optimization',
@@ -61,7 +58,7 @@ const serviceSectionDetails = [
     description:
       'Unlock your business potential with our top-notch mobile app development services. We specialize in creating high-performance, user-friendly applications tailored to meet your specific needs. Experience the power of cutting-edge technology and seamless design, all customized to enhance your brand and drive growth.',
     image:
-      'https://images.unsplash.com/photo-1645929148848-b4ad7c145585?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
+      'https://images.unsplash.com/photo-1597740985671-2a8a3b80502e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80',
     majorTitle_1: 'Custom Mobile Application Solutions',
     majorTitle_2: 'Cross-Platform App Development',
     majorTitle_3: 'Mobile App UI/UX Design',
@@ -85,7 +82,7 @@ const serviceSectionDetails = [
     description:
       'Boost your online sales with our custom eCommerce website development services. We create user-friendly, secure, and optimized platforms tailored to your business needs, ensuring maximum customer satisfaction and engagement. Partner with us to elevate your online presence and drive revenue growth.',
     image:
-      'https://images.unsplash.com/photo-1649984302689-19617ea0620e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80',
+      'https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2372&q=80',
     majorTitle_1: 'Custom eCommerce Solutions',
     majorTitle_2: 'Responsive Web Design',
     majorTitle_3: 'Secure Payment Integration',
@@ -109,7 +106,7 @@ const serviceSectionDetails = [
     description:
       'At TechSolutions, we specialize in professional web design and development services, creating responsive, user-friendly, and visually appealing websites tailored to your brand. Our team of skilled developers and designers work closely with you to ensure your website stands out and drives organic traffic. Discover our range of services to elevate your online presence today.',
     image:
-      'https://images.unsplash.com/photo-1647021038407-fca3bfd3bf0e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80',
+      'https://images.unsplash.com/photo-1600132806608-231446b2e7af?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2274&q=80',
     majorTitle_1: 'Custom Web Design Solutions',
     majorTitle_2: 'Responsive Web Development',
     majorTitle_3: 'E-commerce Website Design',
@@ -133,7 +130,7 @@ const serviceSectionDetails = [
     description:
       'TechSolutions offers top-quality website and mobile app maintenance services to keep your digital presence optimized and secure. Our experienced team ensures your online platforms remain up-to-date and user-friendly, allowing you to focus on your business.',
     image:
-      'https://images.unsplash.com/photo-1659835347242-97835d671db7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80',
+      'https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80',
     majorTitle_1: 'Website Maintenance',
     majorTitle_2: 'Mobile App Maintenance',
     majorTitle_3: 'Security Updates',
