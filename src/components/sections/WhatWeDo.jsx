@@ -1,7 +1,7 @@
 import React from 'react'
 import { Typography, Grid, Paper, Box } from '@mui/material'
-import SectionHeader from '../../components/sections/SectionHeader'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
+import SectionHeader from './SectionHeader'
 import { useStyles } from '../styles/sections/WhatWeDo.styles'
 import bulletPoints from '../../data/whatWeDoData'
 

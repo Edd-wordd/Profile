@@ -1,7 +1,7 @@
 import React from 'react'
 import { Box, Typography, Grid, Container } from '@mui/material'
-import MajorSigns from '../../components/sections/MajorSigns'
-import FaqServices from '../../components/sections/FaqServices'
+import MajorSigns from './MajorSigns'
+import FaqServices from './FaqServices'
 import { useStyles } from '../styles/sections/ServiceInfo.styles'
 import serviceSectionDetails from '../../data/serviceInfoData'
 

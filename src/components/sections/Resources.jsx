@@ -1,9 +1,18 @@
 import React from 'react'
-import { Card, Grid, Container, CardActionArea, Typography } from '@mui/material'
-import { CardActions, CardContent, CardMedia, Button } from '@mui/material'
+import {
+  Card,
+  Grid,
+  Container,
+  CardActionArea,
+  Typography,
+  CardActions,
+  CardContent,
+  CardMedia,
+  Button,
+} from '@mui/material'
 import { RWebShare } from 'react-web-share'
 import { useStyles } from '../styles/sections/Resources.styles'
-import SectionHeader from '../../components/sections/SectionHeader'
+import SectionHeader from './SectionHeader'
 import blogPosts from '../../data/resourceData'
 
 function Resources(props) {
@@ -39,7 +48,7 @@ function Resources(props) {
                     url: card.link,
                     title: card.title,
                   }}
-                  onClick={() => console.log('shared successfully')}
+                  // onClick={() => console.log('shared successfully')}
                 >
                   <Button size="small" color="primary">
                     Share

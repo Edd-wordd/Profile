@@ -1,7 +1,7 @@
 import React from 'react'
-import {useStyles} from "../styles/sections/NotFound.styles"
+import { useStyles } from '../styles/sections/NotFound.styles'
 
-const NotFound = () => {
+function NotFound() {
   const classes = useStyles()
   return (
     <div className={classes.errorWrapper}>

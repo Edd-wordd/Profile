@@ -1,13 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { Container, Typography, Grid, Paper } from '@mui/material'
-import { Zoom } from '@mui/material'
+import { Container, Typography, Grid, Paper, Zoom } from '@mui/material'
 import Transition from 'react-transition-group/Transition'
-import ButtonLink from '../../components/buttons/ButtonLink'
-import SectionHeader from '../../components/sections/SectionHeader'
+import ButtonLink from '../buttons/ButtonLink'
+import SectionHeader from './SectionHeader'
 import companyValues from '../../data/whoWeAreData'
 import { WhoWeAreCards } from '../styles/sections/WhoWeAre.styles'
 
-function WhoWeAre(props) {
+function WhoWeAre() {
   const [inProp, setInProp] = useState(false)
 
   const cardObserver = useRef(
