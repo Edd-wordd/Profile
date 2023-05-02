@@ -61,6 +61,7 @@ function ContactForm(props) {
           `https://api.apilayer.com/number_verification/validate?number=${formatedPhone}`,
           requestOptions
         )
+
         const data = await response.json()
         console.log(data, 'data in phoneCheck APi')
         return data.valid
@@ -75,8 +76,6 @@ function ContactForm(props) {
 
   const emailCheck = async (email) => {
     const emailRegex = /^([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,63})$/
-
-    // /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/
 
     if (email.trim().match(emailRegex)) {
       const myHeaders = new Headers()
@@ -335,7 +334,6 @@ function ContactForm(props) {
                 </div>
                 <Grid container direction="row" justifyContent="flex-end" alignItems="center">
                   <Button
-                    // className={classes.submitBtn}
                     sx={{ margin: '1.5rem 0rem', padding: '.5rem 4rem' }}
                     type="submit"
                     size="large"
