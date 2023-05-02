@@ -4,11 +4,12 @@ import { useStyles } from '../styles/buttons/CalendyButton.styles'
 
 function CalendyButton(props) {
   const classes = useStyles(props)
+  const url = process.env.REACT_APP_CALENDLY_URL
 
   return (
     <div>
       <PopupButton
-        url="https://calendly.com/mona-tech"
+        url={url}
         text="Schedule time "
         rootElement={document.getElementById('root')}
         className={classes.calendlyBtn}

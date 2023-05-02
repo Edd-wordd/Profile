@@ -49,7 +49,7 @@ function Footer() {
               Email:
               <Link
                 sw={{ color: '#89023e' }}
-                href="mailto:edd_wordd@icloud.com?subject=Mona Tech General Inquires"
+                href={`${process.env.REACT_APP_FOOTER_COMPANY_EMAIL}`}
               >
                 &nbsp;info@monatech.com
               </Link>
@@ -62,7 +62,7 @@ function Footer() {
           <nav>
             <Link
               sw={{ color: '#89023e' }}
-              href="https://www.facebook.com"
+              href={`${process.env.REACT_APP_COMPANY_FACEBOOK_URL}`}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
@@ -71,7 +71,7 @@ function Footer() {
             </Link>
             <Link
               sw={{ color: '#89023e' }}
-              href="https://www.linkedin.com/"
+              href={`${process.env.REACT_APP_COMPANY_LINKEDIN_URL}`}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
@@ -80,7 +80,7 @@ function Footer() {
             </Link>
             <Link
               sw={{ color: '#89023e' }}
-              href="https://www.instagram.com"
+              href={`${process.env.REACT_APP_COMPANY_INSTAGRAM_URL}`}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
@@ -89,7 +89,7 @@ function Footer() {
             </Link>
             <Link
               sw={{ color: '#89023e' }}
-              href="https://www.twitter.com"
+              href={`${process.env.REACT_APP_COMPANY_TWITTER_URL}`}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Twitter"

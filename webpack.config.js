@@ -2,6 +2,15 @@ const path = require('path')
 const autoprefixer = require('autoprefixer')
 const webpack = require('webpack')
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
+const dotenv = require('dotenv')
+const Dotenv = require('dotenv-webpack')
+
+const env = dotenv.config().parsed
+
+const envKeys = Object.keys(env).reduce((prev, next) => {
+  prev[`process.env.${next}`] = JSON.stringify(env[next])
+  return prev
+}, {})
 
 module.exports = {
   mode: process.env.NODE_ENV || 'development',
@@ -76,6 +85,7 @@ module.exports = {
   },
 
   plugins: [
+    new Dotenv(),
     new webpack.HotModuleReplacementPlugin({
       multiStep: true,
       fullBuildTimeout: 3000,
