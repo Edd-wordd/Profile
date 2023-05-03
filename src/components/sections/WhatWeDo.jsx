@@ -16,7 +16,7 @@ function WhatWeDo(props) {
         item
         lg={12}
         md={10}
-        sm={10}
+        sm={12}
         container
         direction="row"
         justifyContent="center"

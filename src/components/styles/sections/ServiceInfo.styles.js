@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   mainTitle: {
-    borderBottom: '1px solid #FF8E53',
+    borderBottom: '1px solid #89023e',
     marginBottom: theme.spacing(2),
     color: theme.palette.defaultLight.main,
     [theme.breakpoints.down('sm')]: {
@@ -25,15 +25,18 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   pics: {
-    minWidth: '600px',
-    maxHeight: '400px',
+    width: '600px',
+    height: '400px',
     borderRadius: '5px',
     objectFit: 'cover',
     [theme.breakpoints.down('sm')]: {
-      minWidth: '300px',
-      minHeight: '300px',
+      width: '90%',
+      height: 'auto',
       padding: '2.5rem 0',
       borderRadius: '5px',
+    },
+    [theme.breakpoints.down('md')]: {
+      paddingBottom: '4rem',
     },
   },
   mainDescription: {
@@ -41,6 +44,7 @@ const useStyles = makeStyles((theme) => ({
     height: 'auto',
     color: theme.palette.defaultLight.main,
     letterSpacing: theme.spacing(0.25),
+    paddingTop: theme.spacing(2),
     [theme.breakpoints.down('md')]: {
       width: '100%',
     },
