@@ -35,9 +35,7 @@ function MainDisplay(props) {
           <Typography variant="h1" className={classes.mainTitle}>
             {props.mainViewTitle}
           </Typography>
-          <Typography paragraph className={classes.mainParagraph}>
-            {props.mainViewSubtitle}
-          </Typography>
+          <Typography className={classes.mainParagraph}>{props.mainViewSubtitle}</Typography>
           <Grid container direction="row" justifyContent="center">
             {props.buttonOneText && (
               <Link href={props.buttonLink} className={classes.buttonStyle}>
