@@ -47,7 +47,7 @@ function ContactForm(props) {
   const phoneCheck = async (phone) => {
     const phoneRegex = /^\+(?:[0-9] ?){6,14}[0-9]$/
     const formatedPhone = '+1' + phone
-    console.log(formatedPhone)
+    // console.log(formatedPhone)
     if (formatedPhone.trim().match(phoneRegex)) {
       const myHeaders = new Headers()
       myHeaders.append('apikey', process.env.REACT_APP_PHONE_NUMBER_VERIFICATION_API_KEY)
@@ -61,14 +61,14 @@ function ContactForm(props) {
           `${process.env.REACT_APP_PHONE_NUMBER_VERIFICATION_API_URL}${formatedPhone}`,
           requestOptions
         )
-        console.log('Response:', response) // Add this line to log the response
-        console.log(process.env.REACT_APP_PHONE_NUMBER_VERIFICATION_API)
+        // console.log('Response:', response) // Add this line to log the response
+        // console.log(process.env.REACT_APP_PHONE_NUMBER_VERIFICATION_API)
 
         const data = await response.json()
-        console.log(data, 'data in phoneCheck APi')
+        // console.log(data, 'data in phoneCheck APi')
         return data.valid
       } catch (err) {
-        console.error(err)
+        // console.error(err)
         return false
       }
     }
@@ -93,14 +93,13 @@ function ContactForm(props) {
           `${process.env.REACT_APP_EMAIL_VERIFICATION_API_URL}${email}`,
           requestOptions
         )
-        console.log('Response:', response) // Add this line to log the response
 
         const data = await response.json()
-        console.log(data, 'data in emailCheck API')
-        console.log(data.smtp_check, 'data.smtp_check')
+        // console.log(data, 'data in emailCheck API')
+        // console.log(data.smtp_check, 'data.smtp_check')
         return data.smtp_check
       } catch (err) {
-        console.error(err)
+        // console.error(err)
         return false
       }
     }
@@ -134,7 +133,7 @@ function ContactForm(props) {
 
     const data = new FormData(e.target)
     data.append('timeStamp', new Date())
-    console.log(Object.fromEntries(data))
+    // console.log(Object.fromEntries(data))
 
     const simpleData = Object.fromEntries(data)
 
@@ -172,18 +171,16 @@ function ContactForm(props) {
         axios
           .post('/api/form', simpleData)
           .then((res) => {
-            console.log(res, 'data is here')
-            // setOpen(false)
-            // setIsLoading(false)
+            // console.log(res, 'data is here')
             setAlert(true)
             setIsButtonDisabled(false)
           })
           .catch((err) => {
-            console.log(err)
+            // console.log(err)
             setIsButtonDisabled(false)
           })
       } catch (error) {
-        console.log(error)
+        // console.log(error)
         setIsButtonDisabled(false)
       }
     } else if (!phoneIsValid && !emailIsValid) {
@@ -211,7 +208,6 @@ function ContactForm(props) {
     } else {
       setError({
         phoneNumber: 'Please enter valid phone number',
-        // email: 'Please enter valid email',
       })
       setIsButtonDisabled(false)
       setOpen(false)
