@@ -63,6 +63,7 @@ const faqQuestions = [
     rank: 9,
   },
   {
+    id: 3009,
     question: 'What kind of support do you offer?',
     answer:
       'We offer comprehensive support to all of our clients, including phone and email support, as well as access to our knowledge base and community forums. Our support team is available 24/7 to address any questions or concerns you may have.',

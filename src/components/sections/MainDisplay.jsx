@@ -23,7 +23,11 @@ function MainDisplay(props) {
             </Typography>
           </Grid>
           <Grid container direction="row" justifyContent="center" alignItems="center">
-            <Typography paragraph className={classes.mainParagraphMobileView}>
+            <Typography
+              paragraph
+              className={classes.mainParagraphMobileView}
+              sx={{ fontSize: '1.5rem' }}
+            >
               {props.mobileViewSubtitle}
             </Typography>
           </Grid>
@@ -35,7 +39,9 @@ function MainDisplay(props) {
           <Typography variant="h1" className={classes.mainTitle}>
             {props.mainViewTitle}
           </Typography>
-          <Typography className={classes.mainParagraph}>{props.mainViewSubtitle}</Typography>
+          <Typography className={classes.mainParagraph} sx={{ fontSize: '1.5rem' }}>
+            {props.mainViewSubtitle}
+          </Typography>
           <Grid container direction="row" justifyContent="center">
             {props.buttonOneText && (
               <Link href={props.buttonLink} className={classes.buttonStyle}>
