@@ -16,6 +16,11 @@
          "plugins": [
             "transform-react-remove-prop-types"
          ]
+      },
+      "test": {
+         "plugins": [
+            "@babel/plugin-transform-modules-commonjs"
+         ]
       }
    }
 }
