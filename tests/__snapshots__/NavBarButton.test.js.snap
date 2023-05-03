@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavBarButton should render NavBarButton 1`] = `"Component"`;
