@@ -45,7 +45,12 @@ const useStyles = makeStyles((theme) => ({
     padding: '3rem 0',
   },
   titleWrapperMobileView: {
-    paddingTop: theme.spacing(30),
+    [theme.breakpoints.down('md')]: {
+      paddingTop: theme.spacing(60),
+    },
+    [theme.breakpoints.down('sm')]: {
+      paddingTop: theme.spacing(40),
+    },
   },
   mainTitleMobileView: {
     fontWeight: 500,

@@ -8,6 +8,9 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
       margin: '1rem 0rem',
     },
+    [theme.breakpoints.down('md')]: {
+      margin: '1rem 0rem',
+    },
   },
   media: {
     height: theme.spacing(30),
