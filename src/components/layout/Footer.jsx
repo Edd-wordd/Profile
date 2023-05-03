@@ -51,7 +51,7 @@ function Footer() {
                 sw={{ color: '#89023e' }}
                 href={`${process.env.REACT_APP_FOOTER_COMPANY_EMAIL}`}
               >
-                &nbsp;info@monatech.com
+                &nbsp;monatechinfo@gmail.com
               </Link>
             </Typography>
             <Typography>Las Vegas, Nevada U.S.A</Typography>
