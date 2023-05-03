@@ -287,19 +287,6 @@ function ContactForm(props) {
                   </Snackbar>
                 )}
                 <div>
-                  <Hidden smDown>
-                    {alert && (
-                      <Alert
-                        onClose={() => setAlert(Boolean(false))}
-                        severity="success"
-                        className={classes.successAlert}
-                      >
-                        <AlertTitle>Success</AlertTitle>
-                        Your form has been sent Successfully!
-                        <strong>Thank you!</strong>
-                      </Alert>
-                    )}
-                  </Hidden>
                   <Hidden mdUp>
                     {alert && (
                       <Snackbar

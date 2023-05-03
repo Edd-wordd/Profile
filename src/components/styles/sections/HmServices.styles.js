@@ -4,6 +4,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.defaultLight.main,
     paddingBottom: theme.spacing(5),
+    paddingTop: theme.spacing(5),
     [theme.breakpoints.down('sm')]: {
       paddingTop: theme.spacing(3),
     },
