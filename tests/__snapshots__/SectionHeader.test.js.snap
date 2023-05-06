@@ -1,3 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Resources should render Resources 1`] = `"Component"`;
+
+exports[`SectionHeader should render SectionHeader 1`] = `"Component"`;
