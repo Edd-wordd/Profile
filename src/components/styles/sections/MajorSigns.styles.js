@@ -21,7 +21,9 @@ const useStyles = makeStyles((theme) => ({
     width: theme.spacing(30),
     minHeight: theme.spacing(38),
     [theme.breakpoints.down('md')]: {
-      margin: theme.spacing(1),
+      width: '85%',
+      padding: '1.5rem ',
+      marginTop: '.5rem',
     },
   },
   paperTitle: {

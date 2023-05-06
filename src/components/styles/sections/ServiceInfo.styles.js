@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
       width: '90%',
       height: 'auto',
-      padding: '2.5rem 0',
+      // padding: '2.5rem 0',
       borderRadius: '5px',
     },
     [theme.breakpoints.down('md')]: {
