@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense, lazy } from 'react'
 import {
   Accordion,
   AccordionSummary,
@@ -10,7 +10,9 @@ import {
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import { CustomAccordion } from '../styles/sections/FaqServices.styles'
 import faqQuestions from '../../data/faqData'
-import SectionHeader from './SectionHeader'
+import Spinner from '../spinners/Spinner'
+
+const SectionHeader = lazy(() => import('./SectionHeader'))
 
 function FaqServices() {
   const [expanded, setExpanded] = React.useState('panel1')
@@ -20,10 +22,12 @@ function FaqServices() {
   }
   return (
     <>
-      <SectionHeader
-        title="Frequently Asked Questions About Our Website and Software Services"
-        subTitle="Get the answers you need"
-      />
+      <Suspense fallback={<Spinner />}>
+        <SectionHeader
+          title="Frequently Asked Questions About Our Website and Software Services"
+          subTitle="Get the answers you need"
+        />
+      </Suspense>
       <Container maxWidth="lg" sx={{ paddingBottom: '4rem' }}>
         <Grid sx={{ padding: '3rem 0rem' }}>
           <Typography component="p">
