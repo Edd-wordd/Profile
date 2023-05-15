@@ -5,13 +5,6 @@ const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin'
 const dotenv = require('dotenv')
 const Dotenv = require('dotenv-webpack')
 
-const env = dotenv.config().parsed
-
-const envKeys = Object.keys(env).reduce((prev, next) => {
-  prev[`process.env.${next}`] = JSON.stringify(env[next])
-  return prev
-}, {})
-
 module.exports = {
   mode: process.env.NODE_ENV || 'development',
 
@@ -22,8 +15,6 @@ module.exports = {
     path: path.join(__dirname, 'public'),
     filename: '[name].min.js',
     publicPath: '/public',
-    // path: path.resolve(__dirname, 'tmp'),
-    // Other output options...
   },
   optimization: {
     minimize: true,
@@ -94,4 +85,8 @@ module.exports = {
     new ReactRefreshWebpackPlugin(),
     process.env.NODE_ENV === 'development' && new ReactRefreshWebpackPlugin(),
   ].filter(Boolean),
+
+  performance: {
+    maxAssetSize: 1000000,
+  },
 }
