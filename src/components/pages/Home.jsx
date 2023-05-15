@@ -1,13 +1,15 @@
-import React from 'react'
-import WhoWeAre from '../../components/sections/WhoWeAre'
-import HmServices from '../../components/sections/HmServices'
-import Questions from '../../components/sections/Questions'
-import GetStarted from '../../components/sections/GetStarted'
+import React, { Suspense, lazy } from 'react'
+import Spinner from '../../components/spinners/Spinner'
 import MainDisplay from '../../components/sections/MainDisplay'
+
+const WhoWeAre = lazy(() => import('../../components/sections/WhoWeAre'))
+const HmServices = lazy(() => import('../../components/sections/HmServices'))
+const Questions = lazy(() => import('../../components/sections/Questions'))
+const GetStarted = lazy(() => import('../../components/sections/GetStarted'))
 
 function Home() {
   return (
-    <div>
+    <>
       <MainDisplay
         mobileViewTitle="Look to the Future"
         mobileViewSubtitle="Discover how we can help you achieve your vision"
@@ -19,11 +21,13 @@ function Home() {
         buttonTwoText="SEO Services"
         buttonLink2="/services/seo"
       />
-      <WhoWeAre />
-      <HmServices />
-      <Questions />
-      <GetStarted />
-    </div>
+      <Suspense fallback={<Spinner />}>
+        <WhoWeAre />
+        <HmServices />
+        <Questions />
+        <GetStarted />
+      </Suspense>
+    </>
   )
 }
 
