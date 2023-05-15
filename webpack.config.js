@@ -2,8 +2,9 @@ const path = require('path')
 const autoprefixer = require('autoprefixer')
 const webpack = require('webpack')
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
-const dotenv = require('dotenv')
+// const dotenv = require('dotenv')
 const Dotenv = require('dotenv-webpack')
+const TerserPlugin = require('terser-webpack-plugin') // Add this import
 
 module.exports = {
   mode: process.env.NODE_ENV || 'development',
@@ -18,6 +19,7 @@ module.exports = {
   },
   optimization: {
     minimize: true,
+    minimizer: [new TerserPlugin()], // Add this line
   },
   module: {
     rules: [
