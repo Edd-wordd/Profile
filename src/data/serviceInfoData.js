@@ -10,8 +10,6 @@ const serviceSectionDetails = [
     majorTitle_2: 'Engaging Blog Posts',
     majorTitle_3: 'Informative Articles',
     majorTitle_4: 'Website Copywriting',
-    majorImage:
-      'https://images.unsplash.com/photo-1611697690865-52d89f47ec02?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80',
     majorInfo_1:
       'Our content writers are skilled in creating SEO-optimized content that ranks higher on search engines and attracts more organic traffic to your website.',
     majorInfo_2:
@@ -39,8 +37,6 @@ const serviceSectionDetails = [
     majorTitle_2: 'On-Page Optimization',
     majorTitle_3: 'Off-Page Optimization',
     majorTitle_4: 'Ongoing Monitoring',
-    majorImage:
-      'https://images.unsplash.com/photo-1641495623850-1f32a5da2dd6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60',
     majorInfo_1:
       'Our SEO strategies are tailored to each client, targeting specific objectives and maximizing results. We thoroughly analyze and optimize every aspect of your online presence.',
     majorInfo_2:
@@ -63,8 +59,6 @@ const serviceSectionDetails = [
     majorTitle_2: 'Cross-Platform App Development',
     majorTitle_3: 'Mobile App UI/UX Design',
     majorTitle_4: 'App Maintenance & Support',
-    majorImage:
-      'https://images.unsplash.com/photo-1504691342899-4d92b50853e1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y29udGVudCUyMHdyaXRpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
     majorInfo_1:
       'Our custom mobile app solutions are tailored to suit your unique business requirements, ensuring a personalized and engaging experience for your users.',
     majorInfo_2:
@@ -87,8 +81,6 @@ const serviceSectionDetails = [
     majorTitle_2: 'Responsive Web Design',
     majorTitle_3: 'Secure Payment Integration',
     majorTitle_4: 'Search Engine Optimization',
-    majorImage:
-      'https://images.unsplash.com/photo-1504691342899-4d92b50853e1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y29udGVudCUyMHdyaXRpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
     majorInfo_1:
       'Our custom eCommerce solutions are tailored to your specific business requirements, ensuring a unique and engaging shopping experience for your customers.',
     majorInfo_2:
@@ -111,8 +103,6 @@ const serviceSectionDetails = [
     majorTitle_2: 'Responsive Web Development',
     majorTitle_3: 'E-commerce Website Design',
     majorTitle_4: 'CMS Integration & Management',
-    majorImage:
-      'https://images.unsplash.com/photo-1504691342899-4d92b50853e1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y29udGVudCUyMHdyaXRpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60',
     majorInfo_1:
       'Our custom web design solutions focus on creating visually stunning and highly functional websites that align with your brand and business goals. We listen to your needs and tailor our approach to deliver a unique online experience for your visitors.',
     majorInfo_2:
@@ -135,8 +125,6 @@ const serviceSectionDetails = [
     majorTitle_2: 'Mobile App Maintenance',
     majorTitle_3: 'Security Updates',
     majorTitle_4: 'Performance Optimization',
-    majorImage:
-      'https://images.unsplash.com/photo-1531756346973-7b893b8dbbdd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
     majorInfo_1:
       'Our website maintenance services ensure your site stays up-to-date, secure, and optimized for performance. We handle everything from content updates to bug fixes, giving you peace of mind.',
     majorInfo_2:
