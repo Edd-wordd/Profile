@@ -1,7 +1,5 @@
 import React, { Suspense, lazy } from 'react'
 import { Box, Typography, Grid, Container } from '@mui/material'
-// import MajorSigns from './MajorSigns'
-// import FaqServices from './FaqServices'
 import Spinner from '../spinners/Spinner'
 import { useStyles } from '../styles/sections/ServiceInfo.styles'
 import serviceSectionDetails from '../../data/serviceInfoData'

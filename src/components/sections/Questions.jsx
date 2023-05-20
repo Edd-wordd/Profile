@@ -1,17 +1,21 @@
-import React from 'react'
+import React, { Suspense, lazy } from 'react'
 import { Container, Typography, Grid, Link, Paper } from '@mui/material'
-import SectionHeader from './SectionHeader'
 import questionDetails from '../../data/questionsData'
 import { QuestionsBackground, QuestionLinks, Span } from '../styles/sections/Questions.styles'
+import Spinner from '../spinners/Spinner'
+
+const SectionHeader = lazy(() => import('./SectionHeader'))
 
 function Questions() {
   return (
     <QuestionsBackground>
       <Grid sx={{ color: '#f5f5f5', padding: '2rem 0rem' }}>
-        <SectionHeader
-          title="Digital Presence Evaluation"
-          subTitle="Answer these questions to determine your digital needs"
-        />
+        <Suspense fallback={<Spinner />}>
+          <SectionHeader
+            title="Digital Presence Evaluation"
+            subTitle="Answer these questions to determine your digital needs"
+          />
+        </Suspense>
       </Grid>
       <Container maxWidth="lg">
         <Grid container direction="row" justifyContent="center">
