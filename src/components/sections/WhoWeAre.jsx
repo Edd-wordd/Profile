@@ -1,10 +1,12 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, Suspense, lazy } from 'react'
 import { Container, Typography, Grid, Paper, Zoom } from '@mui/material'
 import Transition from 'react-transition-group/Transition'
 import ButtonLink from '../buttons/ButtonLink'
-import SectionHeader from './SectionHeader'
 import companyValues from '../../data/whoWeAreData'
 import { WhoWeAreCards } from '../styles/sections/WhoWeAre.styles'
+import Spinner from '../spinners/Spinner'
+
+const SectionHeader = lazy(() => import('./SectionHeader'))
 
 function WhoWeAre() {
   const [inProp, setInProp] = useState(false)
@@ -31,10 +33,13 @@ function WhoWeAre() {
 
   return (
     <>
-      <SectionHeader
-        title="Who We Are | Digital Innovation Team"
-        subTitle="Bring your digital ideas to life!"
-      />
+      <Suspense fallback={<Spinner />}>
+        <SectionHeader
+          title="Who We Are | Digital Innovation Team"
+          subTitle="Bring your digital ideas to life!"
+        />
+      </Suspense>
+
       <Container maxWidth="lg">
         <Grid sx={{ margin: '3rem 0' }}>
           <Typography paragraph variant="body1" sx={{ lineHeight: '2rem' }}>

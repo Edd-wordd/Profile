@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { Suspense, lazy } from 'react'
 import Transition from 'react-transition-group/Transition'
 import { Paper, Container, Typography, Grid, Grow } from '@mui/material'
-import SectionHeader from './SectionHeader'
 import ButtonLink from '../buttons/ButtonLink'
 import { useStyles } from '../styles/sections/ServicesMain.styles'
 import coreServiceValues from '../../data/serviceMainData'
+import Spinner from '../spinners/Spinner'
 
+const SectionHeader = lazy(() => import('./SectionHeader'))
 function ServicesMain(props) {
   const classes = useStyles(props)
   const [inProp, setInProp] = React.useState(false)
@@ -32,7 +33,9 @@ function ServicesMain(props) {
 
   return (
     <>
-      <SectionHeader title="Expert Services" subTitle="Transforming Your Ideas into Reality" />
+      <Suspense fallback={<Spinner />}>
+        <SectionHeader title="Expert Services" subTitle="Transforming Your Ideas into Reality" />
+      </Suspense>
       <Container maxWidth="lg">
         <Grid className={classes.paragraphWrapper}>
           <Typography paragraph variant="body1" className={classes.paraInfo}>
