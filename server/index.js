@@ -18,7 +18,8 @@ const app = express()
 const port = process.env.PORT || 3000
 
 const publicDir = path.join(__dirname, '..', 'public')
-app.use('/public', express.static(publicDir))
+// app.use('/public', express.static(publicDir))
+app.use(express.static(publicDir))
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -74,7 +75,7 @@ app.post('/api/form', (req, res) => {
     html: `
   <div style='font-family: Arial, sans-serif; color: #333; max-width: 600px; margin: auto; background-color: #f4f1fa; padding: 30px; border-radius: 5px;'>
     <div style='text-align: center; margin-bottom: 30px;'>
-      <img src='/public/assets/black.webp' alt='MonaTech Logo' style='max-width: 200px; height: auto;'>
+      <img src='/assets/black.webp' alt='MonaTech Logo' style='max-width: 200px; height: auto;'>
     </div>
     <h1 style='background-color: #0f0c29; color: #fff; padding: 15px 20px; font-size: 28px; margin: 0 0 30px; border-radius: 5px;'>MonaTech Inquiry</h1>
     <h3 style='font-size: 22px; margin: 0 0 15px; color: #333;'>Client Details</h3>
