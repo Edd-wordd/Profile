@@ -1,16 +1,22 @@
-import React from 'react'
+import React, { Suspense, lazy } from 'react'
 import { Typography, Grid, Paper, Box } from '@mui/material'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle'
-import SectionHeader from './SectionHeader'
 import { useStyles } from '../styles/sections/WhatWeDo.styles'
 import bulletPoints from '../../data/whatWeDoData'
+import Spinner from '../spinners/Spinner'
 
+const SectionHeader = lazy(() => import('./SectionHeader'))
 function WhatWeDo(props) {
   const classes = useStyles(props)
 
   return (
     <>
-      <SectionHeader title="Our Strategy" subTitle="Discover the Distinction in Our Methodology" />
+      <Suspense fallback={<Spinner />}>
+        <SectionHeader
+          title="Our Strategy"
+          subTitle="Discover the Distinction in Our Methodology"
+        />
+      </Suspense>
       <Grid
         className={classes.root}
         item
