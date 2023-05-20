@@ -37,7 +37,7 @@ function NavBar(props) {
             <Grid item xs={11}>
               <Link href="/">
                 <img
-                  src="../../../public/assets/monaTechLogo.webp"
+                  src="/assets/monaTechLogo.webp"
                   alt="mona-tech-logo"
                   className={classes.mobileLogoImg}
                 />
@@ -73,7 +73,7 @@ function NavBar(props) {
           <Grid item sm={4} md={2} lg={2}>
             <Link href="/">
               <img
-                src="../../../public/assets/monaTechLogo.webp"
+                src="/assets/monaTechLogo.webp"
                 alt="mona-tech-logo"
                 className={classes.mainLogo}
               />
