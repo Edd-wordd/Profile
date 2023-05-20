@@ -1,7 +1,6 @@
 const path = require('path')
 const autoprefixer = require('autoprefixer')
 const webpack = require('webpack')
-const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
 const dotenv = require('dotenv')
 const Dotenv = require('dotenv-webpack')
 const TerserPlugin = require('terser-webpack-plugin')
@@ -10,12 +9,26 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 
 const isDevelopment = process.env.NODE_ENV === 'development'
 
+// Set up plugins
+const plugins = [
+  new Dotenv(),
+  new webpack.HotModuleReplacementPlugin({
+    multiStep: true,
+    fullBuildTimeout: 3000,
+    requestTimeout: 1000,
+  }),
+  !isDevelopment && new MiniCssExtractPlugin({ filename: '[name].min.css' }),
+]
+
+// Add react-refresh-webpack-plugin only if in development mode
+if (isDevelopment) {
+  const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
+  plugins.push(new ReactRefreshWebpackPlugin())
+}
+
 module.exports = {
   mode: process.env.NODE_ENV || 'development',
-
-  entry: {
-    main: path.resolve(__dirname, 'src', 'main.jsx'),
-  },
+  entry: { main: path.resolve(__dirname, 'src', 'main.jsx') },
   output: {
     path: path.join(__dirname, 'public'),
     filename: '[name].min.js',
@@ -42,13 +55,8 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif)$/i,
-        use: [
-          {
-            loader: 'file-loader',
-          },
-        ],
+        use: [{ loader: 'file-loader' }],
       },
-
       {
         test: /\.css$/,
         exclude: /node_modules/,
@@ -57,11 +65,7 @@ module.exports = {
           'css-loader',
           {
             loader: 'postcss-loader',
-            options: {
-              postcssOptions: {
-                plugins: [autoprefixer()],
-              },
-            },
+            options: { postcssOptions: { plugins: [autoprefixer()] } },
           },
         ],
       },
@@ -77,17 +81,5 @@ module.exports = {
     publicPath: '/public',
     port: 3000,
   },
-  plugins: [
-    new Dotenv(),
-    new webpack.HotModuleReplacementPlugin({
-      multiStep: true,
-      fullBuildTimeout: 3000,
-      requestTimeout: 1000,
-    }),
-    isDevelopment && new ReactRefreshWebpackPlugin(),
-    !isDevelopment &&
-      new MiniCssExtractPlugin({
-        filename: '[name].min.css',
-      }),
-  ].filter(Boolean),
+  plugins: plugins.filter(Boolean),
 }
