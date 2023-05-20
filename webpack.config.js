@@ -20,7 +20,7 @@ const plugins = [
   !isDevelopment && new MiniCssExtractPlugin({ filename: '[name].min.css' }),
 ]
 
-// Add react-refresh-webpack-plugin only if in development mode
+// Add react-refresh-webpack-plugin only if in development mode (it's not needed in production)
 if (isDevelopment) {
   const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
   plugins.push(new ReactRefreshWebpackPlugin())
