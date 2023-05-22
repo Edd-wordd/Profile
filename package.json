@@ -32,7 +32,8 @@
     "react-transition-group": "^4.4.5",
     "webpack": "^5.74.0",
     "webpack-cli": "^5.0.1",
-    "dotenv-webpack": "^8.0.1"
+    "dotenv-webpack": "^8.0.1",
+    "css-minimizer-webpack-plugin": "^5.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.10.4",
