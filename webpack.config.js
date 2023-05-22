@@ -5,7 +5,8 @@ const webpack = require('webpack')
 const Dotenv = require('dotenv-webpack')
 const TerserPlugin = require('terser-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
+// const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
+const cssnano = require('cssnano')
 
 const isDevelopment = process.env.NODE_ENV === 'development'
 
@@ -36,7 +37,7 @@ module.exports = {
   },
   optimization: {
     minimize: !isDevelopment,
-    minimizer: [new TerserPlugin(), new CssMinimizerPlugin()],
+    minimizer: [new TerserPlugin()],
   },
   module: {
     rules: [
@@ -65,7 +66,11 @@ module.exports = {
           'css-loader',
           {
             loader: 'postcss-loader',
-            options: { postcssOptions: { plugins: [autoprefixer()] } },
+            options: {
+              postcssOptions: {
+                plugins: [isDevelopment ? autoprefixer() : [autoprefixer(), cssnano()]],
+              },
+            },
           },
         ],
       },
