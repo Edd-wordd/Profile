@@ -4,6 +4,7 @@ const webpack = require('webpack')
 const Dotenv = require('dotenv-webpack')
 const TerserPlugin = require('terser-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+require('dotenv').config()
 
 const isDevelopment = process.env.NODE_ENV === 'development'
 
