@@ -1,12 +1,9 @@
 const path = require('path')
 const autoprefixer = require('autoprefixer')
 const webpack = require('webpack')
-// const dotenv = require('dotenv')
 const Dotenv = require('dotenv-webpack')
 const TerserPlugin = require('terser-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-// const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
-const cssnano = require('cssnano')
 
 const isDevelopment = process.env.NODE_ENV === 'development'
 
@@ -68,7 +65,7 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               postcssOptions: {
-                plugins: [isDevelopment ? autoprefixer() : [autoprefixer(), cssnano()]],
+                plugins: [isDevelopment ? autoprefixer() : [autoprefixer(), require('cssnano')()]],
               },
             },
           },
