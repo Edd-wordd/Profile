@@ -6,6 +6,8 @@ import InstagramIcon from '@mui/icons-material/Instagram'
 import TwitterIcon from '@mui/icons-material/Twitter'
 import ComputerIcon from '@mui/icons-material/Computer'
 import footerLinks from '../../data/footerData'
+import logo from '../../../public/assets/black.webp'
+
 import {
   FooterBackground,
   SectionCards,
@@ -116,7 +118,7 @@ function Footer() {
         {/* Footer Logo */}
         <FooterMainLogo>
           <Link href="/">
-            <img src="/assets/black.webp" alt="mona-tech-logo" />
+            <img src={logo} alt="mona-tech-logo" />
           </Link>
         </FooterMainLogo>
       </Grid>
