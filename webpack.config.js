@@ -10,14 +10,14 @@ const isDevelopment = process.env.NODE_ENV === 'development'
 
 // Set up plugins
 const plugins = [
-  new Dotenv(),
+  isDevelopment ? new Dotenv() : false,
   new webpack.HotModuleReplacementPlugin({
     multiStep: true,
     fullBuildTimeout: 3000,
     requestTimeout: 1000,
   }),
   !isDevelopment && new MiniCssExtractPlugin({ filename: '[name].min.css' }),
-]
+].filter(Boolean)
 
 // Add react-refresh-webpack-plugin only if in development mode (it's not needed in production)
 if (isDevelopment) {
