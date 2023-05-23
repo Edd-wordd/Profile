@@ -10,9 +10,7 @@ const isDevelopment = process.env.NODE_ENV === 'development'
 
 // Set up plugins
 const plugins = [
-  new Dotenv({
-    path: path.join(__dirname, '.env'), // Path to .env file
-  }),
+  new Dotenv(),
   new webpack.HotModuleReplacementPlugin({
     multiStep: true,
     fullBuildTimeout: 3000,
