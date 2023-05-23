@@ -13,8 +13,8 @@ const plugins = [
   isDevelopment
     ? new Dotenv()
     : new webpack.DefinePlugin({
-        'process.env': JSON.stringify(process.env),
-      }),
+      'process.env': JSON.stringify(process.env),
+    }),
   !isDevelopment && new MiniCssExtractPlugin({ filename: '[name].min.css' }),
 ].filter(Boolean)
 
