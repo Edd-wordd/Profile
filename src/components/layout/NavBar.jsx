@@ -6,6 +6,7 @@ import { useStyles } from '../styles/layout/NavBar.styles'
 import tabs from '../../data/navbarData'
 import NavBarButton from '../buttons/NavBarButton'
 import CalendyButton from '../buttons/CalendyButton'
+import logo from '../../../public/assets/monaTechLogo.webp'
 
 function NavBar(props) {
   const classes = useStyles(props)
@@ -36,11 +37,7 @@ function NavBar(props) {
           >
             <Grid item xs={11}>
               <Link href="/">
-                <img
-                  src="/assets/monaTechLogo.webp"
-                  alt="mona-tech-logo"
-                  className={classes.mobileLogoImg}
-                />
+                <img src={logo} alt="mona-tech-logo" className={classes.mobileLogoImg} />
               </Link>
             </Grid>
             <Grid className={classes.hamIcon}>
@@ -72,11 +69,7 @@ function NavBar(props) {
         <Grid container>
           <Grid item sm={4} md={2} lg={2}>
             <Link href="/">
-              <img
-                src="/assets/monaTechLogo.webp"
-                alt="mona-tech-logo"
-                className={classes.mainLogo}
-              />
+              <img src={logo} alt="mona-tech-logo" className={classes.mainLogo} />
             </Link>
           </Grid>
           <Grid item sm={8} md={7} lg={7} className={classes.btnDisplay}>

@@ -72,6 +72,19 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.(webp)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'assets/', // output to assets folder
+              publicPath: 'assets/',
+            },
+          },
+        ],
+      },
     ],
   },
   resolve: {
