@@ -13,8 +13,8 @@ const plugins = [
   isDevelopment
     ? new Dotenv()
     : new webpack.DefinePlugin({
-      'process.env': JSON.stringify(process.env),
-    }),
+        'process.env': JSON.stringify(process.env),
+      }),
   !isDevelopment && new MiniCssExtractPlugin({ filename: '[name].min.css' }),
 ].filter(Boolean)
 
@@ -83,7 +83,7 @@ module.exports = {
             options: {
               name: '[name].[ext]',
               outputPath: 'assets/', // output to assets folder
-              publicPath: 'assets/',
+              publicPath: '/',
             },
           },
         ],
