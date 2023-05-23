@@ -25,6 +25,10 @@ if (isDevelopment) {
   plugins.push(new ReactRefreshWebpackPlugin())
 }
 
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
+
 module.exports = {
   mode: process.env.NODE_ENV || 'development',
   entry: { main: path.resolve(__dirname, 'src', 'main.jsx') },
