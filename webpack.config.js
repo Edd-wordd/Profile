@@ -31,7 +31,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'public'),
     filename: '[name].min.js',
-    publicPath: '/public',
+    publicPath: '/',
   },
   optimization: {
     minimize: !isDevelopment,
