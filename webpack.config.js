@@ -10,12 +10,11 @@ const isDevelopment = process.env.NODE_ENV === 'development'
 
 // Set up plugins
 const plugins = [
-  isDevelopment ? new Dotenv() : false,
-  new webpack.HotModuleReplacementPlugin({
-    multiStep: true,
-    fullBuildTimeout: 3000,
-    requestTimeout: 1000,
-  }),
+  isDevelopment
+    ? new Dotenv()
+    : new webpack.DefinePlugin({
+        'process.env': JSON.stringify(process.env),
+      }),
   !isDevelopment && new MiniCssExtractPlugin({ filename: '[name].min.css' }),
 ].filter(Boolean)
 
