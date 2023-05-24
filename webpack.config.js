@@ -1,10 +1,9 @@
 const path = require('path')
-const autoprefixer = require('autoprefixer')
 const webpack = require('webpack')
 const Dotenv = require('dotenv-webpack')
 const TerserPlugin = require('terser-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const CopyWebpackPlugin = require('copy-webpack-plugin') // Import the copy-webpack-plugin
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 require('dotenv').config()
 
 const isDevelopment = process.env.NODE_ENV === 'development'
@@ -18,19 +17,9 @@ const plugins = [
       }),
   !isDevelopment && new MiniCssExtractPlugin({ filename: '[name].min.css' }),
   new CopyWebpackPlugin({
-    patterns: [{ from: 'public', to: '' }], // Copy the contents of the public folder
+    patterns: [{ from: 'public', to: '' }],
   }),
 ].filter(Boolean)
-
-// Add react-refresh-webpack-plugin only if in development mode (it's not needed in production)
-if (isDevelopment) {
-  const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
-  plugins.push(new ReactRefreshWebpackPlugin())
-}
-
-if (process.env.NODE_ENV !== 'production') {
-  require('dotenv').config()
-}
 
 module.exports = {
   mode: process.env.NODE_ENV || 'development',
@@ -46,7 +35,6 @@ module.exports = {
   },
   module: {
     rules: [
-      // Your existing rules...
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
@@ -57,6 +45,20 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.(webp)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: '/assets/',
+              publicPath: '/assets/',
+            },
+          },
+        ],
+      },
+      // Add other rules for handling CSS, images, etc.
     ],
   },
   resolve: {
@@ -69,5 +71,5 @@ module.exports = {
     publicPath: '/public',
     port: 3000,
   },
-  plugins: plugins.filter(Boolean),
+  plugins: plugins,
 }
