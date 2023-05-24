@@ -4,6 +4,7 @@ const webpack = require('webpack')
 const Dotenv = require('dotenv-webpack')
 const TerserPlugin = require('terser-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin') // Import the copy-webpack-plugin
 require('dotenv').config()
 
 const isDevelopment = process.env.NODE_ENV === 'development'
@@ -16,6 +17,9 @@ const plugins = [
         'process.env': JSON.stringify(process.env),
       }),
   !isDevelopment && new MiniCssExtractPlugin({ filename: '[name].min.css' }),
+  new CopyWebpackPlugin({
+    patterns: [{ from: 'public', to: '' }], // Copy the contents of the public folder
+  }),
 ].filter(Boolean)
 
 // Add react-refresh-webpack-plugin only if in development mode (it's not needed in production)
@@ -42,52 +46,7 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        test: /\.jsx?$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            plugins: [
-              isDevelopment && 'react-refresh/babel',
-              !isDevelopment && ['transform-react-remove-prop-types', { mode: 'unsafe-wrap' }],
-            ].filter(Boolean),
-          },
-        },
-      },
-      {
-        test: /\.(png|jpe?g|gif)$/i,
-        use: [{ loader: 'file-loader' }],
-      },
-      {
-        test: /\.css$/,
-        exclude: /node_modules/,
-        use: [
-          isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
-          'css-loader',
-          {
-            loader: 'postcss-loader',
-            options: {
-              postcssOptions: {
-                plugins: [isDevelopment ? autoprefixer() : [autoprefixer(), require('cssnano')()]],
-              },
-            },
-          },
-        ],
-      },
-      {
-        test: /\.(webp)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              outputPath: '/assets/', // output to assets folder
-              publicPath: '/assets/',
-            },
-          },
-        ],
-      },
+      // Your existing rules...
     ],
   },
   resolve: {
