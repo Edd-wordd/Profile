@@ -58,22 +58,23 @@ app.get('*', (_, res, next) => {
 app.listen(port, () => console.log('Server is running and ready for you'))
 
 app.post('/api/form', (req, res) => {
-  const data = req.body
+  try {
+    const data = req.body
 
-  let smtpTransport = nodemailer.createTransport({
-    service: 'Gmail',
-    port: 465,
-    auth: {
-      user: process.env.REACT_APP_COMPANY_USER_EMAIL,
-      pass: process.env.REACT_APP_COMPANY_EMAIL_PASSWORD,
-    },
-  })
+    let smtpTransport = nodemailer.createTransport({
+      service: 'Gmail',
+      port: 465,
+      auth: {
+        user: process.env.REACT_APP_COMPANY_USER_EMAIL,
+        pass: process.env.REACT_APP_COMPANY_EMAIL_PASSWORD,
+      },
+    })
 
-  const mailOptions = {
-    from: data.email,
-    to: process.env.REACT_APP_COMPANY_RECIPIENT_EMAIL,
-    subject: `Inquiry from monaTech website`,
-    html: `
+    const mailOptions = {
+      from: data.email,
+      to: process.env.REACT_APP_COMPANY_RECIPIENT_EMAIL,
+      subject: `Inquiry from monaTech website`,
+      html: `
   <div style='font-family: Arial, sans-serif; color: #333; max-width: 600px; margin: auto; background-color: #f4f1fa; padding: 30px; border-radius: 5px;'>
     <div style='text-align: center; margin-bottom: 30px;'>
       <img src='/assets/black.webp' alt='MonaTech Logo' style='max-width: 200px; height: auto;'>
@@ -93,16 +94,20 @@ app.post('/api/form', (req, res) => {
     <p style='margin: 0;'>${data.message}</p>
   </div>
 `,
-  }
-
-  smtpTransport.sendMail(mailOptions, (error) => {
-    if (error) {
-      console.log(error)
-      res.status(500).send(`Error: ${error}`)
-    } else {
-      res.status(200).send('Success')
     }
-  })
 
-  smtpTransport.close()
+    smtpTransport.sendMail(mailOptions, (error) => {
+      if (error) {
+        console.log(error)
+        res.status(500).send(`Error: ${error}`)
+      } else {
+        res.status(200).send('Success')
+      }
+    })
+
+    smtpTransport.close()
+  } catch (error) {
+    console.log(error)
+    res.status(500).send(`Error: ${error}`)
+  }
 })
