@@ -83,7 +83,7 @@ module.exports = {
             options: {
               name: '[name].[ext]',
               outputPath: '/assets/', // output to assets folder
-              publicPath: '/',
+              publicPath: '/assets/',
             },
           },
         ],
