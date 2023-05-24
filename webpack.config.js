@@ -82,7 +82,7 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[name].[ext]',
-              outputPath: 'assets/', // output to assets folder
+              outputPath: '/assets/', // output to assets folder
               publicPath: '/',
             },
           },
