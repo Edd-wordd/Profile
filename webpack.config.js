@@ -58,7 +58,6 @@ module.exports = {
           },
         ],
       },
-      // Add other rules for handling CSS, images, etc.
     ],
   },
   resolve: {
