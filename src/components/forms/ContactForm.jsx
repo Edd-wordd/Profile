@@ -169,7 +169,7 @@ function ContactForm(props) {
       setIsLoading(false)
       try {
         axios
-          .post('https://wb2bwmpvng.execute-api.us-west-1.amazonaws.com/prod/form', simpleData)
+          .post('/api/form', simpleData)
           .then((res) => {
             // console.log(res, 'data is here')
             setAlert(true)
