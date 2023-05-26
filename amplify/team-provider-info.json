@@ -18,7 +18,7 @@
           "reactAppCompanyEmailPassword": "ushrveuyhibergqw",
           "reactAppCompanyRecipientEmail": "monatechinfo@gmail.com",
           "deploymentBucketName": "amplify-monatech-dev-121604-deployment",
-          "s3Key": "amplify-builds/monatechForm-68336530726b2f364431-build.zip"
+          "s3Key": "amplify-builds/monatechForm-574c714b615a716a4647-build.zip"
         }
       },
       "api": {

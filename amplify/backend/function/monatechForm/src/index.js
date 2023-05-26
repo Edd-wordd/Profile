@@ -1,5 +1,5 @@
 import awsServerlessExpress from 'aws-serverless-express'
-import app from '../app.js' // Adjust the file path based on your directory structure
+import app from './app.js' // Adjust the file path based on your directory structure
 
 const server = awsServerlessExpress.createServer(app)
 
