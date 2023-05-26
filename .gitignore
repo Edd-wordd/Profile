@@ -28,7 +28,6 @@ yarn-error.log*
 **/.idea/workspace.xml
 **/.idea/tasks.xml
 
-.env
 
 #amplify-do-not-edit-begin
 amplify/\#current-cloud-backend
