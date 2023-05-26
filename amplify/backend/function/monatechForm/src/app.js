@@ -1,25 +1,9 @@
-/*
-Copyright 2017 - 2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
-Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with the License. A copy of the License is located at
-    http://aws.amazon.com/apache2.0/
-or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and limitations under the License.
-*/
-
-/* Amplify Params - DO NOT EDIT
-	ENV
-	REGION
-	REACT_APP_COMPANY_USER_EMAIL
-	REACT_APP_COMPANY_EMAIL_PASSWORD
-	REACT_APP_COMPANY_RECIPIENT_EMAIL
-Amplify Params - DO NOT EDIT */
-
 const express = require('express')
 const bodyParser = require('body-parser')
 const awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
 const nodemailer = require('nodemailer')
 
-// declare a new express app
+// Declare a new express app
 const app = express()
 app.use(bodyParser.json())
 app.use(awsServerlessExpressMiddleware.eventContext())
@@ -30,24 +14,6 @@ app.use(function (req, res, next) {
   res.header('Access-Control-Allow-Headers', '*')
   next()
 })
-
-/**********************
- * Example get method *
- **********************/
-
-app.get('/api/form', function (req, res) {
-  // Add your code here
-  res.json({ success: 'get call succeed!', url: req.url })
-})
-
-app.get('/api/form/*', function (req, res) {
-  // Add your code here
-  res.json({ success: 'get call succeed!', url: req.url })
-})
-
-/****************************
- * Example post method *
- ****************************/
 
 app.post('/api/form', async function (req, res) {
   try {
@@ -66,7 +32,26 @@ app.post('/api/form', async function (req, res) {
       from: data.email,
       to: process.env.REACT_APP_COMPANY_RECIPIENT_EMAIL,
       subject: `Inquiry from monaTech website`,
-      //...Rest of the code
+      html: `
+        <div style='font-family: Arial, sans-serif; color: #333; max-width: 600px; margin: auto; background-color: #f4f1fa; padding: 30px; border-radius: 5px;'>
+          <div style='text-align: center; margin-bottom: 30px;'>
+            <img src='/assets/black.webp' alt='MonaTech Logo' style='max-width: 200px; height: auto;'>
+          </div>
+          <h1 style='background-color: #0f0c29; color: #fff; padding: 15px 20px; font-size: 28px; margin: 0 0 30px; border-radius: 5px;'>MonaTech Inquiry</h1>
+          <h3 style='font-size: 22px; margin: 0 0 15px; color: #333;'>Client Details</h3>
+          <ul style='list-style-type: none; padding: 0;'>
+            <li style='margin-bottom: 10px;'><strong>Name:</strong> ${data.firstName} ${data.lastName}</li>
+            <li style='margin-bottom: 10px;'><strong>Company or URL:</strong> ${data.companyName}</li>
+            <li style='margin-bottom: 10px;'><strong>Email:</strong> ${data.email}</li>
+            <li style='margin-bottom: 10px;'><strong>Phone:</strong> ${data.phoneNumber}</li>
+            <li style='margin-bottom: 10px;'><strong>Time/Date User Sent Inquiry:</strong> ${data.timeStamp}</li>
+            <li style='margin-bottom: 10px;'><strong>Project start date:</strong> ${data.startDate}</li>
+            <li style='margin-bottom: 10px;'><strong>Marketing Data (where they heard about us):</strong> ${data.whereDidYouHearAboutUs}</li>
+          </ul>
+          <h3 style='font-size: 22px; margin: 30px 0 15px; color: #333;'>Message</h3>
+          <p style='margin: 0;'>${data.message}</p>
+        </div>
+      `,
     }
 
     await smtpTransport.sendMail(mailOptions)
@@ -101,44 +86,4 @@ app.post('/api/form', async function (req, res) {
   }
 })
 
-app.post('/api/form/*', async function (req, res) {
-  // Add your code here
-  res.json({ success: 'post call succeed!', url: req.url, body: req.body })
-})
-
-/****************************
- * Example put method *
- ****************************/
-
-app.put('/api/form', function (req, res) {
-  // Add your code here
-  res.json({ success: 'put call succeed!', url: req.url, body: req.body })
-})
-
-app.put('/api/form/*', function (req, res) {
-  // Add your code here
-  res.json({ success: 'put call succeed!', url: req.url, body: req.body })
-})
-
-/****************************
- * Example delete method *
- ****************************/
-
-app.delete('/api/form', function (req, res) {
-  // Add your code here
-  res.json({ success: 'delete call succeed!', url: req.url })
-})
-
-app.delete('/api/form/*', function (req, res) {
-  // Add your code here
-  res.json({ success: 'delete call succeed!', url: req.url })
-})
-
-app.listen(3000, function () {
-  console.log('App started')
-})
-
-// Export the app object. When executing the application local this does nothing. However,
-// to port it to AWS Lambda we will create a wrapper around that will load the app from
-// this file
 module.exports = app
