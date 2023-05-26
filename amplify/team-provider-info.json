@@ -1,0 +1,29 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-monatech-dev-121604-authRole",
+      "UnauthRoleArn": "arn:aws:iam::224515780874:role/amplify-monatech-dev-121604-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::224515780874:role/amplify-monatech-dev-121604-authRole",
+      "Region": "us-west-1",
+      "DeploymentBucketName": "amplify-monatech-dev-121604-deployment",
+      "UnauthRoleName": "amplify-monatech-dev-121604-unauthRole",
+      "StackName": "amplify-monatech-dev-121604",
+      "StackId": "arn:aws:cloudformation:us-west-1:224515780874:stack/amplify-monatech-dev-121604/9e864880-fbe0-11ed-9a3d-020ed9b0ab1f",
+      "AmplifyAppId": "d36yjh1ejkglh5"
+    },
+    "categories": {
+      "function": {
+        "monatechForm": {
+          "reactAppCompanyUserEmail": "monatechinfo@gmail.com",
+          "reactAppCompanyEmailPassword": "ushrveuyhibergqw",
+          "reactAppCompanyRecipientEmail": "monatechinfo@gmail.com",
+          "deploymentBucketName": "amplify-monatech-dev-121604-deployment",
+          "s3Key": "amplify-builds/monatechForm-6f3848774d7451516374-build.zip"
+        }
+      },
+      "api": {
+        "monatechformapi": {}
+      }
+    }
+  }
+}

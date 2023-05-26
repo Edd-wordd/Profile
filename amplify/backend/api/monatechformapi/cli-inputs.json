@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/api/form": {
+      "name": "/api/form",
+      "lambdaFunction": "monatechForm",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

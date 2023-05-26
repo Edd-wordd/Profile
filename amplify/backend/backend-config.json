@@ -1,0 +1,68 @@
+{
+  "api": {
+    "monatechformapi": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "monatechForm"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "function": {
+    "monatechForm": {
+      "build": true,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_monatechForm_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "monatechForm"
+        }
+      ]
+    },
+    "AMPLIFY_function_monatechForm_reactAppCompanyEmailPassword": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "monatechForm"
+        }
+      ]
+    },
+    "AMPLIFY_function_monatechForm_reactAppCompanyRecipientEmail": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "monatechForm"
+        }
+      ]
+    },
+    "AMPLIFY_function_monatechForm_reactAppCompanyUserEmail": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "monatechForm"
+        }
+      ]
+    },
+    "AMPLIFY_function_monatechForm_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "monatechForm"
+        }
+      ]
+    }
+  }
+}

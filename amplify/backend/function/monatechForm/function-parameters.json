@@ -1,0 +1,17 @@
+{
+  "lambdaLayers": [],
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "reactAppCompanyUserEmail",
+      "environmentVariableName": "REACT_APP_COMPANY_USER_EMAIL"
+    },
+    {
+      "cloudFormationParameterName": "reactAppCompanyEmailPassword",
+      "environmentVariableName": "REACT_APP_COMPANY_EMAIL_PASSWORD"
+    },
+    {
+      "cloudFormationParameterName": "reactAppCompanyRecipientEmail",
+      "environmentVariableName": "REACT_APP_COMPANY_RECIPIENT_EMAIL"
+    }
+  ]
+}
