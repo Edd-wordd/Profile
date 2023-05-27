@@ -47,7 +47,7 @@ app.post('/api/form', async function (req, res) {
             <li style='margin-bottom: 10px;'><strong>Time/Date User Sent Inquiry:</strong> ${data.timeStamp}</li>
             <li style='margin-bottom: 10px;'><strong>Project start date:</strong> ${data.startDate}</li>
             <li style='margin-bottom: 10px;'><strong>Marketing Data (where they heard about us):</strong> ${data.whereDidYouHearAboutUs}</li>
-          </ul>
+          </ul
           <h3 style='font-size: 22px; margin: 30px 0 15px; color: #333;'>Message</h3>
           <p style='margin: 0;'>${data.message}</p>
         </div>
