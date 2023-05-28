@@ -17,7 +17,7 @@ const getPlugins = () =>
       ? new Dotenv()
       : new webpack.DefinePlugin({ 'process.env': JSON.stringify(process.env) }),
     !isDevelopment && new MiniCssExtractPlugin({ filename: '[name].min.css' }),
-    new CopyWebpackPlugin({ patterns: [{ from: 'public', to: '' }] }),
+    new CopyWebpackPlugin({ patterns: [{ from: 'public/assets', to: 'assets' }] }),
   ].filter(Boolean)
 
 const getModuleRules = () => [
