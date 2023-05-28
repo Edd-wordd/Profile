@@ -89,7 +89,7 @@
 // module.exports = app
 import express from 'express'
 import bodyParser from 'body-parser'
-import awsServerlessExpressMiddleware from 'aws-serverless-express/middleware'
+import awsServerlessExpressMiddleware from 'aws-serverless-express/middleware.js'
 import nodemailer from 'nodemailer'
 
 // Declare a new express app
