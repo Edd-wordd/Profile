@@ -1,4 +1,5 @@
 const path = require('path')
+
 const webpack = require('webpack')
 const Dotenv = require('dotenv-webpack')
 const TerserPlugin = require('terser-webpack-plugin')
@@ -65,7 +66,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'public'),
     filename: '[name].min.js',
-    publicPath: '/',
+    publicPath: '/public/',
   },
   optimization: getOptimization(),
   module: {
