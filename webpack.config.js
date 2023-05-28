@@ -39,7 +39,7 @@ const getModuleRules = () => [
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
-          outputPath: '/assets/',
+          outputPath: 'assets/',
           publicPath: '/assets/',
         },
       },
@@ -66,7 +66,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'public'),
     filename: '[name].min.js',
-    publicPath: '/public/',
+    publicPath: '/',
   },
   optimization: getOptimization(),
   module: {
